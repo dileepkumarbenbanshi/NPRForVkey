@@ -48,6 +48,18 @@ class NPRURLRequestSession: NSObject {
         }
     }
     
+    public func ebCompletion( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+        
+        var endPoint = EndPoint.ebList
+        
+        if !util.isEnumerator() {
+            endPoint = EndPoint.super_hlbList
+        }
+        self.request(BaseUrl.url + endPoint , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
+            finished(success,result, error)
+        }
+    }
+    
     public func downloadSuperVisorEBList( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
         self.request(BaseUrl.url + EndPoint.super_hlbList , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
             finished(success,result, error)
@@ -86,6 +98,12 @@ class NPRURLRequestSession: NSObject {
            }
        }
        
+    
+    public func getOtpChangePassword( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+        self.request(BaseUrl.url + EndPoint.getOTP , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
+            finished(success,result, error)
+        }
+    }
        public func postUploadDataRequest(params:[String: Any],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
         
         var endPoint = EndPoint.Upload_Data

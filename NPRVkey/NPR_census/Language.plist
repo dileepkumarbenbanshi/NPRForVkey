@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>Engish</string>
+		<string>English</string>
 		<key>id</key>
 		<string>01</string>
 	</dict>
@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Malyalam-മലയാളം</string>
+		<string>Malayalam-മലയാളം</string>
 		<key>id</key>
 		<string>05</string>
 	</dict>
@@ -46,7 +46,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Gujrati-ગુજરાતી</string>
+		<string>Gujarati-ગુજરાતી</string>
 		<key>id</key>
 		<string>08</string>
 	</dict>
@@ -76,7 +76,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Oriya-ଓଡ଼ିଆ</string>
+		<string>Odia-ଓଡ଼ିଆ</string>
 		<key>id</key>
 		<string>13</string>
 	</dict>
@@ -88,7 +88,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Telgu-తెలుగు</string>
+		<string>Telugu-తెలుగు</string>
 		<key>id</key>
 		<string>15</string>
 	</dict>

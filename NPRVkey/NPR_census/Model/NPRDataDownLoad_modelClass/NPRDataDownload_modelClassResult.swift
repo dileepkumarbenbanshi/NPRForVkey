@@ -38,16 +38,26 @@ class NPRDataDownload_modelClassResult : NSObject, NSCoding{
         var fathercode : String!
         var fathernm : String!
         var fathernmsl : String!
+        var firstName : String!
+        var  firstnamesl : String!
         var genderid : String!
         var hh : String!
         var hhNoHh : String!
         var hhType : String!
+        var languageRow : String!
+        var lastnamesl : String!
+        var lastName : String!
+    
         var memberStatus : String!
+        var  middleName : String!
+        var  middlenamesl : String!
         var mothercode : String!
         var mothernm : String!
         var mothernmsl : String!
         var mstatusid : String!
         var name : String!
+        var nameSl : String!
+    
         var nameOnCard : String!
         var nameOnCardsl : String!
         var nameRespondent : String!
@@ -138,14 +148,31 @@ class NPRDataDownload_modelClassResult : NSObject, NSCoding{
                 hhNoHh = hhNumber
             }
             else {
+                
                 hhNoHh = ""
             }
+            if let hhNumberFrom2021API = dictionary["slnohhd"] as? String{
+               hh = hhNumberFrom2021API
+                hhNoHh = hhNumberFrom2021API
+            }
+            
+            languageRow = dictionary["languageRow"] as? String
             memberStatus = dictionary["memberStatus"] as? String
             mothercode = dictionary["mothercode"] as? String
             mothernm = dictionary["mothernm"] as? String
             mothernmsl = dictionary["mothernmsl"] as? String
             mstatusid = dictionary["mstatusid"] as? String
             name = dictionary["name"] as? String
+            nameSl = dictionary["namesl"] as? String
+            namesl = dictionary["namesl"] as? String
+            firstName = dictionary["firstName"] as? String
+            firstnamesl = dictionary["firstnamesl"] as? String
+            middleName = dictionary["middleName"] as? String
+            middlenamesl = dictionary["middlenamesl"] as? String
+            
+            lastName = dictionary["lastName"] as? String
+            lastnamesl = dictionary["lastnamesl"] as? String
+            
             nameOnCard = dictionary["nameOnCard"] as? String
             nameOnCardsl = dictionary["nameOnCardsl"] as? String
             nameRespondent = dictionary["nameRespondent"] as? String

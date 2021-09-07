@@ -10,7 +10,16 @@ import UIKit
 
 @available(iOS 13.0, *)
 class ViewEditCompleteViewController: UIViewController {
-
+    @IBOutlet var totalHouseholdsLeftLabel: UILabel!
+    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet var headLabel: UILabel!
+    @IBOutlet var mobileLabel: UILabel!
+    @IBOutlet var aadhaarLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var lblPrevViewName: UILabel!
+    @IBOutlet var lblBellowMessage: UILabel!
+    
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var dataTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var labelTotalHouseHold: UILabel!
@@ -21,6 +30,7 @@ class ViewEditCompleteViewController: UIViewController {
     @IBOutlet weak var imageViewCircleDOB: UIImageView!
     var btnSearchType : UIButton?
     
+    @IBOutlet weak var tfSearch: UITextField!
     var tableViewData = [CellData]()
     //var arayHouseHoldListModel:[NPR2021MemberDetails] = []
     var arayMemberDetail:[NPR2021MemberDetails] = []
@@ -34,16 +44,19 @@ class ViewEditCompleteViewController: UIViewController {
     var skipSelctedHHModel : NPR_2021hh_Details?
     var skipHHSelectedStatus = ""
     var alertType = AlertType.skip
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-              self.labelTotalHouseHold.text = "\(self.tableViewData.count)"
-        viewPrepare()
+      
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         dataTableView.keyboardDismissMode = .onDrag
+        selectedIndexPath = IndexPath.init(row: -1, section: 0)
+        isSelectedCell = false
+        viewPrepare()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,12 +65,42 @@ class ViewEditCompleteViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
     }
     
     func viewPrepare()  {
         
         self.dataTableView.register(UINib(nibName: "IncompleteHouseholdSubCell", bundle: nil), forCellReuseIdentifier:"IncompleteHouseholdSubCell")
         getHouseHoldList()
+        setTitle()
+        
+        lblBellowMessage.text = LanguageModal.langObj.view_edit_not_uploaded_message
+        lblTitle.text = LanguageModal.langObj.search_edit
+        totalHouseholdsLeftLabel.text = LanguageModal.langObj.total_households
+        nameLabel.text = LanguageModal.langObj.name_of_person
+        aadhaarLabel.text = LanguageModal.langObj.aadhaar
+        mobileLabel.text = LanguageModal.langObj.mobile
+        dobLabel.text = LanguageModal.langObj.dob
+        headLabel.text = LanguageModal.langObj.head
+        searchBar.placeholder = LanguageModal.langObj.search
+    }
+    func setTitle()  {
+        guard let viewControllers = self.navigationController?.viewControllers else{
+            return
+        }
+        
+        for vc in viewControllers {
+            if let vcMain  = vc as? MainViewController{
+               
+                if vcMain.isSelectedInCompleteHH ?? false  {
+                    lblPrevViewName.text = LanguageModal.langObj.hh_summary//classTitle.incompleteTitle
+                }else{
+                    lblPrevViewName.text = LanguageModal.langObj.location_particular//classTitle.locationParticular
+                }
+            }
+        }
+       
+        tfSearch.addDoneButton()
     }
     
     @IBAction func onTapBack(_ sender: Any) {
@@ -77,46 +120,15 @@ class ViewEditCompleteViewController: UIViewController {
        let sortedHH = arayHouseHold.sorted(by: {$0.houseHoldhNo ?? "0" < $1.houseHoldhNo ?? "1"})
         
         arayTotalHHList = sortedHH
+        isSelectedCell = false
         arayHHList = arayTotalHHList
-        
+        self.labelTotalHouseHold.text = "\(self.arayHHList.count)"
         updateTblList()
-        
-        
-        
-//        let predicate =  NSPredicate(format: "hh_completed = %@ OR hh_completed = %@ ",HHCompletionStatusCode.completed,HHCompletionStatusCode.uploaded)
-//        guard let arayHouseHold = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate) as? [NPR_2021hh_Details] else {
-//            return
-//        }
-//
-//
-//
-//        print("HouseHoldCount",arayHouseHold.count)
-//        //if arayHouseHold.count > 0 {
-//
-//
-//
-//
-//            arayHHList = arayHouseHold
-//            arayTotalHHList = arayHouseHold
-//           // labelTotalHouseHold.text = "\(arayHouseHoldListModel.count)"
-//        updateTblList()
-//            self.labelTotalHouseHold.text = "\(arayHHList.count)"
-////        }
-////
-//      //  arayHouseHoldListModel.sorted(by: {$0.})
-//
-//
-////        guard let araymodel:[NPR_2021hh_Details] = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats) as? [NPR_2021hh_Details] else {
-////            return
-////        }
-        
-       
-       
+   
     }
 
-    
-    
     @objc func onTapDropDown(_ sender: UIButton){
+        
           let buttonPosition = sender.convert(CGPoint.zero, to: self.dataTableView)
           let indexPath = self.dataTableView.indexPathForRow(at: buttonPosition)!
           if indexPath.row == 0 {
@@ -135,24 +147,34 @@ class ViewEditCompleteViewController: UIViewController {
     
     
       @IBAction func onTapRadioButtons(_ sender: UIButton) {
+        tfSearch.resignFirstResponder()
+        tfSearch.text = ""
         btnSearchType = sender
+        
+        
+        
         if sender.tag == 101 {
             
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Name", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .namePhonePad
         }
         if sender.tag == 102 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Aadhaar", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
         }
         if sender.tag == 103 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Mobile Number", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
         }
         if sender.tag == 104 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Head of HH", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .namePhonePad
         }
         if sender.tag == 105 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using DOB", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
         }
-         
+        tfSearch.becomeFirstResponder()
      }
     
     func handleRadioButtonSelection(tag:Int, placeHoder:String, selectedImage:UIImage, UnselectedImage:UIImage){
@@ -162,7 +184,7 @@ class ViewEditCompleteViewController: UIViewController {
             self.imageViewCircleMobile.image = UnselectedImage
             self.imageViewCircleHead.image = UnselectedImage
             self.imageViewCircleDOB.image = UnselectedImage
-            self.searchBar.placeholder = placeHoder
+            self.tfSearch.placeholder = placeHoder
         }
         if tag == 102 {
             self.imageViewCircleName.image = UnselectedImage
@@ -170,7 +192,7 @@ class ViewEditCompleteViewController: UIViewController {
             self.imageViewCircleMobile.image = UnselectedImage
             self.imageViewCircleHead.image = UnselectedImage
             self.imageViewCircleDOB.image = UnselectedImage
-            self.searchBar.placeholder = placeHoder
+            self.tfSearch.placeholder = placeHoder
         }
         if tag == 103 {
             self.imageViewCircleName.image = UnselectedImage
@@ -178,7 +200,7 @@ class ViewEditCompleteViewController: UIViewController {
             self.imageViewCircleMobile.image = selectedImage
             self.imageViewCircleHead.image = UnselectedImage
             self.imageViewCircleDOB.image = UnselectedImage
-            self.searchBar.placeholder = placeHoder
+            self.tfSearch.placeholder = placeHoder
         }
         if tag == 104 {
             self.imageViewCircleName.image = UnselectedImage
@@ -186,7 +208,7 @@ class ViewEditCompleteViewController: UIViewController {
             self.imageViewCircleMobile.image = UnselectedImage
             self.imageViewCircleHead.image = selectedImage
             self.imageViewCircleDOB.image = UnselectedImage
-            self.searchBar.placeholder = placeHoder
+            self.tfSearch.placeholder = placeHoder
         }
         if tag == 105 {
             self.imageViewCircleName.image = UnselectedImage
@@ -194,14 +216,14 @@ class ViewEditCompleteViewController: UIViewController {
             self.imageViewCircleMobile.image = UnselectedImage
             self.imageViewCircleHead.image = UnselectedImage
             self.imageViewCircleDOB.image = selectedImage
-            self.searchBar.placeholder = placeHoder
+            self.tfSearch.placeholder = placeHoder
         }
     }
  
     @IBAction func onTapRefresh(_ sender: Any) {
         
         let searchType = Utils.searchType.init(rawValue: btnSearchType?.tag ?? 0)
-        
+        btnSearchType = UIButton()
         
         switch searchType {
         case .head:
@@ -229,10 +251,10 @@ class ViewEditCompleteViewController: UIViewController {
             return
         }
         
-        searchBar.placeholder = "Search"
+        tfSearch.placeholder = "Search"
         arayHHList = arayTotalHHList
         btnSearchType?.isSelected = false
-        searchBar.text = ""
+        tfSearch.text = ""
         searchBar.resignFirstResponder()
         updateTblList()
         
@@ -250,6 +272,7 @@ class ViewEditCompleteViewController: UIViewController {
         }
         vc.arayMembersModel = arayMemberDetail
         vc.hhModel = arayHHList[indexPath.section]
+        vc.isCameFromEditPage = true
         self.navigationController?.pushViewController(vc, animated: true)
         
       }

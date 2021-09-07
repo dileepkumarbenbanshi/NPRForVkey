@@ -11,8 +11,27 @@ import UIKit
 class AssignEBViewController: UIViewController {
     var arayDBEBList = [EB]()
     var selectedEBIndex = -1
+    var isDownloadingSelectedEB = false
+    var is_hitHLBAPiFirstTime = true
+    var isTapedRefreshButton = false
     
+    @IBOutlet var totalHoseholdsLeftLabel: UILabel!
+    @IBOutlet var totalOriginalLeftLabel: UILabel!
+    @IBOutlet var totalNewLeftLabel: UILabel!
     
+    @IBOutlet var stateLeftLabel: UILabel!
+    @IBOutlet var districtLeftLabel: UILabel!
+    @IBOutlet var subDistrictLeftLabel: UILabel!
+    @IBOutlet var townOrVillageLeftLabel: UILabel!
+    @IBOutlet var wardLeftLabel: UILabel!
+    @IBOutlet var blockLeftLabel: UILabel!
+    @IBOutlet var jurisdictionTopLabel: UILabel!
+    @IBOutlet var appName: UILabel!
+    @IBOutlet var languageLabel: UILabel!
+    @IBOutlet var selectHLBLabel: UILabel!
+    @IBOutlet var notDownloadedLabel: UILabel!
+    @IBOutlet var downLoadedLabel: UILabel!
+    @IBOutlet var uploadedLabel: UILabel!
     
     @IBOutlet weak var tblView: UITableView!
     override func viewDidLoad() {
@@ -46,12 +65,30 @@ class AssignEBViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         arayDBEBList.removeAll()
-        
+        is_hitHLBAPiFirstTime = true
         getDBEbList()
+        
+        appName.text = AppMessages.App_Name
+       // languageLabel.text = LanguageModal.currentLanguage
+        selectHLBLabel.text = LanguageModal.langObj.select_eb
+        notDownloadedLabel.text = LanguageModal.langObj.not_downloaded
+        downLoadedLabel.text = LanguageModal.langObj.downloaded
+        uploadedLabel.text = LanguageModal.langObj.uploaded
        // callJsonFile()
         
     }
     
+    
+    @IBAction func btnEbSyncRefresh(_ sender: UIButton) {
+        if !Reachability.shared.isConnected {
+            AlertView().alertWithoutButton( message: AppMessages.networkConnection)
+            return
+        }
+        isTapedRefreshButton = true
+        isDownloadingSelectedEB = false
+        getEBList()
+        
+    }
     
     func navigateToMainScreen(){
         
@@ -59,7 +96,10 @@ class AssignEBViewController: UIViewController {
             self.view.removeLoaderView()
             self.view.removeLoaderView()
             if util.isEnumerator(){
-                self.navigateToController(identifier: "MainVC", storyBoardName: "Main")
+                //self.navigateToController(identifier: "MainVC", storyBoardName: "Main")
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+                controller.isFromHlbList = true
+                self.navigateToController(vc: controller)
             }
             else{
                 self.navigateToController(identifier: "SupervisorHHList_VC", storyBoardName: "SuperVisor")
@@ -88,7 +128,7 @@ class AssignEBViewController: UIViewController {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("Path URLs ", urls)
         
-        if arayDBEBList.count == 0 {  // EB List Downloaded or not
+        if arayDBEBList.count == 0 && is_hitHLBAPiFirstTime {  // EB List Downloaded or not
             getEBList()
         }
         else{
@@ -103,19 +143,19 @@ class AssignEBViewController: UIViewController {
                 self.view.removeLoaderView()
                 
             }
-                
-              
-            
-           
         }
  
     }
     
    // Get Eb List From API
     func getEBList()  {
+        if !Reachability.shared.isConnected {
+            AlertView().alertWithoutButton( message: AppMessages.networkConnection)
+            return
+        }
         
-        NPRURLRequestSession().downloadEBList(params: ["":""]) { (done, result, error) in
-          
+        NPRURLRequestSession().downloadEBList(params: ["":""]) { (success, result, error) in
+            if success {
             guard let aray = result as? [[String:Any]] else {
                           return
                        }
@@ -123,24 +163,32 @@ class AssignEBViewController: UIViewController {
           // Pass  Respoce aray to Model Class
           let objEBManagement =  EBManagementClass(ebResponce: aray)
           objEBManagement.delegate = self
+            objEBManagement.isDownloadingSelectedEB = self.isDownloadingSelectedEB
             objEBManagement.ebDataManagement()
             
         }
-        
-
-   }
-    
+            else {
+                DispatchQueue.main.async {
+                    AlertView().alertWithoutButton( message: ErrorMessage.errorMessage(code: error?.code ?? 0))
+                    self.view.removeLoaderView()
+                }
+            }
+        }
+    }
+   
+    // Set For Download EB data 2019
    func setConnectionWithDelegate(selectedEBModel:EB) {
-        
+    is_hitHLBAPiFirstTime = false
         SharedClass.shared.selectEBListModel = selectedEBModel
     Singleton().selectEBListModel = selectedEBModel
          let objDownLodVM = DownloadOldData_ViewModel()
          objDownLodVM.delegate = self
         objDownLodVM.downLoadOlddataForThisEB(ebModel: selectedEBModel)
+      
     //objDownLodVM.getJsonFromFile()
     }
     
-    
+    // Set For Download EB data 2021
     func sdelegateConnectionFor2021DataDownload(selectedEBModel:EB)  {
         
         
@@ -179,18 +227,31 @@ extension AssignEBViewController:UITableViewDelegate, UITableViewDataSource {
         let contentCell:AssignEBTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AssignEBTableViewCell") as! AssignEBTableViewCell
         let ebListModel = arayDBEBList[indexPath.row]
         
+        var color = UIColor.systemRed
+        
         contentCell.labelEB.text = ebListModel.eb_number
         if ebListModel.is_eb_downloaded {
-            contentCell.labelEB.textColor = UIColor.init(named: "green")
+            color = UIColor.init(named: "green") ?? UIColor()//ProjectColor.green
             contentCell.imgDownloadData.image = UIImage.init(named: "ic_rightArrow")
             contentCell.imgDownloadData.tintColor = UIColor.init(named: "green")
         }
-        else{
-            contentCell.labelEB.textColor = UIColor.systemRed
-            contentCell.imgDownloadData.image = UIImage.init(named: "arrow.down")
-            contentCell.imgDownloadData.tintColor = UIColor.systemRed
+        else {
+            color = UIColor.systemRed
+            if #available(iOS 13.0, *) {
+                contentCell.imgDownloadData.image = UIImage(systemName: "arrow.down")
+            } else {
+                // Fallback on earlier versions
+            }
+            
+            
         }
         
+        if ebListModel.is_eb_uploaded  {
+            color = ProjectColor.colorPrimary
+        }
+        contentCell.imgDownloadData.tintColor = color
+        contentCell.labelEB.textColor = color
+        contentCell.lblEnumeratorName.textColor = color
         if  util.isEnumerator() {
             
             contentCell.lblEnumeratorName.text = ""
@@ -210,16 +271,22 @@ extension AssignEBViewController:UITableViewDelegate, UITableViewDataSource {
         SharedClass.shared.selectEBListModel = modelEB_atndex
         selectedEBIndex = indexPath.row
         if modelEB_atndex.is_eb_downloaded {
-        
+            isDownloadingSelectedEB = false
+            
+            if UnHabitedVM().shouldOpenExpHHPopup {
+              loadInhavited()
+            }else{
+                navigateToMainScreen()
+            }
             DBManagerHousehold().updateEB_Active_Flag(modelEBList: modelEB_atndex, value: "1")
-           navigateToMainScreen()
+           
             
-            
-        }
+    }
         else{ 
             
-       
+            isDownloadingSelectedEB = true
             self.tapEBDownLoad()
+            
         }
         
     }
@@ -228,9 +295,7 @@ extension AssignEBViewController:UITableViewDelegate, UITableViewDataSource {
         return DeviceType.IS_IPAD ? 140 : 70
     }
     
-    /*func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }*/
+    
     
 }
 
@@ -246,12 +311,12 @@ extension AssignEBViewController:NPR2019DataDownLoadDelegate {
           
            
         }
-        if util.isEnumerator() {
+        //if util.isEnumerator() {
             sdelegateConnectionFor2021DataDownload(selectedEBModel:singleton().selectEBListModel)
-        }
-        else{
-            self.dataDownloadedAlertAndGetDB()
-        }
+//        }
+//        else{
+//            self.dataDownloadedAlertAndGetDB()
+//        }
         
        
     }
@@ -260,7 +325,7 @@ extension AssignEBViewController:NPR2019DataDownLoadDelegate {
     func data2021DownloadANDSaved () {
         
 //        DispatchQueue.main.async {
-//        AlertView().alertWithoutButton(vc: self, message: AppMessages.ebDownloadedSuccessFully)
+//        AlertView().alertWithoutButton( message: AppMessages.ebDownloadedSuccessFully)
 //        //navigateToMainScreen()
 //            self.getDBEbList()
 //        }
@@ -270,11 +335,31 @@ extension AssignEBViewController:NPR2019DataDownLoadDelegate {
 }
 
 extension AssignEBViewController : EBManagememntProtocol {
-    func ebSavedSuccessFully() {
-        getDBEbList()
+    func ebNotExistMore() {
+                DispatchQueue.main.async {
+                AlertView().alertWithoutButton( message: AppMessages.ebDoesNotExist)
+               
+                   self.getDBEbList()
+                }
     }
     
-   
+    func ebExistYet() {
+        self.setConnectionWithDelegate(selectedEBModel: singleton().selectEBListModel)
+    }
+    
+    func ebSavedSuccessFully() {
+        getDBEbList()
+        DispatchQueue.main.async {
+            
+        self.view.removeLoaderView()
+            if self.isTapedRefreshButton {
+                AlertView().alertWithoutButton( message: LanguageModal.langObj.eb_update)
+                
+                    self.isTapedRefreshButton = false
+            }
+        }
+        
+    }
     
     func countryStateDistrictSaved() {
         getDBEbList()

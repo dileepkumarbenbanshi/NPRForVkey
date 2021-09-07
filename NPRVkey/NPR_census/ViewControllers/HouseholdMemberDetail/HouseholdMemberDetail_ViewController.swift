@@ -9,45 +9,66 @@
 import UIKit
 
 class HouseholdMemberDetail_ViewController: UIViewController {
+    
+    @IBOutlet weak var lblInstituteName: UILabel!
+    @IBOutlet weak var lblInstituteNameTitle: UILabel!
+    @IBOutlet weak var stackViewInstiTutionName: UIStackView!
+    @IBOutlet weak var lblEnterNoOfHH_title: UILabel!
+    @IBOutlet weak var lblSplit_title: UILabel!
+    @IBOutlet weak var lblRefresh_title: UILabel!
+    @IBOutlet weak var lblAdd_title: UILabel!
+    
+    @IBOutlet weak var btn_okSplit: UIButton!
     @IBOutlet weak var lblBlockNo: UILabel!
     
+    @IBOutlet weak var stackViewSplit: UIStackView!
+    @IBOutlet weak var stackViewAddMember: UIStackView!
     @IBOutlet weak var tf_numberSplitHH: UITextField!
     @IBOutlet weak var btnHouseType: UIButton!
     @IBOutlet weak var lblMemberCount: UIButton!
     @IBOutlet weak var lblHouseHoldNumber: UILabel!
+    @IBOutlet weak var btnEditHouseType: UIButton!
     
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblPrevPageName: UILabel!
     @IBOutlet var viewPopUp: UIView!
     // @IBOutlet weak var tbl_MemberList: UITableView!
     var tableLoaded = false
     var modelData = [HouseHoldMemberDetail_modelClass]()
     var arayMembersModel = [NPR2021MemberDetails]()
     var hhModel = NPR_2021hh_Details()
-    
-    
+    let alertView = AlertView()
+    var btnTaped = UIButton()
     var selectedIndexPath = IndexPath.init(row: -1, section: 0)
     var isSelectedCell = false
     var buttonStatusChange:UIButton!
     var isChangeMemberStatus = false
     var isTapedDeleteButton = false
+    var isTapedShiftMember = false
+    var isCameFromEditPage = false
     
+    var selectedMemberToDelete = NPR2021MemberDetails()
+    var tapedButtonTypeAlert =  tapedButtonType.init(rawValue: 3)
     
+    enum tapedButtonType:Int {
+        case deleteBuuton = 1 , shift ,none
+             
+    }
     @IBOutlet weak var tbl_houseoldList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        viewPopUp.frame = self.view.frame
+       viewPopUp.frame = self.view.frame
         
         self.view.addSubview(viewPopUp)
         viewPopUp.isHidden = true
         viewPopUp.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
          
         // Do any additional setup after loading the view.
+        indexPathSelecNone()
+        alertView.delegate = self
     }
-    
-    
-    
-    
+
     func fetchHHMembers()  {
         
         DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: hhModel) { (arayhhMembers) in
@@ -57,13 +78,82 @@ class HouseholdMemberDetail_ViewController: UIViewController {
     }
     
     func viewPrepare()  {
-        
-        lblMemberCount.setTitle("Total Member : \(arayMembersModel.count)", for: .normal)
-        lblBlockNo.text = "Block No - \(singleton().selectEBListModel.eb_block_number ?? "")"
-        lblHouseHoldNumber.text =  "Household Number  - \(arayMembersModel[0].hh_Number ?? "")"
+        lblEnterNoOfHH_title.text = LanguageModal.langObj.expected_hh_to_split
+        tf_numberSplitHH.placeholder = LanguageModal.langObj.expected_hh_to_split
+        btn_okSplit.setTitle(LanguageModal.langObj.OK, for: .normal)
+        lblAdd_title.text = LanguageModal.langObj.button_add_member
+        lblRefresh_title.text = LanguageModal.langObj.refresh
+        lblSplit_title.text = LanguageModal.langObj.split
+        lblMemberCount.setTitle("\(LanguageModal.langObj.total_members) \(arayMembersModel.count)", for: .normal)
+        lblBlockNo.text = "\(LanguageModal.langObj.block_no) \(singleton().selectEBListModel.eb_block_number ?? "")"
+        lblHouseHoldNumber.text =  "\(LanguageModal.langObj.hh_number)  - \(arayMembersModel[0].hh_Number ?? "")"
 //        btnHouseType.setTitle("House Type : \(arayMembersModel[0].hh_type ?? "") ", for: .normal)
         tbl_houseoldList.reloadData()
-         btnHouseType.setTitle("Type of Household : Normal ", for: .normal)
+        lblTitle.text = LanguageModal.langObj.hh_member_details
+        var strInstiTutionName = ""
+        
+        if hhModel.language?.IsSelectedLangauge_nonEnglish ?? false {
+            strInstiTutionName = ((hhModel.instituteName_sl?.count != 0) && (hhModel.instituteName_sl != nil) ? hhModel.instituteName_sl ?? "" : hhModel.instituteName) ?? ""
+        }else{
+            strInstiTutionName = ((hhModel.instituteName?.count != 0) && (hhModel.instituteName != nil)  ? hhModel.instituteName ?? "" : hhModel.instituteName_sl) ?? ""
+        }
+        
+        lblInstituteNameTitle.text = "\(LanguageModal.langObj.name_of_institue) :  \(strInstiTutionName)"
+        lblInstituteName.text = strInstiTutionName
+        lblInstituteName.isHidden = true
+        stackViewInstiTutionName.isHidden = (strInstiTutionName.count == 0  )
+        
+        var strTitle = ""
+        
+        if isCameFromEditPage {
+            strTitle  = LanguageModal.langObj.search_edit
+        }else{
+            strTitle  = LanguageModal.langObj.hh_summary
+        }
+        lblPrevPageName.text = strTitle
+        lblTitle.text = LanguageModal.langObj.hh_member_details
+        hideSplitAndAddMemberOption()
+        tbl_houseoldList.reloadData()
+        
+        guard let houseType = HouseType.init(rawValue: hhModel.hhType ?? "1") else { return  }
+        
+        
+        let houseTypeDecode = util.houseTypeDecode(houseType:houseType)
+        
+        btnHouseType.setTitle("\(LanguageModal.langObj.hh_type) : \(houseTypeDecode ) ", for: .normal)
+        setEditHouseTypeButton()
+        
+        var splitButtonShouldHide = true
+        
+        if (hhModel.hh_status == HHStatusCode.old ||  hhModel.hh_status == HHStatusCode.available){
+            splitButtonShouldHide = false
+            if hhModel.hh_completed == HHCompletionStatusCode.uploaded {
+                splitButtonShouldHide = true
+            }
+            
+        }
+        
+        stackViewSplit.isHidden = splitButtonShouldHide
+    }
+    
+    func setEditHouseTypeButton() {
+        
+        let predicate = NSPredicate(format: "hh_tin = %@ AND hh_completed = %@ AND hh_status = %@",hhModel.hh_tin ?? "" , HHCompletionStatusCode.completed,HHStatusCode.new)
+       //let predicate = NSPredicate(format: "hh_completed = %@",HHCompletionStatusCode.notStarted)
+           if let data = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate) as? [NPR_2021hh_Details]{
+               
+            if data.count > 0 {
+                btnEditHouseType.isHidden = false
+            }else{
+                btnEditHouseType.isHidden = true
+            }
+             }
+        
+    }
+    
+    func indexPathSelecNone()  {
+        
+        selectedIndexPath = IndexPath.init(row: -1, section: 0)
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -76,19 +166,25 @@ class HouseholdMemberDetail_ViewController: UIViewController {
         fetchHHMembers()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func hideSplitAndAddMemberOption()  {
+        var haveToHideSplit = false
+        var haveToHideAddMember = false
+        
+        if hhModel.hh_completed == HHCompletionStatusCode.uploaded && hhModel.hh_status != HHStatusCode.locked {
+            haveToHideAddMember = true
+            haveToHideSplit = true
+        }else if hhModel.hh_completed == HHCompletionStatusCode.completed && hhModel.hh_status ?? "" == HHStatusCode.new {
+            haveToHideSplit = true
+        }
+        
+        stackViewSplit.isHidden = haveToHideSplit
+        stackViewAddMember.isHidden = haveToHideAddMember
     }
-    */
     
     // MARK: - Button Action
     @IBAction func btnDismisPopup_action(_ sender: UIButton) {
         viewPopUp.isHidden = true
+        tf_numberSplitHH.text = ""
     }
     
     @available(iOS 13.0, *)
@@ -98,7 +194,7 @@ class HouseholdMemberDetail_ViewController: UIViewController {
             
             let intNumberSplit = Int(self.tf_numberSplitHH.text ?? "") ?? 0
             
-            if intNumberSplit    >= 2 && intNumberSplit <= arayExistMemberInHH.count{
+            if intNumberSplit    >= 2 && intNumberSplit <= arayExistMemberInHH.count && intNumberSplit    <= 99{
                 self.viewPopUp.isHidden = true
             //self.navigateToController(identifier: "SplitHouseHold_VC", storyBoardName: "NPR")
                 self.tf_numberSplitHH.text = ""
@@ -112,58 +208,49 @@ class HouseholdMemberDetail_ViewController: UIViewController {
                 var strMessage = ""
                 
                 if arayExistMemberInHH.count > 2 {
-                   strMessage = "\(English.SplitView().splitNumberAlert) 2 to \(arayExistMemberInHH.count)"
+                    strMessage = "\(LanguageModal.langObj.expected_hh_can_not_be_more_than)-\(arayExistMemberInHH.count)"
                 }
                 else{
-                    strMessage = "\(English.SplitView().splitNumberGreter)"
+                   // strMessage = "\(English.SplitView().atleastTwoMemberShouldAvailble)"
+                    if intNumberSplit == 0 {
+                        strMessage = LanguageModal.langObj.expected_hh_can_not_be_zero
+                    }else{
+                        strMessage = LanguageModal.langObj.expected_hh_can_not_be_one
+                    }
+                    
                 }
-                AlertView().alertWithoutButton(vc: self, message: strMessage)
+                AlertView().alertWithoutButton( message: strMessage)
             }
-            
         }
-        
-        
     }
     
     @IBAction func btnBack_action(_ sender: UIButton) {
         
-        if hhModel.respondentName?.count ?? 0 == 0  && isChangeMemberStatus {
-            
-            //self.navigateToRespondentSignature()
-            
-            DBManagerHousehold().updateHHStatus_dependONMember(houseHoldModel: hhModel) { (isUpdated) in
-
-                self.navigateToRespondentSignature()
-
-            }
-        }else{
-            self.navigationController?.popViewController(animated: true)
-        }
+        self.checkAndOpenSignatureView ()
+        
        
            
        }
     @IBAction func btnSplit_action(_ sender: UIButton) {
         
-        
+        tf_numberSplitHH.delegate = self
         DBManagerMemberDetail().fetchOldMembers_currentalyLiveinHH(modelSelectedHH: hhModel) { (arayMemberLiveinHH) in
            
             if arayMemberLiveinHH.count > 1 {
                 self.viewPopUp.isHidden = false
-                self.tf_numberSplitHH.addDonButton_TextFields()
+               // self.tf_numberSplitHH.addDonButton_TextFields()
             }else{
-                AlertView().showAlertWithSingleButton(vc: self, title: "", message: English.SplitView().availableMember)
+                AlertView().showAlertWithSingleButton( title: "", message: LanguageModal.langObj.one_member_should_be_available_to_split)
                 
                 
             }
         }
         
         
-        
-        
-        
     }
     @IBAction func btnRefresh_action(_ sender: UIButton) {
-        
+        isSelectedCell = false
+        tbl_houseoldList.reloadData()
     }
     
     @IBAction func btn_addMember_action(_ sender: UIButton) {
@@ -177,7 +264,7 @@ class HouseholdMemberDetail_ViewController: UIViewController {
         
         objHHMemberDetail.isEditingDetail = false
         objHHMemberDetail.entryT = .addNewMemberExitHH
-        objHHMemberDetail.strMemberName = "New Member"
+        objHHMemberDetail.strMemberName = LanguageModal.langObj.new_member
         objHHMemberDetail.modelHH = hhModel
 //       let hhHeadModel = arayMembersModel.filter({$0.rel_code == "01"})
 //        objHHMemberDetail.strHHNumber = hhHeadModel[0].hh_Number ?? ""
@@ -188,6 +275,13 @@ class HouseholdMemberDetail_ViewController: UIViewController {
         self.navigateToController(vc: objHHMemberDetail)
     }
     
+    @IBAction func btnEditHouseType_action(_ sender: UIButton) {
+        
+        guard let addNewMemberForm = self.storyboard?.instantiateViewController(identifier: ClassID.changeHHType) as? ChangeHouseTypeVC else { return }
+       
+        addNewMemberForm.hhModel = hhModel
+        self.navigationController?.pushViewController(addNewMemberForm, animated: true)
+    }
     
     @objc func btnDropDown_click(_ sender: UIButton){
         
@@ -225,22 +319,15 @@ extension HouseholdMemberDetail_ViewController:UITableViewDataSource,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-       
-        
        if indexPath.row == 0 {
         
         let cell:HoldHoldMemberList_TVC = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.houseHoldDetai_memberList, for: indexPath) as! HoldHoldMemberList_TVC
-        //cell.btnDropDown.tag = indexPath.section
-        //cell.btnDropDown.addTarget(self, action: #selector(HouseholdMemberDetail_ViewController.btnDropDown_click(_:)), for: .touchUpInside)
-        arayMembersModel[indexPath.section].censusHH_number = hhModel.census_hhNo
-        arayMembersModel[indexPath.section].censusHouse_number = hhModel.census_hNo
-        do {
-            try context.save()
-        } catch  {
-            
-        }
-        cell.lblMemberName.text = arayMembersModel[indexPath.section].name
-        cell.lblSerialNumber.text = arayMembersModel[indexPath.section].sloMember
+        
+       
+//        cell.lblMemberName.text = arayMembersModel[indexPath.section].name
+//        cell.lblSerialNumber.text = arayMembersModel[indexPath.section].sloMember
+        cell.hhModel = hhModel
+        cell.cellValueSetUP(memberDetailModel: arayMembersModel[indexPath.section], index: indexPath.section)
         return cell
         }
         else{
@@ -285,10 +372,21 @@ extension HouseholdMemberDetail_ViewController:UITableViewDataSource,UITableView
                 //cell.btnEdit.addTarget(self, action: #selector(HouseholdMemberDetail_ViewController.on(_:)), for: .touchUpInside)
                 
             }
-        
-            let hhHeadModel = arayMembersModel.filter({$0.rel_code == "01"})
             
-            cell.cellPutValues(memberDetailModel: modelMemberDetail, headGender: hhHeadModel[0].gender_id ?? "0")
+            let hhHeadModels = arayMembersModel.filter({$0.rel_code == "01"})
+            var hhHeadModel = NPR2021MemberDetails()
+            if hhHeadModels.count > 0 {
+               hhHeadModel = hhHeadModels[0]
+            }else{
+                hhHeadModel = arayMembersModel[0]
+            }
+             
+            
+            
+            cell.stackViewShift.isHidden = shiftWillHide(memberModel: modelMemberDetail)
+            cell.btnShift.tag = indexPath.section
+            cell.cellPutValues(memberDetailModel: modelMemberDetail, headGender: hhHeadModel.gender_id ?? "0")
+            cell.delegate = self
         return cell
         }
     
@@ -301,11 +399,7 @@ extension HouseholdMemberDetail_ViewController:UITableViewDataSource,UITableView
             selectedIndexPath = indexPath
             tableView.reloadData()
         }
-//        else if selectedIndexPath == indexPath && isSelectedCell{
-//            isSelectedCell = false
-//            let sections = IndexSet.init(integer: indexPath.section)
-//            tableView.reloadSections(sections, with: .automatic)
-//        }
+
          else if indexPath.row == 0{
             selectedIndexPath = indexPath
             
@@ -318,18 +412,12 @@ extension HouseholdMemberDetail_ViewController:UITableViewDataSource,UITableView
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-//        if indexPath.row == 1 {
-//            return DeviceType.IS_IPAD ? 1400 : 950
-//        }
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+
         
         return UITableView.automaticDimension
     }
 }
-
-
-
 @available(iOS 13.0, *)
 extension HouseholdMemberDetail_ViewController {
     
@@ -363,55 +451,89 @@ extension HouseholdMemberDetail_ViewController {
             
         case 11:
             status = "Moved Out"
-            
+            status = LanguageModal.langObj.as_migrated
             break
             case 12:
             
                 status = "Died"
+                status = LanguageModal.langObj.as_dead
             break
             
         default:
             
             status = "Died"
+            status = LanguageModal.langObj.as_dead
             break
         }
-        
-        
-        
-    
-        
-       
-        alertForStatusChange(status: status, indexPath: indexPath)
+        isTapedDeleteButton = false
+        isTapedShiftMember = false
+        if hhModel.hh_status == HHStatusCode.migratedOut || hhModel.hh_status == HHStatusCode.locked || hhModel.hh_status == HHStatusCode.notAvailable {
+            alertStatusChangeForSkipHH(status: status, indexPath: indexPath)
+        }else{
+            
+            alertForStatusChange(status: status, indexPath: indexPath)
+        }
+   
     
     }
+   
     
     
-    func alertForStatusChange(status:String,indexPath:IndexPath)  {
-        
+func alertForStatusChange(status:String,indexPath:IndexPath)  {
+    let alertView = AlertView()
+    alertView.delegate = self
         DBManagerMemberDetail().fetchMembers_currentalyLeaveinHH(modelSelectedHH: hhModel) { (arayCurrentalyLeaveINHH) in
-           
-            if arayCurrentalyLeaveINHH.count > 1 {
+            if arayCurrentalyLeaveINHH.count > 1{
                 
-                let alertView = AlertView()
-                alertView.delegate = self
-                alertView.showAlert(vc: self, title: "Are You Sure", message: "To mark member   \(self.arayMembersModel[indexPath.section].name ?? "")  as \(status)")
+                alertView.showAlert( title: LanguageModal.langObj.are_you_sure, message: "\(LanguageModal.langObj.to_mark_member)   \(self.arayMembersModel[indexPath.section].name ?? "")   \(status)")
             }
+           else if arayCurrentalyLeaveINHH.count == 1 && !(arayCurrentalyLeaveINHH.last == self.arayMembersModel[indexPath.section]) {
+                
+            alertView.showAlert( title: LanguageModal.langObj.are_you_sure, message: "\(LanguageModal.langObj.to_mark_member)   \(self.arayMembersModel[indexPath.section].name ?? "")   \(status)")
+            }
+//           else if arayCurrentalyLeaveINHH.count == 0{
+//
+//                alertView.showAlert( title: "Are You Sure", message: "To mark member   \(self.arayMembersModel[indexPath.section].name ?? "")  as \(status)")
+//            }
             else{
                 
-                AlertView().showAlertWithSingleButton(vc: self, title: "", message: English.HouseholdDetail.atLeastOneMemberINHH)
+                AlertView().showAlertWithSingleButton( title: "", message: English.HouseholdDetail.atLeastOneMemberINHH)
             }
         }
-        
-        
-        
-        
-        
-        
+ 
     }
     
+    func alertStatusChangeForSkipHH(status:String,indexPath:IndexPath)  {
+        isTapedShiftMember = false
+        isTapedDeleteButton = false
+        let alertView = AlertView()
+        alertView.delegate = self
+        
+        alertView.showAlert( title: LanguageModal.langObj.are_you_sure, message: "\(LanguageModal.langObj.to_mark_member)  \(self.arayMembersModel[indexPath.section].name ?? "")  as \(status)")
+                
+        alertView.showAlert( title: LanguageModal.langObj.are_you_sure, message: "\(LanguageModal.langObj.to_mark_member)   \(self.arayMembersModel[indexPath.section].name ?? "")  as \(status)")
+               
+    }
     
+    func alertForDeleteMember(indexPath:IndexPath)  {
+            
+            DBManagerMemberDetail().fetchMembers_currentalyLeaveinHH(modelSelectedHH: hhModel) { (arayCurrentalyLeaveINHH) in
+               
+                if arayCurrentalyLeaveINHH.count != 1 {
+                    
+                    let alertView = AlertView()
+                    alertView.delegate = self
+                    alertView.showAlert( title: LanguageModal.langObj.are_you_sure, message: "\(English.HouseholdDetail.deleteMember)   \(self.arayMembersModel[indexPath.section].name ?? "") ")
+                }
+                else{
+                    
+                    AlertView().showAlertWithSingleButton( title: "", message: English.HouseholdDetail.atLeastOneMemberINHH)
+                }
+            }
+     
+        }
     
-    @objc func btnEdit_action(_ sender: UIButton) {
+@objc func btnEdit_action(_ sender: UIButton) {
     
         
         let modelMemberDetail = arayMembersModel[sender.tag]
@@ -424,16 +546,9 @@ extension HouseholdMemberDetail_ViewController {
         self.navigationController?.pushViewController(addNewMemberForm, animated: true)
     }
     
-    
-    
-    
-    
     @objc func onTapSkip(_ sender: UIButton){
         
-//       let pickerView = Bundle.main.loadNibNamed("SkipHHView", owner: self, options: nil)?.first as? SkipHHView
-//           pickerView?.delegate = self
-//        skipSelctedHHModel = arayHHList[sender.tag]
-//            pickerView?.loadSKipView()
+
     }
     
 }

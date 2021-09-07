@@ -18,8 +18,12 @@ class EBList_ModelClassRootClass : NSObject, NSCoding{
     var name :String?
     
     var statecode : String!
+    var stateLanguageCode : String!
+    
     var statename : String!
     var statenamesl : String!
+    var startDate : String!
+    var endDate : String!
     var subebno : String!
     var tehsilcode : String!
     var tehsilname : String!
@@ -28,7 +32,8 @@ class EBList_ModelClassRootClass : NSObject, NSCoding{
     var townname : String!
     var townnamesl : String!
     var ward : String!
-
+    var ebCompletedOn : String!
+    
 
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
@@ -44,7 +49,11 @@ class EBList_ModelClassRootClass : NSObject, NSCoding{
         
         if !util.isEnumerator() {
             name = dictionary["name"] as? String
+        }else{
+            startDate = dictionary["npr_start_date"] as? String
+           endDate = dictionary["npr_end_date"] as? String
         }
+        
         statecode = dictionary["statecode"] as? String
         statename = dictionary["statename"] as? String
         statenamesl = dictionary["statenamesl"] as? String
@@ -56,6 +65,19 @@ class EBList_ModelClassRootClass : NSObject, NSCoding{
         townname = dictionary["townname"] as? String
         townnamesl = dictionary["townnamesl"] as? String
         ward = dictionary["ward"] as? String
+        stateLanguageCode = dictionary["state_language_codes"] as? String
+        ebCompletedOn = ""
+        if let ebCompletedon = dictionary["enumCompletedOn"] as? String {
+            ebCompletedOn = ebCompletedon
+            
+        }
+        if let enumStarted = dictionary["enumStartedOn"] as? String {
+            enumStartedOn = enumStarted
+            
+        }else{
+            enumStartedOn = ""
+        }
+        
     }
 
     /**

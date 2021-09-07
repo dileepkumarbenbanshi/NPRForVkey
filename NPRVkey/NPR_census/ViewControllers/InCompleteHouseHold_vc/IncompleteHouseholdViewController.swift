@@ -7,7 +7,13 @@
 //
 
 class IncompleteHouseholdViewController: UIViewController {
-
+    @IBOutlet var totalHouseholdsLeftLabel: UILabel!
+    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet var headLabel: UILabel!
+    @IBOutlet var mobileLabel: UILabel!
+    @IBOutlet var aadhaarLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    
     
     @IBOutlet weak var incompleteHouseholdTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -18,6 +24,8 @@ class IncompleteHouseholdViewController: UIViewController {
     @IBOutlet weak var imageViewCircleHead: UIImageView!
     @IBOutlet weak var imageViewCircleDOB: UIImageView!
     var btnSearchType:UIButton?
+    @IBOutlet weak var btnAddHH: UIButton!
+    @IBOutlet weak var tfSearch: UITextField!
     
     //var arayHouseHoldListModel:[NPR2021MemberDetails] = []
     var skipSelctedHHModel : NPR_2021hh_Details?
@@ -37,7 +45,6 @@ class IncompleteHouseholdViewController: UIViewController {
         super.viewDidLoad()
        viewPrepare()
         
-        self.incompleteHouseholdTableView.register(UINib(nibName: "IncompleteHouseholdSubCell", bundle: nil), forCellReuseIdentifier:"IncompleteHouseholdSubCell")
         
     }
     
@@ -46,6 +53,17 @@ class IncompleteHouseholdViewController: UIViewController {
     func viewPrepare()  {
         
         //searchBar.setupDonButton_TextFields
+        tfSearch.addDoneButton()
+        self.incompleteHouseholdTableView.register(UINib(nibName: "IncompleteHouseholdSubCell", bundle: nil), forCellReuseIdentifier:"IncompleteHouseholdSubCell")
+        
+        totalHouseholdsLeftLabel.text = LanguageModal.langObj.total_households
+        nameLabel.text = LanguageModal.langObj.name_of_person
+        aadhaarLabel.text = LanguageModal.langObj.aadhaar
+        mobileLabel.text = LanguageModal.langObj.mobile
+        dobLabel.text = LanguageModal.langObj.dob
+        headLabel.text = LanguageModal.langObj.head
+        searchBar.placeholder = LanguageModal.langObj.search
+        
         
         
     }
@@ -73,6 +91,9 @@ class IncompleteHouseholdViewController: UIViewController {
             return
         }
         
+           // self.viewSetUpForInhavited(hhCount: arayTotalHouseHoldINEB.count)
+        
+        
       let  arayHouseHold =  arayTotalHouseHoldINEB.filter({$0.hh_completed == HHCompletionStatusCode.notStarted || $0.hh_completed == HHCompletionStatusCode.inComplete })
        let sortedHH = arayHouseHold.sorted(by: {$0.houseHoldhNo ?? "0" < $1.houseHoldhNo ?? "1"})
         
@@ -89,23 +110,37 @@ class IncompleteHouseholdViewController: UIViewController {
     }
     
     @IBAction func onTapRadioButtons(_ sender: UIButton) {
+        tfSearch.resignFirstResponder()
+        tfSearch.text = ""
         btnSearchType = sender
+        
         if sender.tag == 101 {
             
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Name", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .namePhonePad
+            tfSearch.returnKeyType = .default
         }
         if sender.tag == 102 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Aadhaar", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
+            tfSearch.returnKeyType = .done
         }
         if sender.tag == 103 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Mobile Number", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
+            tfSearch.returnKeyType = .done
         }
         if sender.tag == 104 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Head of HH", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .namePhonePad
+            tfSearch.returnKeyType = .default
         }
         if sender.tag == 105 {
             self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using DOB", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+            tfSearch.keyboardType = .phonePad
+            tfSearch.returnKeyType = .done
         }
+        tfSearch.becomeFirstResponder()
     }
     
     func handleRadioButtonSelection(tag:Int, placeHoder:String, selectedImage:UIImage, UnselectedImage:UIImage){
@@ -115,7 +150,7 @@ class IncompleteHouseholdViewController: UIViewController {
                self.imageViewCircleMobile.image = UnselectedImage
                self.imageViewCircleHead.image = UnselectedImage
                self.imageViewCircleDOB.image = UnselectedImage
-               self.searchBar.placeholder = placeHoder
+               self.tfSearch.placeholder = placeHoder
            }
            if tag == 102 {
                self.imageViewCircleName.image = UnselectedImage
@@ -123,7 +158,7 @@ class IncompleteHouseholdViewController: UIViewController {
                self.imageViewCircleMobile.image = UnselectedImage
                self.imageViewCircleHead.image = UnselectedImage
                self.imageViewCircleDOB.image = UnselectedImage
-               self.searchBar.placeholder = placeHoder
+               self.tfSearch.placeholder = placeHoder
            }
            if tag == 103 {
                self.imageViewCircleName.image = UnselectedImage
@@ -131,7 +166,7 @@ class IncompleteHouseholdViewController: UIViewController {
                self.imageViewCircleMobile.image = selectedImage
                self.imageViewCircleHead.image = UnselectedImage
                self.imageViewCircleDOB.image = UnselectedImage
-               self.searchBar.placeholder = placeHoder
+               self.tfSearch.placeholder = placeHoder
            }
            if tag == 104 {
                self.imageViewCircleName.image = UnselectedImage
@@ -139,7 +174,7 @@ class IncompleteHouseholdViewController: UIViewController {
                self.imageViewCircleMobile.image = UnselectedImage
                self.imageViewCircleHead.image = selectedImage
                self.imageViewCircleDOB.image = UnselectedImage
-               self.searchBar.placeholder = placeHoder
+               self.tfSearch.placeholder = placeHoder
            }
            if tag == 105 {
                self.imageViewCircleName.image = UnselectedImage
@@ -147,13 +182,20 @@ class IncompleteHouseholdViewController: UIViewController {
                self.imageViewCircleMobile.image = UnselectedImage
                self.imageViewCircleHead.image = UnselectedImage
                self.imageViewCircleDOB.image = selectedImage
-               self.searchBar.placeholder = placeHoder
+               tfSearch.placeholder = placeHoder
            }
        }
     
     @IBAction func onTapAddHousehold(_ sender: Any) {
-        self.navigateToController(identifier: ClassID.addNewHouseHold, storyBoardName: storyBoardName.npr)
+       if UnHabitedVM().expHHPopupInInconcompleteHH {
+        openExpectedHHPopup()
+       }else if UnHabitedVM().isInhavitedAndUploaded{
+        AlertView().alertWithoutButton( message: English.IncompleHHOrViewEditPage.cantAddNewHHinThisHLB)
+       }
+       else {
         
+        self.navigateToController(identifier: ClassID.addNewHouseHold, storyBoardName: storyBoardName.npr)
+        }
         
     }
     
@@ -162,7 +204,7 @@ class IncompleteHouseholdViewController: UIViewController {
         
         let searchType = Utils.searchType.init(rawValue: btnSearchType?.tag ?? 0)
         
-        
+        btnSearchType = UIButton()
         switch searchType {
         case .head:
             imageViewCircleHead.image = UIImage.init(named: "ic_circle")
@@ -190,10 +232,10 @@ class IncompleteHouseholdViewController: UIViewController {
         }
         
         
-        searchBar.placeholder = "Search"
+        tfSearch.placeholder = "Search"
         arayHHList = arayTotalHHList
         btnSearchType?.isSelected = false
-        searchBar.text = ""
+        tfSearch.text = ""
         searchBar.resignFirstResponder()
         updateTblList()
         
@@ -246,12 +288,13 @@ extension IncompleteHouseholdViewController:UITableViewDelegate, UITableViewData
         //let dataIndex = indexPath.row-1
              if indexPath.row == 0 {
                 if #available(iOS 13.0, *) {
-                    let contentCell = tableView.dequeueReusableCell(withIdentifier: "IncompleteHouseholdTableViewCell") as! IncompleteHouseholdTableViewCell
+//                    let contentCell = tableView.dequeueReusableCell(withIdentifier: "IncompleteHouseholdTableViewCell") as! IncompleteHouseholdTableViewCell
+                    let contentCell = tableView.dequeueReusableCell(withIdentifier: "IncompleteHouseholdTableViewCell", for: indexPath) as! IncompleteHouseholdTableViewCell
                 
                 contentCell.buttonSkip.tag = indexPath.section
                 let dictModel = arayHHList[indexPath.section]
                 contentCell.cellSetUP(model: dictModel)
-                
+                contentCell.setSkipButton(modelHH: dictModel)
                 //contentCell.buttonDropDown.addTarget(self, action: #selector(IncompleteHouseholdViewController.onTapDropDown(_:)), for: .touchUpInside)
                 
                 contentCell.buttonSkip.addTarget(self, action: #selector(IncompleteHouseholdViewController.onTapSkip(_:)), for: .touchUpInside)

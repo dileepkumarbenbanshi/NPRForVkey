@@ -24,6 +24,8 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var districtcode : String!
     var dob : String!
     var dobType : String!
+    var drivingLicence : String!
+    
     var durationInyear : Int!
     var eduCode : String!
     var enumBatchId : String!
@@ -38,6 +40,8 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var fatherName : String!
     var fatherNamesl : String!
     var firstName : String!
+   
+    var  firstnamesl : String!
     var fotherDobtype : String!
     var genderid : Int!
     var hhCompleted : Int!
@@ -46,6 +50,11 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var isSignUpdated : Int!
     var language : String!
     var lastName : String!
+    var lastName_sl : String!
+    
+    var middlenamesl :String!
+    var middleName :String!
+    
     var lastResidencyCountry : String!
     var lastResidencyDistrict : String!
     var lastResidencyState : String!
@@ -53,6 +62,7 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var memberCompleted : String!
     var memberStatus : Int!
     var midleName : String!
+    var midleName_sl : String!
     var mobileNumber : String!
     var motherBirthCountry : String!
     var motherBirthDistrict : String!
@@ -63,6 +73,8 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var motherName : String!
     var motherNamesl : String!
     var motherTongue : String!
+    var otherMotherTongue :String!
+    
     var name : String!
     var nameRespondent : String!
     var namesl : String!
@@ -123,7 +135,7 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
     var tin2019 : String!
     var towncode : String!
     var wardid : String!
-
+    var voterid : String!
 
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
@@ -145,6 +157,7 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
         districtcode = dictionary["districtcode"] as? String
         dob = dictionary["dob"] as? String
         dobType = dictionary["dobType"] as? String
+        drivingLicence = dictionary["drivingLicense"] as? String
         durationInyear = dictionary["durationInyear"] as? Int
         eduCode = dictionary["eduCode"] as? String
         enumBatchId = dictionary["enumBatchId"] as? String
@@ -167,6 +180,16 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
         isSignUpdated = dictionary["isSignUpdated"] as? Int
         language = dictionary["language"] as? String
         lastName = dictionary["lastName"] as? String
+        
+        firstName = dictionary["firstName"] as? String
+        firstnamesl = dictionary["firstnamesl"] as? String
+        middleName = dictionary["middleName"] as? String
+        middlenamesl = dictionary["middlenamesl"] as? String
+        
+        lastName = dictionary["lastName"] as? String
+        lastName_sl = dictionary["lastnamesl"] as? String
+        
+        
         lastResidencyCountry = dictionary["lastResidencyCountry"] as? String
         lastResidencyDistrict = dictionary["lastResidencyDistrict"] as? String
         lastResidencyState = dictionary["lastResidencyState"] as? String
@@ -184,6 +207,7 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
         motherName = dictionary["motherName"] as? String
         motherNamesl = dictionary["motherNamesl"] as? String
         motherTongue = dictionary["motherTongue"] as? String
+        otherMotherTongue = dictionary["otherMotherTongue"] as? String
         name = dictionary["name"] as? String
         nameRespondent = dictionary["nameRespondent"] as? String
         namesl = dictionary["namesl"] as? String
@@ -244,6 +268,8 @@ class NPRData2021ModelClassResult : NSObject, NSCoding{
         tin2019 = dictionary["tin2019"] as? String
         towncode = dictionary["towncode"] as? String
         wardid = dictionary["wardid"] as? String
+        voterid = dictionary["voterId"] as? String
+        
     }
 
     /**

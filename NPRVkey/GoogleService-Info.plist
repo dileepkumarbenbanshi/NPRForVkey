@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>854403904660-r4use43b9ivt0o27lflcfqi6nm93k220.apps.googleusercontent.com</string>
+	<string>618535535684-0b9f71gush5qc8otbisj1el4m5lm9o9i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.854403904660-r4use43b9ivt0o27lflcfqi6nm93k220</string>
+	<string>com.googleusercontent.apps.618535535684-0b9f71gush5qc8otbisj1el4m5lm9o9i</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAjdYcRMFP_SCfa7TQDd_8x1OX3UlsJzM0</string>
+	<string>AIzaSyDx5QA4x7kQcTFZW2QCGKXbYmfur7xT3vw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>854403904660</string>
+	<string>618535535684</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.census.NPR2020</string>
+	<string>census.NPR-census2021</string>
 	<key>PROJECT_ID</key>
-	<string>censusproject-4238b</string>
+	<string>census-d10f7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>censusproject-4238b.appspot.com</string>
+	<string>census-d10f7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:854403904660:ios:f9f08db3330787fb49b081</string>
+	<string>1:618535535684:ios:1aa420a6e4ea8f9b0fe811</string>
 </dict>
 </plist>

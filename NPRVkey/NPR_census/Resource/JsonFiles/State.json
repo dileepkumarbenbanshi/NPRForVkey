@@ -1,4 +1,6 @@
 [
+   
+    
     {
         "statecode": "35",
         "statename": "ANDAMAN & NICOBAR ISLANDS",
@@ -212,5 +214,11 @@
         "statename": "WEST BENGAL",
         "statenamenl": "पश्चिम बंगाल",
         "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    
+    {
+        "statecode": "99",
+        "statename": "NOT KNOWN"
+        
     }
 ]

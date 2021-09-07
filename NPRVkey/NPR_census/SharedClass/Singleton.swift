@@ -27,7 +27,10 @@ class Singleton: NSObject {
     
     override init() {
                super.init()
-               NPRRect = NPRRectView()
+        DispatchQueue.main.async {
+            self.NPRRect = NPRRectView()
+        }
+               
                Alert = NPRAlert()
                RequestManager = NPRURLRequestSession()
            }
@@ -108,8 +111,7 @@ class Singleton: NSObject {
         }
     
     func convertToBase64(image: UIImage) -> String {
-      return image.pngData()!
-        .base64EncodedString()
+      return image.pngData()!.base64EncodedString()
      }
     
     func getCurrentDateAndTime() -> String{

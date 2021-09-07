@@ -11,7 +11,18 @@ import UIKit
 class SupervisorHHList_VC: UIViewController {
     @IBOutlet weak var tblView:UITableView!
    
+    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet var headLabel: UILabel!
+    @IBOutlet var mobileLabel: UILabel!
+    @IBOutlet var aadhaarLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
+    @IBOutlet weak var imageViewCircleName: UIImageView!
+    @IBOutlet weak var imageViewCicleAadhaar: UIImageView!
+    @IBOutlet weak var imageViewCircleMobile: UIImageView!
+    @IBOutlet weak var imageViewCircleHead: UIImageView!
+    @IBOutlet weak var imageViewCircleDOB: UIImageView!
+    @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var lblDistrict: UILabel!
     @IBOutlet weak var labelTotalHouseHold: UILabel!
     @IBOutlet weak var lblState: UILabel!
@@ -33,14 +44,14 @@ class SupervisorHHList_VC: UIViewController {
     
     var selectedIndexPath = IndexPath.init(row: -1, section: 0)
     var isSelectedCell = false
-    
+    var btnSearchType : UIButton?
     
     var tableViewData = [CellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
        viewPrepare()
-        
+        Utils().vKeySetup(enable:false)
 //        self.tblView.register(UINib(nibName: "IncompleteHouseholdSubCell", bundle: nil), forCellReuseIdentifier:"SV_HHLIst_TVC")
         
     }
@@ -106,6 +117,38 @@ class SupervisorHHList_VC: UIViewController {
         
     }
     
+    
+    @IBAction func onTapRadioButtons(_ sender: UIButton) {
+      tfSearch.resignFirstResponder()
+      tfSearch.text = ""
+      btnSearchType = sender
+      
+      
+      
+      if sender.tag == 101 {
+          
+          self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Name", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+          tfSearch.keyboardType = .namePhonePad
+      }
+      if sender.tag == 102 {
+          self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Aadhaar", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+          tfSearch.keyboardType = .phonePad
+      }
+      if sender.tag == 103 {
+          self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Mobile Number", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+          tfSearch.keyboardType = .phonePad
+      }
+      if sender.tag == 104 {
+          self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using Head of HH", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+          tfSearch.keyboardType = .namePhonePad
+      }
+      if sender.tag == 105 {
+          self.handleRadioButtonSelection(tag: sender.tag, placeHoder: "Search using DOB", selectedImage: UIImage(named: "ic_circle_fill")!, UnselectedImage: UIImage(named: "ic_circle")!)
+          tfSearch.keyboardType = .phonePad
+      }
+      tfSearch.becomeFirstResponder()
+   }
+  
     
     
     func fetchedMemberDetailData(modelSelectedHH:NPR_2021hh_Details ,Completion:@escaping(Bool) -> Void )  {

@@ -11,7 +11,11 @@ import UIKit
 import UIKit
 
 class MainViewController: UIViewController {
-
+    @IBOutlet var progressLabel: UILabel!
+    @IBOutlet var viewOrEditLabel: UILabel!
+    @IBOutlet var uploadDataLabel: UILabel!
+    @IBOutlet var homeLabel: UILabel!
+    @IBOutlet var languageLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var locationParitcularView: UIView!
     @IBOutlet weak var labelLocationParitcular: UILabel!
@@ -19,6 +23,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var incompleteHouseHoldView: UIView!
     @IBOutlet weak var labelIncompleteHouseHold: UILabel!
     @IBOutlet weak var incompleteHouseHoldLineView: UIView!
+    var isFromHlbList = false
+    var isSelectedInCompleteHH:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,14 @@ class MainViewController: UIViewController {
         
         
         //self.loadLocationParticularViewController()
+        
+        progressLabel.text = LanguageModal.langObj.progress
+        viewOrEditLabel.text = LanguageModal.langObj.search_edit
+        uploadDataLabel.text = LanguageModal.langObj.upload_data
+        homeLabel.text = LanguageModal.langObj.homeScreen
+        languageLabel.text = LanguageModal.currentLanguage
+        labelLocationParitcular.text = LanguageModal.langObj.location_particular
+        labelIncompleteHouseHold.text = LanguageModal.langObj.hh_summary
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +65,7 @@ class MainViewController: UIViewController {
                 self.locationParitcularView.backgroundColor = selectedColor
                 self.labelLocationParitcular.textColor = selectedTextColor
                 self.locationParticularLineView.backgroundColor = selectedLineColor
-                
+                isSelectedInCompleteHH = false
                 self.incompleteHouseHoldView.backgroundColor = defualtColor
                 self.labelIncompleteHouseHold.textColor = defaultTextColor
                 self.incompleteHouseHoldLineView.backgroundColor = defaultLineColor
@@ -61,7 +75,7 @@ class MainViewController: UIViewController {
                 self.incompleteHouseHoldView.backgroundColor = selectedColor
                 self.labelIncompleteHouseHold.textColor = selectedTextColor
                 self.incompleteHouseHoldLineView.backgroundColor = selectedLineColor
-                
+                isSelectedInCompleteHH = true
                 self.locationParitcularView.backgroundColor = defualtColor
                 self.labelLocationParitcular.textColor = defaultTextColor
                 self.locationParticularLineView.backgroundColor = defaultLineColor
@@ -111,6 +125,8 @@ class MainViewController: UIViewController {
     func loadLocationParticularViewController(){
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "LocationParticularVC") as! LocationParticularViewController
+        controller.isFromHlbList = isFromHlbList
+        isSelectedInCompleteHH = false
         self.hideContentController(content: controller)
         self.displayContentController(content: controller)
     }
@@ -120,6 +136,8 @@ class MainViewController: UIViewController {
         let controller = storyBoard.instantiateViewController(withIdentifier: "IncompleteHouseholdVC") as! IncompleteHouseholdViewController
         self.hideContentController(content: controller)
         self.displayContentController(content: controller)
+        isSelectedInCompleteHH = true
+        isFromHlbList = false
     }
     
     
@@ -145,3 +163,5 @@ class MainViewController: UIViewController {
     }
     
 }
+
+

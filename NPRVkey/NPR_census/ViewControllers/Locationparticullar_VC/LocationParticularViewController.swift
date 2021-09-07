@@ -12,50 +12,48 @@ class LocationParticularViewController: UIViewController {
 
     //@IBOutlet weak var tableViewJurisdiction: UITableView!
     
+    @IBOutlet var jurisdictionTopLabel: UILabel!
     
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var labelState: UILabel!
-    @IBOutlet weak var labelDistrict: UILabel!
-    @IBOutlet weak var labelSubdistrict: UILabel!
-    @IBOutlet weak var labelTownVillage: UILabel!
-    @IBOutlet weak var labelWard: UILabel!
-    @IBOutlet weak var labelBlock: UILabel!
+   // @IBOutlet weak var containerView: UIView!
+  
     @IBOutlet weak var btnSwitchEB: UIButton!
     
-    @IBOutlet weak var labelTotalHouseHold: UILabel!
-    @IBOutlet weak var labelOldHouseHold: UILabel!
-    @IBOutlet weak var labelNewHouseHold: UILabel!
+    
 
     
     let inHavitedView = Bundle.main.loadNibNamed("InhavitedView", owner: self, options: nil)?.first as? InhavitedView
+    var isFromHlbList = false
+    var lpVM = LocationParticularVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.containerView.cornerRadiusV = 5
+        //self.containerView.cornerRadiusV = 5
         
-        Utils().vKeySetup(enable: false)
+        //Utils().vKeySetup(enable: false)
         
         checkInhavitedEB()
         
+        jurisdictionTopLabel.text = LanguageModal.langObj.lp_headline
+        btnSwitchEB.setTitle(LanguageModal.langObj.switch_eb, for: .normal)
+        
     }
     
-    
-    
     func checkInhavitedEB()  {
-        
-        print("Load CheckinView")
-        let predicateHH = NSPredicate(format: "ebNumber = %@",singleton().selectEBListModel.eb_number!)
-        guard let arayTotalHouseHoldINEB = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicateHH) as? [NPR_2021hh_Details] else {
-            return
-        }
-        if arayTotalHouseHoldINEB.count == 0 {
-            if singleton().selectEBListModel.expectedHH_number == "" || singleton().selectEBListModel.expectedHH_number == nil {
-                inHavitedView?.lodInhavitedView()
-            }
-            
-            
-            
+        inHavitedView?.delegate = self
+        if UnHabitedVM().shouldOpenExpHHPopup  && !singleton().selectEBListModel.is_eb_uploaded && isFromHlbList  {
+            inHavitedView?.lodInhavitedView()
         }
         
+
+        }
+    
+    func  checkConditionForInhavited()->Bool  {
+     
+        if !singleton().selectEBListModel.is_eb_uploaded && isFromHlbList {
+           return true
+        }
+
+      return false
     }
     
     
@@ -76,7 +74,7 @@ class LocationParticularViewController: UIViewController {
     
     
     func viewPrepare()  {
-        getHouseHoldList()
+        //getHouseHoldList()
         
         var selectedeBDataList = DataBaseManager().fetchDBData(entityName: EntityName.eb) as? [EB]
         
@@ -89,12 +87,7 @@ class LocationParticularViewController: UIViewController {
         }
         
       // let ebListModel = SharedClass.shared.selectEBListModel
-        labelWard.text = ebListModel.ebWard_code
-        labelBlock.text = ebListModel.eb_block_number
-        labelState.text = ebListModel.ebState_name
-        labelDistrict.text = ebListModel.ebDistrict_name
-        labelSubdistrict.text = ebListModel.ebTahsil_name
-        labelTownVillage.text = ebListModel.ebTown_name
+       
         singleton().activeEB  = ebListModel.eb_block_number ?? ""
        
         
@@ -102,34 +95,54 @@ class LocationParticularViewController: UIViewController {
     }
     
    
-    
-    
         
-        func getHouseHoldList()  {
-    // memberStatus
-            
-            let predicateHH = NSPredicate(format: "ebNumber = %@",singleton().selectEBListModel.eb_number!)
-            guard let arayTotalHouseHoldINEB = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicateHH) as? [NPR_2021hh_Details] else {
-                return
-            }
-            
-            let  arayNewHouseHold =  arayTotalHouseHoldINEB.filter({$0.hh_status == HHStatusCode.new })
-            
-            let totalHHCount = arayTotalHouseHoldINEB.count
-            let newHHcount = arayNewHouseHold.count
-            let oldHHCount = totalHHCount-newHHcount
-            
-            
-            self.labelTotalHouseHold.text = "\(totalHHCount)"
-            self.labelNewHouseHold.text = "\(newHHcount)"
-            self.labelOldHouseHold.text = "\(oldHHCount)"
-            
-        
-    }
         
     }
 
 
 
+extension LocationParticularViewController:InhavitedViewDelegate {
+    func saveExpectedHH_number() {
+        
+    }
+    
+    func saveExpectedHHNumberZero() {
+        
+        self.navigateToController(identifier:ClassID.uploadData , storyBoardName: storyBoardName.main)
+        
+    }
+    
+    func popUpHaveToShowAgain() {
+        checkInhavitedEB()
+    }
+    
+    
+}
 
 
+extension LocationParticularViewController:UITableViewDataSource,UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        return lpVM.arayLanguage.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let strID  = indexPath.section == 0 ? CellIdentifier.locationParticularAddress : CellIdentifier.locationParticularHHCountbyLang
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: strID, for: indexPath) as? LocationParticullerTVC else {
+            return UITableViewCell()
+        }
+        indexPath.section == 0 ? cell.setValueForAdress() : cell.setHHCountByLang(lang: lpVM.arayLanguage[indexPath.row])
+        return cell
+        
+    }
+    
+    
+}

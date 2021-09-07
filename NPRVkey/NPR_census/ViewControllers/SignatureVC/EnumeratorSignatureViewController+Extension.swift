@@ -8,13 +8,34 @@
 
 import Foundation
 
+extension EnumeratorSignatureViewController {
+    func hhSignatureAttributeUpdate()  {
+        modelHHRespondent.respondentName = ""
+    }
+}
 extension EnumeratorSignatureViewController:AlertViewDelegate {
+    
+    
     func alertTapedYes() {
         
     }
   
     func alertViewWithoutButtonDissMiss() {
+        DispatchQueue.main.async {self.view.removeLoaderView()}
+        if isRespondentSign{
+            if !isFromFormPage {
+                self.navigationController?.popViewController(animated: true)
+            }
+            delegate?.respondentSignatureCpatered?()
+            
+            return
+        }else if isFromUpload {
+            self.navigationController?.popViewController(animated: true)
+            uploadDelegate?.DataUploadedSuccessfuly?()
+        }
+        else{
         self.popTwoView()
+        }
     }
     
     

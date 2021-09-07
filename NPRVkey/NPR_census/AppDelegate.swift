@@ -8,72 +8,33 @@
 
 import UIKit
 import CoreData
-import Firebase
-import IQKeyboardManagerSwift
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, VGuardManagerProtocol, VGuardThreatsDelegate, VGuardExceptionHandlerProtocol {
-    
-    func statusVOS(_ status: VOS_STATUS, withError error: Error!) {
-        if status == VOS_OK
-        {
-            print("VOS OK")
-        } else
-        {
-            print("error in starting VOS")
-            print(error.localizedDescription)
-        }
-    }
-    
-    func statusVGuard(_ status: VGUARD_STATUS, withError error: Error!) {
-        print(" V-key status \(status) \(String(describing: error))")
-    }
-    
-    func vGuardDidFinishInitializing(_ status: Bool, withError error: Error!) {
-        
-    }
-    
-    func sslErroDetected(_ error: Error!) {
-        
-    }
-    
-    func vGuardExceptionHandler(_ exception: NSException!) {
-        
-    }
-    
+class AppDelegate: UIResponder,UIApplicationDelegate  {
+    var orientationLock = UIInterfaceOrientationMask.portrait
+
 
     var window: UIWindow?
-    var vGuardMgr: VGuardManager!
+    //var vGuardMgr: VGuardManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
 
     print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         // Override point for customization after application launch.
-        IQKeyboardManager.shared.enable = true
+        //IQKeyboardManager.shared.enable = true
        // UINavigationBar.appearance().barStyle = .
         
 
         
-       // vKeySetup()
+        Reachability.shared.startMonitoring()
         
         return true
         
        
     }
     
-    func vKeySetup()  {
-        
-        vGuardMgr = VGuardManager.shared()
-        vGuardMgr.delegate = self
-        vGuardMgr.isDebug = false
-        
-       // vGuardMgr.getDFPHashHash()
-        vGuardMgr.initializeVGuard()
-        
-        let exceptionHandler = VGuardExceptionHandler.sharedManager()
-        exceptionHandler?.delegate = self
-        
-    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
            // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -83,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, VGuardManagerProtocol, VG
        func applicationDidEnterBackground(_ application: UIApplication) {
            // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
            // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        
        }
 
        func applicationWillEnterForeground(_ application: UIApplication) {
@@ -90,16 +53,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, VGuardManagerProtocol, VG
        }
 
        func applicationDidBecomeActive(_ application: UIApplication) {
-        if (vGuardMgr != nil) {
-            vGuardMgr.start()
-        }
+//        if (vGuardMgr != nil) {
+//            vGuardMgr.start()
+//        }
        }
 
        func applicationWillTerminate(_ application: UIApplication) {
            // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
        }
 
-
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return orientationLock
+    }
+    
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+            
+        return UIInterfaceOrientationMask.portrait
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

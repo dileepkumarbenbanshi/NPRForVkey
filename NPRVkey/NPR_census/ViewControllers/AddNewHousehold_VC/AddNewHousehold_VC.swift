@@ -12,6 +12,7 @@ import UIKit
 @available(iOS 13.0, *)
 class AddNewHousehold_VC: UIViewController {
     @IBOutlet weak var lblAssignEB: UILabel!
+    @IBOutlet weak var lblPrevVC: UILabel!
     @IBOutlet weak var tf_nameOfInstitute: UITextField!
     @IBOutlet weak var tf_name: UITextField!
     @IBOutlet weak var tf_houseHoldNumber: UITextField!
@@ -19,6 +20,20 @@ class AddNewHousehold_VC: UIViewController {
     @IBOutlet weak var btnHouseless: UIButton!
     @IBOutlet weak var btnnstitute: UIButton!
     @IBOutlet weak var btnNormal: UIButton!
+    
+    @IBOutlet var proceedButton: UIButton!
+    @IBOutlet var nameOfHeadLabel: UILabel!
+    @IBOutlet var numberOfMembersLabel: UILabel!
+    @IBOutlet var nprHouseholdLabel: UILabel!
+    @IBOutlet var houselessButton: UIButton!
+    @IBOutlet var institutionalButton: UIButton!
+    @IBOutlet var normalButton: UIButton!
+    @IBOutlet var typeOfHouseholdLabel: UILabel!
+    @IBOutlet var addNewHouseholdLabel: UILabel!
+    @IBOutlet var backToIncompleteHouselholdLabel: UILabel!
+    
+    
+    
     var isRadioButtonSelected:Bool = false
     var houseHoldArr = [NPR_2021hh_Details]()
     var selectedHouseType:HouseType?
@@ -40,10 +55,28 @@ class AddNewHousehold_VC: UIViewController {
         tf_houseHoldNumber.text =  DBManagerHousehold().getNewHouseHoldNumber()
         
         lblAssignEB.text = "Assign HLB - \(singleton().activeEB)"
-        tf_numberOfMember.setupDonButton_TextFields()
-        tf_houseHoldNumber.setupDonButton_TextFields()
+        tf_numberOfMember.addupDoneButton_TextFields()
+        tf_houseHoldNumber.addupDoneButton_TextFields()
         
         
+        
+        lblAssignEB.text = LanguageModal.langObj.assign_eb_number + " " + (singleton().activeEB)
+       
+        
+        nameOfHeadLabel.text = LanguageModal.langObj.head_of_family_name
+        numberOfMembersLabel.text = LanguageModal.langObj.number_of_member_in_family
+        nprHouseholdLabel.text = LanguageModal.langObj.hh_number2
+        houselessButton.setTitle(LanguageModal.langObj.houseless, for: .normal)
+        institutionalButton.setTitle(LanguageModal.langObj.institutional, for: .normal)
+        normalButton.setTitle(LanguageModal.langObj.normal, for: .normal)
+        typeOfHouseholdLabel.text = LanguageModal.langObj.hh_type
+        addNewHouseholdLabel.text = LanguageModal.langObj.ad_new_hh
+        backToIncompleteHouselholdLabel.text = LanguageModal.langObj.head_of_family_name
+        proceedButton.setTitle(LanguageModal.langObj.proceed, for: .normal)
+        tf_houseHoldNumber.placeholder = LanguageModal.langObj.hh_number2
+        tf_numberOfMember.placeholder = LanguageModal.langObj.number_of_member_in_family
+        tf_name.placeholder = LanguageModal.langObj.head_of_family_name
+        backToIncompleteHouselholdLabel.text = LanguageModal.langObj.hh_summary
     }
     
     
@@ -69,11 +102,14 @@ class AddNewHousehold_VC: UIViewController {
     @IBAction func btnProceed_action(_ sender: UIButton) {
         if isAllFieldValid() {
         guard let vc = self.storyboard?.instantiateViewController(identifier: ClassID.addNewMemberForm) as? AddNewHouseHoldForm_TVC else { return  }
+            
         vc.strHHNumber = tf_houseHoldNumber.text ?? ""
         vc.strMemberNumber = tf_numberOfMember.text ?? ""
         vc.strMemberName = tf_name.text ?? ""
         vc.strCensusHHNumber = strCensusHouseHoldNumber
         vc.selectedHouseType = selectedHouseType
+        vc.strInstituteName = tf_nameOfInstitute.text ?? ""
+            
         self.navigationController?.pushViewController(vc, animated: true)
         }
        
@@ -83,7 +119,9 @@ class AddNewHousehold_VC: UIViewController {
        
         stackViewNameInstitute.isHidden = true
         self.isRadioButtonSelected = true
-        let houseType = HouseType.init(rawValue: sender.tag)
+        let strTag = "\(sender.tag - 9)"
+        
+        let houseType = HouseType.init(rawValue: strTag)
         
         switch houseType {
         case .normal:
@@ -111,17 +149,29 @@ class AddNewHousehold_VC: UIViewController {
     }
     
     func isAllFieldValid()-> Bool{
+        let numberOfMembers = Int(self.tf_numberOfMember.text ?? "")
+        
         if !self.isRadioButtonSelected {
-          singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Please_Choose_Type_Household, delay: 5.0)
+         
+            let alert = AlertView()
+            alert.alertWithoutButton( message: LanguageModal.langObj.check_hh_type, time: 2.0)
+            
           return false
         }
         if self.btnNormal.isSelected || self.btnHouseless.isSelected {
-            if (self.tf_numberOfMember.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_numberOfMember.text == "0"{
-              singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Family_Member_Should_Valid, delay: 5.0)
+            if (self.tf_numberOfMember.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || (numberOfMembers == 0) {
+             
+                let alert = AlertView()
+                alert.alertWithoutButton( message: LanguageModal.langObj.validation_hh_family_membr_no, time: 2.0)
+                
                 return false
              }
-            if (self.tf_name.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_name.text!.count < 3 {
-              singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Name_Atleast_3_Char_Long, delay: 5.0)
+            if (self.tf_name.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_name.text!.count < 2 {
+                
+             
+                
+                let alert = AlertView()
+                alert.alertWithoutButton( message: LanguageModal.langObj.validation_first_name, time: 2.0)
                 return false
             }
         }
@@ -136,16 +186,22 @@ class AddNewHousehold_VC: UIViewController {
                     strMessage =  AppMessages.Institutional_Name_MoreThan3Char
                 }
                 
-                AlertView().alertWithoutButton(vc: self, message:strMessage )
+                AlertView().alertWithoutButton( message:strMessage )
               
                 return false
             }
-            if (self.tf_numberOfMember.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_numberOfMember.text == "0"{
-              singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Family_Member_Should_Valid, delay: 5.0)
+            if (self.tf_numberOfMember.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || Int(self.tf_numberOfMember.text ?? "") == 0{
+              
+                let alert = AlertView()
+                alert.alertWithoutButton( message: LanguageModal.langObj.validation_hh_family_membr_no, time: 2.0)
+                
                 return false
              }
-            if (self.tf_name.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_name.text!.count < 3 {
-              singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Name_Atleast_3_Char_Long, delay: 5.0)
+            if (self.tf_name.text?.trimmingCharacters(in: .whitespaces).isEmpty)! || self.tf_name.text!.count < 2 {
+              
+                
+                let alert = AlertView()
+                alert.alertWithoutButton( message: LanguageModal.langObj.validation_first_name, time: 2.0)
                 return false
             }
         }
@@ -160,10 +216,24 @@ class AddNewHousehold_VC: UIViewController {
 extension AddNewHousehold_VC : UITextFieldDelegate {
  
      func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var txtAfterUpdate = ""
+        if let text = textField.text as NSString? {
+                 txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+               
+            }
+        if textField == tf_nameOfInstitute || textField == tf_name {
+            if !(string.isValidAlphabetAndSpace() ) {
+                AlertView().alertWithoutButton( message: LanguageModal.langObj.language_error, time: 3.0)
+                return false
+            }
+        
+        }
+        
         if textField == self.tf_numberOfMember {
-            guard let text = self.tf_numberOfMember.text else { return true }
-            let newLength = text.count + string.count - range.length
-            return newLength <= 4
+            if !(string.isValiNumberEntry() ) || txtAfterUpdate.count > 2 {
+                return false
+            }
+            return true
         }
         else{
             if (string == "\n") {

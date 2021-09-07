@@ -17,6 +17,10 @@ class SplitHouseHold_VC: UIViewController {
     @IBOutlet weak var lblTotalMembers: UILabel!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var lblNewHouseHoldNumber: UILabel!
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    
     var totalMember = 5
     var memberSelected = 0
     var arayMemberModel = [NPR2021MemberDetails]()
@@ -47,40 +51,52 @@ class SplitHouseHold_VC: UIViewController {
     }
     
     func featchHHMembers() {
-        
-       strNewHouseNumber = DBManagerHousehold().getNewHouseNumber()
-        strNewHH = DBManagerHousehold().getNewHouseHoldNumber()
-        
-        DBManagerMemberDetail().fetchOldMembers_currentalyLiveinHH(modelSelectedHH: hhModel) { (arayOldMemberLiveInHH) in
+        strNewHouseNumber = DBManagerHousehold().getNewHouseNumber()
+         strNewHH = DBManagerHousehold().getNewHouseHoldNumber()
          
-            self.arayMemberModel = arayOldMemberLiveInHH
-            self.viewPrepare()
+
+        if araySplitedMembers.count > 0 {
+        
+        DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: hhModel) { (arayHHMembers) in
+            //self.arayMemberModel = arayHHMembers
+            self.arayMemberModel = arayHHMembers.filter({$0.memberStatus == MemberStatusCode.notStarted || $0.memberStatus == MemberStatusCode.available
+                })
+            }
+            
         }
         
-//        DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: hhModel) { (arayHHMembers) in
-//            //self.arayMemberModel = arayHHMembers
-//            self.arayMemberModel = arayHHMembers.filter({$0.memberStatus == MemberStatusCode.notStarted || $0.memberStatus == MemberStatusCode.available || $0.memberStatus == MemberStatusCode.newMember})
-//            
-//        }
+        DBManagerMemberDetail().fetchMembers_currentalyLeaveinHH(modelSelectedHH: hhModel) { (arayHHMembers)  in
+             
+            self.arayMemberModel = arayHHMembers.filter({$0.memberStatus != MemberStatusCode.newMember
+            })
+            self.viewPrepare()
+        }
     }
     
     func viewPrepare()  {
         
         totalMember = arayMemberModel.count
-        lblTotalMembers.text = "Total Member - \(arayMemberModel.count )"
-        lblBlockNo.text = "Block No. - \(arayMemberModel[0].block_no ?? "")"
-        lblHouseHoldNo.text = "Household No. - \(arayMemberModel[0].hh_Number ?? "")"
+        lblTotalMembers.text = "\(LanguageModal.langObj.total_members) \(arayMemberModel.count )"
+        lblBlockNo.text = "\(LanguageModal.langObj.block_no) \(arayMemberModel[0].block_no ?? "")"
+        lblHouseHoldNo.text = "\(LanguageModal.langObj.hh_no) \(arayMemberModel[0].hh_Number?.hhNumber() ?? "")"
 
-        lblNewHouseHoldNumber.text = "Selected members will move to new household No.- \(strNewHH)"
+        lblNewHouseHoldNumber.text = "\(LanguageModal.langObj.selected_member_move_in_new_household).- \(strNewHH)"
         tblView.reloadData()
         memberSelected = 0
         araySplitedMembers.removeAll()
         remainMemberUpdate()
         
+        btnNext.setTitle(LanguageModal.langObj.next, for: .normal)
+        lblSelectedMembers.text = LanguageModal.langObj.selected_members_are + "\(araySplitedMembers.count)"
+        lblBackTitle.text = LanguageModal.langObj.hh_summary
+        lblTitle.text = LanguageModal.langObj.split
+        
     }
    
  
      @IBAction func btnNext_action(_ sender: UIButton) {
+        if araySplitedMembers.count > 0 {
+            
         
         self.createNewHouseHold { (saved) in
             print("saved member in Splited new HH")
@@ -91,19 +107,17 @@ class SplitHouseHold_VC: UIViewController {
                 let alertView = AlertView()
                if self.arayMemberModel.count == 1 {
                 alertView.delegate = self
-                alertView.showAlertWithSingleButton(vc: self, title: English.SplitView().atleastOneMemberLeftInsameHH, message: English.SplitView.splitDoneTittle)
+                alertView.showAlertWithSingleButton( title:"", message: LanguageModal.langObj.one_member_should_be_available_to_split)
                 }
                else{
-                
-                
-                
                 alertView.delegate = self
                 
-                alertView.showAlert(vc: self, title: "", message: English.SplitView.slitDoneAlert)
+                alertView.showAlert( title: "", message: LanguageModal.langObj.spliting_completed)
                }
-                
-                
-            }
+                }
+        }
+        }else{
+            AlertView().alertWithoutButton( message: LanguageModal.langObj.select_any_member_to_split, time: 3.0)
         }
      }
     
@@ -132,8 +146,22 @@ extension SplitHouseHold_VC:UITableViewDataSource,UITableViewDelegate {
         cell.btnCheck.tag = indexPath.row
         cell.btnCheck.addTarget(self, action: #selector(SplitHouseHold_VC.onTapCheckButton(_:)), for: .touchUpInside)
         cell.lblOrderNo.text = "\(indexPath.row+1)"
-        cell.lblMemberName.text = modelMember.name ?? ""
-        cell.lblRelation.text = modelMember.relName ?? ""
+        
+        
+        var name = ""
+        
+        if hhModel.language?.IsSelectedLangauge_nonEnglish ?? false {
+           name = ((modelMember.nameSL?.count != 0 && modelMember.nameSL != nil ) ? modelMember.nameSL ?? "" : modelMember.name) ?? ""
+        }else{
+            name = ((modelMember.name?.count != 0) ? modelMember.name ?? "" : modelMember.nameSL) ?? ""
+        }
+       
+        
+        cell.lblMemberName.text = name
+        let gender = gender.init(rawValue: Int (modelMember.gender_id ?? "0") ?? 0) ?? .male
+        
+        
+        cell.lblRelation.text = modelMember.rel_code?.getName_by_ID(aray: English().getRelationShipAray(gender: gender))
         
         /// Check Member selected or not 
         let memberAlreadySelected = araySplitedMembers.filter() { $0 == arayMemberModel[indexPath.row] }
@@ -158,7 +186,7 @@ extension SplitHouseHold_VC {
   
     @objc func onTapCheckButton(_ sender: UIButton){
         if arayMemberModel.count == 1 {
-            AlertView().alertWithoutButton(vc: self, message: English.SplitView().atleastOneMemberLeftInsameHH)
+            AlertView().alertWithoutButton( message: English.SplitView().atleastOneMemberLeftInsameHH)
             return
         }
         
@@ -191,9 +219,9 @@ extension SplitHouseHold_VC {
         }else{
             btnNext.isUserInteractionEnabled = true
         }
-        lblRemainingMember.text = " Remaining Member : \(totalMember - memberSelected)"
+        lblRemainingMember.text = "\(LanguageModal.langObj.remaning_members)  \(totalMember - memberSelected)"
         
-        lblSelectedMembers.text = "Selected Member : \(memberSelected)"
+        lblSelectedMembers.text = "\(LanguageModal.langObj.selected_members_are) \(memberSelected)"
         
     }
 }

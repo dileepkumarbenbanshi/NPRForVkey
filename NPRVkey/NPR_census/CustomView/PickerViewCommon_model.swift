@@ -16,16 +16,21 @@ class PickerViewCommon_model{
     
     
     init(model:Any) {
-       
+        if let modelNameid = model as? ModelNameID {
+            id = modelNameid.id ?? ""
+            name = modelNameid.name ?? ""
+        }else{
         if let nameFound = (model as AnyObject).value(forKey: "name") as?String {
             name = nameFound
         }
         if let idFound = (model as AnyObject).value(forKey: "id") as?String {
             id = idFound
         }
-       
+        }
         
     }
     
     
 }
+
+
