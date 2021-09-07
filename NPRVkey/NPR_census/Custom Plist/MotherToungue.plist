@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	
+    <string>Adi-001</string>
+    <string>Adi Gallong/Gallong-002</string>
+    <string>Adi Miniyong/Miniyong-003</string>
+    <string>Afghani/Kabuli/Pashto-004</string>
+    <string>Ahirani-005</string>
+    <string>Anal-006</string>
+    <string>Angami-007</string>
+    <string>Ao-008</string>
+    <string>Apatani-009</string>
+    <string>Arabic/Arbi-010</string>
+    <string>Are-011</string>
+    <string>Assamese-012</string>
+    <string>Awadhi-013</string>
+    <string>Badaga-014</string>
+    <string>Baghati/Baghati Pahari-015</string>
+    <string>Bagheli/Baghel Khandi-016</string>
+    <string>Bagri-017</string>
+    <string>Bagri Rajasthani-018</string>
+    <string>Bahawal Puri-019</string>
+    <string>Balti-020</string>
+    <string>Banjari-021</string>
+    <string>Baori-022</string>
+    <string>Barel-023</string>
+    <string>Bauti-024</string>
+    <string>Bengali-025</string>
+    <string>Bhadrawahi-026</string>
+    <string>Bhagoria-027</string>
+    <string>Bhansari-028</string>
+    <string>Bharmauri/Gaddi-029</string>
+    <string>Bhateali-030</string>
+    <string>Bhatia-031</string>
+    <string>Bhatri-032</string>
+    <string>Bhilali-033</string>
+    <string>Bhili/Bhilodi-034</string>
+    <string>Bhojpuri-035</string>
+    <string>Bhotia-036</string>
+    <string>Bhuiya/Bhuyan[Ori]-037</string>
+    <string>Bhumij-038</string>
+    <string>Bhumijali-039</string>
+    <string>Bilaspuri Kahluri-040</string>
+    <string>Bishnoi-041</string>
+    <string>Bishnupriya Manipuri/Manipuri Bishnupriya-042</string>
+    <string>Bishnupuriya-043</string>
+    <string>Bodo/Boro-044</string>
+    <string>Brajbhasha-045</string>
+    <string>Bundeli/Bundel khandi-046</string>
+    <string>Chakhesang-047</string>
+    <string>Chakma-048</string>
+    <string>Chakru/Chokri-049</string>
+    <string>Chambeali/Chamrali-050</string>
+    <string>Chang-051</string>
+    <string>Chhattisgarhi-052</string>
+    <string>Chirr-053</string>
+    <string>Chodhari-054</string>
+    <string>Chungli-055</string>
+    <string>Churahi-056</string>
+    <string>Coorgi/Kodagu-057</string>
+    <string>Dangi-058</string>
+    <string>Dardi-059</string>
+    <string>Deori-060</string>
+    <string>Desia-061</string>
+    <string>Dhodia-062</string>
+    <string>Dhundhari-063</string>
+    <string>Dhurwa-064</string>
+    <string>Dimasa-065</string>
+    <string>Dogri-066</string>
+    <string>Dorli-067</string>
+    <string>English-068</string>
+    <string>Gadaba-069</string>
+    <string>Gamti/Gavit-070</string>
+    <string>Gangte-071</string>
+    <string>Garasia-072</string>
+    <string>Garhwali-073</string>
+    <string>Garo-074</string>
+    <string>Gawari-075</string>
+    <string>Gojri/Gujjari/Gujar-076</string>
+    <string>Gondi-077</string>
+    <string>Gorboli/Goru/Gorwani-078</string>
+    <string>Gujarati-079</string>
+    <string>Gujari-080</string>
+    <string>Gujrao/Gujrau-081</string>
+    <string>Haijong/Hajong-082</string>
+    <string>Halabi-083</string>
+    <string>Halam-084</string>
+    <string>Handuri-085</string>
+    <string>Hara/Harauti-086</string>
+    <string>Haryanvi-087</string>
+    <string>Hindi-088</string>
+    <string>Hindi Multani-089</string>
+    <string>Hmar-090</string>
+    <string>Ho-091</string>
+    <string>Irula/Irular Mozhi-092</string>
+    <string>Jatapu-093</string>
+    <string>Jaunpuri/Jaunsari-094</string>
+    <string>Juang-095</string>
+    <string>Kabui-096</string>
+    <string>Kachari-097</string>
+    <string>Kachchhi-098</string>
+    <string>Kaikadi-099</string>
+    <string>Kalari-100</string>
+    <string>Kangri-101</string>
+    <string>Kannada-102</string>
+    <string>Karbi/Mikir-103</string>
+    <string>Karmali-104</string>
+    <string>Kashmiri-105</string>
+    <string>Khandeshi-106</string>
+    <string>Khari Boli-107</string>
+    <string>Kharia-108</string>
+    <string>Khasi-109</string>
+    <string>Khezha-110</string>
+    <string>Khiemnungan-111</string>
+    <string>Khond/Kondh-112</string>
+    <string>Khortha/Khotta-113</string>
+    <string>Kinnauri-114</string>
+    <string>Kisan-115</string>
+    <string>Kishtwari-116</string>
+    <string>Koch-117</string>
+    <string>Koda/Kora-118</string>
+    <string>Kodava-119</string>
+    <string>Kodu-120</string>
+    <string>Kokbarak-121</string>
+    <string>Kokna/Kokni/Kukna-122</string>
+    <string>Kol-123</string>
+    <string>Kolami-124</string>
+    <string>Koli-125</string>
+    <string>Kom-126</string>
+    <string>Konda-127</string>
+    <string>Konkani-128</string>
+    <string>Konyak-129</string>
+    <string>Koraku-130</string>
+    <string>Korava-131</string>
+    <string>Korku-132</string>
+    <string>Korwa -133</string>
+    <string>Koya-134</string>
+    <string>Kudubi/Kudumbi-135</string>
+    <string>Kui-136</string>
+    <string>Kuki-137</string>
+    <string>Kulehiya-138</string>
+    <string>Kulvi-139</string>
+    <string>Kumauni-140</string>
+    <string>Kurmali Thar-141</string>
+    <string>Kuruba/Kurumba-142</string>
+    <string>Kurukh/Oraon-143</string>
+    <string>Kuvi-144</string>
+    <string>Ladakhi-145</string>
+    <string>Lahauli-146</string>
+    <string>Lahnda -147</string>
+    <string>Lakher-148</string>
+    <string>Lalung-149</string>
+    <string>Lamani/Lambadi-150</string>
+    <string>Laria-151</string>
+    <string>Lepcha-152</string>
+    <string>Liangmei-153</string>
+    <string>Limbu-154</string>
+    <string>Lodhi-155</string>
+    <string>Lohara-156</string>
+    <string>Lotha-157</string>
+    <string>Lushai/Mizo-158</string>
+    <string>Lyngngam-159</string>
+    <string>Magadhi/Magahi-160</string>
+    <string>Mahili-161</string>
+    <string>Maithili-162</string>
+    <string>Malayalam-163</string>
+    <string>Malto -164</string>
+    <string>Malvi-165</string>
+    <string>Malwani-166</string>
+    <string>Mandeali-167</string>
+    <string>Manipuri-168</string>
+    <string>Mao-169</string>
+    <string>Mara-170</string>
+    <string>Maram -171</string>
+    <string>Marathi-172</string>
+    <string>Maria/ Muria-173</string>
+    <string>Maring-174</string>
+    <string>Marwari-175</string>
+    <string>Mawchi-176</string>
+    <string>Mech/Mechhia-177</string>
+    <string>Mewari-178</string>
+    <string>Mewati-179</string>
+    <string>Miri/Mishing-180</string>
+    <string>Mishmi-181</string>
+    <string>Mogh-182</string>
+    <string>Mongsen-183</string>
+    <string>Monpa-184</string>
+    <string>Munda-185</string>
+    <string>Mundari-186</string>
+    <string>Muwasi-187</string>
+    <string>Nagpuria-188</string>
+    <string>Nawait-189</string>
+    <string>Nepali-190</string>
+    <string>Nicobarese-191</string>
+    <string>Nimadi-192</string>
+    <string>Nissi/Dafla-193</string>
+    <!--<string>Nyishi-193</string>-->
+    <string>Nocte-194</string>
+    <string>Odia-195</string>
+    <string>Padari-196</string>
+    <string>Pahari-197</string>
+    <string>Pahariya-198</string>
+    <string>Paite-199</string>
+    <string>Palmuha-200</string>
+    <string>Panch Pargania-201</string>
+    <string>Pando/Pandwani-202</string>
+    <string>Pangwali-203</string>
+    <string>Pania-204</string>
+    <string>Paola-205</string>
+    <string>Paradhi-206</string>
+    <string>Parji -207</string>
+    <string>Pattani-208</string>
+    <string>Pawari/Powari-209</string>
+    <string>Pawi-210</string>
+    <string>Pawri-211</string>
+    <string>Phom-212</string>
+    <string>Pnar/Synteng-213</string>
+    <string>Pochury-214</string>
+    <string>Ponchi-215</string>
+    <string>Prakritha/Prakritha Bhasha-216</string>
+    <string>Proja (Ori)-217</string>
+    <string>Punjabi-218</string>
+    <string>Puran/Puran Bhasha-219</string>
+    <string>Purbi Maithili-220</string>
+    <string>Purkhi-221</string>
+    <string>Rabha-222</string>
+    <string>Rai-223</string>
+    <string>Rajasthani-224</string>
+    <string>Rajbangsi-225</string>
+    <string>Rathi-226</string>
+    <string>Reang-227</string>
+    <string>Relli-228</string>
+    <string>Rengma-229</string>
+    <string>Rongmei-230</string>
+    <string>Sadan/Sadri-231</string>
+    <string>Sambalpuri-232</string>
+    <string>Sangtam-233</string>
+    <string>Sanskrit-234</string>
+    <string>Santali-235</string>
+    <string>Saurashtra/Saurashtri-236</string>
+    <string>Savara-237</string>
+    <string>Sema-238</string>
+    <string>Sherpa-239</string>
+    <string>Shina-240</string>
+    <string>Sindhi-241</string>
+    <string>Siraji-242</string>
+    <string>Sirmauri-243</string>
+    <string>Sondwari-244</string>
+    <string>Sugali-245</string>
+    <string>Surgujia-246</string>
+    <string>Surjapuri-247</string>
+    <string>Tadavi-248</string>
+    <string>Tagin-249</string>
+    <string>Talgalo-250</string>
+    <string>Tamang-251</string>
+    <string>Tamil-252</string>
+    <string>Tangkhul-253</string>
+    <string>Tangsa-254</string>
+    <string>Telugu-255</string>
+    <string>Thado-256</string>
+    <string>Tharu-257</string>
+    <string>Thati-258</string>
+    <string>Tibetan-259</string>
+    <string>Tikhir-260</string>
+    <string>Tripuri-261</string>
+    <string>Tulu-262</string>
+    <string>Tutcha Tangsa-263</string>
+    <string>Urdu-264</string>
+    <string>Vadari-265</string>
+    <string>Vaiphei-266</string>
+    <string>Varli-267</string>
+    <string>Vasava-268</string>
+    <string>Wagdi-269</string>
+    <string>Wancho-270</string>
+    <string>War-271</string>
+    <string>Yerava-272</string>
+    <string>Yerukala/Yerukula-273</string>
+    <string>Yimchungre-274</string>
+    <string>Zeliang-275</string>
+    <string>Zemi-276</string>
+    <string>Zou-277</string>
+    <string>Other Mother Tongue -999</string>
+</array>
+</plist>

@@ -1,0 +1,216 @@
+[
+    {
+        "statecode": "35",
+        "statename": "ANDAMAN & NICOBAR ISLANDS",
+        "statenamenl": "अंडमान और निकोबार द्वीप",
+        "statenamesl": "अंडमान और निकोबार द्वीप"
+    },
+    {
+        "statecode": "28",
+        "statename": "ANDHRA PRADESH",
+        "statenamenl": "आंध्र प्रदेश",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "12",
+        "statename": "ARUNACHAL PRADESH",
+        "statenamenl": "अरुनांचल प्रदॆश",
+        "statenamesl": "ARUNACHAL PRADESH"
+    },
+    {
+        "statecode": "18",
+        "statename": "ASSAM",
+        "statenamenl": "आसाम",
+        "statenamesl": "অসম"
+    },
+    {
+        "statecode": "10",
+        "statename": "BIHAR",
+        "statenamenl": "बिहार",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "04",
+        "statename": "CHANDIGARH",
+        "statenamenl": "चंडीगढ",
+        "statenamesl": "चंडीगढ"
+    },
+    {
+        "statecode": "22",
+        "statename": "CHHATTISGARH",
+        "statenamenl": "छत्तीसगढ़",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "26",
+        "statename": "Dadra and Nagar Haveli and Daman and Diu",
+        "statenamenl": "",
+        "statenamesl": ""
+    },
+    {
+        "statecode": "07",
+        "statename": "DELHI",
+        "statenamenl": "दिल्ली",
+        "statenamesl": "दिल्ली"
+    },
+    {
+        "statecode": "30",
+        "statename": "GOA",
+        "statenamenl": "गॊवा",
+        "statenamesl": "गॊवा"
+    },
+    {
+        "statecode": "24",
+        "statename": "GUJARAT",
+        "statenamenl": "गुजरात",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "06",
+        "statename": "HARYANA",
+        "statenamenl": "हरियाणा",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "02",
+        "statename": "HIMACHAL PRADESH",
+        "statenamenl": "हिमाचल प्रदॆश",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "01",
+        "statename": "JAMMU & KASHMIR",
+        "statenamenl": "जम्मू और कश्मीर",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "20",
+        "statename": "JHARKHAND",
+        "statenamenl": "झारखण्ड",
+        "statenamesl": "झारखण्ड"
+    },
+    {
+        "statecode": "29",
+        "statename": "KARNATAKA",
+        "statenamenl": "कर्नाटक",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "32",
+        "statename": "KERALA",
+        "statenamenl": "केरल",
+        "statenamesl": "കേരളം"
+    },
+    {
+        "statecode": "37",
+        "statename": "Ladakh (UT)",
+        "statenamenl": " लद्दाख़ ",
+        "statenamesl": ""
+    },
+    {
+        "statecode": "31",
+        "statename": "LAKSHADWEEP",
+        "statenamenl": "लक्षद्वीप",
+        "statenamesl": "ലക്ഷദ്വീപ്"
+    },
+    {
+        "statecode": "23",
+        "statename": "MADHYA PRADESH",
+        "statenamenl": "मध्य प्रदॆश",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "27",
+        "statename": "MAHARASHTRA",
+        "statenamenl": "महाराष्ट्र",
+        "statenamesl": "महाराष्ट्र"
+    },
+    {
+        "statecode": "14",
+        "statename": "MANIPUR",
+        "statenamenl": "मणीपुर",
+        "statenamesl": "MANIPUR"
+    },
+    {
+        "statecode": "17",
+        "statename": "MEGHALAYA",
+        "statenamenl": "मॆघालय",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "15",
+        "statename": "MIZORAM",
+        "statenamenl": "मिजॊरम",
+        "statenamesl": "MIZORAM"
+    },
+    {
+        "statecode": "13",
+        "statename": "NAGALAND",
+        "statenamenl": "नागालॆन्ड",
+        "statenamesl": "NAGALAND"
+    },
+    {
+        "statecode": "21",
+        "statename": "ORISSA",
+        "statenamenl": "उड़ीसा",
+        "statenamesl": "ଓଡ଼ିଶା "
+    },
+    {
+        "statecode": "34",
+        "statename": "PUDUCHERRY",
+        "statenamenl": "पुडुचेरी"
+    },
+    {
+        "statecode": "03",
+        "statename": "PUNJAB",
+        "statenamenl": "पंजाब",
+        "statenamesl": "ਪੰਜਾਬ"
+    },
+    {
+        "statecode": "08",
+        "statename": "RAJASTHAN",
+        "statenamenl": "राजस्थान",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "11",
+        "statename": "SIKKIM",
+        "statenamenl": "सिक्किम",
+        "statenamesl": "SIKKIM"
+    },
+    {
+        "statecode": "33",
+        "statename": "TAMILNADU",
+        "statenamenl": "तमिलनाडु",
+        "statenamesl": "தமிழ்நாடு"
+    },
+    {
+        "statecode": "36",
+        "statename": "TELANGANA",
+        "statenamenl": "तेलंगाना"
+    },
+    {
+        "statecode": "16",
+        "statename": "TRIPURA",
+        "statenamenl": "त्रिपुरा",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "05",
+        "statename": "UTTARAKHAND",
+        "statenamenl": "उत्तराखण्ड",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "09",
+        "statename": "UTTAR PRADESH",
+        "statenamenl": "उत्तर प्रदॆश",
+        "statenamesl": "उत्तर प्रदॆश"
+    },
+    {
+        "statecode": "19",
+        "statename": "WEST BENGAL",
+        "statenamenl": "पश्चिम बंगाल",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    }
+]

@@ -1,0 +1,633 @@
+
+/* Class = "UIButton"; normalTitle = "Birth Place State"; ObjectID = "01o-Ht-19K"; */
+"01o-Ht-19K.normalTitle" = "Birth Place State";
+
+/* Class = "UILabel"; text = "Head/Self"; ObjectID = "1Bi-Sn-yWD"; */
+"1Bi-Sn-yWD.text" = "Head/Self";
+
+/* Class = "UIButton"; normalTitle = "Mother's Birth Place District"; ObjectID = "1jM-wT-Uzv"; */
+"1jM-wT-Uzv.normalTitle" = "Mother's Birth Place District";
+
+/* Class = "UILabel"; text = "Ravi"; ObjectID = "1ra-ka-ltV"; */
+"1ra-ka-ltV.text" = "Ravi";
+
+/* Class = "UILabel"; text = "Paridhi"; ObjectID = "2ON-6k-rPz"; */
+"2ON-6k-rPz.text" = "Paridhi";
+
+/* Class = "UITextField"; placeholder = "House Number and Locality"; ObjectID = "2Ra-sw-0ds"; */
+"2Ra-sw-0ds.placeholder" = "House Number and Locality";
+
+/* Class = "UIButton"; normalTitle = "Mother's Birth Place Country"; ObjectID = "2TH-Dg-h1I"; */
+"2TH-Dg-h1I.normalTitle" = "Mother's Birth Place Country";
+
+/* Class = "UILabel"; text = "Town/Village"; ObjectID = "2gR-ok-bNB"; */
+"2gR-ok-bNB.text" = "Town/Village";
+
+/* Class = "UILabel"; text = "Census Household no. as in Houselist"; ObjectID = "2rC-NH-bcZ"; */
+"2rC-NH-bcZ.text" = "Census Household no. as in Houselist";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "3CT-24-4su"; */
+"3CT-24-4su.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Father's Birth Place District"; ObjectID = "3Kl-SS-H6F"; */
+"3Kl-SS-H6F.normalTitle" = "Father's Birth Place District";
+
+/* Class = "UINavigationItem"; title = "Household Form"; ObjectID = "3Qf-jV-Iod"; */
+"3Qf-jV-Iod.title" = "Household Form";
+
+/* Class = "UIButton"; normalTitle = "NS"; ObjectID = "3zj-Bt-rko"; */
+"3zj-Bt-rko.normalTitle" = "NS";
+
+/* Class = "UILabel"; text = "Assign HLB - 002"; ObjectID = "4It-ff-7s4"; */
+"4It-ff-7s4.text" = "Assign HLB - 002";
+
+/* Class = "UIButton"; normalTitle = "District"; ObjectID = "4YK-ev-QC1"; */
+"4YK-ev-QC1.normalTitle" = "District";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "5FX-Ge-Vmb"; */
+"5FX-Ge-Vmb.normalTitle" = "English";
+
+/* Class = "UIButton"; normalTitle = "Moved Out"; ObjectID = "5mF-aQ-EnT"; */
+"5mF-aQ-EnT.normalTitle" = "Moved Out";
+
+/* Class = "UILabel"; text = "0001"; ObjectID = "5nx-EZ-dSx"; */
+"5nx-EZ-dSx.text" = "0001";
+
+/* Class = "UILabel"; text = "Date of Birth (DD- MM - YYYY )"; ObjectID = "6Vz-WH-ZVC"; */
+"6Vz-WH-ZVC.text" = "Date of Birth (DD- MM - YYYY )";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "6yD-qY-lg7"; */
+"6yD-qY-lg7.text" = "Status";
+
+/* Class = "UILabel"; text = "Split"; ObjectID = "785-OB-Sbw"; */
+"785-OB-Sbw.text" = "Split";
+
+/* Class = "UITextField"; placeholder = "Spouse's Name"; ObjectID = "7Qi-wp-ank"; */
+"7Qi-wp-ank.placeholder" = "Spouse's Name";
+
+/* Class = "UIButton"; normalTitle = "Father's Birth Place Country"; ObjectID = "7h0-fQ-KR6"; */
+"7h0-fQ-KR6.normalTitle" = "Father's Birth Place Country";
+
+/* Class = "UIButton"; normalTitle = "Birth Place Country"; ObjectID = "7vF-bw-jiV"; */
+"7vF-bw-jiV.normalTitle" = "Birth Place Country";
+
+/* Class = "UILabel"; text = "Enter number of household to split the selected household"; ObjectID = "8HR-kd-EGa"; */
+"8HR-kd-EGa.text" = "Enter number of household to split the selected household";
+
+/* Class = "UILabel"; text = "01"; ObjectID = "9Xd-pK-HWJ"; */
+"9Xd-pK-HWJ.text" = "01";
+
+/* Class = "UITextField"; placeholder = "If having passport then enter passport No."; ObjectID = "9ue-8W-OPT"; */
+"9ue-8W-OPT.placeholder" = "If having passport then enter passport No.";
+
+/* Class = "UIButton"; normalTitle = "India"; ObjectID = "A2F-gc-IHH"; */
+"A2F-gc-IHH.normalTitle" = "India";
+
+/* Class = "UIButton"; normalTitle = "Identification Details"; ObjectID = "ALX-rr-8hL"; */
+"ALX-rr-8hL.normalTitle" = "Identification Details";
+
+/* Class = "UILabel"; text = "Block"; ObjectID = "AUR-dR-fhe"; */
+"AUR-dR-fhe.text" = "Block";
+
+/* Class = "UILabel"; text = "Indian"; ObjectID = "AiQ-9y-TEV"; */
+"AiQ-9y-TEV.text" = "Indian";
+
+/* Class = "UIButton"; normalTitle = "Education/Occupation/Mother tongue"; ObjectID = "An9-iM-TKa"; */
+"An9-iM-TKa.normalTitle" = "Education/Occupation/Mother tongue";
+
+/* Class = "UILabel"; text = "Ravi"; ObjectID = "BQe-wx-ff5"; */
+"BQe-wx-ff5.text" = "Ravi";
+
+/* Class = "UILabel"; text = "Split"; ObjectID = "BkI-Vp-sF5"; */
+"BkI-Vp-sF5.text" = "Split";
+
+/* Class = "UILabel"; text = "00001"; ObjectID = "C3m-E4-Oh6"; */
+"C3m-E4-Oh6.text" = "00001";
+
+/* Class = "UILabel"; text = "- "; ObjectID = "Czp-Y7-p10"; */
+"Czp-Y7-p10.text" = "- ";
+
+/* Class = "UIButton"; normalTitle = "Parent's Details"; ObjectID = "Do1-HG-AXg"; */
+"Do1-HG-AXg.normalTitle" = "Parent's Details";
+
+/* Class = "UITextField"; placeholder = "MM"; ObjectID = "EOP-F4-54m"; */
+"EOP-F4-54m.placeholder" = "MM";
+
+/* Class = "UITextField"; placeholder = "YYYY"; ObjectID = "Eso-uS-KBx"; */
+"Eso-uS-KBx.placeholder" = "YYYY";
+
+/* Class = "UIBarButtonItem"; title = "Incomplete Household"; ObjectID = "EvB-jb-VCE"; */
+"EvB-jb-VCE.title" = "Incomplete Household";
+
+/* Class = "UITextField"; placeholder = "YYYY"; ObjectID = "F5c-8w-Ovh"; */
+"F5c-8w-Ovh.placeholder" = "YYYY";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "FEF-Vo-eYz"; */
+"FEF-Vo-eYz.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "FMA-c4-kbz"; */
+"FMA-c4-kbz.text" = "-";
+
+/* Class = "UILabel"; text = "Total Members - 3"; ObjectID = "Fsf-fi-SWr"; */
+"Fsf-fi-SWr.text" = "Total Members - 3";
+
+/* Class = "UILabel"; text = "Refresh"; ObjectID = "Fyr-Q8-6b3"; */
+"Fyr-Q8-6b3.text" = "Refresh";
+
+/* Class = "UIButton"; normalTitle = "Country"; ObjectID = "G0b-oJ-Ncf"; */
+"G0b-oJ-Ncf.normalTitle" = "Country";
+
+/* Class = "UITextField"; placeholder = "Driving Licence Number"; ObjectID = "G7I-YO-jKT"; */
+"G7I-YO-jKT.placeholder" = "Driving Licence Number";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "GIu-Ge-zAs"; */
+"GIu-Ge-zAs.text" = "Date of Birth";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "GNm-WT-KAW"; */
+"GNm-WT-KAW.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Education Qualification"; ObjectID = "Gik-gO-Utl"; */
+"Gik-gO-Utl.normalTitle" = "Education Qualification";
+
+/* Class = "UITextField"; placeholder = "DD"; ObjectID = "GzK-3g-dKM"; */
+"GzK-3g-dKM.placeholder" = "DD";
+
+/* Class = "UILabel"; text = "If having passport then enter passport No."; ObjectID = "H3a-wK-Mhp"; */
+"H3a-wK-Mhp.text" = "If having passport then enter passport No.";
+
+/* Class = "UILabel"; text = "Son"; ObjectID = "H4K-RT-7FD"; */
+"H4K-RT-7FD.text" = "Son";
+
+/* Class = "UITextField"; placeholder = "Mother's Name"; ObjectID = "Hkp-vV-n34"; */
+"Hkp-vV-n34.placeholder" = "Mother's Name";
+
+/* Class = "UITextField"; placeholder = "SE Reference Number"; ObjectID = "I4m-w2-Z12"; */
+"I4m-w2-Z12.placeholder" = "SE Reference Number";
+
+/* Class = "UIButton"; normalTitle = "Mother Tongue"; ObjectID = "IMz-RK-17p"; */
+"IMz-RK-17p.normalTitle" = "Mother Tongue";
+
+/* Class = "UILabel"; text = "Block No.- 0013"; ObjectID = "INM-Bb-dmD"; */
+"INM-Bb-dmD.text" = "Block No.- 0013";
+
+/* Class = "UIButton"; normalTitle = "Died"; ObjectID = "ITT-r9-Nnk"; */
+"ITT-r9-Nnk.normalTitle" = "Died";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "IeU-EI-RSz"; */
+"IeU-EI-RSz.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Total Member-3"; ObjectID = "If6-3K-yim"; */
+"If6-3K-yim.normalTitle" = "Total Member-3";
+
+/* Class = "UITextField"; placeholder = "Name of Institution"; ObjectID = "InJ-3k-MZC"; */
+"InJ-3k-MZC.placeholder" = "Name of Institution";
+
+/* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "IzO-Oj-ydt"; */
+"IzO-Oj-ydt.placeholder" = "Mobile";
+
+/* Class = "UILabel"; text = "Kalka Ji"; ObjectID = "J42-JU-0dG"; */
+"J42-JU-0dG.text" = "Kalka Ji";
+
+/* Class = "UILabel"; text = "Block - 0100"; ObjectID = "JWh-xS-Ru5"; */
+"JWh-xS-Ru5.text" = "Block - 0100";
+
+/* Class = "UILabel"; text = "Pincode"; ObjectID = "KG7-HI-zrM"; */
+"KG7-HI-zrM.text" = "Pincode";
+
+/* Class = "UIButton"; normalTitle = "Female"; ObjectID = "KPq-4z-484"; */
+"KPq-4z-484.normalTitle" = "Female";
+
+/* Class = "UILabel"; text = "Son"; ObjectID = "KVC-A2-9DC"; */
+"KVC-A2-9DC.text" = "Son";
+
+/* Class = "UILabel"; text = "- "; ObjectID = "Kn5-su-5Fj"; */
+"Kn5-su-5Fj.text" = "- ";
+
+/* Class = "UILabel"; text = "002"; ObjectID = "Kw7-jP-X0h"; */
+"Kw7-jP-X0h.text" = "002";
+
+/* Class = "UIButton"; normalTitle = "Personal Details"; ObjectID = "LDb-cY-6up"; */
+"LDb-cY-6up.normalTitle" = "Personal Details";
+
+/* Class = "UITextField"; placeholder = "Pincode"; ObjectID = "LiT-ti-UCT"; */
+"LiT-ti-UCT.placeholder" = "Pincode";
+
+/* Class = "UILabel"; text = "Member Status"; ObjectID = "MFg-Os-OD8"; */
+"MFg-Os-OD8.text" = "Member Status";
+
+/* Class = "UIButton"; normalTitle = "Currently Married"; ObjectID = "MRl-6J-WHZ"; */
+"MRl-6J-WHZ.normalTitle" = "Currently Married";
+
+/* Class = "UILabel"; text = "Marital Status"; ObjectID = "NJI-FB-PdO"; */
+"NJI-FB-PdO.text" = "Marital Status";
+
+/* Class = "UITextField"; placeholder = "MM"; ObjectID = "Ng5-5G-ukt"; */
+"Ng5-5G-ukt.placeholder" = "MM";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "O8d-0T-Vz6"; */
+"O8d-0T-Vz6.text" = "Sex";
+
+/* Class = "UILabel"; text = "Add New Household"; ObjectID = "OYl-6N-vNC"; */
+"OYl-6N-vNC.text" = "Add New Household";
+
+/* Class = "UIButton"; normalTitle = "Nationality"; ObjectID = "OuC-Mp-VIL"; */
+"OuC-Mp-VIL.normalTitle" = "Nationality";
+
+/* Class = "UILabel"; text = "Census House No. as in Houselis :"; ObjectID = "P3F-b2-jFZ"; */
+"P3F-b2-jFZ.text" = "Census House No. as in Houselis :";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "P8Y-qQ-wz9"; */
+"P8Y-qQ-wz9.text" = "Sex";
+
+/* Class = "UITextField"; placeholder = "Father's Name"; ObjectID = "PZK-pc-AWi"; */
+"PZK-pc-AWi.placeholder" = "Father's Name";
+
+/* Class = "UILabel"; text = "Sanjay Singh"; ObjectID = "Ppi-s9-cKV"; */
+"Ppi-s9-cKV.text" = "Sanjay Singh";
+
+/* Class = "UIButton"; normalTitle = "Normal"; ObjectID = "Pts-Bw-YUb"; */
+"Pts-Bw-YUb.normalTitle" = "Normal";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "Pv3-tR-ZzN"; */
+"Pv3-tR-ZzN.normalTitle" = "Yes";
+
+/* Class = "UILabel"; text = "Marital Status"; ObjectID = "Py1-Z9-xQz"; */
+"Py1-Z9-xQz.text" = "Marital Status";
+
+/* Class = "UILabel"; text = "Census House No. as in Houselist"; ObjectID = "Q4f-Ps-nHK"; */
+"Q4f-Ps-nHK.text" = "Census House No. as in Houselist";
+
+/* Class = "UIButton"; normalTitle = "Transgender Person"; ObjectID = "Q8g-CE-tSW"; */
+"Q8g-CE-tSW.normalTitle" = "Transgender Person";
+
+/* Class = "UIButton"; normalTitle = "Male"; ObjectID = "QMp-Xv-f2V"; */
+"QMp-Xv-f2V.normalTitle" = "Male";
+
+/* Class = "UILabel"; text = "Member Sr. No. - 10"; ObjectID = "QOj-NT-OAb"; */
+"QOj-NT-OAb.text" = "Member Sr. No. - 10";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "QSs-sm-D6c"; */
+"QSs-sm-D6c.text" = "-";
+
+/* Class = "UITextField"; placeholder = "Number of Members in household"; ObjectID = "QeY-Ib-hA5"; */
+"QeY-Ib-hA5.placeholder" = "Number of Members in household";
+
+/* Class = "UISearchBar"; placeholder = "Search head name from HLD"; ObjectID = "Qzf-m1-X8D"; */
+"Qzf-m1-X8D.placeholder" = "Search head name from HLO";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "R5N-xV-hDN"; */
+"R5N-xV-hDN.text" = "Name";
+
+/* Class = "UILabel"; text = "Tahsil"; ObjectID = "RLg-o2-b4M"; */
+"RLg-o2-b4M.text" = "Tahsil";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "Rxx-MP-XGo"; */
+"Rxx-MP-XGo.normalTitle" = "Update";
+
+/* Class = "UITextField"; placeholder = "Town/Village"; ObjectID = "RzP-pw-5OV"; */
+"RzP-pw-5OV.placeholder" = "Town/Village";
+
+/* Class = "UIButton"; normalTitle = "Present Address Details"; ObjectID = "TOp-L3-2Kj"; */
+"TOp-L3-2Kj.normalTitle" = "Present Address Details";
+
+/* Class = "UILabel"; text = "Birth Place District"; ObjectID = "TT6-mN-iRG"; */
+"TT6-mN-iRG.text" = "Birth Place District";
+
+/* Class = "UILabel"; text = "Remaining Members = 3"; ObjectID = "TfO-aK-C9t"; */
+"TfO-aK-C9t.text" = "Remaining Members = 3";
+
+/* Class = "UILabel"; text = "SE Reference Number"; ObjectID = "U1E-RS-zPk"; */
+"U1E-RS-zPk.text" = "SE Reference Number";
+
+/* Class = "UITextField"; placeholder = "Town/Village"; ObjectID = "U3T-q1-HfE"; */
+"U3T-q1-HfE.placeholder" = "Town/Village";
+
+/* Class = "UILabel"; text = "Whether staying at present address sice birth"; ObjectID = "UGO-XI-jQf"; */
+"UGO-XI-jQf.text" = "Whether staying at present address sice birth";
+
+/* Class = "UILabel"; text = "Sunderpur Varanasi"; ObjectID = "V55-Gr-NJc"; */
+"V55-Gr-NJc.text" = "Sunderpur Varanasi";
+
+/* Class = "UILabel"; text = "Permanent Address"; ObjectID = "V9l-CX-Am9"; */
+"V9l-CX-Am9.text" = "Permanent Address";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "VGs-Vj-wbX"; */
+"VGs-Vj-wbX.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Census House No.as in Houselist"; ObjectID = "VU9-Aq-pjD"; */
+"VU9-Aq-pjD.text" = "Census House No.as in Houselist";
+
+/* Class = "UILabel"; text = "Birth Place Country "; ObjectID = "Vbg-20-msG"; */
+"Vbg-20-msG.text" = "Birth Place Country ";
+
+/* Class = "UIButton"; normalTitle = "India"; ObjectID = "Vbj-px-7Ga"; */
+"Vbj-px-7Ga.normalTitle" = "India";
+
+/* Class = "UIButton"; normalTitle = "Relationship With Head"; ObjectID = "Vz6-bf-4f1"; */
+"Vz6-bf-4f1.normalTitle" = "Relationship With Head";
+
+/* Class = "UIButton"; normalTitle = "Father's Birth Place State"; ObjectID = "W2W-RT-YWp"; */
+"W2W-RT-YWp.normalTitle" = "Father's Birth Place State";
+
+/* Class = "UIButton"; normalTitle = "Occupation"; ObjectID = "Wi6-gp-7Cp"; */
+"Wi6-gp-7Cp.normalTitle" = "Occupation";
+
+/* Class = "UIButton"; normalTitle = "Institutional"; ObjectID = "Wi7-wT-iig"; */
+"Wi7-wT-iig.normalTitle" = "Institutional";
+
+/* Class = "UIButton"; normalTitle = "Country"; ObjectID = "WxB-A7-hGv"; */
+"WxB-A7-hGv.normalTitle" = "Country";
+
+/* Class = "UILabel"; text = "Household Member Details"; ObjectID = "X7O-nv-z4m"; */
+"X7O-nv-z4m.text" = "Household Member Details";
+
+/* Class = "UILabel"; text = "Varanasi"; ObjectID = "XFt-gR-Pte"; */
+"XFt-gR-Pte.text" = "Varanasi";
+
+/* Class = "UIButton"; normalTitle = "Proceed"; ObjectID = "XIY-mH-TO9"; */
+"XIY-mH-TO9.normalTitle" = "Proceed";
+
+/* Class = "UIButton"; normalTitle = "India"; ObjectID = "XSo-n7-ONH"; */
+"XSo-n7-ONH.normalTitle" = "India";
+
+/* Class = "UILabel"; text = "Birth Place"; ObjectID = "Y8Q-I7-CLd"; */
+"Y8Q-I7-CLd.text" = "Birth Place";
+
+/* Class = "UILabel"; text = "Incomplete Household"; ObjectID = "YYJ-4m-kNu"; */
+"YYJ-4m-kNu.text" = "Incomplete Household";
+
+/* Class = "UIButton"; normalTitle = "Read and signed in front of respondent by Enumerator because respondent is unable to sign."; ObjectID = "YhV-PO-8Kd"; */
+"YhV-PO-8Kd.normalTitle" = "Read and signed in front of respondent by Enumerator because respondent is unable to sign.";
+
+/* Class = "UITextField"; placeholder = "DD"; ObjectID = "YiL-qv-SER"; */
+"YiL-qv-SER.placeholder" = "DD";
+
+/* Class = "UITextField"; placeholder = "YYYY"; ObjectID = "Yws-8f-tuA"; */
+"Yws-8f-tuA.placeholder" = "YYYY";
+
+/* Class = "UITextField"; placeholder = "Voter ID Number"; ObjectID = "YzZ-Qo-tpZ"; */
+"YzZ-Qo-tpZ.placeholder" = "Voter ID Number";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "a2P-L0-y4f"; */
+"a2P-L0-y4f.text" = "-";
+
+/* Class = "UILabel"; text = "Male"; ObjectID = "aLS-1L-CaL"; */
+"aLS-1L-CaL.text" = "Male";
+
+/* Class = "UIButton"; normalTitle = "Permanent Address Details"; ObjectID = "aY4-oc-1tR"; */
+"aY4-oc-1tR.normalTitle" = "Permanent Address Details";
+
+/* Class = "UINavigationItem"; title = "Household Member Details"; ObjectID = "anr-0l-x4d"; */
+"anr-0l-x4d.title" = "Household Member Details";
+
+/* Class = "UIButton"; normalTitle = "Birth Place District"; ObjectID = "asa-11-WMm"; */
+"asa-11-WMm.normalTitle" = "Birth Place District";
+
+/* Class = "UILabel"; text = "Uttar Pradesh"; ObjectID = "bPf-xy-9Si"; */
+"bPf-xy-9Si.text" = "Uttar Pradesh";
+
+/* Class = "UITextField"; placeholder = "MM"; ObjectID = "bRF-ld-82s"; */
+"bRF-ld-82s.placeholder" = "MM";
+
+/* Class = "UIButton"; normalTitle = "India"; ObjectID = "bXJ-7C-vik"; */
+"bXJ-7C-vik.normalTitle" = "India";
+
+/* Class = "UITextField"; placeholder = "Enter No. of Households"; ObjectID = "bon-l3-I9K"; */
+"bon-l3-I9K.placeholder" = "Enter No. of Households";
+
+/* Class = "UIButton"; normalTitle = "Mother's Birth Place State"; ObjectID = "cfe-Nq-aWE"; */
+"cfe-Nq-aWE.normalTitle" = "Mother's Birth Place State";
+
+/* Class = "UILabel"; text = "Mumbai"; ObjectID = "cpY-Iz-9sF"; */
+"cpY-Iz-9sF.text" = "Mumbai";
+
+/* Class = "UIBarButtonItem"; title = "Home"; ObjectID = "d0F-3G-AjZ"; */
+"d0F-3G-AjZ.title" = "Home";
+
+/* Class = "UILabel"; text = "Household Number:"; ObjectID = "d3p-zo-klK"; */
+"d3p-zo-klK.text" = "Household Number:";
+
+/* Class = "UILabel"; text = "Household No. - 00002"; ObjectID = "dGz-5M-fSX"; */
+"dGz-5M-fSX.text" = "Household No. - 00002";
+
+/* Class = "UILabel"; text = "Type Of Household"; ObjectID = "dLO-jg-psy"; */
+"dLO-jg-psy.text" = "Type Of Household";
+
+/* Class = "UITextField"; placeholder = "house Number and Locality"; ObjectID = "dXM-Tz-Cua"; */
+"dXM-Tz-Cua.placeholder" = "house Number and Locality";
+
+/* Class = "UITextField"; placeholder = "Pincode"; ObjectID = "ds9-w5-Vlf"; */
+"ds9-w5-Vlf.placeholder" = "Pincode";
+
+/* Class = "UILabel"; text = "Name ( Head of the Household )"; ObjectID = "e62-bG-3RU"; */
+"e62-bG-3RU.text" = "Name ( Head of the Household )";
+
+/* Class = "UILabel"; text = "Add New Household"; ObjectID = "eFZ-fR-xEC"; */
+"eFZ-fR-xEC.text" = "Add New Household";
+
+/* Class = "UILabel"; text = "Household No. - 00002"; ObjectID = "ere-qz-at1"; */
+"ere-qz-at1.text" = "Household No. - 00002";
+
+/* Class = "UILabel"; text = "Delhi"; ObjectID = "f0e-A5-mar"; */
+"f0e-A5-mar.text" = "Delhi";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "f2f-rE-cTb"; */
+"f2f-rE-cTb.normalTitle" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "I acknowledge and confirm that the Enumerator has shown/read all my household particulars recorded on the App(as told by me) and I declare that all the information provided by me is true to the best of my knowledge and belief."; ObjectID = "fGk-Pa-udg"; */
+"fGk-Pa-udg.normalTitle" = "I acknowledge and confirm that the Enumerator has shown/read all my household particulars recorded on the App(as told by me) and I declare that all the information provided by me is true to the best of my knowledge and belief.";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "fLO-Jv-Sx5"; */
+"fLO-Jv-Sx5.text" = "City";
+
+/* Class = "UITextField"; placeholder = "NPR Household Number"; ObjectID = "fLe-Qp-sqV"; */
+"fLe-Qp-sqV.placeholder" = "NPR Household Number";
+
+/* Class = "UILabel"; text = "Kalka ji Delhi"; ObjectID = "fj9-Pg-mj8"; */
+"fj9-Pg-mj8.text" = "Kalka ji Delhi";
+
+/* Class = "UIViewController"; title = "Split"; ObjectID = "g1S-MC-vdS"; */
+"g1S-MC-vdS.title" = "Split";
+
+/* Class = "UILabel"; text = "00001"; ObjectID = "gFR-rG-BGu"; */
+"gFR-rG-BGu.text" = "00001";
+
+/* Class = "UIButton"; normalTitle = "Indian"; ObjectID = "gkz-y4-7j3"; */
+"gkz-y4-7j3.normalTitle" = "Indian";
+
+/* Class = "UIButton"; normalTitle = "State"; ObjectID = "hBg-iT-8ah"; */
+"hBg-iT-8ah.normalTitle" = "State";
+
+/* Class = "UIButton"; normalTitle = "India"; ObjectID = "hy1-pN-pRM"; */
+"hy1-pN-pRM.normalTitle" = "India";
+
+/* Class = "UIButton"; normalTitle = "Sub-District"; ObjectID = "i4V-RJ-sTD"; */
+"i4V-RJ-sTD.normalTitle" = "Sub-District";
+
+/* Class = "UIButton"; normalTitle = "Sub-district"; ObjectID = "ite-9p-E4t"; */
+"ite-9p-E4t.normalTitle" = "Sub-district";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "itj-eA-fGc"; */
+"itj-eA-fGc.text" = "Date of Birth";
+
+/* Class = "UIButton"; normalTitle = "Widowed"; ObjectID = "j5x-JH-aXZ"; */
+"j5x-JH-aXZ.normalTitle" = "Widowed";
+
+/* Class = "UIButton"; normalTitle = "District"; ObjectID = "j72-vc-FnW"; */
+"j72-vc-FnW.normalTitle" = "District";
+
+/* Class = "UITextField"; placeholder = "DD"; ObjectID = "ju2-7U-GuV"; */
+"ju2-7U-GuV.placeholder" = "DD";
+
+/* Class = "UILabel"; text = "Mumbai"; ObjectID = "jvN-Wd-UBp"; */
+"jvN-Wd-UBp.text" = "Mumbai";
+
+/* Class = "UILabel"; text = "Household Form"; ObjectID = "kwE-7d-5fF"; */
+"kwE-7d-5fF.text" = "Household Form";
+
+/* Class = "UINavigationItem"; title = "Household Splitting"; ObjectID = "l3q-aU-RT1"; */
+"l3q-aU-RT1.title" = "Household Splitting";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "lEs-uB-eL2"; */
+"lEs-uB-eL2.normalTitle" = "No";
+
+/* Class = "UILabel"; text = "Relationship"; ObjectID = "lfO-Y8-dRM"; */
+"lfO-Y8-dRM.text" = "Relationship";
+
+/* Class = "UILabel"; text = "* Nationality recorded is as declared by the respondent . This does not confer any right to indian Citizonship."; ObjectID = "lnx-Pd-cQr"; */
+"lnx-Pd-cQr.text" = "* Nationality recorded is as declared by the respondent . This does not confer any right to indian Citizonship.";
+
+/* Class = "UILabel"; text = "Block No.- 0013"; ObjectID = "mMX-0O-114"; */
+"mMX-0O-114.text" = "Block No.- 0013";
+
+/* Class = "UILabel"; text = "Ravi"; ObjectID = "mTp-nx-HyG"; */
+"mTp-nx-HyG.text" = "Ravi";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "mnZ-7S-4sj"; */
+"mnZ-7S-4sj.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "House Number and Locality"; ObjectID = "muz-8P-hnc"; */
+"muz-8P-hnc.text" = "House Number and Locality";
+
+/* Class = "UILabel"; text = "Nationality"; ObjectID = "nOT-IO-hyg"; */
+"nOT-IO-hyg.text" = "Nationality";
+
+/* Class = "UILabel"; text = "Selected members will move in new household No.-002"; ObjectID = "nSW-2Y-LHg"; */
+"nSW-2Y-LHg.text" = "Selected members will move in new household No.-002";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "nkW-pc-mTA"; */
+"nkW-pc-mTA.text" = "Date of Birth";
+
+/* Class = "UITextField"; placeholder = "Census Household no. as in Houselist"; ObjectID = "oYw-BE-bwH"; */
+"oYw-BE-bwH.placeholder" = "Census Household no. as in Houselist";
+
+/* Class = "UIButton"; normalTitle = "Available"; ObjectID = "oyE-un-Tce"; */
+"oyE-un-Tce.normalTitle" = "Available";
+
+/* Class = "UILabel"; text = "Household Number- 0100"; ObjectID = "p54-Zl-Sk5"; */
+"p54-Zl-Sk5.text" = "Household Number- 0100";
+
+/* Class = "UITextField"; placeholder = "Aadhar"; ObjectID = "pv9-w1-aN6"; */
+"pv9-w1-aN6.placeholder" = "Aadhaar";
+
+/* Class = "UILabel"; text = "Name of Institution"; ObjectID = "q4I-Pk-hyM"; */
+"q4I-Pk-hyM.text" = "Name of Institution";
+
+/* Class = "UILabel"; text = "Incomplete Household"; ObjectID = "qUU-AW-1TF"; */
+"qUU-AW-1TF.text" = "Incomplete Household";
+
+/* Class = "UITextField"; placeholder = "Census House No. as in Houselist"; ObjectID = "quo-GY-jfS"; */
+"quo-GY-jfS.placeholder" = "Census House No. as in Houselist";
+
+/* Class = "UILabel"; text = "Sanjay Singh"; ObjectID = "qwm-Ah-xeR"; */
+"qwm-Ah-xeR.text" = "Sanjay Singh";
+
+/* Class = "UILabel"; text = "Nationality"; ObjectID = "r6h-92-MkA"; */
+"r6h-92-MkA.text" = "Nationality";
+
+/* Class = "UILabel"; text = "Select Members are = 0"; ObjectID = "rDj-F2-a6o"; */
+"rDj-F2-a6o.text" = "Select Members are = 0";
+
+/* Class = "UIButton"; normalTitle = "Houseless"; ObjectID = "rDr-p4-uO6"; */
+"rDr-p4-uO6.normalTitle" = "Houseless";
+
+/* Class = "UIButton"; normalTitle = "Choose Responded"; ObjectID = "rWG-Kf-AiR"; */
+"rWG-Kf-AiR.normalTitle" = "Choose Respondent";
+
+/* Class = "UILabel"; text = "Household Member Detail"; ObjectID = "rbr-FJ-KMh"; */
+"rbr-FJ-KMh.text" = "Household Member Detail";
+
+/* Class = "UILabel"; text = "Add"; ObjectID = "sGM-Sp-Yb3"; */
+"sGM-Sp-Yb3.text" = "Add";
+
+/* Class = "UIButton"; normalTitle = "State"; ObjectID = "sRK-in-O5i"; */
+"sRK-in-O5i.normalTitle" = "State";
+
+/* Class = "UILabel"; text = "Son"; ObjectID = "sfP-6K-HZ3"; */
+"sfP-6K-HZ3.text" = "Son";
+
+/* Class = "UITextField"; placeholder = "Name ( Head of the Household )"; ObjectID = "sjb-G6-6UX"; */
+"sjb-G6-6UX.placeholder" = "Name ( Head of the Household )";
+
+/* Class = "UILabel"; text = "Spouse Name"; ObjectID = "tEh-tZ-A07"; */
+"tEh-tZ-A07.text" = "Spouse Name";
+
+/* Class = "UIButton"; normalTitle = "Never Married"; ObjectID = "tLd-QG-pzi"; */
+"tLd-QG-pzi.normalTitle" = "Never Married";
+
+/* Class = "UILabel"; text = "SE Reference Number"; ObjectID = "tbY-Qu-33n"; */
+"tbY-Qu-33n.text" = "SE Reference Number";
+
+/* Class = "UILabel"; text = "Dileep"; ObjectID = "tvQ-EB-KnN"; */
+"tvQ-EB-KnN.text" = "Dileep";
+
+/* Class = "UILabel"; text = "Indian"; ObjectID = "u1Z-6C-3mU"; */
+"u1Z-6C-3mU.text" = "Indian";
+
+/* Class = "UILabel"; text = "Married"; ObjectID = "uDN-Cs-UFB"; */
+"uDN-Cs-UFB.text" = "Married";
+
+/* Class = "UILabel"; text = "Number of Members in household"; ObjectID = "urS-vR-PJa"; */
+"urS-vR-PJa.text" = "Number of Members in household";
+
+/* Class = "UIButton"; normalTitle = "NS"; ObjectID = "w98-4Q-pF4"; */
+"w98-4Q-pF4.normalTitle" = "NS";
+
+/* Class = "UILabel"; text = "Birth Place Sate"; ObjectID = "wDO-Fd-XhX"; */
+"wDO-Fd-XhX.text" = "Birth Place Sate";
+
+/* Class = "UIButton"; normalTitle = "Separated"; ObjectID = "wLG-Vo-Zzu"; */
+"wLG-Vo-Zzu.normalTitle" = "Separated";
+
+/* Class = "UILabel"; text = "Respondent Signature"; ObjectID = "wLW-1h-gZ2"; */
+"wLW-1h-gZ2.text" = "Respondent Signature";
+
+/* Class = "UILabel"; text = "NPR Household Number"; ObjectID = "wxL-SL-3RZ"; */
+"wxL-SL-3RZ.text" = "NPR Household Number";
+
+/* Class = "UILabel"; text = "Census Household no. as in houselist ( New )"; ObjectID = "wyg-Tv-YD0"; */
+"wyg-Tv-YD0.text" = "Census Household no. as in houselist ( New )";
+
+/* Class = "UILabel"; text = "Present Address"; ObjectID = "xLv-Jw-Wtt"; */
+"xLv-Jw-Wtt.text" = "Present Address";
+
+/* Class = "UIButton"; normalTitle = "Permanent Address smae as Present Address"; ObjectID = "xf3-ms-EUg"; */
+"xf3-ms-EUg.normalTitle" = "Permanent Address smae as Present Address";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "xpR-JV-5b6"; */
+"xpR-JV-5b6.normalTitle" = "NEXT";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "yIm-Ko-WGa"; */
+"yIm-Ko-WGa.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "- "; ObjectID = "zZY-fV-7nl"; */
+"zZY-fV-7nl.text" = "- ";
+
+/* Class = "UIButton"; normalTitle = "Divorced"; ObjectID = "zfz-IT-viG"; */
+"zfz-IT-viG.normalTitle" = "Divorced";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "zmY-sM-GIR"; */
+"zmY-sM-GIR.normalTitle" = "English";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "zsY-Ln-9ms"; */
+"zsY-Ln-9ms.normalTitle" = "English";

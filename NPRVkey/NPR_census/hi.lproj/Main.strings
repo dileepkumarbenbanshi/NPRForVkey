@@ -1,0 +1,501 @@
+
+/* Class = "UILabel"; text = "07-03-1960"; ObjectID = "03d-4O-lvR"; */
+"03d-4O-lvR.text" = "07-03-1960";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "0Lz-7V-gUp"; */
+"0Lz-7V-gUp.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "0dq-ol-Yk5"; */
+"0dq-ol-Yk5.text" = "State";
+
+/* Class = "UILabel"; text = "0001"; ObjectID = "2aL-ch-j7M"; */
+"2aL-ch-j7M.text" = "0001";
+
+/* Class = "UILabel"; text = "Enumerator Status"; ObjectID = "2bu-vJ-0Up"; */
+"2bu-vJ-0Up.text" = "Enumerator Status";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "3Wu-ad-m8h"; */
+"3Wu-ad-m8h.text" = "2";
+
+/* Class = "UILabel"; text = "Moved Out Members"; ObjectID = "4T5-5U-ya4"; */
+"4T5-5U-ya4.text" = "Moved Out Members";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "4Zz-AK-Mry"; */
+"4Zz-AK-Mry.text" = "123";
+
+/* Class = "UILabel"; text = "OTP Verification"; ObjectID = "4ze-O4-Mo5"; */
+"4ze-O4-Mo5.text" = "OTP Verification";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "6Cg-7m-3iC"; */
+"6Cg-7m-3iC.text" = "2";
+
+/* Class = "UITextField"; placeholder = "User Id"; ObjectID = "70U-w7-ADF"; */
+"70U-w7-ADF.placeholder" = "User Id";
+
+/* Class = "UILabel"; text = "District"; ObjectID = "7fX-Ck-3Jt"; */
+"7fX-Ck-3Jt.text" = "District";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "7hH-mA-aJ5"; */
+"7hH-mA-aJ5.text" = "Mobile";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "8fv-kO-r5x"; */
+"8fv-kO-r5x.text" = "State";
+
+/* Class = "UILabel"; text = "District"; ObjectID = "91P-ne-cZ6"; */
+"91P-ne-cZ6.text" = "District";
+
+/* Class = "UITextField"; placeholder = "User Id"; ObjectID = "9BI-5M-eQF"; */
+"9BI-5M-eQF.placeholder" = "User Id";
+
+/* Class = "UITextField"; text = "ravinder"; ObjectID = "9BI-5M-eQF"; */
+"9BI-5M-eQF.text" = "ravinder";
+
+/* Class = "UILabel"; text = "Head"; ObjectID = "ALg-1C-J7B"; */
+"ALg-1C-J7B.text" = "Head";
+
+/* Class = "UILabel"; text = "INCOMPLETE HOUSEHOLD"; ObjectID = "Avv-VB-VkS"; */
+"Avv-VB-VkS.text" = "INCOMPLETE HOUSEHOLD";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "CJ9-gZ-Ic8"; */
+"CJ9-gZ-Ic8.text" = "0";
+
+/* Class = "UILabel"; text = "Town/Village"; ObjectID = "CSZ-km-O2h"; */
+"CSZ-km-O2h.text" = "Town/Village";
+
+/* Class = "UILabel"; text = "Location Particular"; ObjectID = "DWk-6Z-xmd"; */
+"DWk-6Z-xmd.text" = "Location Particular";
+
+/* Class = "UILabel"; text = "Members with Mobile Number"; ObjectID = "DgC-QK-gJl"; */
+"DgC-QK-gJl.text" = "Members with Mobile Number";
+
+/* Class = "UILabel"; text = "0002"; ObjectID = "Dq7-4u-yko"; */
+"Dq7-4u-yko.text" = "0002";
+
+/* Class = "UITextField"; placeholder = "Registered User Id"; ObjectID = "DvG-Go-fwC"; */
+"DvG-Go-fwC.placeholder" = "Registered User Id";
+
+/* Class = "UILabel"; text = "0001"; ObjectID = "E9d-Rv-YdY"; */
+"E9d-Rv-YdY.text" = "0001";
+
+/* Class = "UILabel"; text = "NPR HH No -"; ObjectID = "EPE-IH-iuQ"; */
+"EPE-IH-iuQ.text" = "NPR HH No -";
+
+/* Class = "UILabel"; text = "Total Households (Original + New)"; ObjectID = "EwI-MP-C8D"; */
+"EwI-MP-C8D.text" = "Total Households (Original + New)";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "FZa-xZ-dBt"; */
+"FZa-xZ-dBt.text" = "123";
+
+/* Class = "UILabel"; text = "Location Particular"; ObjectID = "Fgv-Rh-fAr"; */
+"Fgv-Rh-fAr.text" = "Location Particular";
+
+/* Class = "UILabel"; text = "Total HLB Assigned"; ObjectID = "Fqf-h2-mqd"; */
+"Fqf-h2-mqd.text" = "Total HLB Assigned";
+
+/* Class = "UILabel"; text = "Enumerator Signature"; ObjectID = "HLd-qt-7AI"; */
+"HLd-qt-7AI.text" = "Enumerator Signature";
+
+/* Class = "UILabel"; text = "User Id"; ObjectID = "HSD-O5-Bz1"; */
+"HSD-O5-Bz1.text" = "User Id";
+
+/* Class = "UILabel"; text = "Total Pending HLB"; ObjectID = "Hk9-Pv-Dr3"; */
+"Hk9-Pv-Dr3.text" = "Total Pending HLB";
+
+/* Class = "UILabel"; text = "Members with Driving Licence"; ObjectID = "IJX-bH-Qfj"; */
+"IJX-bH-Qfj.text" = "Members with Driving Licence";
+
+/* Class = "UILabel"; text = "Census HH No -"; ObjectID = "IbH-eJ-k8p"; */
+"IbH-eJ-k8p.text" = "Census HH No -";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "Ik4-93-zc4"; */
+"Ik4-93-zc4.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "IvU-8t-o1C"; */
+"IvU-8t-o1C.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "Ja2-3R-IOY"; */
+"Ja2-3R-IOY.text" = "2";
+
+/* Class = "UILabel"; text = "LAKSH"; ObjectID = "JoR-ZC-FXE"; */
+"JoR-ZC-FXE.text" = "LAKSH";
+
+/* Class = "UILabel"; text = "VIEW / EDIT / COMPLETE"; ObjectID = "K8s-ur-0Y0"; */
+"K8s-ur-0Y0.text" = "VIEW / EDIT / COMPLETE";
+
+/* Class = "UILabel"; text = "VIEW / EDIT / COMPLETE"; ObjectID = "L3J-AC-bA8"; */
+"L3J-AC-bA8.text" = "VIEW / EDIT / COMPLETE";
+
+/* Class = "UILabel"; text = "Total Locked Households"; ObjectID = "L40-Od-rtb"; */
+"L40-Od-rtb.text" = "Total Locked Households";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "Lka-0N-zA5"; */
+"Lka-0N-zA5.text" = "2";
+
+/* Class = "UILabel"; text = "Town/Village"; ObjectID = "Mag-ro-uDr"; */
+"Mag-ro-uDr.text" = "Town/Village";
+
+/* Class = "UILabel"; text = "Total Original Households"; ObjectID = "Mec-ok-0DK"; */
+"Mec-ok-0DK.text" = "Total Original Households";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "Mh5-gk-mxy"; */
+"Mh5-gk-mxy.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "NPR-2020"; ObjectID = "NDV-Nq-6Tp"; */
+"NDV-Nq-6Tp.text" = "NPR-2020";
+
+/* Class = "UILabel"; text = "MOOSA AOUBUM"; ObjectID = "OAZ-ks-fGw"; */
+"OAZ-ks-fGw.text" = "MOOSA AOUBUM";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "OTE-4E-qh4"; */
+"OTE-4E-qh4.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "VERIFY OTP"; ObjectID = "OX7-qC-llT"; */
+"OX7-qC-llT.normalTitle" = "VERIFY OTP";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "Ooh-1h-dLz"; */
+"Ooh-1h-dLz.text" = "Mobile";
+
+/* Class = "UILabel"; text = "LAKSHADWE"; ObjectID = "PBK-bS-LpO"; */
+"PBK-bS-LpO.text" = "LAKSHADWE";
+
+/* Class = "UILabel"; text = "Block"; ObjectID = "PRb-ee-NhJ"; */
+"PRb-ee-NhJ.text" = "Block";
+
+/* Class = "UILabel"; text = "Total Households -"; ObjectID = "Pc2-Tb-iuG"; */
+"Pc2-Tb-iuG.text" = "Total Households -";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "Pfj-ls-sF1"; */
+"Pfj-ls-sF1.text" = "2";
+
+/* Class = "UILabel"; text = "HLB Number"; ObjectID = "Pj2-Hv-9Ur"; */
+"Pj2-Hv-9Ur.text" = "HLB Number";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "Q5f-Gq-T4J"; */
+"Q5f-Gq-T4J.text" = "Login";
+
+/* Class = "UILabel"; text = "Members with Indian Passport"; ObjectID = "QR3-cc-FhN"; */
+"QR3-cc-FhN.text" = "Members with Indian Passport";
+
+/* Class = "UILabel"; text = "Total Upload HLB"; ObjectID = "R5u-Ca-6aT"; */
+"R5u-Ca-6aT.text" = "Total Upload HLB";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "RFg-wr-gVD"; */
+"RFg-wr-gVD.text" = "2";
+
+/* Class = "UILabel"; text = "Total New Households"; ObjectID = "Ryf-iN-nvp"; */
+"Ryf-iN-nvp.text" = "Total New Households";
+
+/* Class = "UIButton"; normalTitle = "CLEAR"; ObjectID = "S06-wb-JOJ"; */
+"S06-wb-JOJ.normalTitle" = "CLEAR";
+
+/* Class = "UIButton"; normalTitle = "Supervisor Login"; ObjectID = "S6J-K1-EDf"; */
+"S6J-K1-EDf.normalTitle" = "Supervisor Login";
+
+/* Class = "UILabel"; text = "Current HLB Status"; ObjectID = "SEX-0B-MZY"; */
+"SEX-0B-MZY.text" = "Current HLB Status";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "SSQ-yr-2Uh"; */
+"SSQ-yr-2Uh.text" = "123";
+
+/* Class = "UILabel"; text = "Total Updated Members"; ObjectID = "T4A-2A-bzB"; */
+"T4A-2A-bzB.text" = "Total Updated Members";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "T9G-eK-raI"; */
+"T9G-eK-raI.text" = "Password";
+
+/* Class = "UILabel"; text = "Members Yet to be updated"; ObjectID = "TCJ-ji-k4n"; */
+"TCJ-ji-k4n.text" = "Members Yet to be updated";
+
+/* Class = "UILabel"; text = "0002"; ObjectID = "TIx-k5-IUC"; */
+"TIx-k5-IUC.text" = "0002";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "TPF-9H-96v"; */
+"TPF-9H-96v.text" = "Login";
+
+/* Class = "UILabel"; text = "Change Password via OTP"; ObjectID = "TQC-bb-ird"; */
+"TQC-bb-ird.text" = "Change Password via OTP";
+
+/* Class = "UILabel"; text = "MOOSA AOUBUM"; ObjectID = "Td3-6Y-9dX"; */
+"Td3-6Y-9dX.text" = "MOOSA AOUBUM";
+
+/* Class = "UILabel"; text = "Enumerator Sign below"; ObjectID = "Ueh-Gh-4qJ"; */
+"Ueh-Gh-4qJ.text" = "Enumerator Sign below";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "Un9-bO-YbM"; */
+"Un9-bO-YbM.text" = "123";
+
+/* Class = "UILabel"; text = "Aadhaar"; ObjectID = "VOh-SF-M0Q"; */
+"VOh-SF-M0Q.text" = "Aadhaar";
+
+/* Class = "UILabel"; text = "*Downloaded"; ObjectID = "VQj-7X-OuL"; */
+"VQj-7X-OuL.text" = "*Downloaded";
+
+/* Class = "UILabel"; text = "*Not Downloaded"; ObjectID = "Voo-Xr-1N6"; */
+"Voo-Xr-1N6.text" = "*Not Downloaded";
+
+/* Class = "UIButton"; normalTitle = "CHANGE PASSWORD"; ObjectID = "XEo-SR-ajc"; */
+"XEo-SR-ajc.normalTitle" = "CHANGE PASSWORD";
+
+/* Class = "UILabel"; text = "Kavaratti CT"; ObjectID = "Xsz-Hc-f6s"; */
+"Xsz-Hc-f6s.text" = "Kavaratti CT";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "Ydx-jH-0gC"; */
+"Ydx-jH-0gC.text" = "Home";
+
+/* Class = "UILabel"; text = "PROGRESS"; ObjectID = "YiC-IG-z2c"; */
+"YiC-IG-z2c.text" = "PROGRESS";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "ZBO-dE-G1b"; */
+"ZBO-dE-G1b.text" = "2";
+
+/* Class = "UILabel"; text = "Household Status"; ObjectID = "ZzJ-xk-YFS"; */
+"ZzJ-xk-YFS.text" = "Household Status";
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "aBM-JZ-tXU"; */
+"aBM-JZ-tXU.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "LAKSH"; ObjectID = "aZo-BR-4Vh"; */
+"aZo-BR-4Vh.text" = "LAKSH";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "bqQ-pM-FG7"; */
+"bqQ-pM-FG7.text" = "2";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "c2c-Yq-ZkS"; */
+"c2c-Yq-ZkS.text" = "2";
+
+/* Class = "UILabel"; text = "You are working for the given Jurisdiction"; ObjectID = "cPE-ur-ybC"; */
+"cPE-ur-ybC.text" = "You are working for the given Jurisdiction";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "chc-D6-AhW"; */
+"chc-D6-AhW.text" = "2";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "dhN-hv-ppb"; */
+"dhN-hv-ppb.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "UPLOAD DATA"; ObjectID = "e0c-nI-V5O"; */
+"e0c-nI-V5O.text" = "UPLOAD DATA";
+
+/* Class = "UILabel"; text = "07-03-1960"; ObjectID = "eIU-2q-69h"; */
+"eIU-2q-69h.text" = "07-03-1960";
+
+/* Class = "UILabel"; text = "Total Pending Households"; ObjectID = "eJ2-QU-jWH"; */
+"eJ2-QU-jWH.text" = "Total Pending Households";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "eJe-UR-TbI"; */
+"eJe-UR-TbI.text" = "2";
+
+/* Class = "UILabel"; text = "Total Moved Households"; ObjectID = "elH-bs-2qW"; */
+"elH-bs-2qW.text" = "Total Moved Households";
+
+/* Class = "UILabel"; text = "PROGRESS"; ObjectID = "fIA-k6-g2f"; */
+"fIA-k6-g2f.text" = "PROGRESS";
+
+/* Class = "UIButton"; normalTitle = "CHANGE PASSWORD"; ObjectID = "fQW-QW-gYg"; */
+"fQW-QW-gYg.normalTitle" = "CHANGE PASSWORD";
+
+/* Class = "UILabel"; text = "Head"; ObjectID = "fer-kj-Vcx"; */
+"fer-kj-Vcx.text" = "Head";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "gCE-nz-ObZ"; */
+"gCE-nz-ObZ.text" = "0";
+
+/* Class = "UILabel"; text = "Total Original Household"; ObjectID = "gEc-q1-vnV"; */
+"gEc-q1-vnV.text" = "Total Original Household";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "gUZ-Dh-dUa"; */
+"gUZ-Dh-dUa.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "SWITCH HLB"; ObjectID = "gVy-NW-xBU"; */
+"gVy-NW-xBU.normalTitle" = "SWITCH HLB";
+
+/* Class = "UILabel"; text = "Ward"; ObjectID = "gW2-MZ-PYO"; */
+"gW2-MZ-PYO.text" = "Ward";
+
+/* Class = "UILabel"; text = "Total New Members"; ObjectID = "geE-ks-MFB"; */
+"geE-ks-MFB.text" = "Total New Members";
+
+/* Class = "UILabel"; text = "Sub District"; ObjectID = "ghM-RZ-ABd"; */
+"ghM-RZ-ABd.text" = "Sub District";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "gjP-vk-Yqs"; */
+"gjP-vk-Yqs.text" = "2";
+
+/* Class = "UILabel"; text = "11111111111111111111"; ObjectID = "gkA-pU-Nre"; */
+"gkA-pU-Nre.text" = "11111111111111111111";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "gwb-bv-9CZ"; */
+"gwb-bv-9CZ.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Ward"; ObjectID = "hJW-xM-xkS"; */
+"hJW-xM-xkS.text" = "Ward";
+
+/* Class = "UILabel"; text = "Total Members(Original + New)"; ObjectID = "hd6-qu-Z1K"; */
+"hd6-qu-Z1K.text" = "Total Members(Original + New)";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "hpG-gp-Arq"; */
+"hpG-gp-Arq.text" = "2";
+
+/* Class = "UILabel"; text = "Upload Data"; ObjectID = "ifj-pj-eIH"; */
+"ifj-pj-eIH.text" = "Upload Data";
+
+/* Class = "UILabel"; text = "Total Updated Households"; ObjectID = "igh-Ky-6WO"; */
+"igh-Ky-6WO.text" = "Total Updated Households";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "ipu-5o-kJh"; */
+"ipu-5o-kJh.text" = "2";
+
+/* Class = "UILabel"; text = "251"; ObjectID = "jIz-X7-CI3"; */
+"jIz-X7-CI3.text" = "251";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "jh6-6a-wwT"; */
+"jh6-6a-wwT.text" = "English";
+
+/* Class = "UILabel"; text = "Total Original Members"; ObjectID = "jqX-u3-xdQ"; */
+"jqX-u3-xdQ.text" = "Total Original Members";
+
+/* Class = "UILabel"; text = "LAKSHADWE"; ObjectID = "jta-Vo-0nW"; */
+"jta-Vo-0nW.text" = "LAKSHADWE";
+
+/* Class = "UILabel"; text = "Upload Data"; ObjectID = "kVU-an-Ppd"; */
+"kVU-an-Ppd.text" = "Upload Data";
+
+/* Class = "UILabel"; text = "Aadhaar"; ObjectID = "kbJ-WI-yay"; */
+"kbJ-WI-yay.text" = "Aadhaar";
+
+/* Class = "UILabel"; text = "Block"; ObjectID = "l9Q-bX-5jd"; */
+"l9Q-bX-5jd.text" = "Block";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "lza-qj-rP4"; */
+"lza-qj-rP4.text" = "2";
+
+/* Class = "UILabel"; text = "Available Members"; ObjectID = "mDh-vB-6hh"; */
+"mDh-vB-6hh.text" = "Available Members";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "mHK-GG-hBI"; */
+"mHK-GG-hBI.text" = "Name";
+
+/* Class = "UILabel"; text = "251"; ObjectID = "mKT-8H-cjE"; */
+"mKT-8H-cjE.text" = "251";
+
+/* Class = "UILabel"; text = "Member Status"; ObjectID = "mMT-vM-SoZ"; */
+"mMT-vM-SoZ.text" = "Member Status";
+
+/* Class = "UILabel"; text = "Census HH No -"; ObjectID = "mOH-to-2ZL"; */
+"mOH-to-2ZL.text" = "Census HH No -";
+
+/* Class = "UILabel"; text = "DOB"; ObjectID = "mcX-bN-uZd"; */
+"mcX-bN-uZd.text" = "DOB";
+
+/* Class = "UILabel"; text = "Total Available Households"; ObjectID = "mim-w4-nQc"; */
+"mim-w4-nQc.text" = "Total Available Households";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "mwV-Qu-ztH"; */
+"mwV-Qu-ztH.text" = "2";
+
+/* Class = "UILabel"; text = "Total Household"; ObjectID = "nH9-91-eEX"; */
+"nH9-91-eEX.text" = "Total Household";
+
+/* Class = "UILabel"; text = "Select any HLB"; ObjectID = "nVR-5H-ANq"; */
+"nVR-5H-ANq.text" = "Select any HLB";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "nZS-u9-rcI"; */
+"nZS-u9-rcI.text" = "English";
+
+/* Class = "UITextField"; placeholder = "User Id"; ObjectID = "nkn-MM-wfd"; */
+"nkn-MM-wfd.placeholder" = "User Id";
+
+/* Class = "UITextField"; text = "Password"; ObjectID = "nkn-MM-wfd"; */
+"nkn-MM-wfd.text" = "Password";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "no6-Hp-AWX"; */
+"no6-Hp-AWX.text" = "2";
+
+/* Class = "UILabel"; text = "Total 'Not Available' Households"; ObjectID = "oxM-h8-IcQ"; */
+"oxM-h8-IcQ.text" = "Total 'Not Available' Households";
+
+/* Class = "UILabel"; text = "*Uploaded"; ObjectID = "pJa-DF-K3Q"; */
+"pJa-DF-K3Q.text" = "*Uploaded";
+
+/* Class = "UIButton"; normalTitle = "RESEND OTP"; ObjectID = "pl2-pI-Lbw"; */
+"pl2-pI-Lbw.normalTitle" = "RESEND OTP";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "pq1-fy-zrJ"; */
+"pq1-fy-zrJ.text" = "Name";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "qUQ-H0-SCb"; */
+"qUQ-H0-SCb.text" = "English";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "r1M-hy-BVG"; */
+"r1M-hy-BVG.text" = "2";
+
+/* Class = "UITextField"; placeholder = "Retype Password"; ObjectID = "rBw-o2-b11"; */
+"rBw-o2-b11.placeholder" = "Retype Password";
+
+/* Class = "UILabel"; text = "NPR HH No -"; ObjectID = "rGr-Q3-jnE"; */
+"rGr-Q3-jnE.text" = "NPR HH No -";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "s4i-LK-pbf"; */
+"s4i-LK-pbf.text" = "2";
+
+/* Class = "UILabel"; text = "Members with Aadhaar"; ObjectID = "s7k-gM-DPc"; */
+"s7k-gM-DPc.text" = "Members with Aadhaar";
+
+/* Class = "UILabel"; text = "OTP has beeen sent to 9*****9999"; ObjectID = "tKC-vE-bKu"; */
+"tKC-vE-bKu.text" = "OTP has beeen sent to 9*****9999";
+
+/* Class = "UILabel"; text = "Sub District"; ObjectID = "tyl-br-yJN"; */
+"tyl-br-yJN.text" = "Sub District";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "u7v-gy-JY7"; */
+"u7v-gy-JY7.text" = "2";
+
+/* Class = "UILabel"; text = "Kavaratti"; ObjectID = "uDW-cc-eht"; */
+"uDW-cc-eht.text" = "Kavaratti";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "uaC-hj-Cpn"; */
+"uaC-hj-Cpn.text" = "2";
+
+/* Class = "UILabel"; text = "DOB"; ObjectID = "ulk-d2-YLP"; */
+"ulk-d2-YLP.text" = "DOB";
+
+/* Class = "UILabel"; text = "Kavaratti"; ObjectID = "v5S-zi-pMI"; */
+"v5S-zi-pMI.text" = "Kavaratti";
+
+/* Class = "UILabel"; text = "Kavaratti CT"; ObjectID = "vPS-ez-Dxt"; */
+"vPS-ez-Dxt.text" = "Kavaratti CT";
+
+/* Class = "UILabel"; text = "Died Members"; ObjectID = "vU7-rf-qKt"; */
+"vU7-rf-qKt.text" = "Died Members";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "vhs-Lt-zpv"; */
+"vhs-Lt-zpv.text" = "123";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "w3w-MJ-odz"; */
+"w3w-MJ-odz.placeholder" = "New Password";
+
+/* Class = "UILabel"; text = "Members with Voter ID"; ObjectID = "wnu-Z6-I59"; */
+"wnu-Z6-I59.text" = "Members with Voter ID";
+
+/* Class = "UILabel"; text = "LOCATION PARTICULAR"; ObjectID = "wo4-w6-qEe"; */
+"wo4-w6-qEe.text" = "LOCATION PARTICULAR";
+
+/* Class = "UILabel"; text = "Total New Household"; ObjectID = "wu6-r5-Ynw"; */
+"wu6-r5-Ynw.text" = "Total New Household";
+
+/* Class = "UILabel"; text = "123"; ObjectID = "xLl-qX-Cmu"; */
+"xLl-qX-Cmu.text" = "123";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "xOh-O2-7lE"; */
+"xOh-O2-7lE.text" = "2";
+
+/* Class = "UILabel"; text = "Total Households -"; ObjectID = "xUa-ze-cTZ"; */
+"xUa-ze-cTZ.text" = "Total Households -";
+
+/* Class = "UILabel"; text = "NPR-2020"; ObjectID = "z49-fI-zSn"; */
+"z49-fI-zSn.text" = "NPR-2020";
+
+/* Class = "UILabel"; text = "Location Particular"; ObjectID = "zD4-lv-86E"; */
+"zD4-lv-86E.text" = "Location Particular";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "zHG-RF-7yF"; */
+"zHG-RF-7yF.normalTitle" = "SIGN IN";

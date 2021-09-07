@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SKipHHView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SkipHHView" customModule="NPR_2020" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYN-eV-oax">
+                    <rect key="frame" x="10" y="325" width="394" height="246.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zf5-TK-0VM">
+                            <rect key="frame" x="10" y="10" width="374" height="226.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select reason for Skipping the Household :" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7i-YT-6mW">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OEi-dS-rhC">
+                                    <rect key="frame" x="0.0" y="60.5" width="374" height="87"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="agV-t0-Tao">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xu-pf-U6y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="25X-p1-wdp">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="25" id="8o0-06-NCG">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
+                                                    <state key="normal" image="circle" catalog="system"/>
+                                                    <state key="selected" image="largecircle.fill.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="pXP-TM-bAC"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLx-36-8KF">
+                                                    <rect key="frame" x="30" y="0.0" width="344" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Locked House">
+                                                        <color key="titleColor" name="color_primary"/>
+                                                    </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="oSb-Sd-UBK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" id="eO7-em-ohR">
+                                            <rect key="frame" x="0.0" y="31" width="374" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBd-Pu-Lfu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="TmA-IK-9TD">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="25" id="kSi-Rf-fB1">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" image="circle" catalog="system"/>
+                                                    <state key="selected" image="largecircle.fill.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="4pE-sf-woZ"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-f8-L24">
+                                                    <rect key="frame" x="30" y="0.0" width="344" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Household Migrated / Moved Out">
+                                                        <color key="titleColor" name="color_primary"/>
+                                                    </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="gVc-xG-SfF"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <viewLayoutGuide key="safeArea" id="tmg-nC-c9f"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" id="sop-Ql-8fA">
+                                            <rect key="frame" x="0.0" y="62" width="374" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vk9-9w-Tc3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="FAe-hY-zhP">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="25" id="gsB-cf-5AZ">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" image="circle" catalog="system"/>
+                                                    <state key="selected" image="largecircle.fill.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="mLn-dv-fKw"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-Li-KF4">
+                                                    <rect key="frame" x="30" y="0.0" width="344" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Not Available">
+                                                        <color key="titleColor" name="color_primary"/>
+                                                    </state>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="btnTypeHousehold_action:" destination="iN0-l3-epB" eventType="touchUpInside" id="JF3-Ki-T6G"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <viewLayoutGuide key="safeArea" id="pfl-XA-mMd"/>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-65-ucc">
+                                    <rect key="frame" x="0.0" y="187.5" width="374" height="39"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpg-Uh-G4W">
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="39"/>
+                                            <color key="backgroundColor" name="colorLightPink"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnCancel_click:" destination="iN0-l3-epB" eventType="touchUpInside" id="eGv-34-sIW"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itx-iw-5TW">
+                                            <rect key="frame" x="197" y="0.0" width="177" height="39"/>
+                                            <color key="backgroundColor" name="colorLightPink"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <state key="normal" title="Ok">
+                                                <color key="titleColor" name="color_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnOk_click:" destination="iN0-l3-epB" eventType="touchUpInside" id="jVz-VZ-VEh"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="zf5-TK-0VM" firstAttribute="centerY" secondItem="FYN-eV-oax" secondAttribute="centerY" id="EJH-on-dxr"/>
+                        <constraint firstItem="zf5-TK-0VM" firstAttribute="centerX" secondItem="FYN-eV-oax" secondAttribute="centerX" id="PDH-De-8M9"/>
+                        <constraint firstItem="zf5-TK-0VM" firstAttribute="leading" secondItem="FYN-eV-oax" secondAttribute="leading" constant="10" id="RLC-nE-vmK"/>
+                        <constraint firstItem="zf5-TK-0VM" firstAttribute="top" secondItem="FYN-eV-oax" secondAttribute="top" constant="10" id="hcd-Zw-EV6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
+            <constraints>
+                <constraint firstItem="FYN-eV-oax" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="58U-rF-LIF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FYN-eV-oax" secondAttribute="trailing" constant="10" id="HnC-6I-nFL"/>
+                <constraint firstItem="FYN-eV-oax" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KhV-ML-RSg"/>
+                <constraint firstItem="FYN-eV-oax" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LWu-m0-fkd"/>
+            </constraints>
+            <connections>
+                <outlet property="btnLocked" destination="1xu-pf-U6y" id="gp9-bm-Mp6"/>
+                <outlet property="btnMigrated" destination="QBd-Pu-Lfu" id="1W9-4w-BIJ"/>
+                <outlet property="btnNotAvailable" destination="vk9-9w-Tc3" id="xfm-o6-HN2"/>
+            </connections>
+            <point key="canvasLocation" x="-196" y="70"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="largecircle.fill.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="colorLightPink">
+            <color red="0.95377010107040405" green="0.89843243360519409" blue="0.96107488870620728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_primary">
+            <color red="0.40400001406669617" green="0.22699999809265137" blue="0.71799999475479126" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

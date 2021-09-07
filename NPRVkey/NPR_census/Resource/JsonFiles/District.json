@@ -1,0 +1,5374 @@
+[
+    {
+        "statecode": "36",
+        "districtcode": "01",
+        "districtname": "ADILABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "51",
+        "districtname": "AGAR MALWA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "15",
+        "districtname": "AGRA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "26",
+        "districtname": "AHMADNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "07",
+        "districtname": "AHMEDABAD",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "15",
+        "districtcode": "03",
+        "districtname": "AIZAWL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "21",
+        "districtname": "AJMER",
+        "cpsuId": " ",
+        "districtnamenl": "अजमेर",
+        "districtnamesl": "अजमेर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "05",
+        "districtname": "AKOLA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "11",
+        "districtname": "ALAPPUZHA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "12",
+        "districtname": "ALIGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "20",
+        "districtname": "ALIPURDUAR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "48",
+        "districtname": "ALIRAJPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "09",
+        "districtname": "ALMORA",
+        "cpsuId": " ",
+        "districtnamenl": "अल्मोड़ा",
+        "districtnamesl": "अल्मोड़ा",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "06",
+        "districtname": "ALWAR",
+        "cpsuId": " ",
+        "districtnamenl": "अलवर",
+        "districtnamesl": "अलवर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "02",
+        "districtname": "AMBALA",
+        "cpsuId": " ",
+        "districtnamenl": "अम्बाला",
+        "districtnamesl": "अम्बाला",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "47",
+        "districtname": "AMBEDKAR NAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "75",
+        "districtname": "AMETHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "07",
+        "districtname": "AMRAVATI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "13",
+        "districtname": "AMRELI",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "15",
+        "districtname": "Amritsar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "06",
+        "districtname": "Amroha",
+        "cpsuId": " ",
+        "districtnamenl": "ज्योतीबा फुले नगर",
+        "districtnamesl": "ज्योतीबा फुले नगर",
+        "langCode": "hin",
+        "statenamesl": "उत्तर प्रदॆश"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "15",
+        "districtname": "ANAND",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "12",
+        "districtname": "ANANTHAPURAMU",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "01",
+        "districtcode": "14",
+        "districtname": "ANANTNAG",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "16",
+        "districtname": "ANJAW",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "15",
+        "districtname": "ANUGUL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "44",
+        "districtname": "ANUPPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "07",
+        "districtname": "ARARIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "15",
+        "districtname": "ARIYALUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "27",
+        "districtname": "ARVALLI",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "38",
+        "districtname": "ARWAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "42",
+        "districtname": "ASHOKNAGAR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "31",
+        "districtname": "AURAIYA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "19",
+        "districtname": "AURANGABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "33",
+        "districtname": "AURANGABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "46",
+        "districtname": "AYODHYA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "60",
+        "districtname": "AZAMGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "02",
+        "districtname": "BADGAM",
+        "cpsuId": " ",
+        "districtnamenl": "बड़गाम",
+        "districtnamesl": "بڑگام",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "02",
+        "districtname": "BAGALKOT",
+        "cpsuId": " ",
+        "districtnamenl": "बागलकोट",
+        "districtnamesl": "ಬಾಗಲಕೋಟೆ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "08",
+        "districtname": "BAGESHWAR",
+        "cpsuId": " ",
+        "districtnamenl": "बागेश्वर",
+        "districtnamesl": "बागेश्वर",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "08",
+        "districtname": "BAGHPAT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "49",
+        "districtname": "BAHRAICH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "25",
+        "districtname": "BAKSA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "40",
+        "districtname": "BALAGHAT",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "24",
+        "districtname": "BALANGIR ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "08",
+        "districtname": "BALESHWAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "11",
+        "districtname": "BALLARI",
+        "cpsuId": " ",
+        "districtnamenl": "बेलैरी",
+        "districtnamesl": "ಬಳ್ಳಾರಿ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "62",
+        "districtname": "BALLIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "23",
+        "districtname": "BALOD",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "24",
+        "districtname": "BALODABAZAR-BHATAPARA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "51",
+        "districtname": "BALRAMPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "20",
+        "districtname": "BALRAMPUR-RAMANUJGANJ",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "02",
+        "districtname": "BANAS KANTHA",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "39",
+        "districtname": "BANDA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "09",
+        "districtname": "BANDIPORE",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "23",
+        "districtname": "BANKA",
+        "cpsuId": " ",
+        "districtnamenl": "बाँका",
+        "districtnamesl": "बाँका",
+        "langCode": "hin",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "13",
+        "districtname": "BANKURA ",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "27",
+        "districtname": "BANSWARA",
+        "cpsuId": " ",
+        "districtnamenl": "बांसवाड़ा",
+        "districtnamesl": "बांसवाड़ा",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "45",
+        "districtname": "BARA BANKI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "08",
+        "districtname": "BARAMULLA",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "30",
+        "districtname": "BARAN",
+        "cpsuId": " ",
+        "districtnamenl": "बाराँ",
+        "districtnamesl": "बाराँ",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "19",
+        "districtname": "BAREILLY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "01",
+        "districtname": "BARGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "17",
+        "districtname": "BARMER",
+        "cpsuId": " ",
+        "districtnamenl": "बाड़मेर",
+        "districtnamesl": "बाड़मेर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "20",
+        "districtname": "Barnala",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "04",
+        "districtname": "BARPETA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "24",
+        "districtname": "BARWANI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "15",
+        "districtname": "BASTAR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "54",
+        "districtname": "BASTI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "12",
+        "districtname": "Bathinda",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "22",
+        "districtname": "BAUDH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "20",
+        "districtname": "BEGUSARAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "01",
+        "districtname": "BELAGAVI",
+        "cpsuId": " ",
+        "districtnamenl": "बेलगाम",
+        "districtnamesl": "ಬೆಳಗಾವಿ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "22",
+        "districtname": "BEMETARA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "18",
+        "districtname": "BENGALURU",
+        "cpsuId": " ",
+        "districtnamenl": "बैंगलोर",
+        "districtnamesl": "ಬೆಂಗಳೂರು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "29",
+        "districtname": "BENGALURU RURAL",
+        "cpsuId": " ",
+        "districtnamenl": "बंगलौर ग्रामीण",
+        "districtnamesl": "ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "30",
+        "districtname": "BETUL",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "67",
+        "districtname": "BHADOHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "33",
+        "districtname": "BHADRADRI KOTHAGUDEM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "09",
+        "districtname": "BHADRAK",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "22",
+        "districtname": "BHAGALPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "10",
+        "districtname": "BHANDARA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "07",
+        "districtname": "BHARATPUR",
+        "cpsuId": " ",
+        "districtnamenl": "भरतपुर",
+        "districtnamesl": "भरतपुर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "21",
+        "districtname": "BHARUCH",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "14",
+        "districtname": "BHAVNAGAR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "24",
+        "districtname": "BHILWARA",
+        "cpsuId": " ",
+        "districtnamenl": "भीलवाड़ा",
+        "districtnamesl": "भीलवाड़ा",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "03",
+        "districtname": "BHIND",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "13",
+        "districtname": "BHIWANI",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "29",
+        "districtname": "BHOJPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "27",
+        "districtname": "BHOPAL",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "27",
+        "districtname": "BID",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "04",
+        "districtname": "BIDAR",
+        "cpsuId": " ",
+        "districtnamenl": "बीदर",
+        "districtnamesl": "ಬೀದರ್",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "18",
+        "districtname": "BIJAPUR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "03",
+        "districtname": "BIJNOR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "03",
+        "districtname": "BIKANER",
+        "cpsuId": " ",
+        "districtnamenl": "बीकानेर",
+        "districtnamesl": "बीकानेर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "08",
+        "districtname": "BILASPUR",
+        "cpsuId": " ",
+        "districtnamenl": "बिलासपुर",
+        "districtnamesl": "बिलासपुर",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "07",
+        "districtname": "BILASPUR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "08",
+        "districtname": "BIRBHUM",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "04",
+        "districtname": "BISHNUPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "28",
+        "districtname": "BISWANATH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "10",
+        "districtname": "BOKARO",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "20",
+        "districtname": "BONGAIGAON",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "31",
+        "districtname": "BOTAD",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "18",
+        "districtname": "BUDAUN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "11",
+        "districtname": "BULANDSHAHR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "04",
+        "districtname": "BULDANA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "23",
+        "districtname": "BUNDI",
+        "cpsuId": " ",
+        "districtnamenl": "बूँदी",
+        "districtnamesl": "बूँदी",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "50",
+        "districtname": "BURHANPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "30",
+        "districtname": "BUXAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "17",
+        "districtname": "CACHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "06",
+        "districtname": "CENTRAL",
+        "cpsuId": " ",
+        "districtnamenl": "केंद्रीय",
+        "districtnamesl": "केंद्रीय",
+        "langCode": "hin",
+        "statenamesl": "दिल्ली"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "24",
+        "districtname": "CHAMARAJANAGAR",
+        "cpsuId": " ",
+        "districtnamenl": "चमराजनगर",
+        "districtnamesl": "ಚಾಮರಾಜನಗರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "01",
+        "districtname": "CHAMBA",
+        "cpsuId": " ",
+        "districtnamenl": "चंबा",
+        "districtnamesl": "चंबा",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "02",
+        "districtname": "CHAMOLI",
+        "cpsuId": " ",
+        "districtnamenl": "चमोली",
+        "districtnamesl": "चमोली",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "10",
+        "districtname": "CHAMPAWAT",
+        "cpsuId": " ",
+        "districtnamenl": "चम्पावत",
+        "districtnamesl": "चम्पावत",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "15",
+        "districtcode": "04",
+        "districtname": "CHAMPHAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "65",
+        "districtname": "CHANDAULI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "09",
+        "districtname": "CHANDEL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "04",
+        "districtcode": "01",
+        "districtname": "CHANDIGARH",
+        "cpsuId": " ",
+        "districtnamenl": "चंडीगढ़",
+        "districtnamesl": "चंडीगढ़",
+        "langCode": "hin",
+        "statenamesl": "चंडीगढ"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "13",
+        "districtname": "CHANDRAPUR",
+        "cpsuId": " ",
+        "districtnamenl": "चंद्रपुर",
+        "districtnamesl": "चंद्रपूर",
+        "langCode": "mar",
+        "statenamesl": "महाराष्ट्र"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "09",
+        "districtname": "CHANGLANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "31",
+        "districtname": "CHARAIDEO",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "22",
+        "districtname": "CHARKHI DADRI",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "02",
+        "districtname": "CHATRA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "33",
+        "districtname": "CHENGALPATTU",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "02",
+        "districtname": "CHENNAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "08",
+        "districtname": "CHHATARPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "38",
+        "districtname": "CHHINDWARA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "33",
+        "districtname": "CHHOTAUDEPUR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "28",
+        "districtname": "CHIKKABALLAPURA",
+        "cpsuId": " ",
+        "districtnamenl": "चिक्कबल्लपुर",
+        "districtnamesl": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "16",
+        "districtname": "CHIKKAMAGALURU",
+        "cpsuId": " ",
+        "districtnamenl": "चिकमगलूर",
+        "districtnamesl": "ಚಿಕ್ಕಮಗಳೂರು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "21",
+        "districtname": "CHIRANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "12",
+        "districtname": "CHITRADURGA",
+        "cpsuId": " ",
+        "districtnamenl": "चित्रदुर्गा",
+        "districtnamesl": "ಚಿತ್ರದುರ್ಗ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "40",
+        "districtname": "CHITRAKOOT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "28",
+        "districtname": "CHITTAURGARH",
+        "cpsuId": " ",
+        "districtnamenl": "चित्तौरगढ़",
+        "districtnamesl": "चित्तौरगढ़",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "13",
+        "districtname": "CHITTOOR",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "04",
+        "districtname": "CHURU",
+        "cpsuId": " ",
+        "districtnamenl": "चुरु",
+        "districtnamesl": "चुरु",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "03",
+        "districtname": "CHURUCHANDPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "31",
+        "districtname": "COIMBATORE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "03",
+        "districtname": "COOCH BEHAR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "16",
+        "districtname": "CUDDALORE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "12",
+        "districtname": "CUTTACK",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "26",
+        "districtcode": "03",
+        "districtname": "Dadra and Nagar Haveli",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "18",
+        "districtname": "DAHOD",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "21",
+        "districtname": "DAKSHINA KANNADA",
+        "cpsuId": " ",
+        "districtnamenl": "दक्षिण कन्नड़",
+        "districtnamesl": "ದಕ್ಷಿಣ ಕನ್ನಡ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "17",
+        "districtname": "DAKSHIN BASTAR DANTEWADA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "05",
+        "districtname": "DAKSHIN DINAJPUR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "26",
+        "districtcode": "02",
+        "districtname": "Daman",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "11",
+        "districtname": "DAMOH",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "13",
+        "districtname": "DARBHANGA",
+        "cpsuId": " ",
+        "districtnamenl": "दरभंगा",
+        "districtnamesl": "दरभंगा",
+        "langCode": "hin",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "01",
+        "districtname": "DARJEELING",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "26",
+        "districtname": "DARRANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "05",
+        "districtname": "DATIA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "11",
+        "districtname": "DAUSA",
+        "cpsuId": " ",
+        "districtnamenl": "दौसा",
+        "districtnamesl": "दौसा",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "13",
+        "districtname": "DAVANAGERE",
+        "cpsuId": " ",
+        "districtnamenl": "दावणगेरे",
+        "districtnamesl": "ದಾವಣಗೆರೆ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "04",
+        "districtname": "DEBAGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "05",
+        "districtname": "DEHRADUN",
+        "cpsuId": " ",
+        "districtnamenl": "देहरादून",
+        "districtnamesl": "देहरादून",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "05",
+        "districtname": "DEOGHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "59",
+        "districtname": "DEORIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "29",
+        "districtname": "DEVBHUMI DWARKA",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "20",
+        "districtname": "DEWAS",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "16",
+        "districtcode": "03",
+        "districtname": "DHALAI",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "13",
+        "districtname": "DHAMTARI",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "09",
+        "districtname": "DHANBAD",
+        "cpsuId": " ",
+        "districtnamenl": "धनबाद",
+        "districtnamesl": "धनबाद",
+        "langCode": "hin",
+        "statenamesl": "झारखण्ड"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "21",
+        "districtname": "DHAR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "29",
+        "districtname": "DHARMAPURI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "08",
+        "districtname": "DHARWAD",
+        "cpsuId": " ",
+        "districtnamenl": "धारवाड़",
+        "districtnamesl": "ಧಾರವಾಡ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "08",
+        "districtname": "DHAULPUR",
+        "cpsuId": " ",
+        "districtnamenl": "धौलपुर",
+        "districtnamesl": "धौलपुर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "09",
+        "districtname": "DHEMAJI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "14",
+        "districtname": "DHENKANAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "02",
+        "districtname": "DHUBRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "02",
+        "districtname": "DHULE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "13",
+        "districtname": "DIBANG VALLEY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "11",
+        "districtname": "DIBRUGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "16",
+        "districtname": "DIMA HASAO",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "05",
+        "districtname": "DIMAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "11",
+        "districtname": "DINDIGUL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "36",
+        "districtname": "DINDORI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "26",
+        "districtcode": "01",
+        "districtname": "Diu",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "16",
+        "districtname": "DODA",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "17",
+        "districtname": "DUMKA",
+        "cpsuId": " ",
+        "districtnamenl": "दुमका",
+        "districtnamesl": "दुमका",
+        "langCode": "hin",
+        "statenamesl": "झारखण्ड"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "26",
+        "districtname": "DUNGARPUR",
+        "cpsuId": " ",
+        "districtnamenl": "डूंगरपूर",
+        "districtnamesl": "डूंगरपूर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "10",
+        "districtname": "DURG",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "07",
+        "districtcode": "04",
+        "districtname": "EAST",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "11",
+        "districtcode": "04",
+        "districtname": "EAST DISTRICT",
+        "cpsuId": " ",
+        "districtnamenl": "पूर्व जिला",
+        "districtnamesl": "East District",
+        "langCode": "eng",
+        "statenamesl": "SIKKIM"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "02",
+        "districtname": "EAST GARO HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "04",
+        "districtname": "EAST GODAVARI",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "09",
+        "districtname": "EAST JAINTIA HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "03",
+        "districtname": "EAST KAMENG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "17",
+        "districtcode": "06",
+        "districtname": "EAST KHASI",
+        "cpsuId": " ",
+        "districtnamenl": "पूर्वी खासी",
+        "districtnamesl": "East Khasi",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "49",
+        "districtname": "EAST NIMAR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "07",
+        "districtname": "EAST SIANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "08",
+        "districtname": "ERNAKULAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "09",
+        "districtname": "ERODE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "70",
+        "districtname": "ETAH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "30",
+        "districtname": "ETAWAH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "20",
+        "districtname": "FARIDABAD",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "11",
+        "districtname": "Faridkot",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "28",
+        "districtname": "FARRUKHABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "10",
+        "districtname": "FATEHABAD",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "06",
+        "districtname": "Fatehgarh Sahib",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "41",
+        "districtname": "FATEHPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "21",
+        "districtname": "Fazilka",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "09",
+        "districtname": "Ferozepur",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "16",
+        "districtname": "FIROZABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "07",
+        "districtname": "GADAG",
+        "cpsuId": " ",
+        "districtnamenl": "गदग",
+        "districtnamesl": "ಗದಗ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "12",
+        "districtname": "GADCHIROLI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "20",
+        "districtname": "GAJAPATI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "11",
+        "districtname": "GANDERBAL",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "06",
+        "districtname": "GANDHINAGAR",
+        "cpsuId": " ",
+        "districtnamenl": "गांधीनगर",
+        "districtnamesl": "ગાંધીનગર",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "01",
+        "districtname": "GANGANAGAR",
+        "cpsuId": " ",
+        "districtnamenl": "गंगानगर",
+        "districtnamesl": "गंगानगर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "19",
+        "districtname": "GANJAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "01",
+        "districtname": "GARHWA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "06",
+        "districtname": "GARHWAL",
+        "cpsuId": " ",
+        "districtnamenl": "गढ़वाल",
+        "districtnamesl": "गढ़वाल",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "25",
+        "districtname": "GARIYABAND",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "28",
+        "districtname": "Gaurela-Pendra-Marwahi",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "10",
+        "districtname": "GAUTAM BUDDHA NAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "34",
+        "districtname": "GAYA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "09",
+        "districtname": "GHAZIABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "64",
+        "districtname": "GHAZIPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "04",
+        "districtname": "GIRIDIH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "30",
+        "districtname": "GIR SOMNATH",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "03",
+        "districtname": "GOALPARA",
+        "cpsuId": " ",
+        "districtnamenl": "गोलपाड़ा",
+        "districtnamesl": "গোৱালপাৰা",
+        "langCode": "ass",
+        "statenamesl": "অসম"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "06",
+        "districtname": "GODDA",
+        "cpsuId": " ",
+        "districtnamenl": "गोड्डा",
+        "districtnamesl": "गोड्डा",
+        "langCode": "hin",
+        "statenamesl": "झारखण्ड"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "14",
+        "districtname": "GOLAGHAT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "16",
+        "districtcode": "07",
+        "districtname": "GOMATI",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "52",
+        "districtname": "GONDA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "11",
+        "districtname": "GONDIYA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "15",
+        "districtname": "GOPALGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "57",
+        "districtname": "GORAKHPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "21",
+        "districtname": "GUMLA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "41",
+        "districtname": "GUNA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "07",
+        "districtname": "GUNTUR",
+        "cpsuId": " ",
+        "districtnamenl": "गुंटूर",
+        "districtnamesl": "గుంటూరు",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "01",
+        "districtname": "Gurdaspur",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "18",
+        "districtname": "GURUGRAM",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "04",
+        "districtname": "GWALIOR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "19",
+        "districtname": "HAILAKANDI",
+        "cpsuId": " ",
+        "districtnamenl": "हलाकांडी",
+        "districtnamesl": "হাইলাকান্দি",
+        "langCode": "ass",
+        "statenamesl": "অসম"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "06",
+        "districtname": "HAMIRPUR",
+        "cpsuId": " ",
+        "districtnamenl": "हमीरपुर",
+        "districtnamesl": "हमीरपुर",
+        "langCode": "hin",
+        "statenamesl": "उत्तर प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "37",
+        "districtname": "HAMIRPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "02",
+        "districtname": "HANUMANGARH",
+        "cpsuId": " ",
+        "districtnamenl": "हनुमानगढ़",
+        "districtnamesl": "हनुमानगढ़",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "74",
+        "districtname": "HAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "31",
+        "districtname": "HARDA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "24",
+        "districtname": "HARDOI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "13",
+        "districtname": "HARIDWAR",
+        "cpsuId": " ",
+        "districtnamenl": "हरिद्वार",
+        "districtnamesl": "हरिद्वार",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "20",
+        "districtname": "HASSAN",
+        "cpsuId": " ",
+        "districtnamenl": "हसन",
+        "districtnamesl": "ಹಾಸನ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "13",
+        "districtname": "Hathras",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "10",
+        "districtname": "HAVERI",
+        "cpsuId": " ",
+        "districtnamenl": "हावेरी",
+        "districtnamesl": "ಹಾವೇರಿ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "15",
+        "districtname": "HAZARIBAGH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "16",
+        "districtname": "HINGOLI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "12",
+        "districtname": "HISAR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "15",
+        "districtcode": "11",
+        "districtname": "Hnahthial",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "32",
+        "districtname": "HOJAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "12",
+        "districtname": "HOOGHLY",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "32",
+        "districtname": "HOSHANGABAD",
+        "cpsuId": " ",
+        "districtnamenl": "होशंगाबाद",
+        "districtnamesl": "होशंगाबाद",
+        "langCode": "hin",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "04",
+        "districtname": "Hoshiarpur",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "15",
+        "districtname": "HOWRAH",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "15",
+        "districtname": "HYDERABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "09",
+        "districtname": "IDUKKI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "07",
+        "districtname": "IMPHAL EAST",
+        "cpsuId": " ",
+        "districtnamenl": "इम्फाल ईस्ट",
+        "districtnamesl": "Imphal East",
+        "langCode": "eng",
+        "statenamesl": "MANIPUR"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "06",
+        "districtname": "IMPHAL WEST",
+        "cpsuId": " ",
+        "districtnamenl": "इंफाल पश्चिम",
+        "districtnamesl": "Imphal West",
+        "langCode": "eng",
+        "statenamesl": "MANIPUR"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "22",
+        "districtname": "INDORE",
+        "cpsuId": " ",
+        "districtnamenl": "इंदौर",
+        "districtnamesl": "इंदौर",
+        "langCode": "hin",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "34",
+        "districtname": "JABALPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "11",
+        "districtname": "JAGATSINGHPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "08",
+        "districtname": "JAGTIAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "12",
+        "districtname": "JAIPUR ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "16",
+        "districtname": "JAISALMER",
+        "cpsuId": " ",
+        "districtnamenl": "जैसलमेर",
+        "districtnamesl": "जैसलमेर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "13",
+        "districtname": "JAJAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "03",
+        "districtname": "Jalandhar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "34",
+        "districtname": "JALAUN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "03",
+        "districtname": "JALGAON",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "18",
+        "districtname": "JALNA ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "18",
+        "districtname": "JALOR",
+        "cpsuId": " ",
+        "districtnamenl": "जालोर",
+        "districtnamesl": "जालोर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "02",
+        "districtname": "JALPAIGURI",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "01",
+        "districtcode": "21",
+        "districtname": "JAMMU",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "10",
+        "districtname": "JAMNAGAR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "18",
+        "districtname": "JAMTARA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "36",
+        "districtname": "JAMUI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "26",
+        "districtname": "JANGAON",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "06",
+        "districtname": "JANJGIR - CHAMPA",
+        "cpsuId": " ",
+        "districtnamenl": "जांजगीर - चंपा",
+        "districtnamesl": "जांजगीर - चंपा",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "03",
+        "districtname": "JASHPUR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "63",
+        "districtname": "JAUNPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "29",
+        "districtname": "JAYASHANKAR BHUPALPALLY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "37",
+        "districtname": "JEHANABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "47",
+        "districtname": "JHABUA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "15",
+        "districtname": "JHAJJAR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "31",
+        "districtname": "JHALAWAR",
+        "cpsuId": " ",
+        "districtnamenl": "झालावाड़",
+        "districtnamesl": "झालावाड़",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "35",
+        "districtname": "JHANSI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "22",
+        "districtname": "JHARGRAM",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "02",
+        "districtname": "JHARSUGUDA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "05",
+        "districtname": "JHUNJHUNUN",
+        "cpsuId": " ",
+        "districtnamenl": "झुंझुनूं",
+        "districtnamesl": "झुंझुनूं",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "09",
+        "districtname": "JIND",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "12",
+        "districtname": "JIRIBAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "15",
+        "districtname": "JODHPUR",
+        "cpsuId": " ",
+        "districtnamenl": "जोधपुर",
+        "districtnamesl": "जोधपुर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "20",
+        "districtname": "JOGULAMBA GADWAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "13",
+        "districtname": "JORHAT",
+        "cpsuId": " ",
+        "districtnamenl": "जोरहाट",
+        "districtnamesl": "যোৰহাট",
+        "langCode": "ass",
+        "statenamesl": "অসম"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "12",
+        "districtname": "JUNAGADH",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "08",
+        "districtname": "KABEERDHAM",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "01",
+        "districtname": "KACHCHH",
+        "cpsuId": " ",
+        "districtnamenl": "कच्छ",
+        "districtnamesl": "કાચો",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "31",
+        "districtname": "KAIMUR (BHABUA)",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "05",
+        "districtname": "KAITHAL",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "10",
+        "districtname": "KAKCHING",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "25",
+        "districtname": "KALABURAGI",
+        "cpsuId": " ",
+        "districtnamenl": "गुल्बर्गा",
+        "districtnamesl": "ಗುಲ್ಬರ್ಗ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "26",
+        "districtname": "KALAHANDI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "21",
+        "districtname": "KALIMPONG",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "36",
+        "districtname": "KALLAKURICHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "06",
+        "districtname": "KAMAREDDY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "16",
+        "districtname": "KAMJONG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "19",
+        "districtname": "KAMLE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "22",
+        "districtname": "KAMRUP",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "23",
+        "districtname": "KAMRUP METROPOLITAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "03",
+        "districtname": "KANCHEEPURAM",
+        "cpsuId": " ",
+        "districtnamenl": "कांचीपुरम",
+        "districtnamesl": "காஞ்சிபுரம்",
+        "langCode": "tam",
+        "statenamesl": "தமிழ்நாடு"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "21",
+        "districtname": "KANDHAMAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "11",
+        "districtname": "KANGPOKPI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "02",
+        "districtcode": "02",
+        "districtname": "KANGRA",
+        "cpsuId": " ",
+        "districtnamenl": "कांगड़ा",
+        "districtnamesl": "कांगड़ा",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "29",
+        "districtname": "KANNAUJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "28",
+        "districtname": "KANNIYAKUMARI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "02",
+        "districtname": "KANNUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "32",
+        "districtname": "KANPUR DEHAT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "33",
+        "districtname": "KANPUR NAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "02",
+        "districtname": "Kapurthala",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "34",
+        "districtcode": "04",
+        "districtname": "KARAIKAL",
+        "cpsuId": " ",
+        "districtnamenl": "कराईकल",
+        "districtnamesl": "காரைக்கால்",
+        "langCode": "tam",
+        "statenamesl": "புதுச்சேரி"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "09",
+        "districtname": "KARAULI",
+        "cpsuId": " ",
+        "districtnamenl": "करौली",
+        "districtnamesl": "करौली",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "15",
+        "districtname": "KARBI ANGLONG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "37",
+        "districtcode": "02",
+        "districtname": "KARGIL",
+        "cpsuId": " ",
+        "statenamesl": "लद्दाख़ "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "18",
+        "districtname": "KARIMGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "10",
+        "districtname": "KARIMNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "06",
+        "districtname": "KARNAL",
+        "cpsuId": " ",
+        "districtnamenl": "करनाल",
+        "districtnamesl": "करनाल",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "12",
+        "districtname": "KARUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "01",
+        "districtname": "KASARAGOD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "71",
+        "districtname": "KASGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "07",
+        "districtname": "KATHUA",
+        "cpsuId": " ",
+        "districtnamenl": "कठुआ",
+        "districtnamesl": "کٹھوعہ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "10",
+        "districtname": "KATIHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "33",
+        "districtname": "KATNI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "43",
+        "districtname": "KAUSHAMBI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "10",
+        "districtname": "KENDRAPARA",
+        "cpsuId": " ",
+        "districtnamenl": "केंद्रपाड़ा",
+        "districtnamesl": "କେନ୍ଦ୍ରାପଡା ",
+        "langCode": "ori",
+        "statenamesl": "ଓଡ଼ିଶା "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "06",
+        "districtname": "KENDUJHAR",
+        "cpsuId": " ",
+        "districtnamenl": "केंदुझार",
+        "districtnamesl": "କେନ୍ଦୁଝର ",
+        "langCode": "ori",
+        "statenamesl": "ଓଡ଼ିଶା "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "21",
+        "districtname": "KHAGARIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "32",
+        "districtname": "KHAMMAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "10",
+        "districtname": "Khawzawl",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "16",
+        "districtname": "KHEDA",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "22",
+        "districtname": "KHERI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "17",
+        "districtname": "KHORDHA  ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "16",
+        "districtcode": "05",
+        "districtname": "KHOWAI",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "20",
+        "districtname": "KHUNTI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "02",
+        "districtcode": "12",
+        "districtname": "KINNAUR",
+        "cpsuId": " ",
+        "districtnamenl": "किन्नौर",
+        "districtnamesl": "किन्नौर",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "13",
+        "districtcode": "09",
+        "districtname": "KIPHIRE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "08",
+        "districtname": "KISHANGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "18",
+        "districtname": "KISHTWAR",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "22",
+        "districtname": "KODAGU",
+        "cpsuId": " ",
+        "districtnamenl": "कोडागू",
+        "districtnamesl": "ಕೊಡಗು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "03",
+        "districtname": "KODARMA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "10",
+        "districtname": "KOHIMA",
+        "cpsuId": " ",
+        "districtnamenl": "कोहिमा",
+        "districtnamesl": "Kohima",
+        "langCode": "eng",
+        "statenamesl": "NAGALAND"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "01",
+        "districtname": "KOKRAJHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "27",
+        "districtname": "KOLAR",
+        "cpsuId": " ",
+        "districtnamenl": "कोलार",
+        "districtnamesl": "ಕೋಲಾರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "15",
+        "districtcode": "02",
+        "districtname": "KOLASIB",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "34",
+        "districtname": "KOLHAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "16",
+        "districtname": "KOLKATA",
+        "cpsuId": " ",
+        "districtnamenl": "कोलकाता",
+        "districtnamesl": "কলকাতা",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "32",
+        "districtcode": "13",
+        "districtname": "KOLLAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "26",
+        "districtname": "KONDAGAON",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "06",
+        "districtname": "KOPPAL",
+        "cpsuId": " ",
+        "districtnamenl": "कोप्पल",
+        "districtnamesl": "ಕೊಪ್ಪಳ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "29",
+        "districtname": "KORAPUT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "05",
+        "districtname": "KORBA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "01",
+        "districtname": "KORIYA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "29",
+        "districtname": "KOTA",
+        "cpsuId": " ",
+        "districtnamenl": "कोटा",
+        "districtnamesl": "कोटा",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "32",
+        "districtcode": "10",
+        "districtname": "KOTTAYAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "04",
+        "districtname": "KOZHIKODE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "18",
+        "districtname": "KRA-DAADI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "28",
+        "districtcode": "06",
+        "districtname": "KRISHNA",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "30",
+        "districtname": "KRISHNAGIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "15",
+        "districtname": "KULGAM",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "04",
+        "districtname": "KULLU",
+        "cpsuId": " ",
+        "districtnamenl": "कुल्लू",
+        "districtnamesl": "कुल्लू",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "02",
+        "districtname": "KUMURAM BHEEM",
+        "cpsuId": " ",
+        "districtnamenl": "",
+        "districtnamesl": "",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "01",
+        "districtcode": "01",
+        "districtname": "KUPWARA",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "11",
+        "districtname": "KURNOOL",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "04",
+        "districtname": "KURUKSHETRA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "12",
+        "districtname": "KURUNG KUMEY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "58",
+        "districtname": "KUSHINAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "02",
+        "districtcode": "03",
+        "districtname": "LAHUL & SPITI",
+        "cpsuId": " ",
+        "districtnamenl": "लाहुल और स्पीति",
+        "districtnamesl": "लाहुल और स्पीति",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "08",
+        "districtname": "LAKHIMPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "25",
+        "districtname": "LAKHISARAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "31",
+        "districtcode": "01",
+        "districtname": "LAKSHADWEEP",
+        "cpsuId": " ",
+        "districtnamenl": "लक्षद्वीप",
+        "districtnamesl": "ലക്ഷദ്വീപ്",
+        "langCode": "mal",
+        "statenamesl": "ലക്ഷദ്വീപ്"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "36",
+        "districtname": "LALITPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "14",
+        "districtname": "LATEHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "28",
+        "districtname": "LATUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "07",
+        "districtname": "LAWNGTLAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "37",
+        "districtcode": "01",
+        "districtname": "LEH(LADAKH)",
+        "cpsuId": " ",
+        "statenamesl": "लद्दाख़ "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "21",
+        "districtname": "LEPARADA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "11",
+        "districtname": "LOHARDAGA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "15",
+        "districtname": "LOHIT ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "24",
+        "districtname": "LONGDING",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "08",
+        "districtname": "LONGLENG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "14",
+        "districtname": "LOWER DIBANG VALLEY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "20",
+        "districtname": "LOWER SIANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "11",
+        "districtname": "LOWER SUBANSIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "26",
+        "districtname": "LUCKNOW",
+        "cpsuId": " ",
+        "districtnamenl": "लखनऊ",
+        "districtnamesl": "लखनऊ",
+        "langCode": "hin",
+        "statenamesl": "उत्तर प्रदॆश"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "07",
+        "districtname": "Ludhiana",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "06",
+        "districtname": "LUNGLEI",
+        "cpsuId": " ",
+        "districtnamenl": "लुंगलेई",
+        "districtnamesl": "Lunglei",
+        "langCode": "eng",
+        "statenamesl": "MIZORAM"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "11",
+        "districtname": "MADHEPURA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "05",
+        "districtname": "MADHUBANI",
+        "cpsuId": " ",
+        "districtnamenl": "मधुबनी",
+        "districtnamesl": "मधुबनी",
+        "langCode": "hin",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "22",
+        "districtname": "MADURAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "31",
+        "districtname": "MAHABUBABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "18",
+        "districtname": "MAHABUBNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "12",
+        "districtname": "MAHASAMUND",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "34",
+        "districtcode": "03",
+        "districtname": "MAHE",
+        "cpsuId": " ",
+        "districtnamenl": "माहे",
+        "districtnamesl": "മാഹി",
+        "langCode": "mal",
+        "statenamesl": "പുതുച്ചേരി"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "16",
+        "districtname": "MAHENDRAGARH",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "04",
+        "districtname": "MAHESANA",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "32",
+        "districtname": "MAHISAGAR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "38",
+        "districtname": "MAHOBA",
+        "cpsuId": " ",
+        "districtnamenl": "महोबा",
+        "districtnamesl": "महोबा",
+        "langCode": "hin",
+        "statenamesl": "उत्तर प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "56",
+        "districtname": "MAHRAJGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "17",
+        "districtname": "MAINPURI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "29",
+        "districtname": "MAJULI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "05",
+        "districtname": "MALAPPURAM",
+        "cpsuId": " ",
+        "districtnamenl": "मलप्पुरम",
+        "districtnamesl": "മലപ്പുറം",
+        "langCode": "mal",
+        "statenamesl": "കേരളം"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "06",
+        "districtname": "MALDA",
+        "cpsuId": " ",
+        "districtnamenl": "मालदह",
+        "districtnamesl": "মালদহ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "30",
+        "districtname": "MALKANGIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "01",
+        "districtname": "MAMIT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "03",
+        "districtname": "MANCHERIAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "02",
+        "districtcode": "05",
+        "districtname": "MANDI",
+        "cpsuId": " ",
+        "districtnamenl": "मंडी",
+        "districtnamesl": "मंडी",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "37",
+        "districtname": "MANDLA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "16",
+        "districtname": "MANDSAUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "19",
+        "districtname": "MANDYA",
+        "cpsuId": " ",
+        "districtnamenl": "मण्डया",
+        "districtnamesl": "ಮಂಡ್ಯ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "13",
+        "districtname": "Mansa",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "14",
+        "districtname": "MATHURA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "61",
+        "districtname": "MAU",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "07",
+        "districtname": "MAYURBHANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "12",
+        "districtname": "MEDAK",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "14",
+        "districtname": "MEDCHAL-MALKAJGIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "07",
+        "districtname": "MEERUT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "68",
+        "districtname": "MIRZAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "08",
+        "districtname": "Moga",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "02",
+        "districtname": "MOKOKCHUNG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "01",
+        "districtname": "MON",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "04",
+        "districtname": "MORADABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "28",
+        "districtname": "MORBI",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "02",
+        "districtname": "MORENA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "05",
+        "districtname": "MORIGAON",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "30",
+        "districtname": "MULUGU",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "23",
+        "districtname": "MUMBAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "22",
+        "districtname": "MUMBAI SUBURBAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "21",
+        "districtname": "MUNGELI",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "24",
+        "districtname": "MUNGER",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "07",
+        "districtname": "MURSHIDABAD",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "02",
+        "districtname": "MUZAFFARNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "14",
+        "districtname": "MUZAFFARPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "23",
+        "districtname": "MYSURU",
+        "cpsuId": " ",
+        "districtnamenl": "मैसूर",
+        "districtnamesl": "ಮೈಸೂರು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "28",
+        "districtname": "NABARANGAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "10",
+        "districtname": "NADIA",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "06",
+        "districtname": "NAGAON",
+        "cpsuId": " ",
+        "districtnamenl": "नौगांव",
+        "districtnamesl": "নগাঁও",
+        "langCode": "ass",
+        "statenamesl": "অসম"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "17",
+        "districtname": "NAGAPATTINAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "22",
+        "districtname": "NAGARKURNOOL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "14",
+        "districtname": "NAGAUR",
+        "cpsuId": " ",
+        "districtnamenl": "नागौर",
+        "districtnamesl": "नागौर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "09",
+        "districtname": "NAGPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "11",
+        "districtname": "NAINITAL",
+        "cpsuId": " ",
+        "districtnamenl": "नैनीताल",
+        "districtnamesl": "नैनीताल",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "27",
+        "districtname": "NALANDA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "24",
+        "districtname": "NALBARI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "23",
+        "districtname": "NALGONDA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "08",
+        "districtname": "NAMAKKAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "17",
+        "districtname": "NAMSAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "15",
+        "districtname": "NANDED",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "01",
+        "districtname": "NANDURBAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "19",
+        "districtname": "NARAYANPET",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "16",
+        "districtname": "NARAYANPUR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "20",
+        "districtname": "NARMADA",
+        "cpsuId": " ",
+        "districtnamenl": "नर्मदा",
+        "districtnamesl": "નર્મદા",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "35",
+        "districtname": "NARSIMHAPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "20",
+        "districtname": "NASHIK",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "23",
+        "districtname": "NAVSARI",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "35",
+        "districtname": "NAWADA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "16",
+        "districtname": "NAYAGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "15",
+        "districtname": "NEEMUCH",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "07",
+        "districtcode": "05",
+        "districtname": "NEW DELHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "35",
+        "districtcode": "01",
+        "districtname": "Nicobars",
+        "cpsuId": " ",
+        "districtnamenl": "निकोबार",
+        "districtnamesl": "निकोबार",
+        "langCode": "hin",
+        "statenamesl": "अंडमान और निकोबार द्वीप"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "04",
+        "districtname": "NIRMAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "52",
+        "districtname": "NIWARI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "05",
+        "districtname": "NIZAMABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "13",
+        "districtname": "NONEY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "02",
+        "districtname": "NORTH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "11",
+        "districtname": "NORTH 24 PARGANAS",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "11",
+        "districtcode": "01",
+        "districtname": "NORTH DISTRICT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "03",
+        "districtname": "NORTH-EAST",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "17",
+        "districtcode": "08",
+        "districtname": "NORTH GARO HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "30",
+        "districtcode": "01",
+        "districtname": "NORTH GOA",
+        "cpsuId": " ",
+        "districtnamenl": "",
+        "districtnamesl": "",
+        "langCode": "hin",
+        "statenamesl": "गॊवा"
+    },
+    {
+        "statecode": "16",
+        "districtcode": "04",
+        "districtname": "NORTH TRIPURA",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "07",
+        "districtcode": "01",
+        "districtname": "NORTH WEST",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "35",
+        "districtcode": "02",
+        "districtname": "North  & Middle Andaman",
+        "cpsuId": " ",
+        "districtnamenl": "उत्तर और मध्य अंडमान",
+        "districtnamesl": "उत्तर और मध्य अंडमान",
+        "langCode": "hin",
+        "statenamesl": "अंडमान और निकोबार द्वीप"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "25",
+        "districtname": "NUAPADA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "19",
+        "districtname": "NUH",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "29",
+        "districtname": "OSMANABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "25",
+        "districtname": "PAKKE-KESSANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "08",
+        "districtname": "PAKUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "06",
+        "districtname": "PALAKKAD",
+        "cpsuId": " ",
+        "districtnamenl": "पालाक्कड़",
+        "districtnamesl": "പാലക്കാട്",
+        "langCode": "mal",
+        "statenamesl": "കേരളം"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "13",
+        "districtname": "PALAMU",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "36",
+        "districtname": "Palghar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "20",
+        "districtname": "PALI",
+        "cpsuId": " ",
+        "districtnamenl": "पाली",
+        "districtnamesl": "पाली",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "21",
+        "districtname": "PALWAL",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "01",
+        "districtname": "PANCHKULA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "17",
+        "districtname": "PANCH MAHALS",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "07",
+        "districtname": "PANIPAT",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "09",
+        "districtname": "PANNA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "04",
+        "districtname": "PAPUM PARE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "17",
+        "districtname": "PARBHANI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "23",
+        "districtname": "PASCHIM BARDHAMAN",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "18",
+        "districtname": "PASCHIM MEDINIPUR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "01",
+        "districtname": "PASHCHIM CHAMPARAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "23",
+        "districtname": "PASHCHIMI SINGHBHUM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "03",
+        "districtname": "PATAN",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "32",
+        "districtcode": "12",
+        "districtname": "PATHANAMTHITTA",
+        "cpsuId": " ",
+        "districtnamenl": "पथानामथीट्टा",
+        "districtnamesl": "പത്തനംതിട്ട",
+        "langCode": "mal",
+        "statenamesl": "കേരളം"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "22",
+        "districtname": "Pathankot",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "14",
+        "districtname": "Patiala",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "28",
+        "districtname": "PATNA",
+        "cpsuId": " ",
+        "districtnamenl": "पटना",
+        "districtnamesl": "पटना",
+        "langCode": "hin",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "09",
+        "districtname": "PEDDAPALLI",
+        "cpsuId": " ",
+        "districtnamenl": "",
+        "districtnamesl": ""
+    },
+    {
+        "statecode": "33",
+        "districtcode": "14",
+        "districtname": "PERAMBALUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "11",
+        "districtname": "PEREN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "13",
+        "districtcode": "06",
+        "districtname": "PHEK",
+        "cpsuId": " ",
+        "districtnamenl": "फ़ेक",
+        "districtnamesl": "Phek",
+        "langCode": "eng",
+        "statenamesl": "NAGALAND"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "14",
+        "districtname": "PHERZAWL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "20",
+        "districtname": "PILIBHIT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "07",
+        "districtname": "PITHORAGARH",
+        "cpsuId": " ",
+        "districtnamenl": "पिथौरागढ़",
+        "districtnamesl": "पिथौरागढ़",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "11",
+        "districtname": "PORBANDAR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "08",
+        "districtname": "PRAKASAM",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "33",
+        "districtname": "PRATAPGARH",
+        "cpsuId": " ",
+        "districtnamenl": "प्रतापगढ़",
+        "districtnamesl": "प्रतापगढ़",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "42",
+        "districtname": "PRATAPGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "44",
+        "districtname": "PRAYAGRAJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "34",
+        "districtcode": "02",
+        "districtname": "PUDUCHERRY",
+        "cpsuId": " ",
+        "districtnamenl": "पुडुचेरी",
+        "districtnamesl": "புதுச்சேரி",
+        "langCode": "tam",
+        "statenamesl": "புதுச்சேரி"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "20",
+        "districtname": "PUDUKKOTTAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "12",
+        "districtname": "PULWAMA",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "01",
+        "districtcode": "05",
+        "districtname": "PUNCH",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "25",
+        "districtname": "PUNE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "09",
+        "districtname": "PURBA BARDHAMAN",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "02",
+        "districtname": "PURBA CHAMPARAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "19",
+        "districtname": "PURBA MEDINIPUR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "12",
+        "districtname": "PURBI SINGHBHUM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "18",
+        "districtname": "PURI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "09",
+        "districtname": "PURNIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "14",
+        "districtname": "PURULIA",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "27",
+        "districtname": "RAE BARELI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "05",
+        "districtname": "RAICHUR",
+        "cpsuId": " ",
+        "districtnamenl": "रायचूर",
+        "districtnamesl": "ರಾಯಚೂರು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "24",
+        "districtname": "RAIGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "04",
+        "districtname": "RAIGARH",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "11",
+        "districtname": "RAIPUR",
+        "cpsuId": " ",
+        "districtnamenl": "रायपुर",
+        "districtnamesl": "रायपुर",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "29",
+        "districtname": "RAISEN",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "07",
+        "districtname": "RAJANNA SIRCILLA",
+        "cpsuId": " ",
+        "districtnamenl": "",
+        "districtnamesl": "",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "01",
+        "districtcode": "06",
+        "districtname": "RAJAURI",
+        "cpsuId": " ",
+        "districtnamenl": "राजौरी",
+        "districtnamesl": "راجوری",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "25",
+        "districtname": "RAJGARH",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "09",
+        "districtname": "RAJKOT",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "09",
+        "districtname": "RAJNANDGAON",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "25",
+        "districtname": "RAJSAMAND",
+        "cpsuId": " ",
+        "districtnamenl": "राजसमंद",
+        "districtnamesl": "राजसमंद",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "30",
+        "districtname": "RAMANAGARA",
+        "cpsuId": " ",
+        "districtnamenl": "रामनगरा",
+        "districtnamesl": "ರಾಮನಗರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "25",
+        "districtname": "RAMANATHAPURAM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "17",
+        "districtname": "RAMBAN",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "16",
+        "districtname": "RAMGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "05",
+        "districtname": "RAMPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "19",
+        "districtname": "RANCHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "16",
+        "districtname": "RANGAREDDY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "34",
+        "districtname": "RANIPET",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "17",
+        "districtname": "RATLAM",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "32",
+        "districtname": "RATNAGIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "27",
+        "districtname": "RAYAGADA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "20",
+        "districtname": "REASI",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "13",
+        "districtname": "REWA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "17",
+        "districtname": "REWARI",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "05",
+        "districtname": "RI BHOI",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "14",
+        "districtname": "ROHTAK",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "32",
+        "districtname": "ROHTAS",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "03",
+        "districtname": "RUDRAPRAYAG",
+        "cpsuId": " ",
+        "districtnamenl": "रुद्रप्रयाग",
+        "districtnamesl": "रुद्रप्रयाग",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "17",
+        "districtname": "Rupnagar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "05",
+        "districtname": "SABAR KANTHA",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "10",
+        "districtname": "SAGAR",
+        "cpsuId": " ",
+        "districtnamenl": "सागर",
+        "districtnamesl": "सागर",
+        "langCode": "hin",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "01",
+        "districtname": "SAHARANPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "12",
+        "districtname": "SAHARSA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "07",
+        "districtname": "SAHIBGANJ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "18",
+        "districtname": "Sahibzada Ajit Singh Nagar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "08",
+        "districtname": "SAIHA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "15",
+        "districtcode": "09",
+        "districtname": "Saitual",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "07",
+        "districtname": "SALEM",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "19",
+        "districtname": "SAMASTIPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "22",
+        "districtname": "SAMBA",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "03",
+        "districtname": "SAMBALPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "73",
+        "districtname": "SAMBHAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "13",
+        "districtname": "SANGAREDDY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "35",
+        "districtname": "SANGLI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "03",
+        "districtcode": "19",
+        "districtname": "Sangrur",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "55",
+        "districtname": "SANT KABIR NAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "20",
+        "districtcode": "24",
+        "districtname": "SARAIKELA-KHARSAWAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "17",
+        "districtname": "SARAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "31",
+        "districtname": "SATARA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "12",
+        "districtname": "SATNA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "10",
+        "districtname": "SAWAI MADHOPUR",
+        "cpsuId": " ",
+        "districtnamenl": "सवाई माधोपुर",
+        "districtnamesl": "सवाई माधोपुर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "28",
+        "districtname": "SEHORE",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "01",
+        "districtname": "SENAPATI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "39",
+        "districtname": "SEONI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "16",
+        "districtcode": "06",
+        "districtname": "SEPAHIJALA",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "15",
+        "districtcode": "05",
+        "districtname": "SERCHHIP",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "10",
+        "districtname": "SHAHDARA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "43",
+        "districtname": "SHAHDOL",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "05",
+        "districtname": "Shahid Bhagat Singh Nagar",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "21",
+        "districtname": "SHAHJAHANPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "19",
+        "districtname": "SHAJAPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "72",
+        "districtname": "SHAMLI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "26",
+        "districtname": "SHEIKHPURA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "03",
+        "districtname": "SHEOHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "01",
+        "districtname": "SHEOPUR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "11",
+        "districtname": "SHIMLA",
+        "cpsuId": " ",
+        "districtnamenl": "शिमला",
+        "districtnamesl": "शिमला",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "14",
+        "districtname": "SHIVAMOGGA",
+        "cpsuId": " ",
+        "districtnamenl": "शिमोगा",
+        "districtnamesl": "ಶಿವಮೊಗ್ಗ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "06",
+        "districtname": "SHIVPURI",
+        "cpsuId": " ",
+        "districtnamenl": "शिवपुरी",
+        "districtnamesl": "शिवपुरी",
+        "langCode": "hin",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "22",
+        "districtname": "SHI-YOMI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "50",
+        "districtname": "SHRAWASTI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "13",
+        "districtname": "SHUPIYAN",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "23",
+        "districtname": "SIANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "53",
+        "districtname": "SIDDHARTHNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "11",
+        "districtname": "SIDDIPET",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "45",
+        "districtname": "SIDHI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "13",
+        "districtname": "SIKAR",
+        "cpsuId": " ",
+        "districtnamenl": "सीकर",
+        "districtnamesl": "सीकर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "20",
+        "districtcode": "22",
+        "districtname": "SIMDEGA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "33",
+        "districtname": "SINDHUDURG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "46",
+        "districtname": "SINGRAULI",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "10",
+        "districtname": "SIRMAUR",
+        "cpsuId": " ",
+        "districtnamenl": "सिरमौर",
+        "districtnamesl": "सिरमौर",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "19",
+        "districtname": "SIROHI",
+        "cpsuId": " ",
+        "districtnamenl": "सिरोही",
+        "districtnamesl": "सिरोही",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "11",
+        "districtname": "SIRSA",
+        "cpsuId": " ",
+        "districtnamenl": "सिरसा",
+        "districtnamesl": "सिरसा",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "04",
+        "districtname": "SITAMARHI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "23",
+        "districtname": "SITAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "21",
+        "districtname": "SIVAGANGA",
+        "cpsuId": " ",
+        "districtnamenl": "शिवगंगा",
+        "districtnamesl": "சிவகங்கை",
+        "langCode": "tam",
+        "statenamesl": "தமிழ்நாடு"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "12",
+        "districtname": "SIVASAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "16",
+        "districtname": "SIWAN",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "02",
+        "districtcode": "09",
+        "districtname": "SOLAN",
+        "cpsuId": " ",
+        "districtnamenl": "सोलन",
+        "districtnamesl": "सोलन",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "30",
+        "districtname": "SOLAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "09",
+        "districtcode": "69",
+        "districtname": "SONBHADRA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "06",
+        "districtcode": "08",
+        "districtname": "SONIPAT",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "07",
+        "districtname": "SONITPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "09",
+        "districtname": "SOUTH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "19",
+        "districtcode": "17",
+        "districtname": "SOUTH  24 PARGANAS",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "35",
+        "districtcode": "03",
+        "districtname": "SOUTH ANDAMAN",
+        "cpsuId": " ",
+        "districtnamenl": "दक्षिण अंडमान",
+        "districtnamesl": "दक्षिण अंडमान",
+        "langCode": "hin",
+        "statenamesl": "अंडमान और निकोबार द्वीप"
+    },
+    {
+        "statecode": "11",
+        "districtcode": "03",
+        "districtname": "SOUTH DISTRICT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "11",
+        "districtname": "SOUTH EAST",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "17",
+        "districtcode": "03",
+        "districtname": "SOUTH GARO HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "30",
+        "districtcode": "02",
+        "districtname": "SOUTH GOA",
+        "cpsuId": " ",
+        "districtnamenl": "दक्षिण गोवा",
+        "districtnamesl": "दक्षिण गोवा",
+        "langCode": "hin",
+        "statenamesl": "गॊवा"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "30",
+        "districtname": "SOUTH SALMARA MANKACHAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "16",
+        "districtcode": "02",
+        "districtname": "SOUTH TRIPURA",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "07",
+        "districtcode": "08",
+        "districtname": "SOUTH WEST",
+        "cpsuId": " ",
+        "districtnamenl": "दक्षिण पश्चिम",
+        "districtnamesl": "दक्षिण पश्चिम",
+        "langCode": "hin",
+        "statenamesl": "दिल्ली"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "11",
+        "districtname": "SOUTH WEST GARO HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "10",
+        "districtname": "SOUTH WEST KHASI HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "01",
+        "districtname": "SRIKAKULAM",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "10",
+        "districtname": "Sri Muktsar Sahib",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "10",
+        "districtname": "SRINAGAR",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "09",
+        "districtname": "SRI POTTI SRIRAMULU NELLORE",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "21",
+        "districtcode": "23",
+        "districtname": "SUBARNAPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "22",
+        "districtcode": "27",
+        "districtname": "SUKMA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "48",
+        "districtname": "SULTANPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "21",
+        "districtcode": "05",
+        "districtname": "SUNDERGARH",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "10",
+        "districtcode": "06",
+        "districtname": "SUPAUL",
+        "cpsuId": " ",
+        "districtnamenl": "सुपौल",
+        "districtnamesl": "सुपौल",
+        "langCode": "hin",
+        "statenamesl": "बिहार"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "19",
+        "districtname": "SURAJPUR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "25",
+        "districtname": "SURAT",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "08",
+        "districtname": "SURENDRANAGAR",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "02",
+        "districtname": "SURGUJA",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "24",
+        "districtname": "SURYAPET",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "02",
+        "districtname": "TAMENGLONG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "26",
+        "districtname": "TAPI",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "03",
+        "districtcode": "16",
+        "districtname": "Tarn Taran",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "01",
+        "districtname": "TAWANG ",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "05",
+        "districtcode": "04",
+        "districtname": "TEHRI GARHWAL",
+        "cpsuId": " ",
+        "districtnamenl": "टिहरी गढ़वाल",
+        "districtnamesl": "टिहरी गढ़वाल",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "15",
+        "districtname": "TENGNOUPAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "37",
+        "districtname": "TENKASI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "21",
+        "districtname": "THANE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "19",
+        "districtname": "THANJAVUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "22",
+        "districtname": "THE DANGS",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "23",
+        "districtname": "THENI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "10",
+        "districtname": "THE NILGIRIS",
+        "cpsuId": " ",
+        "districtnamenl": "नीलगिरी",
+        "districtnamesl": "யூக்கலிப்டஸ்",
+        "langCode": "tam",
+        "statenamesl": "தமிழ்நாடு"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "01",
+        "districtname": "THIRUVALLUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "14",
+        "districtname": "THIRUVANANTHAPURAM",
+        "cpsuId": " ",
+        "districtnamenl": "तिरुवनंतपुरम",
+        "districtnamesl": "തിരുവനന്തപുരം",
+        "langCode": "mal",
+        "statenamesl": "കേരളം"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "18",
+        "districtname": "THIRUVARUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "26",
+        "districtname": "THOOTHUKKUDI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "14",
+        "districtcode": "05",
+        "districtname": "THOUBAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "32",
+        "districtcode": "07",
+        "districtname": "THRISSUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "07",
+        "districtname": "TIKAMGARH",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "10",
+        "districtname": "TINSUKIA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "10",
+        "districtname": "TIRAP",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "13",
+        "districtname": "TIRUCHIRAPPALLI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "27",
+        "districtname": "TIRUNELVELI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "35",
+        "districtname": "TIRUPATHUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "32",
+        "districtname": "TIRUPPUR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "05",
+        "districtname": "TIRUVANNAMALAI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "08",
+        "districtcode": "22",
+        "districtname": "TONK",
+        "cpsuId": " ",
+        "districtnamenl": "टौंक",
+        "districtnamesl": "टौंक",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "13",
+        "districtcode": "07",
+        "districtname": "TUENSANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "17",
+        "districtname": "TUMAKURU",
+        "cpsuId": " ",
+        "districtnamenl": "तुमकुर",
+        "districtnamesl": "ತುಮಕೂರು",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "08",
+        "districtcode": "32",
+        "districtname": "UDAIPUR",
+        "cpsuId": " ",
+        "districtnamenl": "उदयपुर",
+        "districtnamesl": "उदयपुर",
+        "langCode": "hin",
+        "statenamesl": "राजस्थान"
+    },
+    {
+        "statecode": "18",
+        "districtcode": "27",
+        "districtname": "UDALGURI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "01",
+        "districtcode": "19",
+        "districtname": "UDHAMPUR",
+        "cpsuId": " ",
+        "langCode": "urd",
+        "statenamesl": "جموں و کشمیر"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "12",
+        "districtname": "UDHAM SINGH NAGAR",
+        "cpsuId": " ",
+        "districtnamenl": "ऊधम सिंह नगर",
+        "districtnamesl": "ऊधम सिंह नगर",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "15",
+        "districtname": "UDUPI",
+        "cpsuId": " ",
+        "districtnamenl": "उडुपी",
+        "districtnamesl": "ಉಡುಪಿ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "18",
+        "districtname": "UJJAIN",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "14",
+        "districtcode": "08",
+        "districtname": "UKHRUL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "14",
+        "districtname": "UMARIA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "02",
+        "districtcode": "07",
+        "districtname": "UNA",
+        "cpsuId": " ",
+        "districtnamenl": "यूना",
+        "districtnamesl": "यूना",
+        "langCode": "hin",
+        "statenamesl": "हिमाचल प्रदेश"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "25",
+        "districtname": "UNNAO",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "16",
+        "districtcode": "08",
+        "districtname": "UNOKATI",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "08",
+        "districtname": "UPPER SIANG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "12",
+        "districtcode": "05",
+        "districtname": "UPPER SUBANSIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "09",
+        "districtname": "UTTARA KANNADA",
+        "cpsuId": " ",
+        "districtnamenl": "उत्तर कन्नड़",
+        "districtnamesl": "ಉತ್ತರ ಕನ್ನಡ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "22",
+        "districtcode": "14",
+        "districtname": "UTTAR BASTAR KANKER",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "छत्तीसगढ़"
+    },
+    {
+        "statecode": "19",
+        "districtcode": "04",
+        "districtname": "UTTAR DINAJPUR",
+        "cpsuId": " ",
+        "langCode": "ben",
+        "statenamesl": "পশ্চিম বঙ্গ"
+    },
+    {
+        "statecode": "05",
+        "districtcode": "01",
+        "districtname": "UTTARKASHI",
+        "cpsuId": " ",
+        "districtnamenl": "उत्तरकाशी",
+        "districtnamesl": "उत्तरकाशी",
+        "langCode": "hin",
+        "statenamesl": "उत्तराखण्ड"
+    },
+    {
+        "statecode": "24",
+        "districtcode": "19",
+        "districtname": "VADODARA",
+        "cpsuId": " ",
+        "districtnamenl": "वडोदरा",
+        "districtnamesl": "વડોદરા",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "10",
+        "districtcode": "18",
+        "districtname": "VAISHALI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "24",
+        "districtcode": "24",
+        "districtname": "VALSAD",
+        "cpsuId": " ",
+        "langCode": "guj",
+        "statenamesl": "ગુજરાત"
+    },
+    {
+        "statecode": "09",
+        "districtcode": "66",
+        "districtname": "VARANASI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "04",
+        "districtname": "VELLORE",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "23",
+        "districtcode": "26",
+        "districtname": "VIDISHA",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "29",
+        "districtcode": "03",
+        "districtname": "VIJAYAPURA",
+        "cpsuId": " ",
+        "districtnamenl": "बीजापुर",
+        "districtnamesl": "ಬಿಜಾಪುರ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "17",
+        "districtname": "VIKARABAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "33",
+        "districtcode": "06",
+        "districtname": "VILUPPURAM",
+        "cpsuId": " ",
+        "districtnamenl": "विलुपपुरम",
+        "districtnamesl": "விழுப்புரம்",
+        "langCode": "tam",
+        "statenamesl": "தமிழ்நாடு"
+    },
+    {
+        "statecode": "33",
+        "districtcode": "24",
+        "districtname": "VIRUDHUNAGAR",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "28",
+        "districtcode": "03",
+        "districtname": "VISAKHAPATNAM",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "02",
+        "districtname": "VIZIANAGARAM",
+        "cpsuId": " ",
+        "districtnamenl": "विजयनगरम",
+        "districtnamesl": "విజయనగరం",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "36",
+        "districtcode": "21",
+        "districtname": "WANAPARTHY",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "27",
+        "districtname": "WARANGAL (RURAL)",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "28",
+        "districtname": "WARANGAL (URBAN)",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "08",
+        "districtname": "WARDHA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "27",
+        "districtcode": "06",
+        "districtname": "WASHIM",
+        "cpsuId": " ",
+        "districtnamenl": "वाशिम",
+        "districtnamesl": "वाशिम",
+        "langCode": "mar",
+        "statenamesl": "महाराष्ट्र"
+    },
+    {
+        "statecode": "32",
+        "districtcode": "03",
+        "districtname": "WAYANAD",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "07",
+        "districtcode": "07",
+        "districtname": "WEST",
+        "cpsuId": " ",
+        "districtnamenl": "पश्चिम",
+        "districtnamesl": "पश्चिम",
+        "langCode": "hin",
+        "statenamesl": "दिल्ली"
+    },
+    {
+        "statecode": "11",
+        "districtcode": "02",
+        "districtname": "WEST DISTRICT",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "17",
+        "districtcode": "01",
+        "districtname": "WEST GARO HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "28",
+        "districtcode": "05",
+        "districtname": "WEST GODAVARI",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "17",
+        "districtcode": "07",
+        "districtname": "WEST JAINTIA HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "02",
+        "districtname": "WEST KAMENG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "18",
+        "districtcode": "33",
+        "districtname": "WEST KARBI ANGLONG",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "17",
+        "districtcode": "04",
+        "districtname": "WEST KHASI HILLS",
+        "cpsuId": " ",
+        "langCode": "eng",
+        "statenamesl": "MEGHALAYA"
+    },
+    {
+        "statecode": "23",
+        "districtcode": "23",
+        "districtname": "WEST NIMAR",
+        "cpsuId": " ",
+        "statenamesl": "मध्य प्रदॆश"
+    },
+    {
+        "statecode": "12",
+        "districtcode": "06",
+        "districtname": "WEST SIANG",
+        "cpsuId": " ",
+        "districtnamenl": "पश्चिम सियांग",
+        "districtnamesl": "West Siang",
+        "langCode": "eng",
+        "statenamesl": "ARUNACHAL PRADESH"
+    },
+    {
+        "statecode": "16",
+        "districtcode": "01",
+        "districtname": "WEST TRIPURA",
+        "cpsuId": " ",
+        "districtnamenl": "पश्चिम त्रिपुरा",
+        "districtnamesl": "পশ্চিম ত্রিপুরা",
+        "langCode": "ben",
+        "statenamesl": "ত্রিপুরা"
+    },
+    {
+        "statecode": "13",
+        "districtcode": "04",
+        "districtname": "WOKHA",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "36",
+        "districtcode": "25",
+        "districtname": "YADADRI BHUVANAGIRI",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "29",
+        "districtcode": "26",
+        "districtname": "YADGIR",
+        "cpsuId": " ",
+        "districtnamenl": "यादगीर",
+        "districtnamesl": "ಯಾದಗಿರಿ",
+        "langCode": "kan",
+        "statenamesl": "ಕರ್ನಾಟಕ"
+    },
+    {
+        "statecode": "06",
+        "districtcode": "03",
+        "districtname": "YAMUNA NAGAR",
+        "cpsuId": " ",
+        "langCode": "hin",
+        "statenamesl": "हरियाणा"
+    },
+    {
+        "statecode": "34",
+        "districtcode": "01",
+        "districtname": "YANAM",
+        "cpsuId": " ",
+        "districtnamenl": "यनम",
+        "districtnamesl": "యానాం",
+        "langCode": "tel",
+        "statenamesl": "పుదుచ్చేరి"
+    },
+    {
+        "statecode": "27",
+        "districtcode": "14",
+        "districtname": "YAVATMAL",
+        "cpsuId": " "
+    },
+    {
+        "statecode": "28",
+        "districtcode": "10",
+        "districtname": "Y.S.R.",
+        "cpsuId": " ",
+        "langCode": "tel",
+        "statenamesl": "ఆంధ్ర ప్రదేశ్"
+    },
+    {
+        "statecode": "13",
+        "districtcode": "03",
+        "districtname": "ZUNHEBOTO",
+        "cpsuId": " "
+    }
+]

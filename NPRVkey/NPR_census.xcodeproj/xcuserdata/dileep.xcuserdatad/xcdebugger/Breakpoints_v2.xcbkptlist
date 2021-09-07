@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B504AB84-0E33-4ABD-BD3F-BBB1548E8D27"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B0CC8B6-4181-41DB-B6D8-A4DDB46BA711"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerHousehold.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "saveNewHouseHold(formClass:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2BD7087-5E16-4BCC-9975-336D54008AA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerHousehold.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "saveNewHouseHold(formClass:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FA6E25E-6C07-4307-9559-4EC3E0B97E1D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerHousehold.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "checkHHCompleted(houseHoldNumber:completionType:Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F2A7653-66CC-40A4-B4D2-04AF5AA951CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseholdMemberDetail/HouseholdMemberDetail_ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "btn_addMember_action(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02738B49-61BF-4B17-9C0F-90996E3A8C3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/AddnewHouseHoldFormVC/AddnewHousHoldForm_Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getNewMemberSerialNumber(hhNumber:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34C68EBF-5136-4C7A-BFB8-B050C4B16DD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/AsignEB_VC/AssignEBViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "getDBEbList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50E9B27D-5066-4D79-AE42-7DE79377EF60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerMemberDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "saveHHMemberDetail(hhModel:Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0A16D8F-E992-4253-A82A-8C5236A92D37"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/AsignEB_VC/AssignEBViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "navigateToMainScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EFDD844-E8E8-45E9-AA64-E3BEDA0190AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "btnNext_action(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EFDD844-E8E8-45E9-AA64-E3BEDA0190AC - 59e59eb6ed7691c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.SplitHouseHold_VC.btnNext_action(__C.UIButton) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Desktop/NPR-2021-408c02d1c9767f1459af4a7f62f69374786b5c4a%202/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "6EFDD844-E8E8-45E9-AA64-E3BEDA0190AC - bbd5f69d1233455"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in NPR_2020.SplitHouseHold_VC.btnNext_action(__C.UIButton) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Desktop/NPR-2021-408c02d1c9767f1459af4a7f62f69374786b5c4a%202/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E5079AE-F977-4DE8-A6B6-A0B0B88580E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "viewPrepare()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C790A93B-C111-49C7-9511-93F81CD87A7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "featchHHMembers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C790A93B-C111-49C7-9511-93F81CD87A7D - d9f1ecf1829138b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.SplitHouseHold_VC.featchHHMembers() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "213">
+               </Location>
+               <Location
+                  uuid = "C790A93B-C111-49C7-9511-93F81CD87A7D - 4d90506aae9f8ce8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;NPR_2020.NPR2021MemberDetails&gt;) -&gt; () in NPR_2020.SplitHouseHold_VC.featchHHMembers() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E79B58D-73B5-4EC4-AB89-7EB124DCACE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "createNewHouseHold(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F11BD7D-0AB4-44F4-A9E5-37D8FE36CCCE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "insertMembersNewHH(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D5C85E2-6208-4B9D-9336-99AE666AA41B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "updateHHMemberAfterSplited(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0530F3B3-36C0-4BB6-A6AA-EEA77E58A7BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "updateHHMemberAfterSplited(Completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0530F3B3-36C0-4BB6-A6AA-EEA77E58A7BA - ae7089630e2b6bbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.SplitHouseHold_VC.updateHHMemberAfterSplited(Completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "127">
+               </Location>
+               <Location
+                  uuid = "0530F3B3-36C0-4BB6-A6AA-EEA77E58A7BA - d309359b2f6ef99f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NPR_2020.NPR2021MemberDetails) -&gt; Swift.Bool in NPR_2020.SplitHouseHold_VC.updateHHMemberAfterSplited(Completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C40AE4A1-A39D-46B0-AB67-122A4CFB04A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "btnNext_action(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5CA1FE0-408E-47A5-909E-409FAC2BFCBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "btnNext_action(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A5CA1FE0-408E-47A5-909E-409FAC2BFCBA - bbd5f69d1233474"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in NPR_2020.SplitHouseHold_VC.btnNext_action(__C.UIButton) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Desktop/NPR-2021-408c02d1c9767f1459af4a7f62f69374786b5c4a%202/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "A5CA1FE0-408E-47A5-909E-409FAC2BFCBA - 8be055c51372e050"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Bool) -&gt; () in NPR_2020.SplitHouseHold_VC.btnNext_action(__C.UIButton) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Desktop/NPR-2021-408c02d1c9767f1459af4a7f62f69374786b5c4a%202/NPR_census/ViewControllers/HouseHoldSplitting/SplitHouseHold_VC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "179">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FC37904-F790-4CEB-AC3D-635FF49916B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "updateHHAfterSplit(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E0175F4-3DC3-4DF1-B3E6-CBCAC6C7EB94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "updateHHAfterSplit(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F881AEBC-528F-48C3-9ECF-D97E15682841"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "updateHHMemberAfterSplited(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E610548-A5C7-4825-B47A-F2BAD70B00D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/HouseHoldSplitting/Extension+SplitHouseHold_VC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "updateHHMemberAfterSplited(Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F216ACA6-865E-46BB-89D2-52ADCA2A793C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/EnumeretorLoginVC/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "customize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28890443-9192-4D63-B260-517EEC48E7AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/AsignEB_VC/AssignEBViewController+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "onTapAgree()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96D13142-BB9A-4276-BD3F-0684001CAD23"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/InCompleteHouseHold_vc/IncompleteHouseholdViewController+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "onTapSkip(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "667DEE55-6ADA-4F3D-BABD-7C83FDDFB8CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
+            landmarkName = "getEBList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "667DEE55-6ADA-4F3D-BABD-7C83FDDFB8CF - a4e69314d6555d8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.EnumeratorSignatureViewController.getEBList() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "667DEE55-6ADA-4F3D-BABD-7C83FDDFB8CF - 34a3e84e5ead3c45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Any, Swift.Optional&lt;NPR_2020.CustomServiceError&gt;) -&gt; () in NPR_2020.EnumeratorSignatureViewController.getEBList() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E999F80-525E-445F-8136-7991C63ABC08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
+            landmarkName = "requestForUpload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "196569CA-A0CC-4213-A343-AADC22BA1B94"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "576"
+            endingLineNumber = "576"
+            landmarkName = "requestForEBStartDate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "672F3F56-4674-4A6F-B3A6-CA5611916F2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
+            landmarkName = "requestForExpectedHouseHold()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A2606C8-2A52-435B-92CF-84DB2E2E39DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "651"
+            endingLineNumber = "651"
+            landmarkName = "requestForUpload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCDC6372-F49B-4C40-B33B-24541F075A20"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "getAllResidentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B868E4A-2CBE-45AF-8138-288F0C0E6CA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "fetchedMemberDetailData(modelSelectedHH:Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C426EFD-43A3-45D3-ABCC-742CE6E93065"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "fetchedMemberDetailData(modelSelectedHH:Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7364EC2C-0580-4F8C-B80C-B92B34514EA2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "geAllCompletedHouseHold()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4771FF7-071F-47EB-8466-57796995F9A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
+            landmarkName = "getAllResidentData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDAE906F-E632-4EE6-B50C-DDEC9BE0DDCC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/SignatureVC/EnumeratorSignatureViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "662"
+            endingLineNumber = "662"
+            landmarkName = "requestForUpload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B571F0D0-CF8A-464C-9696-484E8350A985"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/TableViewCell/HoldMemberDetail/HouseHoldDetail_TVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "cellPutValues(memberDetailModel:headGender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A9190A8-F630-4FAD-A1FA-8136E610BF79"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/InCompleteHouseHold_vc/IncompleteHouseholdViewController+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "onTapOK(statusSelectedCode:skipSelectedStatus:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "874B157A-DD27-4BD9-9A65-28BE832E146C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Utils/Utils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "memberStatus_dependOn_hhStatus(hhStatus:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "095D0E34-2BBA-417F-B592-656B0E5B859C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/InCompleteHouseHold_vc/IncompleteHouseholdViewController+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "alertTapedYes()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "095D0E34-2BBA-417F-B592-656B0E5B859C - eb359f09c59b444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.IncompleteHouseholdViewController.alertTapedYes() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/ViewControllers/InCompleteHouseHold_vc/IncompleteHouseholdViewController+Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "095D0E34-2BBA-417F-B592-656B0E5B859C - fd430660239dcde9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in NPR_2020.IncompleteHouseholdViewController.alertTapedYes() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/ViewControllers/InCompleteHouseHold_vc/IncompleteHouseholdViewController+Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62912D75-2572-48D8-B243-2C7079D3BD10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerMemberDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "updateMemberStatusAfterSkipHH(hhModel:hhStatus:Completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62912D75-2572-48D8-B243-2C7079D3BD10 - b7503f32d6a2bdf7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NPR_2020.DBManagerMemberDetail.updateMemberStatusAfterSkipHH(hhModel: NPR_2020.NPR_2021hh_Details, hhStatus: Swift.String, Completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerMemberDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "234">
+               </Location>
+               <Location
+                  uuid = "62912D75-2572-48D8-B243-2C7079D3BD10 - 946761eaf3423d14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;NPR_2020.NPR2021MemberDetails&gt;) -&gt; () in NPR_2020.DBManagerMemberDetail.updateMemberStatusAfterSkipHH(hhModel: NPR_2020.NPR_2021hh_Details, hhStatus: Swift.String, Completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Dropbox/My%20Mac%20(Dileep%E2%80%99s%20MacBook%20Air)/Documents/NPR_census/NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerMemberDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "167">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5BB4A5AA-EB9B-482E-9DAE-D1F34072B681"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/NPRComponents/Constant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "shortCode()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3525D17-395F-4852-8980-C8F2E0FF9E0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/DataBaseManager/DBManager_2019MemberDetail/DBManagerMemberDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
+            landmarkName = "updateMemberStatusAfterSkipHH(hhModel:hhStatus:Completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58A6CDE0-6930-44C2-8491-DB999C990A32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/EnumeretorLoginVC/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "onTapSignIn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "339C3CA6-667B-4F05-9D53-6F52D866E89C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/ViewControllers/EnumeretorLoginVC/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "requestForEnrollement()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "339C3CA6-667B-4F05-9D53-6F52D866E89C - 56d7e2696ab54fe5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Any, Swift.Optional&lt;NPR_2020.CustomServiceError&gt;) -&gt; () in NPR_2020.LoginViewController.requestForEnrollement() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/EnumeretorLoginVC/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "339C3CA6-667B-4F05-9D53-6F52D866E89C - 8223ed907c84ceb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Bool, Any, Swift.Optional&lt;NPR_2020.CustomServiceError&gt;) -&gt; () in NPR_2020.LoginViewController.requestForEnrollement() -&gt; ()"
+                  moduleName = "NPR-2020"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dileep/Documents/NPR_census/NPR_census/ViewControllers/EnumeretorLoginVC/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EAEED26-2373-45F4-965E-FE08CACF4F27"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NPR_census/Helper/API Handler/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "request(_:httpMethod:apiType:parameter:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
