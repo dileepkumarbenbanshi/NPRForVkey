@@ -29,9 +29,12 @@ extension EB {
     @NSManaged public var ebEnumeratorName_mobile: String?
     @NSManaged public var ebExpHHNO: String?
     @NSManaged public var ebEnumeratorStartTime: String?
+    @NSManaged public var ebInHabitedPopUpCount: Int16
     @NSManaged public var ebState_code: String?
     @NSManaged public var ebState_name: String?
     @NSManaged public var ebState_nameSL: String?
+    @NSManaged public var ebEndDate: String?
+    @NSManaged public var ebStartDate: String?
     @NSManaged public var ebSubEB_code: String?
     @NSManaged public var ebSupervisor: String?
     @NSManaged public var ebSupervisor_mibile: String?
@@ -51,11 +54,13 @@ extension EB {
     @NSManaged public var is_InHavitedEB: Bool
     
     @NSManaged public var is_eb_completed: Bool
+    @NSManaged public var is_eb_uploaded: Bool
     @NSManaged public var is_eb_downloaded: Bool
     @NSManaged public var superVisor_eb_comletion_date: String?
     @NSManaged public var supervisor_is_eb_completed: String?
     @NSManaged public var ebEnumerator: String?
-       @NSManaged public var ebEnumStartOn: String?
+    @NSManaged public var ebEnumStartOn: String?
+    @NSManaged public var ebEbCompletedOn: String?
     @NSManaged public var supervisor_sign: Data?
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -23,11 +23,15 @@
         <attribute name="ebDistrict_code" optional="YES" attributeType="String"/>
         <attribute name="ebDistrict_name" optional="YES" attributeType="String"/>
         <attribute name="ebDistrict_nameSL" optional="YES" attributeType="String"/>
+        <attribute name="ebEbCompletedOn" optional="YES" attributeType="String"/>
+        <attribute name="ebEndDate" optional="YES" attributeType="String"/>
         <attribute name="ebEnumerator" optional="YES" attributeType="String"/>
         <attribute name="ebEnumeratorName_mobile" optional="YES" attributeType="String"/>
         <attribute name="ebEnumeratorStartTime" optional="YES" attributeType="String"/>
         <attribute name="ebEnumStartOn" optional="YES" attributeType="String"/>
         <attribute name="ebExpHHNO" optional="YES" attributeType="String"/>
+        <attribute name="ebInHabitedPopUpCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ebStartDate" optional="YES" attributeType="String"/>
         <attribute name="ebState_code" optional="YES" attributeType="String"/>
         <attribute name="ebState_name" optional="YES" attributeType="String"/>
         <attribute name="ebState_nameSL" optional="YES" attributeType="String"/>
@@ -48,58 +52,104 @@
         <attribute name="expectedHH_number" optional="YES" attributeType="String"/>
         <attribute name="is_eb_completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="is_eb_downloaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="is_eb_uploaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="is_InHavitedEB" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="is_superVisor_login" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="superVisor_eb_comletion_date" optional="YES" attributeType="String"/>
         <attribute name="supervisor_is_eb_completed" optional="YES" attributeType="String"/>
         <attribute name="supervisor_sign" optional="YES" attributeType="Binary"/>
     </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="HLOData" representedClassName="HLOData" syncable="YES">
         <attribute name="block_no" optional="YES" attributeType="String"/>
         <attribute name="census_hh_no" optional="YES" attributeType="String"/>
         <attribute name="census_house_no" optional="YES" attributeType="String"/>
         <attribute name="eb_name" optional="YES" attributeType="String"/>
+        <attribute name="ebNumber" optional="YES" attributeType="String"/>
         <attribute name="head_name" optional="YES" attributeType="String"/>
+        <attribute name="head_name_sl" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
     </entity>
     <entity name="NPR_2021hh_Details" representedClassName="NPR_2021hh_Details" syncable="YES">
+        <attribute name="addressBlockId" optional="YES" attributeType="String"/>
+        <attribute name="addressContry" optional="YES" attributeType="String"/>
+        <attribute name="addressCountryName" optional="YES" attributeType="String"/>
+        <attribute name="addressCountryName_sl" optional="YES" attributeType="String"/>
+        <attribute name="addressDistrict" optional="YES" attributeType="String"/>
+        <attribute name="addressDistrictName" optional="YES" attributeType="String"/>
+        <attribute name="addressDistrictName_sl" optional="YES" attributeType="String"/>
+        <attribute name="addressHNLocality" optional="YES" attributeType="String"/>
+        <attribute name="addressHNLocality_sl" optional="YES" attributeType="String"/>
+        <attribute name="addressPinCode" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="addressState" optional="YES" attributeType="String"/>
+        <attribute name="addressStateName" optional="YES" attributeType="String"/>
+        <attribute name="addressStateName_sl" optional="YES" attributeType="String"/>
+        <attribute name="addressSubDistrict" optional="YES" attributeType="String"/>
+        <attribute name="addressSubDistrictName" optional="YES" attributeType="String"/>
+        <attribute name="addressSubDistrictName_sl" optional="YES" attributeType="String"/>
+        <attribute name="addressWardID" optional="YES" attributeType="String"/>
         <attribute name="block_no" optional="YES" attributeType="String"/>
         <attribute name="census_hhNo" optional="YES" attributeType="String"/>
         <attribute name="census_hNo" optional="YES" attributeType="String"/>
         <attribute name="discrictCode" optional="YES" attributeType="String"/>
         <attribute name="ebNumber" optional="YES" attributeType="String"/>
+        <attribute name="first_name" optional="YES" attributeType="String"/>
+        <attribute name="first_name_sl" optional="YES" attributeType="String"/>
         <attribute name="h_id" optional="YES" attributeType="String"/>
         <attribute name="head_DOB" optional="YES" attributeType="String"/>
         <attribute name="headGenderID" optional="YES" attributeType="String"/>
         <attribute name="headName" optional="YES" attributeType="String"/>
+        <attribute name="headName_sl" optional="YES" attributeType="String"/>
         <attribute name="hh_completed" optional="YES" attributeType="String"/>
         <attribute name="hh_id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="hh_status" optional="YES" attributeType="String"/>
         <attribute name="hh_tin" optional="YES" attributeType="String"/>
-        <attribute name="hhType" optional="YES" attributeType="String"/>
+        <attribute name="hhType" optional="YES" attributeType="String" defaultValueString="1"/>
         <attribute name="houseHoldhNo" optional="YES" attributeType="String"/>
         <attribute name="houseNo" optional="YES" attributeType="String"/>
+        <attribute name="instituteName" optional="YES" attributeType="String"/>
+        <attribute name="instituteName_sl" optional="YES" attributeType="String"/>
         <attribute name="is_sign_updated" optional="YES" attributeType="String"/>
         <attribute name="is_Splited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="is_superVisor_login" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isDownloaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isInEnglish" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isOpen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="languageSort" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="lastName_sl" optional="YES" attributeType="String"/>
+        <attribute name="midle_name" optional="YES" attributeType="String"/>
+        <attribute name="midle_name_sl" optional="YES" attributeType="String"/>
+        <attribute name="occuName_sl" optional="YES" attributeType="String"/>
+        <attribute name="originalHHNumberSplit" optional="YES" attributeType="String"/>
+        <attribute name="originalHHSplitInto" optional="YES" attributeType="String"/>
         <attribute name="respondentName" optional="YES" attributeType="String"/>
+        <attribute name="respondentName_sl" optional="YES" attributeType="String"/>
+        <attribute name="respondentSign" optional="YES" attributeType="Binary"/>
+        <attribute name="signByEnumBehalfRespondant" optional="YES" attributeType="String"/>
+        <attribute name="signRespondet" optional="YES" attributeType="String"/>
+        <attribute name="slNo_responded" optional="YES" attributeType="String"/>
         <attribute name="slnohhd" optional="YES" attributeType="String"/>
+        <attribute name="slnoRespondent" optional="YES" attributeType="String"/>
         <attribute name="splitedFrom" optional="YES" attributeType="String"/>
         <attribute name="splitedTo" optional="YES" attributeType="String"/>
         <attribute name="stateCode" optional="YES" attributeType="String"/>
         <attribute name="sub_eb" optional="YES" attributeType="String"/>
         <attribute name="superVisor_remrk" optional="YES" attributeType="String"/>
+        <attribute name="superVisor_remrkOn" optional="YES" attributeType="String"/>
         <attribute name="tahsil_code" optional="YES" attributeType="String"/>
         <attribute name="townCode" optional="YES" attributeType="String"/>
+        <attribute name="townName" optional="YES" attributeType="String"/>
+        <attribute name="townName_sl" optional="YES" attributeType="String"/>
         <attribute name="wardID" optional="YES" attributeType="String"/>
-        <relationship name="toHH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NPR2021MemberDetails" inverseName="relationship" inverseEntity="NPR2021MemberDetails"/>
+        <relationship name="toHH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NPR2021MemberDetails"/>
     </entity>
     <entity name="NPR2021MemberDetails" representedClassName="NPR2021MemberDetails" syncable="YES">
         <attribute name="aadhar" optional="YES" attributeType="String"/>
         <attribute name="address_district" optional="YES" attributeType="String"/>
         <attribute name="address_district_code" optional="YES" attributeType="String"/>
+        <attribute name="address_district_sl" optional="YES" attributeType="String"/>
         <attribute name="address_districtName_sl" optional="YES" attributeType="String"/>
         <attribute name="address_line1" optional="YES" attributeType="String"/>
         <attribute name="address_line1_sl" optional="YES" attributeType="String"/>
@@ -115,6 +165,7 @@
         <attribute name="address_stateCode" optional="YES" attributeType="String"/>
         <attribute name="address_stateName_sl" optional="YES" attributeType="String"/>
         <attribute name="address_subDistrict" optional="YES" attributeType="String"/>
+        <attribute name="address_subDistrict_sl" optional="YES" attributeType="String"/>
         <attribute name="address_subDistrictCode" optional="YES" attributeType="String"/>
         <attribute name="addressCountry_sl" optional="YES" attributeType="String"/>
         <attribute name="age" optional="YES" attributeType="String"/>
@@ -123,6 +174,7 @@
         <attribute name="birth_district_sl" optional="YES" attributeType="String"/>
         <attribute name="birth_state_sl" optional="YES" attributeType="String"/>
         <attribute name="birthAddress" optional="YES" attributeType="String"/>
+        <attribute name="birthAddress_sl" optional="YES" attributeType="String"/>
         <attribute name="birthCountryCode" attributeType="String" defaultValueString="India"/>
         <attribute name="birthCountryName" attributeType="String" defaultValueString="India"/>
         <attribute name="birthDistrictCode" optional="YES" attributeType="String"/>
@@ -143,6 +195,7 @@
         <attribute name="districtName_sl" optional="YES" attributeType="String"/>
         <attribute name="dob" optional="YES" attributeType="String"/>
         <attribute name="dob_type" optional="YES" attributeType="String"/>
+        <attribute name="dobForSearch" optional="YES" attributeType="String"/>
         <attribute name="document1" optional="YES" attributeType="Binary"/>
         <attribute name="document2" optional="YES" attributeType="Binary"/>
         <attribute name="document3" optional="YES" attributeType="Binary"/>
@@ -155,20 +208,11 @@
         <attribute name="eduName_sl" optional="YES" attributeType="String"/>
         <attribute name="enumerated_on" optional="YES" attributeType="String"/>
         <attribute name="enumerator" optional="YES" attributeType="String"/>
-        <attribute name="extra_24" optional="YES" attributeType="String"/>
-        <attribute name="extra_25" optional="YES" attributeType="String"/>
-        <attribute name="extra_26" optional="YES" attributeType="String"/>
-        <attribute name="extra_27" optional="YES" attributeType="String"/>
-        <attribute name="extra_28" optional="YES" attributeType="String"/>
-        <attribute name="extra_29" optional="YES" attributeType="String"/>
-        <attribute name="extra17" optional="YES" attributeType="String"/>
-        <attribute name="extra18" optional="YES" attributeType="String"/>
-        <attribute name="extra19" optional="YES" attributeType="String"/>
-        <attribute name="extra20" optional="YES" attributeType="String"/>
         <attribute name="father_code" optional="YES" attributeType="String"/>
         <attribute name="father_dob" optional="YES" attributeType="String"/>
         <attribute name="father_dobType" optional="YES" attributeType="String"/>
         <attribute name="father_name" optional="YES" attributeType="String"/>
+        <attribute name="father_name_sl" optional="YES" attributeType="String"/>
         <attribute name="fatherBirth_country_sl" optional="YES" attributeType="String"/>
         <attribute name="fatherBirth_district_sl" optional="YES" attributeType="String"/>
         <attribute name="fatherBirth_state_sl" optional="YES" attributeType="String"/>
@@ -181,8 +225,10 @@
         <attribute name="fatherBirthStateCode" optional="YES" attributeType="String"/>
         <attribute name="fatherBirthSubDistrict" optional="YES" attributeType="String"/>
         <attribute name="fatherBirthSubDistrictCode" optional="YES" attributeType="String"/>
-        <attribute name="fatherName_sl" optional="YES" attributeType="String"/>
+        <attribute name="fatherSrNumber" optional="YES" attributeType="String"/>
         <attribute name="fatherVillage_towen" optional="YES" attributeType="String"/>
+        <attribute name="first_name" optional="YES" attributeType="String"/>
+        <attribute name="first_name_sl" optional="YES" attributeType="String"/>
         <attribute name="form_number" optional="YES" attributeType="String"/>
         <attribute name="gender_id" optional="YES" attributeType="String"/>
         <attribute name="genderID_enu" optional="YES" attributeType="String"/>
@@ -201,10 +247,14 @@
         <attribute name="is_signUpdated" optional="YES" attributeType="String"/>
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isStarted" optional="YES" attributeType="String"/>
+        <attribute name="isUpdatedMemberStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="last_name" optional="YES" attributeType="String"/>
+        <attribute name="last_name_sl" optional="YES" attributeType="String"/>
         <attribute name="last_resident_country_sl" optional="YES" attributeType="String"/>
         <attribute name="last_resident_district_sl" optional="YES" attributeType="String"/>
         <attribute name="last_resident_state_sl" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="lastResidencyCountry" optional="YES" attributeType="String" defaultValueString="India"/>
+        <attribute name="lastResidencyCountry" optional="YES" attributeType="String" defaultValueString="083"/>
         <attribute name="lastResidencyDistrict" optional="YES" attributeType="String"/>
         <attribute name="lastResidencyState" optional="YES" attributeType="String"/>
         <attribute name="latest_master" optional="YES" attributeType="String"/>
@@ -215,6 +265,8 @@
         <attribute name="member_completionStatus" optional="YES" attributeType="String"/>
         <attribute name="memberStatus" optional="YES" attributeType="String"/>
         <attribute name="memberStatus_prev_exercise" optional="YES" attributeType="String"/>
+        <attribute name="midle_name" optional="YES" attributeType="String"/>
+        <attribute name="midle_name_sl" optional="YES" attributeType="String"/>
         <attribute name="migrated" optional="YES" attributeType="String"/>
         <attribute name="mobile" optional="YES" attributeType="String"/>
         <attribute name="mother_birthCountry" optional="YES" attributeType="String" defaultValueString="India"/>
@@ -232,6 +284,7 @@
         <attribute name="motherBirth_state_sl" optional="YES" attributeType="String"/>
         <attribute name="motherName" optional="YES" attributeType="String"/>
         <attribute name="motherName_sl" optional="YES" attributeType="String"/>
+        <attribute name="mothersrNumber" optional="YES" attributeType="String"/>
         <attribute name="motherTounge" optional="YES" attributeType="String"/>
         <attribute name="motherToungeode" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -245,24 +298,34 @@
         <attribute name="new_tin" optional="YES" attributeType="String"/>
         <attribute name="occu_code" optional="YES" attributeType="String"/>
         <attribute name="occuName" optional="YES" attributeType="String"/>
+        <attribute name="occuName_sl" optional="YES" attributeType="String"/>
         <attribute name="old_tin" optional="YES" attributeType="String"/>
+        <attribute name="orginalHHN" optional="YES" attributeType="String"/>
         <attribute name="otherMotherTounge" optional="YES" attributeType="String"/>
         <attribute name="paddre_district" optional="YES" attributeType="String"/>
         <attribute name="paddre_districtCode" optional="YES" attributeType="String"/>
         <attribute name="paddre_line1" optional="YES" attributeType="String"/>
+        <attribute name="paddre_line1_sl" optional="YES" attributeType="String"/>
         <attribute name="paddre_line2" optional="YES" attributeType="String"/>
+        <attribute name="paddre_line2_sl" optional="YES" attributeType="String"/>
         <attribute name="paddre_tahsil" optional="YES" attributeType="String"/>
+        <attribute name="paddre_tahsil_sl" optional="YES" attributeType="String"/>
         <attribute name="paddre_tahsilCode" optional="YES" attributeType="String"/>
         <attribute name="paddress_block_code" optional="YES" attributeType="String"/>
         <attribute name="paddress_country" attributeType="String" defaultValueString="India"/>
         <attribute name="paddress_countryCode" optional="YES" attributeType="String" defaultValueString="083"/>
         <attribute name="paddress_line2" optional="YES" attributeType="String"/>
+        <attribute name="paddress_line2_sl" optional="YES" attributeType="String"/>
         <attribute name="paddress_line3" optional="YES" attributeType="String"/>
+        <attribute name="paddress_line3_sl" optional="YES" attributeType="String"/>
         <attribute name="paddress_line4" optional="YES" attributeType="String"/>
+        <attribute name="paddress_line4_sl" optional="YES" attributeType="String"/>
         <attribute name="paddress_line5" optional="YES" attributeType="String"/>
+        <attribute name="paddress_line5_sl" optional="YES" attributeType="String"/>
         <attribute name="paddress_state" optional="YES" attributeType="String"/>
         <attribute name="paddress_stateCode" optional="YES" attributeType="String"/>
         <attribute name="paddress_town" optional="YES" attributeType="String"/>
+        <attribute name="paddress_town_sl" optional="YES" attributeType="String"/>
         <attribute name="panCard_number" optional="YES" attributeType="String"/>
         <attribute name="passpord_id" optional="YES" attributeType="String"/>
         <attribute name="phone_responded" optional="YES" attributeType="String"/>
@@ -303,7 +366,6 @@
         <attribute name="voter_id" optional="YES" attributeType="String"/>
         <attribute name="wardCode" optional="YES" attributeType="String"/>
         <attribute name="wardName" optional="YES" attributeType="String"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NPR_2021hh_Details" inverseName="toHH" inverseEntity="NPR_2021hh_Details"/>
     </entity>
     <entity name="State" representedClassName="State" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String"/>
@@ -323,10 +385,11 @@
     <elements>
         <element name="Country" positionX="59.75390625" positionY="-493.8125" width="128" height="88"/>
         <element name="District" positionX="0" positionY="171" width="128" height="133"/>
-        <element name="EB" positionX="-51.18359375" positionY="1997.27734375" width="128" height="614"/>
-        <element name="HLOData" positionX="-63" positionY="-9" width="128" height="133"/>
-        <element name="NPR_2021hh_Details" positionX="-54" positionY="45" width="128" height="523"/>
-        <element name="NPR2021MemberDetails" positionX="368.53515625" positionY="119.25" width="128" height="3148"/>
+        <element name="EB" positionX="-51.18359375" positionY="1997.27734375" width="128" height="689"/>
+        <element name="Entity" positionX="144" positionY="-333" width="128" height="29"/>
+        <element name="HLOData" positionX="-63" positionY="-9" width="128" height="149"/>
+        <element name="NPR_2021hh_Details" positionX="-54" positionY="45" width="128" height="1124"/>
+        <element name="NPR2021MemberDetails" positionX="368.53515625" positionY="119.25" width="128" height="3329"/>
         <element name="State" positionX="149.0546875" positionY="363.1015625" width="128" height="118"/>
         <element name="Tahsil" positionX="286.98046875" positionY="196.203125" width="128" height="133"/>
     </elements>

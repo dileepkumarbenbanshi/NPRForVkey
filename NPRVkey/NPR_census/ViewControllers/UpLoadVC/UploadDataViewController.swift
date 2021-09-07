@@ -14,12 +14,30 @@ class UploadDataViewController: UIViewController {
     var isAvailableHHToUpload = false
     var isAvailableSelectedEB = false
     
+    var isNoDatatoUploadSouldBackPrevPage = false
     
+    enum AlertFor:Int {
+        case noOne = 0,completeEB  ,completeEBConfirmation
+    }
+    var alertFor = AlertFor.init(rawValue: 0)
+    @IBOutlet weak var btnUpload_title: UILabel!
+    @IBOutlet weak var lblIncompleteHH: UILabel!
+    
+    @IBOutlet weak var lblpageName_title: UILabel!
+    
+    @IBOutlet weak var lblSuperVisorView: UILabel!
+    @IBOutlet weak var lblSuperVisorView_title: UILabel!
+    
+    let uploadDataVM = UploadDataViewModel()
     ///*****************
     //MARK:View life Cycle
     ///*****************
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lblSuperVisorView.isHidden = util.isEnumerator()
+        lblIncompleteHH.isHidden = !util.isEnumerator()
+        setTitle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +49,27 @@ class UploadDataViewController: UIViewController {
     }
     
     
+    func setTitle()  {
+        btnUpload_title.text = LanguageModal.langObj.upload_eb
+        lblpageName_title.text = LanguageModal.langObj.upload_eb
+        guard let viewControllers = self.navigationController?.viewControllers else{
+            return
+        }
+        
+        for vc in viewControllers {
+            if let vcMain  = vc as? MainViewController{
+               
+                if vcMain.isSelectedInCompleteHH ?? false  {
+                    lblIncompleteHH.text = LanguageModal.langObj.hh_summary
+                }else{
+                    lblIncompleteHH.text = LanguageModal.langObj.location_particular
+                }
+            }else{
+                lblSuperVisorView.text = LanguageModal.langObj.sup_view
+            }
+        }
+       
+    }
     ///*****************
     //MARK:Buttons Action
     ///*****************
@@ -40,14 +79,30 @@ class UploadDataViewController: UIViewController {
     }
     
     
-    @IBAction func onTapUpload(_ sender: Any) {
+    @IBAction func onTapUpload(_ sender: UIButton) {
         
+        if Reachability.shared.isConnected {
         isAvailableHHToUpload = false
         DispatchQueue.main.async {
         self.view.showLoader()
         }
-     getEBList()
-}
+        if util.isEnumerator() {
+            if  uploadDataVM.isValidStartAndEndDate  {
+                getEBListFormAPI()
+            }else{
+                DispatchQueue.main.async {
+                self.view.showLoader()
+                }
+            }
+            
+        }else{
+            
+            isDataAvailableToUpload()
+        }
+        }else{
+            AlertView().alertWithoutButton( message: AppMessages.networkConnection)
+        }
+    }
     
     ///*****************
     // MARK: Navigation
@@ -58,18 +113,40 @@ class UploadDataViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     func navigateONSignatureView()  {
-        self.navigateToController(identifier: "EnumeratorSignatureViewController", storyBoardName: storyBoardName.main)
+        //self.navigateToController(identifier: "EnumeratorSignatureViewController", storyBoardName: storyBoardName.main)
+        
+        guard let vcSign = self.storyboard?.instantiateViewController(withIdentifier:"EnumeratorSignatureViewController") as? EnumeratorSignatureViewController else {
+            return
+        }
+        vcSign.uploadDelegate = self
+        vcSign.isFromFormPage = false
+        vcSign.isFromUpload = true
+        self.navigateToController(vc: vcSign)
     }
     
     func isDataAvailableToUpload()  {
+        let isNetworkConnected = Reachability.shared.isReachable
+        if isNetworkConnected  {
+            
         
-        let isCompletedHH = getAllCompletedHouseHold().count > 0
+        DispatchQueue.main.async {
+        self.view.removeLoaderView()
+        }
+        let isCompletedHH = getAllCompletedHouseHold().count > 0 || UnHabitedVM().uiEbAbleToUpload
         isAvailableHHToUpload = isCompletedHH
         if isCompletedHH {
             navigateONSignatureView()
         }
         else {
-            AlertView().alertWithoutButton(vc: self, message: "No Data To Upload")
+            isNoDatatoUploadSouldBackPrevPage = true
+           let alertView = AlertView()
+            alertView.delegate = self
+            alertView.alertWithoutButton( message: LanguageModal.langObj.no_data_to_upload)
+            
+        }
+        }else{
+            
+            AlertView().alertWithoutButton( message: AppMessages.networkConnection)
         }
         
     }
@@ -77,11 +154,17 @@ class UploadDataViewController: UIViewController {
     ///*****************
     // MARK: APIs
     ///*****************
-    func getEBList()  {
+    func getEBListFormAPI()  {
         
-        NPRURLRequestSession().downloadEBList(params: ["":""]) { (done, result, error) in
+        NPRURLRequestSession().downloadEBList(params: ["":""]) { (success, result, error) in
           
+            if success {
+            
             guard let aray = result as? [[String:Any]] else {
+                DispatchQueue.main.async {
+                    
+                    self.view.removeLoaderView()
+                }
                           return
                        }
                        
@@ -94,11 +177,27 @@ class UploadDataViewController: UIViewController {
                     
                     self.view.removeLoaderView()
                 }
+                
+                
+            }
+            
+//            if error != nil {
+//
+//                DispatchQueue.main.async {
+//
+//                    self.view.removeLoaderView()
+//                }
+//            }
+                
+            }else {
+                DispatchQueue.main.async {
+                    AlertView().alertWithoutButton( message: ErrorMessage.errorMessage(code: error?.code ?? 0))
+                    self.view.removeLoaderView()
+                }
             }
         }
-        
-
-   }
+    }
+    
     
     ///*****************
     // MARK: Others
@@ -130,12 +229,41 @@ class UploadDataViewController: UIViewController {
     ///*****************
 
     
+    func ebCompletionAlert()  {
+       
+        let uploadDataVM = UploadDataViewModel()
+        switch alertFor {
+        case .completeEB:
+            alertFor = .completeEBConfirmation
+            showAlert(message: LanguageModal.langObj.eb_completion_alert2_title)
+            
+            break
+        case .completeEBConfirmation:
+            uploadDataVM.delegate = self
+            uploadDataVM.ebCompletionAPI()
+            
+            break
+            
+        default:
+            alertFor = .completeEB
+            alertWithTwoButton(message: LanguageModal.langObj.eb_mark_as_completed)
+            break
+        }
+    }
     func showAlert(message:String)  {
+        DispatchQueue.main.async {
         let alertView = AlertView()
         alertView.delegate = self
-         alertView.alertWithoutButton(vc: self, message: message)
+         alertView.alertWithoutButton( message: message)
         
-        
+        }
+    }
+    func alertWithTwoButton(message: String)  {
+        DispatchQueue.main.async {
+        let alertView = AlertView()
+        alertView.delegate = self
+         alertView.showAlert( title: "", message: message)
+    }
     }
 }
 
@@ -150,7 +278,7 @@ extension UploadDataViewController :EBManagememntProtocol {
                 self.isDataAvailableToUpload()
             }
             else{
-                self.showAlert(message: "HLB not allotted to this user")
+                self.showAlert(message: LanguageModal.langObj.eb_not_alloted)
             }
                
         }
@@ -158,21 +286,70 @@ extension UploadDataViewController :EBManagememntProtocol {
         //self.view.removeLoaderView()
             
         }
+}
 
+///*****************
+// MARK: Delegates
+///*****************
+extension UploadDataViewController :AlertViewDelegate ,DataUploadedDelegate{
+    func alertTapedYes() {
+        
+        alertFor = .completeEBConfirmation
+        ebCompletionAlert()
+    }
+    func alertViewWithoutButtonDissMiss() {
+        if isNoDatatoUploadSouldBackPrevPage {
+            self.navigateBack()
+        }
+        else
+        {
+            self.popBackToController(toControllerType: AssignEBViewController.self)
+        }
+        }
+    
+    func alertViewTapedNo() {
+        alertFor = .noOne
+    }
+    
+    
+    
+    func DataUploadedSuccessfuly() {
+     
+        if uploadDataVM.isEBNearToComplete {
+            alertFor = .noOne
+            ebCompletionAlert()
+        }
+        
+    }
+    func DataUploadedFailled() {
+        
+    }
+    
     
 }
 
-extension UploadDataViewController :AlertViewDelegate {
-    func alertTapedYes() {
+
+extension UploadDataViewController:EBCompletionDelegate {
+    func ebUpdated() {
+        
+        DispatchQueue.main.async {
+        self.view.removeLoaderView()
+            let alertView = AlertView()
+            alertView.delegate = self
+            alertView.alertWithoutButton( message:LanguageModal.langObj.eb_complete_successfully )
+        }
+        
+        
+       
+        
+//        if self.isControllerInNavigationStack(toControllerType: AssignEBViewController.self) {
+//            self.popBackToController(toControllerType: AssignEBViewController.self)
+//        }else{
+//            self.navigateToController(identifier:"AssignEBViewController" , storyBoardName: storyBoardName.main)
+//        }
+        
         
     }
-    func alertViewWithoutButtonDissMiss() {
-        
-            self.popBackToController(toControllerType: AssignEBViewController.self)
-        
-        
-    }
-    
     
     
     

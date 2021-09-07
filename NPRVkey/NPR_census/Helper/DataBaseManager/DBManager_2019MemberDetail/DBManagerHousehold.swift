@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 protocol Download2019Data_delegate {
     func dataSavedSuccessFully()
 }
@@ -22,20 +23,18 @@ class DBManagerHousehold {
     
     
     
-    
     }
 
 
 
 extension DBManagerHousehold {
     
-    
-    
-    func  saveHouseHold(modelDict:NPRDataDownload_modelClassResult)  {
+    func  saveHouseHold(modelDict:NPRDataDownload_modelClassResult, complete:@escaping(Bool)->Void) {
+        
+        let context  = appDelegate.persistentContainer.viewContext
         
         let nprHHData = DataBaseManager().openDataBase(entityName: EntityName.nprHHStats) as? NPR_2021hh_Details
          
-        
         let oldFormatDate = modelDict.dob ?? ""
         
         let strModifiedDate = oldFormatDate.convertDateFormater()
@@ -45,36 +44,71 @@ extension DBManagerHousehold {
          nprHHData?.block_no = modelDict.blockno ?? ""
         //let hhInt = Int(modelDict.hh ?? "")
         nprHHData?.houseHoldhNo = modelDict.hh.hhNumber()
+        nprHHData?.originalHHNumberSplit = modelDict.hh.hhNumber()
+        nprHHData?.originalHHSplitInto = modelDict.hh.hhNumber()
         print("Found HH NO",modelDict.hh ?? "")
         print("Enter HH NO ", nprHHData?.houseHoldhNo ?? "")
         nprHHData?.houseHoldhNo = modelDict.hh.hhNumber()
-        
+        nprHHData?.isInEnglish =  (util.isEnumerator() && modelDict.name.count > 0)
        // nprHHData?.houseNo = AppFormat.hhFormat.censusHouseNumber()
-        nprHHData?.census_hNo = AppFormat.hhFormat.censusHouseNumber()
-        nprHHData?.census_hhNo = AppFormat.hhFormat.censusHHNumber()
+        //nprHHData?.census_hNo = modelDict.censusHOuseNumber.censusHouseNumber()
+        //nprHHData?.census_hhNo = modelDict.censusHHNumber.censusHHNumber()
          //nprHHData?.houseNo = modelDict.hhNoHh ?? ""
          nprHHData?.sub_eb = modelDict.subebno ?? ""
          nprHHData?.hh_tin = modelDict.tin ?? ""
        // nprHHData?.hh_tin_New = modelDict.hh.hhTin()
-         nprHHData?.hh_status = modelDict.status ?? ""   
+        
+        if let hhStatus = Int(modelDict.status ?? "") {
+            print(hhStatus)
+            nprHHData?.hh_status = modelDict.status ?? ""
+        }else
+        {
+            nprHHData?.hh_status = "0"
+        }
+         
         nprHHData?.hh_completed = HHCompletionStatusCode.notStarted
         
         //nprHHData?.slnohhd = modelDict.hh.hhNumber()
         nprHHData?.discrictCode = modelDict.districtcode
+        
         nprHHData?.block_no = modelDict.blockno
         nprHHData?.sub_eb = modelDict.subebno
         nprHHData?.wardID = modelDict.wardid
          nprHHData?.stateCode = modelDict.statecode ?? ""
          nprHHData?.townCode = modelDict.towncode ?? ""
          nprHHData?.tahsil_code = modelDict.tehsilcode ?? ""
+        nprHHData?.addressHNLocality = modelDict.addressline1
+        nprHHData?.addressPinCode = modelDict.pincode ?? ""
          nprHHData?.head_DOB =  strModifiedDate 
          nprHHData?.headName = modelDict.name ?? ""
+        nprHHData?.headName_sl = modelDict.namesl ?? ""
         nprHHData?.headGenderID = modelDict.genderid ?? ""
          nprHHData?.isOpen = false
          //nprHHData?.isUpdated
          nprHHData?.wardID = modelDict.wardid ?? ""
+        nprHHData?.addressHNLocality = modelDict.addressline1
+        //nprHHData?.isUpdated
+       
+        nprHHData?.addressPinCode = modelDict.pincode
+        nprHHData?.addressBlockId = singleton().selectEBListModel.eb_block_number
+        nprHHData?.addressWardID = singleton().selectEBListModel.ebWard_code
+        nprHHData?.addressSubDistrict = singleton().selectEBListModel.ebTahsil_code
+        nprHHData?.addressDistrict = singleton().selectEBListModel.ebDistrict_code
+        nprHHData?.addressState = singleton().selectEBListModel.ebState_code
+
+        nprHHData?.addressCountryName = modelDict.countryname ?? util.countryName
+        
+        nprHHData?.addressStateName_sl = modelDict.statenamesl ?? ""
+        nprHHData?.addressStateName = modelDict.statename ?? ""
+        
+        nprHHData?.addressDistrictName = modelDict.districtname ?? ""
+        nprHHData?.addressDistrictName_sl = modelDict.districtnamesl ?? ""
+        if util.isEnumerator(){
+        nprHHData?.language = modelDict.languageRow.lanaugeCode() 
+        }
         
         nprHHData?.ebNumber     = singleton().selectEBListModel.eb_number//"\(modelDict.statecode ?? "")\(modelDict.districtcode ?? "")\(modelDict.tehsilcode ?? "")\(modelDict.towncode ?? "")\(modelDict.wardid ?? "")\(modelDict.blockno ?? "")\(modelDict.subebno ?? "")"
+        nprHHData?.isInEnglish = (util.isEnumerator() && modelDict.name.count > 0)
         
         nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()
         
@@ -82,7 +116,7 @@ extension DBManagerHousehold {
              try context.save()
              
             print("IndexSaved")
-                 //Completion(true)
+            complete(true)
              
              } catch {
                                    print(" Household list Failed saving")
@@ -97,8 +131,10 @@ extension DBManagerHousehold {
     
     func saveNewHouseHold(formClass:AddNewHouseHoldForm_TVC, complete:@escaping(Bool)->Void)  {
         
-        DispatchQueue.main.async {
-        var nprHHData = DataBaseManager().openDataBase(entityName: EntityName.nprHHStats) as? NPR_2021hh_Details
+        
+        let context  = appDelegate.persistentContainer.viewContext
+       
+        let nprHHData = DataBaseManager().openDataBase(entityName: EntityName.nprHHStats) as? NPR_2021hh_Details
         let ebDetailModel  = singleton().selectEBListModel
         
 //        if !util.isEnumerator() {
@@ -106,6 +142,8 @@ extension DBManagerHousehold {
 //        }
         
         
+        let privateMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateMOC.parent = context
         nprHHData?.block_no = singleton().selectEBListModel.eb_block_number
         nprHHData?.houseHoldhNo = formClass.strHHNumber.hhNumber()
         
@@ -122,7 +160,7 @@ extension DBManagerHousehold {
          nprHHData?.sub_eb = ebDetailModel.ebSubEB_code ?? ""
         nprHHData?.hh_tin = formClass.strHHNumber.hhTin()
         nprHHData?.hh_completed = HHCompletionStatusCode.completed
-        nprHHData?.hh_status = HHStatusCode.new
+        //nprHHData?.hh_status = HHStatusCode.new
         nprHHData?.hh_status = HHStatusCode.new
         //nprHHData?.hh_completed
         nprHHData?.houseHoldhNo = formClass.strHHNumber.hhNumber()
@@ -130,7 +168,20 @@ extension DBManagerHousehold {
          nprHHData?.townCode = ebDetailModel.ebTown_code
         nprHHData?.tahsil_code = ebDetailModel.ebTahsil_code
         nprHHData?.head_DOB = FormDateMangement().dateFormat(type: .personal, formClass: formClass)
-        nprHHData?.headName = formClass.tf_pd_Name.text ?? ""
+        
+        if util.isSelectedLang_english() {
+            
+            nprHHData?.headName = formClass.tf_pd_Name.text ?? ""
+        }else{
+            nprHHData?.headName_sl = formClass.tf_pd_Name.text ?? ""
+        }
+        if util.isSelectedLang_english() {
+            nprHHData?.instituteName = formClass.strInstituteName
+        }else{
+            nprHHData?.instituteName_sl = formClass.strInstituteName
+        }
+        
+        nprHHData?.language = LanguageModal.currentLanguage.lanaugeCode()
         nprHHData?.headGenderID = "\(formClass.genderId.rawValue)"
          nprHHData?.isOpen = false
          //nprHHData?.isUpdated
@@ -138,13 +189,14 @@ extension DBManagerHousehold {
         nprHHData?.ebNumber     = singleton().selectEBListModel.eb_number
         
         nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()
-        nprHHData?.hhType = formClass.hhType
+        //HhType start from 10 in enum
+        nprHHData?.hhType = formClass.selectedHouseType?.rawValue ?? "1"
          
          do {
              try context.save()
             
             print("IndexSaved")
-            nprHHData = nil
+            
             complete(true)
              } catch {
                                    print(" Household list Failed saving")
@@ -153,7 +205,7 @@ extension DBManagerHousehold {
         
         }
         
-    }
+    
     
     
     
@@ -167,25 +219,31 @@ extension DBManagerHousehold {
        
         nprHHData?.is_Splited = true
         nprHHData?.splitedFrom = hhModel.houseHoldhNo
-       
+        nprHHData?.originalHHNumberSplit = hhModel.originalHHNumberSplit
          nprHHData?.block_no = ebDetailModel.eb_block_number ?? ""
         
-       
+        nprHHData?.hh_completed = HHCompletionStatusCode.notStarted
+        nprHHData?.hh_status = HHStatusCode.old
         nprHHData?.houseHoldhNo = strHHID
          nprHHData?.houseNo = strHN
          nprHHData?.sub_eb = ebDetailModel.ebSubEB_code ?? ""
-        nprHHData?.hh_tin = "\(ebDetailModel.eb_number ?? "")\(strHHID)"
-        nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()//"\(ebDetailModel.eb_number ?? "")\(strHHID)"
+        nprHHData?.hh_tin = strHHID.hhTin()
+       // nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()//"\(ebDetailModel.eb_number ?? "")\(strHHID)"
         nprHHData?.hh_completed = HHCompletionStatusCode.notStarted
-        nprHHData?.hh_status = HHStatusCode.new
+        nprHHData?.hh_status = HHStatusCode.old
          //nprHHData?.hh_status = modelDict.status ?? ""
         //nprHHData?.hh_completed
        // nprHHData?.slnohhd = hhModel.strMemberNumber
-        nprHHData?.stateCode = ebDetailModel.ebState_code
+        nprHHData?.stateCode = ebDetailModel.ebState_code ?? ""
+        nprHHData?.discrictCode = ebDetailModel.ebDistrict_code ?? ""
          nprHHData?.townCode = ebDetailModel.ebTown_code
         nprHHData?.tahsil_code = ebDetailModel.ebTahsil_code
         nprHHData?.head_DOB = araySelectedMember[0].dob
-        nprHHData?.headName = araySelectedMember[0].name
+        nprHHData?.headName = araySelectedMember[0].name ?? ""
+        
+            nprHHData?.headName_sl = araySelectedMember[0].nameSL ?? ""
+        
+        nprHHData?.language = araySelectedMember[0].language
         nprHHData?.headGenderID = araySelectedMember[0].gender_id
          nprHHData?.isOpen = false
         nprHHData?.hh_completed = HHCompletionStatusCode.notStarted
@@ -194,11 +252,12 @@ extension DBManagerHousehold {
         nprHHData?.houseHoldhNo = strHHID.hhNumber()
          //nprHHData?.isUpdated
          nprHHData?.wardID = ebDetailModel.ebWard_code ?? ""
-        
+        nprHHData?.respondentName = ""
         nprHHData?.ebNumber     = singleton().selectEBListModel.eb_number//"\(ebDetailModel.ebState_code ?? "")\(ebDetailModel.ebDistrict_code ?? "")\(ebDetailModel.ebTahsil_code ?? "")\(ebDetailModel.ebTown_code ?? "")\(ebDetailModel.ebWard_code ?? "")\(ebDetailModel.eb_block_number ?? "")\(ebDetailModel.ebSubEB_code ?? "")"
         
-        nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()
-        nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()
+        nprHHData?.hh_tin = strHHID.hhTin()
+        nprHHData?.houseHoldhNo = strHHID.hhNumber()
+       // nprHHData?.hh_tin = nprHHData?.houseHoldhNo?.hhTin()
         
          
          do {
@@ -250,20 +309,43 @@ extension DBManagerHousehold {
         
         
         for modelhh in arayHouseHold {
+            
             modelhh.hh_completed = HHCompletionStatusCode.uploaded
             
             do {
                 try context.save()
-                DBManagerMemberDetail().updateMemberStatusAfterUploadHH(hhModel: modelhh, memberCompletionStatus: .uploaded) { (isSaved) in
-                    
                 }
-            } catch  {
+             catch  {
                 
             }
+
+
+
+         }
+    }
+  // Update Member status befure update hh status Update
+// Cause //because of crash due to race condition
+    func updateHHMemberAfterUpoadData()  {
+        
+        let predicate =  NSPredicate(format: "hh_completed != %@ ",HHCompletionStatusCode.notStarted)
+        guard let arayHouseHold = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate) as? [NPR_2021hh_Details] else {
+            return
+        }
+        
+        
+        for modelhh in arayHouseHold {
+           
+            DBManagerMemberDetail().updateMemberStatusAfterUploadHH(hhModel: modelhh, memberCompletionStatus: .uploaded) { (isSaved) in
+                if modelhh == arayHouseHold.last {
+                    self.updateHHStatusAfterUploaded()
+                }
+            }
+
         }
     }
     
     
+
     func checkHHCompleted(houseHoldNumber:String ,completionType:String,Completion:@escaping(Bool) -> Void )   {
         
         //censusHH_number
@@ -308,9 +390,9 @@ extension DBManagerHousehold {
     
     func updateHHStatus_dependONMember(houseHoldModel:NPR_2021hh_Details,Completion:@escaping(Bool) -> Void)   {
         
+        DBManagerMemberDetail().updateMemberStatusSkipedHH(hhModel: houseHoldModel)
         
         DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: houseHoldModel) { (arayTotalMember) in
-            
             
             let remainMembers_notStarted = DBManagerMemberDetail().fetchHHMember_byStatus(modelSelectedHH: houseHoldModel, status: MemberStatusCode.notStarted)
             
@@ -325,6 +407,8 @@ extension DBManagerHousehold {
             
             do {
                 try context.save()
+                
+                self.updateSkipedHHDependONMember(houseHoldModel: houseHoldModel)
                 Completion(true)
             } catch  {
                 
@@ -332,6 +416,20 @@ extension DBManagerHousehold {
           
         }
         
+    }
+    
+    func updateSkipedHHDependONMember(houseHoldModel:NPR_2021hh_Details)  {
+      let hhStatus = HHStaus.init(rawValue: houseHoldModel.hh_status ?? "")
+        
+        if hhStatus == .locked || hhStatus == .migratedOut || hhStatus == .notAvailable{
+            houseHoldModel.hh_status = HHStatusCode.available
+            do {
+                try context.save()
+                DBManagerMemberDetail().updateMemberStatusSkipedHH(hhModel: houseHoldModel)
+            } catch  {
+                
+            }
+        }
     }
     
     func fetchHHList(predicateHH:NSPredicate, Completion:@escaping(_ arayHHLis:[NPR_2021hh_Details]) -> Void)   {
@@ -358,12 +456,14 @@ extension DBManagerHousehold {
     
     
     func getNewHouseHoldNumber() -> String {
-        
-        guard let arayFetched:[NPR_2021hh_Details] = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats) as? [NPR_2021hh_Details] else {
+        let predicate = NSPredicate(format: "ebNumber = %@ ",singleton().selectEBListModel.eb_number ?? "" )
+        guard let arayFetched:[NPR_2021hh_Details] = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate) as? [NPR_2021hh_Details] else {
             return ""
         }
         
         let sortedArary = arayFetched.sorted(by: {$0.houseHoldhNo ?? "" < $1.houseHoldhNo ?? ""})
+       
+        
         
         var strSerialNumber = ""
         print(String(format: AppFormat.hhFormat, strSerialNumber))
@@ -372,14 +472,12 @@ extension DBManagerHousehold {
             
            
             strSerialNumber = String(format: AppFormat.hhFormat, i+1 )
+            let existHH = arayFetched.filter({$0.houseHoldhNo == strSerialNumber })
             
-            if i == arayFetched.count {
+            if existHH.count == 0 {
               return strSerialNumber
             }
-            else if (strSerialNumber != sortedArary[i].houseHoldhNo) {
-                print("HH No ",sortedArary[i].houseHoldhNo ?? "")
-                   return strSerialNumber
-                }
+            
                 
             }
     
@@ -388,12 +486,10 @@ extension DBManagerHousehold {
     }
     
 
-    
-    
-    
     func getNewHouseNumber() -> String {
         
-        guard let arayFetched:[NPR_2021hh_Details] = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats) as? [NPR_2021hh_Details] else {
+        let predicate = NSPredicate(format: "ebNumber = %@ ",singleton().selectEBListModel.eb_number ?? "" )
+        guard let arayFetched:[NPR_2021hh_Details] = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate) as? [NPR_2021hh_Details] else {
             return ""
         }
         
@@ -426,16 +522,28 @@ extension DBManagerHousehold {
    
     func is_censusHouseholdExist(strCensusHHNo:String)->Bool  {
         
-        let predicate = NSPredicate(format: "census_hhNo = %@ AND ebNumber = %@ ",strCensusHHNo,singleton().selectEBListModel.eb_number ?? "" )
+      //  let predicate = NSPredicate(format: "census_hhNo = %@  ",strCensusHHNo.censusHHNumber() )
+       // let predicate = NSPredicate(format: "ebNumber = %@ ",singleton().selectEBListModel.eb_number ?? "" )
+        
+        
+        let predicate = NSPredicate(format: "census_hhNo = %@ AND ebNumber = %@ ",strCensusHHNo.censusHHNumber(),singleton().selectEBListModel.eb_number ?? "" )
         let arayHouseHold = DataBaseManager().fetchDBData(entityName: EntityName.nprHHStats, predicate: predicate)
-        if arayHouseHold.count > 0 {
-            return true
-        }
-        return false
+        return arayHouseHold.count > 0
+            
     }
+
     
-    
-    
-    
+    func isNewMember_inHH(modelSelectedHH:NPR_2021hh_Details) -> Bool   {
+        
+       var arayNewMemberModel = [NPR2021MemberDetails]()
+        
+        DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: modelSelectedHH) { (arayHHMembers) in
+            //self.arayMemberModel = arayHHMembers
+            arayNewMemberModel = arayHHMembers.filter({$0.memberStatus == MemberStatusCode.newMember })
+            
+        }
+       // print("HH Number \(modelSelectedHH.houseHoldhNo ?? "") , New Member Count \(arayNewMemberModel.count)")
+        return arayNewMemberModel.count > 0
+    }
     
 }

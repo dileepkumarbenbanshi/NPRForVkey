@@ -1,4 +1,6 @@
 [
+    
+    
     {
         "statecode": "36",
         "districtcode": "01",
@@ -5370,5 +5372,189 @@
         "districtcode": "03",
         "districtname": "ZUNHEBOTO",
         "cpsuId": " "
+    },
+    
+    
+    {   "statecode": "01",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "02",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    
+    ,
+    {   "statecode": "03",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    ,
+    {   "statecode": "04",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    ,
+    {   "statecode": "05",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    ,
+    {   "statecode": "06",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    ,
+    {   "statecode": "07",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    }
+    ,
+    {   "statecode": "08",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "09",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "10",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "11",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "12",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "13",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "14",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "15",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "16",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "17",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "18",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "19",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "20",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "21",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "22",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "23",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "24",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "26",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "17",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "28",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "29",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "30",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "31",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "32",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "33",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "35",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "36",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
+    },
+    {   "statecode": "37",
+        "districtcode": "99",
+        "districtname": "NOT KNOWN"
+        
     }
 ]

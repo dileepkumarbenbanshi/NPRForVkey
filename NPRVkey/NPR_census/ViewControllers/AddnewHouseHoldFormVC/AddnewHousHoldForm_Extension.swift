@@ -19,27 +19,38 @@ extension AddNewHouseHoldForm_TVC{
         return true
     }
    // Get 
-    func getNewMemberSerialNumber(hhNumber:String) -> String {
+    
+    func checkAndOpenSignatureView()  {
         
-        let predicate = NSPredicate.init(format: "hh_tin = %@", strHHNumber.hhTin())
-        guard var hhMembers = DataBaseManager().fetchDBData(entityName: EntityName.npr2021Data, predicate: predicate) as? [NPR2021MemberDetails] else{
-            return ""
-        }
-        
-       hhMembers = hhMembers.sorted(by: {$0.sloMember ?? "0" < $1.sloMember ?? "1"})
-        var serialNumber = ""
-        for i in 0...hhMembers.count {
-             serialNumber = String(format: AppFormat.member_sr_Format, i+1)
-            if i == hhMembers.count {
-             return serialNumber
-            }
-            else if hhMembers[i].sloMember != serialNumber {
-                return serialNumber
+        let alertView = AlertView()
+        alertView.delegate = self
+        if entryT == .newHouseHold {
+            DBManagerHousehold().fetchHHDetail(hhTin: strHHNumber.hhTin()) { (hhModel) in
+                self.modelHH =  hhModel
             }
         }
-        return serialNumber
+        
+        if entryT == .newHouseHold || (modelHH.respondentName?.count ?? 0 ==  0 && (modelHH.hh_completed == HHCompletionStatusCode.inComplete || modelHH.hh_completed == HHCompletionStatusCode.completed || modelHH.hh_completed == HHCompletionStatusCode.uploaded))  {
+        
+            alertView.showAlertWithSingleButton( title: LanguageModal.langObj.signature_required, message: LanguageModal.langObj.press_ok_to_take_signature)
+        
+        }else{
+            self.backAccordingCondition()
+            //self.navigationController?.popViewController(animated: true)
+        }
     }
-   
+    func navigateToRespondentSignature()  {
+       
+        guard  let vc = self.storyboard?.instantiateViewController(withIdentifier: "EnumeratorSignatureViewController") as? EnumeratorSignatureViewController else {
+            return
+        }
+        vc.isRespondentSign = true
+        vc.delegate = self
+        vc.isFromFormPage = true
+        vc.modelHHRespondent = modelHH
+        self.navigationController?.pushViewController(vc , animated: true)
+        
+    }
     // get Button By Tag
     func findNextORPrevButton(sender:UIButton,tagToFind:Int)->UIButton  {
         
@@ -105,8 +116,10 @@ extension AddNewHouseHoldForm_TVC{
             deSelectButton(sender: button, tag: 6)
             break
         
-        case .none:
+        case .notSelect:
             break
+        case .none:
+            return
         }
         
        
@@ -241,13 +254,6 @@ extension AddNewHouseHoldForm_TVC{
 
 }
 
-
-    
-    
-    
-
-
-
 //MARK:Other Update on Condition
 extension AddNewHouseHoldForm_TVC {
    
@@ -265,7 +271,7 @@ extension AddNewHouseHoldForm_TVC {
         let relCode = getRelationCode()
         var enable = false
         
-        if relCode == "02" || relCode == "05" || relCode == "06" || relCode == "08" {
+        if relCode == "02" || relCode == "05" || relCode == "08" || relCode == "09" {
             enable = false
         } else {
             enable = true
@@ -285,9 +291,16 @@ extension AddNewHouseHoldForm_TVC {
     
 }
 
+//MARK:Alert Delegate
+
 extension AddNewHouseHoldForm_TVC :AlertViewDelegate {
     
     func alertTapedYes() {
+        if alertFor == .aadhar {
+            formModelClass?.validate()
+            alertFor = .dataSaved
+            return
+        }
         
         if isDataSaved {
          // If want to add More member
@@ -297,12 +310,10 @@ extension AddNewHouseHoldForm_TVC :AlertViewDelegate {
                     self.strMemberName = "New member"
                         self.entryT = .addNewMemberExitHH
                             self.isDataSaved = false
+                                self.tf_pd_Name.becomeFirstResponder()
                 self.intialViewPrepare()
              })
-            
-             
-             
-            
+
         }else {
             self.backAccordingCondition()
         }
@@ -310,53 +321,113 @@ extension AddNewHouseHoldForm_TVC :AlertViewDelegate {
     }
     
     func alertViewTapedNo()  {
+        if alertFor == .aadhar {
+            alertFor = .none
+            return
+        }
         if isDataSaved {
             backAccordingCondition()
+           // checkAndOpenSignatureView()
         }
     }
     
     func alertViewWithoutButtonDissMiss()  {
         backAccordingCondition()
     }
+    
+    func alertViewSingelButtonTapedYes() {
+        navigateToRespondentSignature()
+    }
+    
     func backAccordingCondition() {
         
-        switch entryT {
-        case .addNewMemberExitHH:
-            self.popBackToController(toControllerType: HouseholdMemberDetail_ViewController.self)
-            break
-        case .editDetail:
-            self.popBackToController(toControllerType: HouseholdMemberDetail_ViewController.self)
-            break
-            
-        case .newHouseHold :
-            self.popBackToController(toControllerType: MainViewController.self)
-            
-            //self.popTwoView()
-            break
-        
-            
+        let predicateHH = NSPredicate(format: "hh_tin = %@ ", strHHNumber.hhTin())
+        DBManagerHousehold().fetchHHList(predicateHH: predicateHH) { (arayHH) in
+          
+            if  arayHH.count > 0 {
+                let isDetailClass = self.navigationController?.viewControllers.contains(where: {$0 is HouseholdMemberDetail_ViewController}) ?? false
+                if isDetailClass {
+                    self.popBackToController(toControllerType: HouseholdMemberDetail_ViewController.self)
+                }else{
+                    if #available(iOS 13.0, *) {
+                        self.navigateToHHDetail()
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                
+                
+            }else{
+                self.popBackToController(toControllerType: MainViewController.self)
+                //
+                 //self.popTwoView()
+            }
         }
+        
+
+    }
+    
+    
+    @available(iOS 13.0, *)
+    private func navigateToHHDetail()  {
+        
+        DBManagerHousehold().fetchHHDetail(hhTin: strHHNumber.hhTin()) { (hhDetail) in
+           
+            let objStoryBoard:UIStoryboard = UIStoryboard.init(name: storyBoardName.npr, bundle: nil)
+            
+          // let vc1 = objStoryBoard.instantiateViewController(identifier: ClassID.hhMemberDetail)
+            guard let vc = objStoryBoard.instantiateViewController(identifier:ClassID.hhMemberDetail ) as? HouseholdMemberDetail_ViewController else {
+                return
+            }
+            //vc.arayMembersModel = arayMemberDetail
+            vc.hhModel = hhDetail
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }
 
-
-
-
 extension AddNewHouseHoldForm_TVC:SelectFatherMotherDelegate {
     func didSelectFatherMother(modelParent: NPR2021MemberDetails, genderType: gender) {
+        
+        var name = ""
+        
+        if modelParent.language?.IsSelectedLangauge_nonEnglish ?? false {
+            
+            name = ((modelParent.nameSL?.count != 0) ? modelParent.nameSL ?? "" : modelParent.name) ?? ""
+        }else{
+            name = ((modelParent.name?.count != 0) ? modelParent.name ?? "" : modelParent.nameSL) ?? ""
+        }
+        
         if genderType == .male {
+            
             self.fatherDetail(modelMember: modelParent, modelType: .father)
-            btnSelectFatherName.setTitle(modelParent.name, for: .normal)
+            
+            btnSelectFatherName.setTitle(name, for: .normal)
             
         }else {
             self.motherDetail(modelMember: modelParent, modelType: .mother)
-            btnSelectMotherName.setTitle(modelParent.name, for: .normal)
+            btnSelectMotherName.setTitle(name, for: .normal)
         }
     }
-    
-    
    
+}
+
+extension AddNewHouseHoldForm_TVC:SignatureDelegate {
+    func respondentSignatureCpatered() {
+        backAccordingCondition()
+    }
+}
+
+extension AddNewHouseHoldForm_TVC:SelectMemberDelegate {
+    func didSelectMember(memberModel: NPR2021MemberDetails) {
+        btnCkeck_permanentSameasPertularMember.setTitle(memberModel.name, for: .normal)
+        formModelClass?.objPermanentAddressDetail?.permanentAddressFill(modelMemberDetail: memberModel)
+        btnCkeck_permanentSameasHead.isSelected = false
+        btnCkeck_permanentSameasPresentAdd.isSelected = false
+    }
+    
     
     
 }

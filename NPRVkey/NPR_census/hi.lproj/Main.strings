@@ -162,7 +162,7 @@
 "PRb-ee-NhJ.text" = "Block";
 
 /* Class = "UILabel"; text = "Total Households -"; ObjectID = "Pc2-Tb-iuG"; */
-"Pc2-Tb-iuG.text" = "Total Households -";
+"Pc2-Tb-iuG.text" = "Total Household -";
 
 /* Class = "UILabel"; text = "2"; ObjectID = "Pfj-ls-sF1"; */
 "Pfj-ls-sF1.text" = "2";

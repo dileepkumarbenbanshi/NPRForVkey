@@ -21,7 +21,10 @@ extension HLOData {
     @NSManaged public var census_hh_no: String?
     @NSManaged public var census_house_no: String?
     @NSManaged public var eb_name: String?
+    @NSManaged public var ebNumber: String?
+    
     @NSManaged public var head_name: String?
+    @NSManaged public var head_name_sl: String?
     @NSManaged public var id: String?
 
 }

@@ -1,6 +1,0 @@
-framework module Pods_NPR_2020 {
-  umbrella header "Pods-NPR-2020-umbrella.h"
-
-  export *
-  module * { export * }
-}

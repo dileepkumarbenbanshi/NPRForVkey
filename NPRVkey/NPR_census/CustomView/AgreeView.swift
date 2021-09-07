@@ -52,6 +52,16 @@ class AgreeView: UIView {
         lblSubDistrictName.text = ebModel.ebTahsil_name
         lblWardNumber.text = ebModel.ebWard_code
         lblBlockNumber.text = ebModel.eb_block_number
+        lblState.text = LanguageModal.langObj.state
+        lblDistrict.text = LanguageModal.langObj.district
+        lblSubDistrict.text = LanguageModal.langObj.sub_district
+        lblTown_village.text = LanguageModal.langObj.town_village
+        lblWard.text = LanguageModal.langObj.ward
+        lblBlock.text = LanguageModal.langObj.block
+        
+        btnAgree.setTitle(LanguageModal.langObj.AGREE, for: .normal)
+        btnDisAgree.setTitle(LanguageModal.langObj.DISAGREE, for: .normal)
+        lblTitle.text = LanguageModal.langObj.eb_proceed_comfirmation
        
     }
     @IBAction func onTapDisAgree(_ sender: UIButton) {

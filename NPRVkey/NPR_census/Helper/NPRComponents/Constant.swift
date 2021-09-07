@@ -8,15 +8,26 @@
 
 import Foundation
 import UIKit
-
-
+let isProd = false
+//let isProd = true
 struct BaseUrl {
     //static let url = "http://10.10.10.21/fluwiz/"
     // Dev Base Url
     static let url1 = "http://10.10.10.21/"
-    // Vapt Base Url
-    static let url = "https://vaptapi.census.gov.in:8081/fluwiz/"
+    static let urlProdDefault = "https://apidel.census.gov.in"
+    
+    
+     static var url = isProd ? "\(UserDefaults().getUserDefaultValue(key: .baseUrlProd ))"  : "https://vaptapi.census.gov.in:8081"
+    
+   
 }
+
+var baseURL:String{
+    let url = isProd ? "\(UserDefaults().getUserDefaultValue(key: .baseUrlProd ))"  : "https://vaptapi.census.gov.in:8081"
+    return url
+}
+
+
 struct AppFormat {
     
     static let hhFormat = "%05d"
@@ -30,7 +41,93 @@ struct AppFormat {
     
     
 }
+fileprivate struct RegixString {
+    
+    static var regexStr:String {
+         let arrSepRate = LanguageModal.currentLanguage.components(separatedBy: "-")
+       var Regex = ""
+         switch arrSepRate[0] {
+         case "English" :
+            // Regex = "\\u0000-\\u007F"
+            Regex = "a-z,A-Z "
+             break
+         case "Hindi" :
+             Regex = "\\u0905-\\u0963"//"[\\u0900-\\0965\\u0970-\\u097F\\u0030-\\u0039 ()]*"
+             break
+         case "Assamese" :
+             Regex = "\\u0980-\\u09FF"
+             break
+         case "Urdu" :
+             Regex = "\\u0621-\\u064A"
+             break
+         case "Punjabi" :
+             Regex = "\\u0A00-\\u0A7F"//"[\\u0A00-\\u0A65\\u0A70-\\u0A76\\u0030-\\u0039 ()]*"
+             break
+         case "Malyalam" :
+             Regex = "\\u0D00-\\u0D7F"
+             break
+             
+         case "Marathi" :
+             
+             Regex = "\\u0900-\\u0963"
+             break
+         case "Konkani" :
+             
+             Regex = "\\u0900-\\0965"
+             break
+             
+         case "Gujarati" :
+             
+             Regex = "\\u0A80-\\u0AFF"
+             break
+             
+         case "Bengali" :
+             
+             Regex = "\\u0980-\\u09FF"
+             break
+         case "Tamil" :
+             
+             Regex = "\\u0B80-\\u0BFF"
+             break
+         case "Kannada" :
+             
+             Regex = "\\u0C80-\\u0CFF"
+             break
+         case "Odia" :
+             
+             Regex = "\\u0B00-\\u0B7F"
+             break
+         case "Nepali" :
+             
+             Regex = "\\u0900-\\0965"
+             break
+             
+         case "Telugu" :
+             
+             Regex = "\\u0C00-\\u0C7F"
+             break
+             
+         default:
+             Regex = "\\u0000-\\u007F"
+         }
+         return Regex
+     }
+     
+    
+}
+
+struct Regix {
+    
+    static var regeixAlphabetSpace = "^[\(RegixString.regexStr)]*$"
+    static var regixNumber = "^[0-9]*$"
+    static var adress = "^[\(RegixString.regexStr)()0-9 ./]*$"
+  
+    
+    
+}
+    
 struct  HHStatusCode{
+    static let old             = "0"
     static let available       = "1"
     static let locked          = "2"
     static let migratedOut     = "3"
@@ -123,8 +220,6 @@ enum MemberLivingStatusCode:String {
     
     
 }
-
-
 struct HHCompletionStatusCode {
     static let notStarted         = "0"
     static let inComplete         = "1"
@@ -148,37 +243,51 @@ enum MemberCompletionStatus:String {
     
 }
 
-enum HouseType:Int {
-    case normal = 10
-    case institute
-    case houseLess
+enum HouseType:String {
+    case normal = "1"
+    case institute = "2"
+    case houseLess  = "3"
+    
+    
 }
 
+enum entryFieldType {
+    case name  , number , address ,passport ,voterID
+}
+
+
 struct EndPoint {
-      static let Device_Enroll          = "device/v1/pg/100/enlist"
-      static let Device_De_Enroll       = "device/v1/pg/100/delist"
-      static let Verify_OTP             = "device/v1/pg/100/verify"
-      static let country_List           = "api/v1/pg/query/master_GeoCountry/list"
-      static let state_List             = "api/v1/pg/query/master_MstState/list"
-      static let district_List          = "api/v1/pg/query/master_MstDistrict/list"
-      static let Tahsil_List            = "api/v1/pg/query/master_MstTehsil/list"
-      static let npr_2019Data_download  = "api/v2/pg/query/nprdata2019_enum"
-      static let npr_2021Data_download  = "api/v2/pg/query/nprdata2021_enum"
-     // static let uploadData             = ""
-      static let ebList                 = "api/v1/pg/nquery/eballotment/nprenumerator/list"
-      static let Upload_Data            = "api/v2/pg/data/nprdatasig2021_enum"
-      static let Active_Device          = "device/v1/pg/100/active"
-    static let EB_Start_Date = "api/v1/pg/exec/npreb2021_enum/start"
-    static let Expected_HH = "api/v1/pg/data/npreb2021_enum"
-    static let EB_Completation = "api/v1/pg/exec/npreb2021_enum/complete"
+    static let getBaseURL = "/fluwiz/api/v1/pg/nquery/multidc/baseurl/first"
+    
+      static let Device_Enroll          = "/fluwiz/device/v1/pg/100/enlist"
+      static let Device_De_Enroll       = "/fluwiz/device/v1/pg/100/delist"
+      static let Verify_OTP             = "/fluwiz/device/v1/pg/100/verify"
+      static let getOTP                 = "/fluwiz/api/v1/pg/exec/otp/send"
+    static let changePwdOtpVeriFy = "/fluwiz/api/v1/pg/exec/otp/verify"
+    
+      static let country_List           = "/fluwiz/api/v1/pg/query/master_GeoCountry/list"
+      static let state_List             = "/fluwiz/api/v1/pg/query/master_MstState/list"
+      static let district_List          = "/fluwiz/api/v1/pg/query/master_MstDistrict/list"
+      static let Tahsil_List            = "/fluwiz/api/v1/pg/query/master_MstTehsil/list"
+      static let npr_2019Data_download  = "/fluwiz/api/v2/pg/query/nprdata2019_enum"
+      static let npr_2021Data_download  = "/fluwiz/api/v2/pg/query/nprdata2021_enum"
+     // static let uploadData            
+      static let ebList                 = "/fluwiz/api/v1/pg/nquery/eballotment/nprenumerator/list"
+    static let hloDataDownload          = "/fluwiz/api/v1/pg/nquery/eballotment/nprhousingdata/list"
+      static let Upload_Data            = "/fluwiz/api/v2/pg/data/nprdatasig2021_enum"
+      static let Active_Device          = "/fluwiz/device/v1/pg/100/active"
+    static let EB_Start_Date = "/fluwiz/api/v1/pg/exec/npreb2021_enum/start"
+    static let EB_Completion_Date = "/fluwiz/api/v1/pg/exec/npreb2021_enum/start"
+    static let Expected_HH = "/fluwiz/api/v1/pg/data/npreb2021_enum"
+    static let EB_Completation = "/fluwiz/api/v1/pg/exec/npreb2021_enum/complete"
     
     //SuperVisor
     
    
-    static let super_hlbList = "api/v1/pg/nquery/eballotment/nprsupervisor/list"
-    static let createEbDetail = "api/v1/pg/data/npreb2021_enum"
-    static let super_downloadEb = "api/v2/pg/query/nprdata2021_supr"
-    static let Super_UploadData = "api/v2/pg/data/nprdatasig2021_supr"
+    static let super_hlbList = "/fluwiz/api/v1/pg/nquery/eballotment/nprsupervisor/list"
+    static let createEbDetail = "/fluwiz/api/v1/pg/data/npreb2021_enum"
+    static let super_downloadEb = "/fluwiz/api/v2/pg/query/nprdata2021_supr"
+    static let Super_UploadData = "/fluwiz/api/v2/pg/data/nprdatasig2021_supr"
      
 }
 
@@ -236,7 +345,9 @@ struct ClassID {
     static let addNewMemberForm = "AddNewHouseHoldForm_TVC"
     static let splitHousehold   =  "SplitHouseHold_VC"
     static let hhMemberDetail   = "HouseholdMemberDetail_ViewController"
-       
+    static let uploadData = "UploadDataVC"
+    static let changeHHType = "ChangeHouseTypeVC"
+    static let changePasswordOTPVerify = "ChangePasswordOtpVC"
 }
 struct Application {
     static let AppCode = "2"
@@ -256,9 +367,11 @@ enum gender:Int {
     case male = 1
     case female = 2
     case transGender = 3
+    case notSelect = 4
 }
 
 struct Param_Key {
+    
     static let DeviceID = "deviceId"
     static let Application = "application"
     static let Manufacturer = "manufacturer"
@@ -268,6 +381,7 @@ struct Param_Key {
     static let AppVersion = "appVersion"
     static let OSPatch = "osPatch"
     static let OTP = "otp"
+    static let ReasonGetOtp = "reason"
     static let StateCode = "statecode"
     static let DistrictCode = "districtcode"
     static let TehsilCode = "tehsilcode"
@@ -281,74 +395,110 @@ struct Param_Key {
     static let Signature = "signature"
     static let SignedON = "signedOn"
     static let NPREnumCompletion = "nprEnumCompletion"
+    
 }
 
+struct classTitle {
+    static let incompleteTitle = "Incomplete Household"
+    static let locationParticular = "Location Particular"
+    
+}
 
 struct AppMessages {
     
-    static let User_Id_Password_Can_not_be_Empty = "UserId and Password cannot be empty"
-    static let Please_Enter_Correct_OTP =  "Please enter correct OTP"
-    static let Password_Empty =  "Password fields can not be blank"
-    static let Both_Password_Same =  "Both Password should be same"
-    static let Expected_hh_Can_not_be_Blank =  "Expected Households No. cannot be blank"
-    static let Expected_hh_Can_not_be_One = "Expected Households No. cannot be 1"
-    static let Age_Text = "Enter age to calculate date of birth"
-    static let Expected_hh_Can_not_be_More_Than = "Expected Households No. cannot be exceed than no.of HouseHold Members"
-    static let Alert_Date = "Member doesnot know date of birth but knows age"
-    static let Success = "Data Uploaded Successfully"
-    static let Error401 = "You are not authorised user to upload Data"
-    static let Error400 = "Bad Request"
-    static let Server_Response = "Server Response"
-    static let UnAuthorized_Access = "Unauthorized Access"
-    static let Success200 = "Success"
-    static let Fail = " Failed to upload data,try again"
-    static let Already_Active_Device =  "User already has 1 active devices"
-    static let Active_Device =  "You already have an active device."
-    static let Active_Device_Info = "This User Is Already Active on - Google AOSP on IA Emulator. Please Sync The Data From That Device, Before Registering This Device, Otherwise The Data Stored In Other Device Will Be Lost. "
-    static let No_Record = "You have no records to upload"
-    static let NPR_Started = "NPR block marked successfully"
-    static let EB_Start_Date_Mark = "HLB Start Date Marked successfully"
-    static let EB_Complete_Successfully = "HLB Complete successfully"
-    static let Button_Yes = "Yes"
-    static let Button_No = "No"
-    static let EB_Start_Date = "Unable to Fetch HLB Start Date. Please try again"
-    static let Search_Heading = "Total HouseHold in HLB -"
-    static let App_Name = "NPR-2020"
-    static let National_Population_Register = "National Population Register"
-    static let Developer_By = "Developed and Managed By"
-    static let Indian_Gov = "Government of India --"
-    static let Indian_Gov_ORGI = "ORGI,MHA,Government of India"
-    static let Version = "Version-2.0 --"
-    static let Version1 = "Version 1.0.0"
-    static let Please_Wait = "Please Wait"
-    static let Loading_Data = " Loading data..."
-    static let Wrong_Password = "Wrong Password "
-    static let Connected_To_Internet = "Good! Connected to the Internet "
-    static let Not_Connected_To_Internet = "Sorry! Not connected to the internet"
-    static let Total_Records = "Total Records -"
-    static let Total_Households = "Total Households -"
-    static let Enter_EB_Search = "Enter HLB for search"
-    static let checkHHType = "Please choose Type of Household"
+//    var lanModel:LanguageModal
+//
+//
+//    init(model:LanguageModal) {
+//        lanModel=model
+//    }
+//    var userId :String {
+//        return LanguageModal?.lanModel.userId
+//    }
     
-    static let dataSaved = "Data saved successfully"
-    static let Please_Choose_Type_Household = "Please choose Type of Household"
-    static let Family_Member_Should_Valid = "No. of family Member should be valid number"
-    static let Name_Atleast_3_Char_Long = "Name should be atleast 3 characters long"
-    static let Please_Enter_Institutional_Name = "Please enter Institutional Name"
-    static let Institutional_Name_MoreThan3Char = "Institutional Name should be atleast 3 characters long "
+   
+    static let networkConnection = "Check your network connection"
+    
+    static var User_Id_Password_Can_not_be_Empty = "UserId and Password cannot be empty"
+    static var Please_Enter_Correct_OTP =  "Please enter correct OTP"
+    static var Password_Empty =  "Password fields can not be blank"
+    static var Both_Password_Same =  "Both Password should be same"
+    static var Expected_hh_Can_not_be_Blank =  "Expected Households No. cannot be blank"
+    static var Expected_hh_Can_not_be_One = "Expected Households No. cannot be 1"
+    static var Age_Text = "Enter age to calculate date of birth"
+    static var Expected_hh_Can_not_be_More_Than = "Expected Households No. cannot be exceed than no.of HouseHold Members"
+    static var Alert_Date = "Member doesnot know date of birth but knows age"
+    static var Success = "Data Uploaded Successfully"
+    static var Error401 = "You are not authorised user to upload Data"
+    static var Error400 = "Bad Request"
+    static var Server_Response = "Server Response"
+    static var UnAuthorized_Access = "Unauthorized Access"
+    static var device_de_enrolled = "This device has been de-enrolled"
+    static var invalidCredential = "Please enter valid credential"
+    static var Success200 = "Success"
+    static var Fail = " Failed to upload data,try again"
+    static var Already_Active_Device =  "User already has 1 active devices"
+    static var Active_Device =  "You already have an active device."
+    static var Active_Device_Info = "This User Is Already Active on - Google AOSP on IA Emulator. Please Sync The Data From That Device, Before Registering This Device, Otherwise The Data Stored In Other Device Will Be Lost. "
+    static var No_Record = "You have no records to upload"
+    static var NPR_Started = "NPR block marked successfully"
+    static var EB_Start_Date_Mark = "HLB Start Date Marked successfully"
+    static var EB_Complete_Successfully = "HLB Complete successfully"
+    static var Button_Yes = "Yes"
+    static var Button_No = "No"
+    static var EB_Start_Date = "Unable to Fetch HLB Start Date. Please try again"
+    static var Search_Heading = "Total HouseHold in HLB -"
+    static var App_Name = "NPR-2020"
+    static var National_Population_Register = "National Population Register"
+    static var Developer_By = "Developed and Managed By"
+    static var Indian_Gov = "Government of India --"
+    static var Indian_Gov_ORGI = "ORGI,MHA,Government of India"
+    static var Version = "Version-2.0 --"
+    static var Version1 = "Version 1.0.0"
+    static var Please_Wait = "Please Wait"
+    static var Loading_Data = " Loading data..."
+    static var Wrong_Password = "Wrong Password "
+    static var Connected_To_Internet = "Good! Connected to the Internet "
+    static var Not_Connected_To_Internet = "Sorry! Not connected to the internet"
+    static var Total_Records = "Total Records -"
+    static var Total_Households = "Total Household -"
+    static var Enter_EB_Search = "Enter HLB for search"
+    static var checkHHType = "Please choose Type of Household"
+    
+    static var dataSaved = "Data saved successfully"
+    static var Please_Choose_Type_Household = "Please choose Type of Household"
+    static var Family_Member_Should_Valid = "No. of family Member should be valid number"
+    static var Name_Atleast_3_Char_Long = "Name should be atleast 3 characters long"
+    static var Please_Enter_Institutional_Name = "Please enter Institutional Name"
+    static var Institutional_Name_MoreThan3Char = "Institutional Name should be atleast 3 characters long "
     
     
     //Alert
     
-    let areYouSure = "Are You Sure"
+    static var areYouSure = "Are You Sure"
     
-    let agreeImportant = "It's important to agree on assigned HLB to do allotted work. If any issues please contact to your Supervisor/Charge Officer."
+    static var agreeImportant = "It's important to agree on assigned HLB to do allotted work. If any issues please contact to your Supervisor/Charge Officer."
    
-   static let ebDownloadedSuccessFully = "Eb Downloaded Successfully"
+   static var ebDownloadedSuccessFully = "HLB Downloaded Successfully"
+   static var ebDoesNotExist = "This HLB has been unassigned for this user"
+    
+    // Change HouseType
+    
+    static var changedHouseType = "House type changed successfully "
+    
+ 
+    // set Value
+    
+    
+    
     
     
 
 }
+
+
+
+
 
 struct ProjectColor {
     
@@ -408,6 +558,8 @@ struct CellIdentifier {
      static let splitHouseHold = "SplitHouseHoldCell"
      static let houseHoldDetailList = "HouseHoldDetail_Cell"
      static let houseHoldDetai_memberList = "HoldHoldMemberList_Cell"
+    static let locationParticularAddress = "CellAddress"
+    static let locationParticularHHCountbyLang = "CellHHCount"
     
 }
 

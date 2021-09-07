@@ -8,6 +8,34 @@
 
 import Foundation
 extension HouseholdMemberDetail_ViewController {
+    /////////////////
+    // MARK:Others
+    /////////////////////
+    func checkAndOpenSignatureView()  {
+        // Member Count for check skip HH
+        var memberCount = 0
+        
+        if hhModel.hh_completed == HHCompletionStatusCode.completed  {
+            
+            DBManagerMemberDetail().fetchMembers_currentalyLeaveinHH(modelSelectedHH: hhModel, Completion: { (araMemberLiveInHH) in
+                
+                memberCount = araMemberLiveInHH.count
+            })
+        }
+        if hhModel.respondentName?.count ?? 0 ==  0 && (hhModel.hh_completed == HHCompletionStatusCode.inComplete || (hhModel.hh_completed == HHCompletionStatusCode.completed && memberCount > 0 )){
+        
+            alertView.showAlertWithSingleButton( title: LanguageModal.langObj.signature_required, message: LanguageModal.langObj.press_ok_to_take_signature)
+        
+        }else{
+            if isCameFromEditPage {
+                self.navigationController?.popViewController(animated: true)
+            }else{
+            self.popBackToController(toControllerType: MainViewController.self)
+            }
+           // self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     
     func navigateToRespondentSignature()  {
        
@@ -21,37 +49,93 @@ extension HouseholdMemberDetail_ViewController {
     }
     
     @objc func btnDelete_action(_ sender: UIButton) {
-    
         
-        let modelMemberDetail = arayMembersModel[sender.tag]
-        
-        let alertView = AlertView()
-        
-        alertView.delegate = self
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tbl_houseoldList)
+            let indexPath = self.tbl_houseoldList.indexPathForRow(at: buttonPosition)!
+        selectedMemberToDelete = arayMembersModel[sender.tag]
+        let cell = tbl_houseoldList.cellForRow(at: indexPath) as? HouseHoldDetail_TVC
         isTapedDeleteButton = true
+        isTapedShiftMember = false
+        if #available(iOS 13.0, *) {
+            alertForDeleteMember (indexPath: indexPath)
+        } else {
+            // Fallback on earlier versions
+        } 
         
-        alertView.showAlert(vc: self, title: AppMessages().areYouSure, message: "\(English.IncompleHHOrViewEditPage().deletMemberAlert)\(modelMemberDetail.name ?? "")")
+        
+//        buttonStatusChange = sender
+//        btnTaped = sender
+//        isTapedDeleteButton = true
+//        tapedButtonTypeAlert = .deleteBuuton
+//        alertView.showAlert( title: AppMessages().areYouSure, message: "\(English.IncompleHHOrViewEditPage().deletMemberAlert)\(selectedMemberToDelete.name ?? "")")
+        
+    }
+    
+    func deleteMember()  {
+        
+        
+        context.delete(selectedMemberToDelete)
+        do {
+            try context.save()
+        } catch  {
+            
+        }
+        
+        DBManagerHousehold().updateHHStatus_dependONMember(houseHoldModel: hhModel) { (isUpdated) in
+            self.isSelectedCell = false
+            self.fetchHHMembers()
+        }
+        
+        
+    }
+    
+    func alertPrepare(message:String)  {
+       
+        
+    }
+    /////////////////
+    // MARK:Shift open
+    /////////////////////
+    func openShiftMemberView()  {
+        
+        let objShiftMemberHHList = Bundle.main.loadNibNamed("SplitViewHouseHoldList", owner: self, options: nil)?.first as? SplitViewHouseHoldList
+        objShiftMemberHHList?.delegate = self
+        
+        objShiftMemberHHList?.loadHouseHoldList(hhModel: hhModel, memberModel: arayMembersModel[btnTaped.tag], vc: self)
+
         
     }
 }
 
-
+// MARK:Delegates Head Change
 extension HouseholdMemberDetail_ViewController:HeadChangeDelegate {
     func headChanged() {
-        self.statusChangeAfterYes(sender: buttonStatusChange)
-        fetchHHMembers()
+        if isTapedDeleteButton {
+            deleteMember()
+        }else{
+            self.statusChangeAfterYes(sender: buttonStatusChange)
+            fetchHHMembers()
+        }
+        
+        
     }
     
-    
+    func tapedCancelHeadChange() {
+        
+    }
 }
 
-
+// MARK:Alert Delegates
 
 extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
     
     func alertTapedYes() {
-        if isTapedDeleteButton {
-            
+        if isTapedShiftMember {
+            openShiftMemberView()
+        }
+       else if isTapedDeleteButton {
+        
+        openHeaderList()
         }else{
             statusChangeAfterYes(sender: buttonStatusChange)
         }
@@ -59,17 +143,13 @@ extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
         
         isChangeMemberStatus = true
         
+        fetchHHMembers()
+        
     }
     
-    func alertViewTapedNo()  {
-        
-        let buttonPosition = buttonStatusChange.convert(CGPoint.zero, to: self.tbl_houseoldList)
-        let indexPath = self.tbl_houseoldList.indexPathForRow(at: buttonPosition)!
-        
-        tbl_houseoldList.reloadSections([indexPath.section], with: .automatic)
+    func alertViewSingelButtonTapedYes(){
+        navigateToRespondentSignature()
     }
-    
-    
     
     func statusChangeAfterYes(sender:UIButton)  {
     
@@ -119,26 +199,40 @@ extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
             break
         }
         if arayMembersModel[selectedIndexPath.section].rel_code == "01" {
-            let objmembersListForHead = Bundle.main.loadNibNamed("HHMemberListForHeadSelection", owner: self, options: nil)?.first as? HHMemberListForHeadSelection
-            objmembersListForHead?.delegate = self
             
-         objmembersListForHead?.loadHeadChangeList(hhModel: hhModel, vc: self)
-            
-            
+            //openHeaderList()
+            openHeadSelectionView()
             return
         }
         
         memberStatusChangeInDB(status: memberStatusCode)
-        //cell?.btnEdit.setImage(image, for: .normal)
+        cell.lblMemberStatusValue.text = MemberLivingStatusCode.dcodeDetail(memberStatusCode)()
     }
     
-    
+    func openHeadSelectionView()  {
+       
+        
+        let objmembersListForHead = Bundle.main.loadNibNamed("HHMemberListForHeadSelection", owner: self, options: nil)?.first as? HHMemberListForHeadSelection
+        objmembersListForHead?.delegate = self
+        
+     objmembersListForHead?.loadHeadChangeList(hhModel: hhModel, vc: self)
+    }
+    func openHeaderList()  {
+        if selectedMemberToDelete.rel_code == "01" {
+            
+        openHeadSelectionView()
+        }else{
+            deleteMember()
+        }
+    }
     func memberStatusChangeInDB(status:MemberLivingStatusCode)  {
         
-        
+        isChangeMemberStatus = true
         arayMembersModel[selectedIndexPath.section].memberStatus =
         status.rawValue
+       
         arayMembersModel[selectedIndexPath.section].member_completionStatus = MemberCompletionStatusCode.completed
+        arayMembersModel[selectedIndexPath.section].isUpdatedMemberStatus = true
         
         do{
             try context.save()
@@ -147,10 +241,24 @@ extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
             
         }
         
+        hhModel.respondentName = ""
         
+        do{
+            try context.save()
+        }
+        catch{
+            
+        }
+        
+        DBManagerHousehold().updateHHStatus_dependONMember(houseHoldModel: hhModel) { (isUpdated) in
+        }
     }
     
     
+    func updateSkipedHHMembersStatus()  {
+       
+        
+    }
     
     func deleteMemberFromHH()  {
         
@@ -164,6 +272,8 @@ extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
         }
         
         fetchHHMembers()
+        
+        openHeaderList()
     }
     
     
@@ -175,5 +285,84 @@ extension HouseholdMemberDetail_ViewController:AlertViewDelegate {
         guard let cell = tbl_houseoldList.cellForRow(at: indexPath) as? HouseHoldDetail_TVC else { return HouseHoldDetail_TVC() }
         
         return cell
+    }
+    
+    func alertViewTapedNo()  {
+        if !isTapedDeleteButton {
+            let buttonPosition = buttonStatusChange.convert(CGPoint.zero, to: self.tbl_houseoldList)
+            let indexPath = self.tbl_houseoldList.indexPathForRow(at: buttonPosition)!
+            tbl_houseoldList.reloadSections([indexPath.section], with: .automatic)
+        }
+        
+    }
+}
+
+//MARK:Shift button Delegate
+extension HouseholdMemberDetail_ViewController:shiftButtonDelegate {
+    func shiftButtonTaped(sender: UIButton) {
+        btnTaped = sender
+        tapedButtonTypeAlert = .shift
+        
+        isTapedDeleteButton = false
+        isTapedShiftMember = true
+        alertView.showAlert( title: AppMessages.areYouSure, message: "\(LanguageModal.langObj.to_shift) \(arayMembersModel[sender.tag].name ?? "")")
+    }
+    
+   
+}
+
+// MARK:shift Section
+
+//MARK:Shift selected HH Delegate
+extension HouseholdMemberDetail_ViewController:selectouseHoldShiftMember {
+    
+    func shiftWillHide(memberModel:NPR2021MemberDetails)->Bool  {
+        
+        if hhModel.is_Splited {
+            if MemberLivingStatusCode(rawValue: memberModel.memberStatus ?? "") == MemberLivingStatusCode.newMember {
+              return true
+            }
+            else if (hhModel.hh_completed == HHCompletionStatusCode.completed) || (hhModel.hh_completed == HHCompletionStatusCode.uploaded) {
+                return true
+            }
+            var arayTotalAvailableMembers = [NPR2021MemberDetails]()
+            
+            DBManagerMemberDetail().fetchOldMembers_currentalyLiveinHH(modelSelectedHH: hhModel) { (araMemberModel) in
+                arayTotalAvailableMembers = araMemberModel
+                
+            }
+            if arayTotalAvailableMembers.count == 1 {
+               return true
+            }else{
+                return false
+            }
+           
+        }
+        return true
+    }
+    
+    func memberShiftedSuccessfully() {
+        indexPathSelecNone()
+        isSelectedCell = false
+        fetchHHMembers()
+    }
+    
+    func cancelButtonTaped()  {
+        isTapedShiftMember = false
+        btnTaped = UIButton()
+    }
+}
+
+//MARK:Shift selected HH Delegate
+extension HouseholdMemberDetail_ViewController:UITextFieldDelegate {
+   
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        var txtAfterUpdate = ""
+        
+        if let text = textField.text as NSString? {
+                 txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+               
+            }
+        return txtAfterUpdate.count < 3
     }
 }

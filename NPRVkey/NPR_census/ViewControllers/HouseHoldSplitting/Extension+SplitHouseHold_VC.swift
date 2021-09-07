@@ -12,7 +12,8 @@ extension SplitHouseHold_VC {
     
     func createNewHouseHold(Completion:@escaping(Bool) -> Void)  {
        
-       
+        strNewHouseNumber = DBManagerHousehold().getNewHouseNumber()
+         strNewHH = DBManagerHousehold().getNewHouseHoldNumber()
         
         DBManagerHousehold().savedNewSplitHH(hhModel: hhModel, strHHID: strNewHH, strHN: strNewHouseNumber, araySelectedMember: araySplitedMembers) { (createdNewHH) in
             
@@ -52,8 +53,9 @@ extension SplitHouseHold_VC {
             else{
                 memberModel.relName = ""
                 memberModel.rel_code = ""
+                
             }
-            
+            memberModel.member_completionStatus = MemberCompletionStatusCode.notStarted
             do {
                 try context.save()
             } catch  {
@@ -62,7 +64,7 @@ extension SplitHouseHold_VC {
             
             if memberModel == araySplitedMembers.last {
                 Completion(true)
-                
+               
                 
             }
             
@@ -73,7 +75,7 @@ extension SplitHouseHold_VC {
     
     
     func updateHHAfterSplit(Completion:@escaping(Bool) -> Void)   {
-        
+        updateOriginal()
         
         hhModel.is_Splited = true
         if let isSplitedAllReady = hhModel.splitedTo  {
@@ -89,20 +91,17 @@ extension SplitHouseHold_VC {
        
         do {
             try context.save()
-            
-
-            
-            
+ 
             
         } catch  {
             
             
         }
-        
+        self.newHHDetail(hhNumber: self.strNewHH)
         self.updateHHMemberAfterSplited { (inserted) in
             
-           
-            Completion(true)
+           Completion(true)
+            
         }
     }
     
@@ -114,7 +113,7 @@ extension SplitHouseHold_VC {
         let arayRemainMembers = arayMemberModel.filter({$0.hh_tin == hhModel.hh_tin})
         let headDetail = arayRemainMembers.filter({$0.rel_code == "01"})
        
-            
+        updateSplitedHH_basedOnMemberStatus(houseHoldModel: hhModel)
             
             for modelMember in arayRemainMembers {
                 memberSloNO = memberSloNO+1
@@ -149,11 +148,12 @@ extension SplitHouseHold_VC {
                     Completion(true)
                     
                 }
-            
-            
+         
         }
         
-        updateSplitedHH_basedOnMemberStatus(houseHoldModel: hhModel)
+       
+       // updateSplitedHH_basedOnMemberStatus(houseHoldModel: )
+        
         Completion(true)
         
         
@@ -163,7 +163,9 @@ extension SplitHouseHold_VC {
         
         
         DBManagerHousehold().fetchHHDetail(hhTin: hhNumber.hhTin()) { (hhDetailModel) in
-            
+            DBManagerHousehold().updateHHStatus_dependONMember(houseHoldModel: hhDetailModel) { (isUpdated) in
+                
+            }
         }
     }
     
@@ -172,6 +174,32 @@ extension SplitHouseHold_VC {
         DBManagerHousehold().updateHHStatus_dependONMember(houseHoldModel: houseHoldModel) { (isUpdated) in
             
         }
+    }
+    
+ 
+    
+    func updateOriginal()   {
+       // let hh = hhModel.houseHoldhNo  == hhModel.originalHHNumberSplit ? hhModel.houseHoldhNo : hhModel.originalHHNumberSplit
+        var originalHHTin = ""
+        
+        if let spliHHTin = hhModel.originalHHNumberSplit?.hhTin() {
+            originalHHTin = spliHHTin
+        }else{
+            originalHHTin = hhModel.hh_tin ?? "".hhTin()
+        }
+        DBManagerHousehold().fetchHHDetail(hhTin: originalHHTin ) { (originalHHModel) in
+            
+           let oginialHHNumber = originalHHModel.originalHHSplitInto?.count == 0 ? self.strNewHH : "\(originalHHModel.originalHHSplitInto ?? ""),\(self.strNewHH)"
+            
+            originalHHModel.originalHHSplitInto = oginialHHNumber
+            do {
+                try context.save()
+            } catch  {
+                
+            }
+        }
+        
+        
     }
 }
 

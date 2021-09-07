@@ -59,11 +59,11 @@ class SV_HHMemberDetail_VC: UIViewController {
         if arayMembersModel.count > 0 {
             
         
-            lblBlockNo.text = "Block No - \(singleton().selectEBListModel.eb_block_number ?? "")"
+        lblBlockNo.text = "Block No - \(singleton().selectEBListModel.eb_block_number ?? "")"
         lblHouseHoldNumber.text =  "Household Number  - \(arayMembersModel[0].hh_Number ?? "")"
 //        btnHouseType.setTitle("House Type : \(arayMembersModel[0].hh_type ?? "") ", for: .normal)
         
-         btnHouseType.setTitle("House Type : Normal ", for: .normal)
+         btnHouseType.setTitle("Type of Household : Normal ", for: .normal)
             
             setRemark()
     }
@@ -74,14 +74,15 @@ class SV_HHMemberDetail_VC: UIViewController {
         if hhModel.hh_completed == HHCompletionStatusCode.uploaded {
             stackRemark.isHidden = true
             lblRemark.isHidden = false
-            lblRemark.text = hhModel.superVisor_remrk
+            
         }
         else{
             stackRemark.isHidden = false
-            lblRemark.isHidden = true
+            lblRemark.isHidden = false
             
         }
         
+        lblRemark.text = hhModel.superVisor_remrk
     }
     
     
@@ -135,7 +136,7 @@ class SV_HHMemberDetail_VC: UIViewController {
         let remarkView = Bundle.main.loadNibNamed("SV_RemarkView", owner: self, options: nil)?.first as? SV_RemarkView
         
         remarkView?.delgate = self
-        
+        remarkView?.vc = self
         remarkView?.load_SV_RemarkView()
     }
     
@@ -143,15 +144,22 @@ class SV_HHMemberDetail_VC: UIViewController {
        
         hhModel.superVisor_remrk = remark
         hhModel.hh_completed = HHCompletionStatusCode.completed
+        hhModel.superVisor_remrkOn = Date().superVisorRemarkOn
         do {
             try context.save()
             setRemark()
+            alertAfterSaveRemark()
         } catch  {
             
         }
         
     }
     
+    func alertAfterSaveRemark()  {
+        let alertView = AlertView()
+        alertView.alertWithoutButton( message: English.superVisorHHDetail.remarkSaved)
+        alertView.delegate = self
+    }
 }
 
 extension SV_HHMemberDetail_VC:UITableViewDataSource,UITableViewDelegate{
@@ -180,27 +188,26 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         
         cell.lblMemberName.text = arayMembersModel[indexPath.section].name
-        cell.lblSerialNumber.text = arayMembersModel[indexPath.section].sloMember
+        let modelMember = arayMembersModel[indexPath.section]
+        
+        cell.lblMemberName.text = ((modelMember.name?.count != 0 && modelMember.name != nil) ? modelMember.name ?? "" : modelMember.nameSL) ?? ""
+        cell.lblSerialNumber.text = modelMember.sloMember
+        
+        
         return cell
         }
         else{
             
         let cell:HouseHoldDetail_TVC = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.houseHoldDetailList, for: indexPath) as! HouseHoldDetail_TVC
-//        cell.mainStack.backgroundColor = .brown
+       // cell.mainStack.backgroundColor = .brown
         
        let modelMemberDetail = arayMembersModel[indexPath.section]
       // cell.cellValueSetUP(memberDetailModel: modelMemberDetail)
-        
-        
-        
-        
-        
-        
-        
-        
+     
             let hhHeadModel = arayMembersModel.filter({$0.rel_code == "01"})
             
             cell.cellPutValues(memberDetailModel: modelMemberDetail, headGender: hhHeadModel[0].gender_id ?? "0")
+            cell.mainStack.backgroundColor = .white
         return cell
         }
     
@@ -232,16 +239,16 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        if indexPath.row == 1 {
-            return DeviceType.IS_IPAD ? 1400 : 950
-        }
+//        if indexPath.row == 1 {
+//            return DeviceType.IS_IPAD ? 1400 : 950
+//        }
         
         return UITableView.automaticDimension
     }
 }
 
 
-
+//MARK:Custom Delegates
 
 extension SV_HHMemberDetail_VC:SV_RemarkDelegate{
     func tap_svRemarkSubmit(remark: String) {
@@ -251,4 +258,13 @@ extension SV_HHMemberDetail_VC:SV_RemarkDelegate{
     
 }
 
-
+extension SV_HHMemberDetail_VC:AlertViewDelegate {
+    func alertTapedYes() {
+        
+    }
+    func alertViewWithoutButtonDissMiss() {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}

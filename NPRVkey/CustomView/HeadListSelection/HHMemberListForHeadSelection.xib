@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HHMemberListForHeadSelection" customModule="NPR_2020" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybM-hj-Ly0">
+                    <rect key="frame" x="10" y="74.5" width="394" height="707.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8bA-h8-HDL"/>
+                        <outlet property="delegate" destination="-1" id="lw1-A4-Sxf"/>
+                    </connections>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="AIh-9U-2FZ">
+                    <rect key="frame" x="30" y="792" width="354" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05w-BY-AlV">
+                            <rect key="frame" x="0.0" y="0.0" width="155.5" height="40"/>
+                            <color key="backgroundColor" name="lightPink"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.1960784314" green="0.1529411765" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                            </variation>
+                            <connections>
+                                <action selector="btnCancelTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="woW-Xe-ycF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-v1-Kp8">
+                            <rect key="frame" x="198.5" y="0.0" width="155.5" height="40"/>
+                            <color key="backgroundColor" name="lightPink"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <state key="normal" title="Ok">
+                                <color key="titleColor" name="color_primary"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            </variation>
+                            <connections>
+                                <action selector="btnOkTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wmr-FO-2vq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ara-1K-kdc"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select New Head for this Household" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-vO-8ux">
+                    <rect key="frame" x="10" y="44" width="394" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="34"/>
+                    </variation>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AIh-9U-2FZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="3O7-G9-fRW"/>
+                <constraint firstItem="ybM-hj-Ly0" firstAttribute="top" secondItem="n8A-vO-8ux" secondAttribute="bottom" constant="10" id="Dw1-5B-9CO"/>
+                <constraint firstItem="n8A-vO-8ux" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="K4e-3M-EtB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n8A-vO-8ux" secondAttribute="trailing" constant="10" id="N2U-qp-zXT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AIh-9U-2FZ" secondAttribute="bottom" constant="30" id="OqF-Zw-9tE"/>
+                <constraint firstItem="ybM-hj-Ly0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="WH8-7q-oNH"/>
+                <constraint firstItem="AIh-9U-2FZ" firstAttribute="top" secondItem="ybM-hj-Ly0" secondAttribute="bottom" constant="10" id="XBj-cj-Ggm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AIh-9U-2FZ" secondAttribute="trailing" constant="30" id="Z7k-9h-HmX"/>
+                <constraint firstItem="n8A-vO-8ux" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Zeu-Ft-VdY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ybM-hj-Ly0" secondAttribute="trailing" constant="10" id="aST-LH-ixu"/>
+            </constraints>
+            <connections>
+                <outlet property="tblView" destination="ybM-hj-Ly0" id="M2h-BA-JHo"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="color_primary">
+            <color red="0.40400001406669617" green="0.22699999809265137" blue="0.71799999475479126" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightPink">
+            <color red="0.92900002002716064" green="0.90600001811981201" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

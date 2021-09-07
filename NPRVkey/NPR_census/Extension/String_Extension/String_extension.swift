@@ -11,6 +11,20 @@ import Foundation
 
 extension String {
     
+    var IsSelectedLangauge_nonEnglish:Bool {
+    let currentLangCode = self.prefix(2).lowercased()
+        if currentLangCode == "en" {
+            return false
+        }
+        return currentLangCode == LanguageModal.currentLanguage.lanaugeCode().lowercased()
+    }
+    
+    
+    var haveValue:Bool {
+        
+        return (self.count > 0 )
+    }
+    
      func maskEmail() -> String{
         let components = self.components(separatedBy: "@")
         var maskEmail = ""
@@ -28,14 +42,33 @@ extension String {
     
     func maskMobile() -> String{
         var mobile = ""
-        mobile =  String(self.enumerated().map { index, char in
-            return [0, 6, self.count - 3, self.count - 2, self.count - 1].contains(index) ? char : "*"
-        })
+        if self.isValidMobileNumber() {
+          
+            mobile =  String(self.enumerated().map { index, char in
+                return [0, 6, self.count - 3, self.count - 2, self.count - 1].contains(index) ? char : "*"
+            })
+            
+        }
+        
        print(mobile)
        return mobile
     }
     
+    func maskAadhar() -> String{
+       
+        if Verhoeff.validateVerhoeff(for: self) {
+          
+            return String(repeating: "*", count: Swift.max(0, count-4)) + suffix(3)
+            }
+            
+        
+        
+       
+       return ""
+    }
+    
     func convertDateFormater() -> String{
+        
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let date = dateFormatter.date(from: self)
@@ -66,6 +99,24 @@ extension String {
        return ""
     }
     
+    func getDropDownItem_id(aray:[ModelNameID]) -> String {
+        
+        //let predicate = NSPredicate(format:"name == %@", self)
+        if self.count > 0 {
+            let filteredAray = aray.filter { $0.name == self }
+            
+            
+        if filteredAray.count > 0 {
+          
+            let model = PickerViewCommon_model.init(model: filteredAray[0])
+            
+            return model.id
+        }
+            return ""
+        }
+       
+       return ""
+    }
     
     func getName_by_ID(aray:[[String:String]]) -> String {
         
@@ -82,26 +133,43 @@ extension String {
        
        return ""
     }
+    func getName_by_ID(aray:[ModelNameID]) -> String {
+        
+        //let predicate = NSPredicate(format:"name == %@", self)
+        let filteredAray = aray.filter { $0.id == self }
+            
+            
+        if filteredAray.count > 0 {
+          
+            let model = filteredAray[0]
+            
+            return model.name ?? ""
+        }
+       
+       return ""
+    }
     
-    
-    func getRealtionShipAray() -> [[String:String]] {
+    func getRealtionShipAray() -> [ModelNameID] {
         
         
         let genderId = gender.init(rawValue: Int(self) ?? 0)
-        var arayRelation =  [[String:String]]()
+        var arayRelation =  [ModelNameID]()
          switch genderId {
          case .male:
-            arayRelation = English().relationship_to_head_male()
+            arayRelation = LanguageModal.langObj.relationship_to_head_male
              break
          case .female:
-             arayRelation = English().relationship_to_head_female()
+            // arayRelation = English().relationship_to_head_female()
+            arayRelation = LanguageModal.langObj.relationship_to_head_female
              break
          case .transGender:
-             arayRelation = English().relationship_to_head_transGender()
+            // arayRelation = English().relationship_to_head_transGender()
+            arayRelation = LanguageModal.langObj.relationship_to_head
              break
             
          default:
-             arayRelation = English().relationship_to_head_transGender()
+             //arayRelation = English().relationship_to_head_transGender()
+            arayRelation = LanguageModal.langObj.relationship_to_head
              break
          }
         return arayRelation
@@ -113,10 +181,7 @@ extension String {
    
     func splitDateString() -> (date: String, month: String,year: String) {
         
-//       let arayDateComponent = self.components(separatedBy: "-")as?[String]  else {
-//
-//           return (date: "", month:"" ,year: "")
-//        }
+
           let arayDateComponent = self.components(separatedBy: "-")
         if arayDateComponent.count > 2 {
             return (date: arayDateComponent[0], month: arayDateComponent[1],year: arayDateComponent[2])
@@ -134,18 +199,50 @@ extension String {
         return result
     }
     
+    func isValidPassport() -> Bool {
+        let passportRegEx = "^[A-PR-WYa-pr-wy][1-9]\\d" + "\\s?\\d{4}[1-9]$"//"[a-zA-Z]{2}[0-9]{7}"
+
+        let passportPred = NSPredicate(format:"SELF MATCHES %@", passportRegEx)
+        return passportPred.evaluate(with: self)
+      }
+    
+    func isValidAlphabetAndSpace() -> Bool {
+      //  var s="😀 emoji 😀"
+        
+        
+        
+        let namePred = NSPredicate(format:"SELF MATCHES %@", Regix.regeixAlphabetSpace)
+       return namePred.evaluate(with: self)
+        
+        
+    }
+    func isValidAddressEntry() -> Bool {
+        let namePred = NSPredicate(format:"SELF MATCHES %@", Regix.adress)
+       return namePred.evaluate(with: self)
+        
+        
+    }
+    
+    func isValiNumberEntry() -> Bool {
+       
+        let namePred = NSPredicate(format:"SELF MATCHES %@", Regix.regixNumber)
+       return namePred.evaluate(with: self)
+    }
     func isValidDOB() -> Bool  {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-YYYY"
+        
+        let dateandFormat = dateFormatAndDateString()
+        
+        dateFormatter.dateFormat = dateandFormat.format
        // let date = dateFormatter.date(from: self)
         
-        if let dateExist  = dateFormatter.date(from: self) {
+        if let dateExist  = dateFormatter.date(from:dateandFormat.strDate ) {
             print("date DOB" ,dateExist)
             
             let dateComponent = self.splitDateString()
             
-            if (1854 < Int(dateComponent.year) ?? 0) && (dateExist < Date()) {
+            if (1895 < Int(dateComponent.year) ?? 0) && (dateExist < Date()) {
                 return true
             }
             return false
@@ -158,8 +255,113 @@ extension String {
       //  return true
     }
     
+   
+    func isValidSENumber() -> Bool {
+      
+        if self.count < 10 {
+            return false
+        }
+        guard var value = Int(self ) else { return false }
+        var sum = 0
+        let lastDigit =  value%10
+        
+        while value > 0 {
+          sum += value%10
+            value = value/10
+        }
+        
+        let ciDigit = (81-sum)/9
+        
+        return ciDigit == lastDigit
+        
+        
+    }
+    
+    
+    func isValidParentDOB() -> Bool  {
+        
+        let dateFormatter = DateFormatter()
+        
+        let dateandFormat = dateFormatAndDateString()
+        
+        dateFormatter.dateFormat = dateandFormat.format
+       // let date = dateFormatter.date(from: self)
+        
+        if let dateExist  = dateFormatter.date(from:dateandFormat.strDate ) {
+            print("date DOB" ,dateExist)
+            
+            let dateComponent = self.splitDateString()
+            
+            if (1770 < Int(dateComponent.year) ?? 0) && (dateExist < Date()) {
+                return true
+            }
+            return false
+            
+            
+        } else {
+            return false
+        }
+        
+      //  return true
+    }
+    
+    func dateForSearch()->String  {
+        var date = ""
+        var month = ""
+        
+        if self.count == 2 && self == "00" {
+            return "01"
+        }
+        if self.count > 2 && self.count <= 6 {
+            
+        } else {
+            
+        }
+        let dateAray = self.split(separator: "-")
+       
+        let year = dateAray[2]
+        if date == "00" && month == "00"  {
+            date = "01"
+            month = "01"
+        }else if (date == "00" || month == "00"){
+          
+            
+            if date == "00" {
+                date = "01"
+                
+                
+            }
+            else if month == "00" {
+                month = "01"
+            }
+        }
+        
+        let strDate = "\(date)-\(month)-\(year)"
+        return strDate
+    }
     
  //MARK:Formater
+    func dateFormatAndDateString() -> (format :String ,strDate:String) {
+        
+        let araySeratedDateString = self.splitDateString()
+          var dateFormater = ""
+        var strDate = ""
+        
+          if araySeratedDateString.date == "00" && araySeratedDateString.month == "00" && araySeratedDateString.year == "0000" {
+            
+          }else if (araySeratedDateString.date == "00" || araySeratedDateString.date.isEmpty ) && ( araySeratedDateString.month == "00"  || araySeratedDateString.month.isEmpty ) {
+              dateFormater = "yyyy"
+            strDate = araySeratedDateString.year
+              
+          } else  if ( araySeratedDateString.date == "00" || araySeratedDateString.date.isEmpty ) {
+              dateFormater = "MM-yyyy"
+            strDate = "\(araySeratedDateString.month)-\(araySeratedDateString.year)"
+          }else{
+              dateFormater = "dd-MM-yyyy"
+            strDate = "\(araySeratedDateString.date)-\(araySeratedDateString.month)-\(araySeratedDateString.year)"
+          }
+          return (dateFormater,strDate)
+    }
     
     func dataFormater() -> String {
       let araySeratedDateString = self.splitDateString()
@@ -168,16 +370,31 @@ extension String {
         if araySeratedDateString.date == "00" && araySeratedDateString.month == "00" && araySeratedDateString.year == "0000" {
             
         }else if araySeratedDateString.date == "00" && araySeratedDateString.month == "00" {
-            dateFormater = "yyyy"
+            dateFormater = Format.dateFormat.year.rawValue
             
         } else if araySeratedDateString.date == "00" {
-            dateFormater = "MM-yyyy"
+            dateFormater = Format.dateFormat.monthYear.rawValue
         }else{
-            dateFormater = "dd-MM-yyyy"
+            dateFormater = Format.dateFormat.dateMonthYear.rawValue
         }
         return dateFormater
     }
     
+    
+    func stringToDate() -> Date {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dataFormater()
+        let date = dateFormatter.date(from: self)
+        return date ?? Date()
+        
+    }
+    func stringtoDate(format:Format.dateFormat)-> Date  {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format.rawValue
+        let date = dateFormatter.date(from: self)
+        return date ?? Date()
+    }
     
     func memberSrNumber() -> String {
         if  let intHHNumber = Int(self) {
@@ -189,10 +406,24 @@ extension String {
             return ""
     }
     
-    func hhNumber() -> String {
+    func memberSrNumberForUpload() -> String {
         if  let intHHNumber = Int(self) {
         
-        let strHHNumber = String(format: AppFormat.fivedigitFormat, intHHNumber)
+        let strSrNumber = String(format: AppFormat.fivedigitFormat, intHHNumber)
+        
+      return  strSrNumber
+        }
+            return ""
+    }
+    
+    func hhNumber() -> String {
+        if  let intHHNumber = Int(self) {
+            var hhNumberDigit = AppFormat.fivedigitFormat
+            
+            if intHHNumber == 9999 {
+                hhNumberDigit = AppFormat.fourdigitFormat
+            }
+        let strHHNumber = String(format: hhNumberDigit, intHHNumber)
         
       return  strHHNumber
         }
@@ -224,7 +455,18 @@ extension String {
     }
     
     func censusHHNumber() -> String {
-        if  let intHHNumber = Int(self) {
+        let trimedHHN = self.trimWhiteSpace()
+        if  let intHHNumber = Int(trimedHHN) {
+        
+        let strHHNumber = String(format: AppFormat.threeDigitFormat, intHHNumber)
+        
+      return  strHHNumber
+        }
+            return ""
+    }
+    func censusHHNumberForUpload() -> String {
+        let trimedHHN = self.trimWhiteSpace()
+        if  let intHHNumber = Int(trimedHHN) {
         
         let strHHNumber = String(format: AppFormat.fourdigitFormat, intHHNumber)
         
@@ -233,9 +475,10 @@ extension String {
             return ""
     }
     
-    
     func censusHouseNumber() -> String {
-        if  let intHHNumber = Int(self) {
+        let trimedHHN = self.trimWhiteSpace()
+        
+        if  let intHHNumber = Int(trimedHHN) {
         
         let strHHNumber = String(format: AppFormat.threeDigitFormat, intHHNumber)
         
@@ -243,6 +486,55 @@ extension String {
         }
             return ""
     }
-}
+    
+    func trimWhiteSpace() -> String {
+        return self.trimmingCharacters(in: .whitespaces)
+    }
+    
+    var maskedMobile: String {
+            return String(repeating: "*", count: Swift.max(0, count-3)) + suffix(3)
+        }
+    
+    var maskedAadhar: String {
+            return String(repeating: "*", count: Swift.max(0, count-4)) + suffix(3)
+        }
+    
+    
+    func lanaugeCode() -> String {
+     
+       let currentLangCode = self.prefix(2).lowercased()
+        return currentLangCode
+    }
+    
+   fileprivate func detectedLanguage<T: StringProtocol>(_ forString: T) -> String? {
+        guard let languageCode = NSLinguisticTagger.dominantLanguage(for: String(forString)) else {
+            return nil
+        }
+
+//        let detectedLanguage = Locale.current.localizedString(forIdentifier: languageCode)
+//        print("detectedLanguage",detectedLanguage ?? "")
+//        print("languageCode",languageCode)
+        return languageCode
+    }
+    
+    
+    func isEnglishLangauge() -> Bool {
+        
+       return detectedLanguage(self) == "en"
+        
+        
+    }
+    
+    func isEnglishLangCode() -> Bool {
+        return self == "en"
+    }
+    
+    
+    
+    
+    
+    }
+    
+
 
 

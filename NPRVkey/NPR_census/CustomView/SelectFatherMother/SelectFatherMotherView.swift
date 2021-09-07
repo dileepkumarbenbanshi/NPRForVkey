@@ -98,8 +98,18 @@ extension SelectFatherMotherView:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectFatherMotherCell") as? SelectFatherMotherCell
-        let model = arayInPut[indexPath.row] 
-        cell?.lblName.text = model.name
+        let model = arayInPut[indexPath.row]
+        
+        var headName = ""
+        
+        if model.language?.IsSelectedLangauge_nonEnglish ?? false {
+            headName = ((model.nameSL?.count != 0) ? model.nameSL ?? "" : model.name) ?? ""
+        }else{
+            headName = ((model.name?.count != 0) ? model.name ?? "" : model.nameSL) ?? ""
+        }
+       
+        
+        cell?.lblName.text = headName
       return cell ?? PickerViewCommonCell()
     }
     

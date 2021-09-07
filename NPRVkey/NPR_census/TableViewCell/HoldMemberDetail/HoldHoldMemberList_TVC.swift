@@ -11,13 +11,12 @@ import UIKit
 class HoldHoldMemberList_TVC: UITableViewCell {
 
     @IBOutlet weak var btnStatus: UIButton!
-    
-   
-    
-   
     @IBOutlet weak var btnDropDown: UIButton!
     @IBOutlet weak var lblMemberName: UILabel!
     @IBOutlet weak var lblSerialNumber: UILabel!
+    
+    var hhModel = NPR_2021hh_Details()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,10 +27,60 @@ class HoldHoldMemberList_TVC: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func cellValueSetUP(memberDetailModel:NPR2021MemberDetails)  {
-        //lblRelation.text = memberDetailModel.relName
-        //lblMemberName.text = memberDetailModel.name
+    func cellValueSetUP(memberDetailModel:NPR2021MemberDetails , index :Int)  {
+        if Int(memberDetailModel.sloMember ?? "") != index+1 {
+            memberDetailModel.sloMember = "\(index+1)".memberSrNumber()
+        }
+         let isSelectedLanuage = memberDetailModel.language?.IsSelectedLangauge_nonEnglish ?? false
+        
+        var name = ""
+        
+        if isSelectedLanuage {
+            name = ((memberDetailModel.nameSL?.count != 0 && memberDetailModel.nameSL != nil) ? memberDetailModel.nameSL ?? "" : memberDetailModel.name) ?? ""
+        }else{
+            name = ((memberDetailModel.name?.count != 0 && memberDetailModel.name != nil) ? memberDetailModel.name ?? "" : memberDetailModel.nameSL) ?? ""
+        }
+        
+        lblMemberName.text = name
+        
+        memberDetailModel.censusHH_number = hhModel.census_hhNo
+        memberDetailModel.censusHouse_number = hhModel.census_hNo
+        do {
+            try context.save()
+        } catch  {
+            
+        }
+        lblSerialNumber.text = memberDetailModel.sloMember
+        
+        
+        
+        
+        
+      
+        if isSelectedLanuage {
+            
+        }
+        
+        
+        setTextColor(modelMember: memberDetailModel)
+    }
+  
+    
+    func setTextColor(modelMember:NPR2021MemberDetails)  {
+        
+        var textcolor = UIColor.systemPink
+        
+        let memberCompletionStatus = MemberCompletionStatus.init(rawValue: modelMember.member_completionStatus ?? "")
+        let mebberLivingStatus = MemberLivingStatusCode.init(rawValue: modelMember.memberStatus ?? "" )
+        
+        if memberCompletionStatus == .completed && mebberLivingStatus != .notStarted {
+           
+        textcolor = ProjectColor.green
+        }else if memberCompletionStatus == .uploaded  && mebberLivingStatus != .notStarted{
+            textcolor = ProjectColor.colorPrimary
+        }
+        self.lblMemberName?.textColor = textcolor
+        self.lblSerialNumber.textColor = textcolor
         
     }
-    
 }

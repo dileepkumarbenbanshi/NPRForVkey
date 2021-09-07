@@ -40,9 +40,16 @@ class IncompleteHouseholdSubCell: UITableViewCell {
 
     
     func cellSetUP(modelMember:NPR2021MemberDetails,hhModel:NPR_2021hh_Details)  {
-        updateMemberStaCompletiontus_completedORUploadedHH(hhModel: hhModel, modelMember: modelMember)
+        //updateMemberStaCompletiontus_completedORUploadedHH(hhModel: hhModel, modelMember: modelMember)
+       // let name = modelMember.name ?? ""
+        var name = ""
         
-        self.labelMemberName?.text = modelMember.name
+        if modelMember.language?.IsSelectedLangauge_nonEnglish ?? false {
+            name = ((modelMember.nameSL?.count != 0 && modelMember.nameSL != nil) ? modelMember.nameSL ?? "" : modelMember.name) ?? ""
+        }else{
+            name = ((modelMember.name?.count != 0 && modelMember.name != nil) ? modelMember.name ?? "" : modelMember.nameSL) ?? ""
+        }
+        self.labelMemberName.text = name
         self.labelSerialNo.text = modelMember.sloMember
         //let arayRelation = headGender.getRealtionShipAray()
         
@@ -56,18 +63,26 @@ class IncompleteHouseholdSubCell: UITableViewCell {
         do {
             try context.save()
         } catch  {
-            
+
         }
-        self.labelStatus.text = MemberLivingStatusCode.shortCode(memberStatus!)()
+        self.labelStatus.text = MemberLivingStatusCode.shortCode(memberStatus ?? .notStarted)()
         buttonInfo.tag = Int(memberStatus?.rawValue ?? "0") ?? 0
+        
+        setTextColor(modelMember: modelMember, hhModel: hhModel)
+    }
+    
+    
+    func setTextColor(modelMember:NPR2021MemberDetails,hhModel:NPR_2021hh_Details)  {
+        
         var textcolor = UIColor.systemPink
         
         let memberCompletionStatus = MemberCompletionStatus.init(rawValue: modelMember.member_completionStatus ?? "")
+        let mebberLivingStatus = MemberLivingStatusCode.init(rawValue: modelMember.memberStatus ?? "" )
         
-        if memberCompletionStatus == .completed  {
+        if memberCompletionStatus == .completed && mebberLivingStatus != .notStarted {
            
         textcolor = ProjectColor.green
-        }else if memberCompletionStatus == .uploaded {
+        }else if memberCompletionStatus == .uploaded  && mebberLivingStatus != .notStarted{
             textcolor = ProjectColor.colorPrimary
         }
         self.labelMemberName?.textColor = textcolor
@@ -96,13 +111,13 @@ class IncompleteHouseholdSubCell: UITableViewCell {
                 
             }
         }
+        
+        
     }
     
     @IBAction func btnInfo_action(_ sender: UIButton) {
        
-       // let memberLiveStatus = MemberLivingStatusCode.init(rawValue: "\(sender.tag)")
-        
-        //AlertView().showAlertWithSingleButton(vc: , title: <#T##String#>, message: <#T##String#>)
+       
         
         
     }

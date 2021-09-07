@@ -71,13 +71,30 @@ extension PickerViewRespondentList :UIPickerViewDataSource ,UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
         let model = arayRespondentList[row]
-        return model.name
+        var name  = model.name
+        
+        
+        if model.language?.IsSelectedLangauge_nonEnglish ?? false {
+            name = ((model.nameSL?.count != 0 && model.nameSL != nil ) ? model.nameSL ?? "" : model.name) ?? ""
+        }else{
+            name = ((model.name?.count != 0 && model.name != nil ) ? model.name ?? "" : model.nameSL) ?? ""
+        }
+        
+        return name
     }
     
     func selectRow(_ row: Int, inComponent component: Int, animated: Bool) {
         let model = arayRespondentList[row]
          
-        selectedComponent = model.name ?? ""
+        
+        
+        if model.language?.IsSelectedLangauge_nonEnglish ?? false {
+            selectedComponent = ((model.nameSL?.count != 0) ? model.nameSL ?? "" : model.name) ?? ""
+        }else{
+            selectedComponent = ((model.name?.count != 0) ? model.name ?? "" : model.nameSL) ?? ""
+        }
+        
+        
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         if arayRespondentList.count > 0 {
@@ -85,7 +102,16 @@ extension PickerViewRespondentList :UIPickerViewDataSource ,UIPickerViewDelegate
         
         let model = arayRespondentList[row]
             
-         
-        selectedComponent = model.name ?? ""        }
+            var name  = model.name ?? ""
+            
+            if model.language?.IsSelectedLangauge_nonEnglish ?? false {
+                name = ((model.nameSL?.count != 0) ? model.nameSL ?? "" : model.name) ?? ""
+            }else{
+                name = ((model.name?.count != 0) ? model.name ?? "" : model.nameSL) ?? ""
+            }
+            
+            let respondentName_srNumber = "\(name)_\(model.sloMember ?? "" )"
+            
+        selectedComponent = respondentName_srNumber        }
     }
 }

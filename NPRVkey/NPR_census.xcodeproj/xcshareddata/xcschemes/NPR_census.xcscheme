@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84674A4524D9456F0086F723"
-               BuildableName = "NPR-2020.app"
-               BlueprintName = "NPR-2020"
+               BuildableName = "NPR-2021.app"
+               BlueprintName = "NPR-2021"
                ReferencedContainer = "container:NPR_census.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84674A4524D9456F0086F723"
-            BuildableName = "NPR-2020.app"
-            BlueprintName = "NPR-2020"
+            BuildableName = "NPR-2021.app"
+            BlueprintName = "NPR-2021"
             ReferencedContainer = "container:NPR_census.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -88,8 +88,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84674A4524D9456F0086F723"
-            BuildableName = "NPR-2020.app"
-            BlueprintName = "NPR-2020"
+            BuildableName = "NPR-2021.app"
+            BlueprintName = "NPR-2021"
             ReferencedContainer = "container:NPR_census.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

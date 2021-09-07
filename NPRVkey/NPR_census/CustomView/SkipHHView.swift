@@ -19,7 +19,12 @@ class SkipHHView:UIView {
     @IBOutlet weak var btnNotAvailable: UIButton!
     var modelHH = NPR_2021hh_Details ()
     var skipStatus = ""
-    
+    @IBOutlet weak var btnLocked_title: UIButton!
+    @IBOutlet weak var btnMoved_title: UIButton!
+    @IBOutlet weak var btnNotAvailable_title: UIButton!
+    @IBOutlet weak var btnCancel_title: UIButton!
+    @IBOutlet weak var btnOk_title: UIButton!
+    @IBOutlet weak var lblReasonTitle: UILabel!
     var isRadioButtonSelected = false
     
     var staus = ""
@@ -45,6 +50,7 @@ class SkipHHView:UIView {
             btnNotAvailable.isSelected = false
             staus = HHStatusCode.locked
             skipStatus = "Locked"
+            skipStatus = LanguageModal.langObj.due_to_hh_locked
             break
             
             case 11:
@@ -52,12 +58,14 @@ class SkipHHView:UIView {
             btnNotAvailable.isSelected = false
             staus = HHStatusCode.migratedOut
                 skipStatus = "Migrated Out"
+                skipStatus = LanguageModal.langObj.due_to_family_migrated
             break
         default:
             btnLocked.isSelected = false
             btnMigrated.isSelected = false
             staus = HHStatusCode.notAvailable
             skipStatus = "Not Available"
+            skipStatus = LanguageModal.langObj.due_to_hh_not_available
         }
         sender.isSelected =   !sender.isSelected
     }
@@ -65,6 +73,15 @@ class SkipHHView:UIView {
     private func comonInit (){
         
         self.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
+        lblReasonTitle.text = LanguageModal.langObj.skip_title
+        btnLocked_title.setTitle(LanguageModal.langObj.locked_house, for: .normal)
+        
+        btnMoved_title.setTitle(LanguageModal.langObj.family_migrated, for: .normal)
+        
+        btnNotAvailable_title.setTitle(LanguageModal.langObj.not_available, for: .normal)
+        
+        btnOk_title.setTitle(LanguageModal.langObj.OK, for: .normal)
+        btnCancel_title.setTitle(LanguageModal.langObj.cancel, for: .normal)
     }
     
     @IBAction func btnCancel_click(_ sender: UIButton) {

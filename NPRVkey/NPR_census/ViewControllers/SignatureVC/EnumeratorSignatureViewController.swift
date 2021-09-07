@@ -7,9 +7,19 @@
 //
 
 import UIKit
+@objc protocol SignatureDelegate {
+@objc optional func respondentSignatureCpatered()
+ 
+}
 
+@objc protocol DataUploadedDelegate {
+@objc optional func DataUploadedSuccessfuly()
+@objc optional func DataUploadedFailled()
+ 
+}
 class EnumeratorSignatureViewController: UIViewController {
 
+    @IBOutlet weak var btnChooseRespondent: UIButton!
     @IBOutlet weak var stackViewRespondentCheck: UIStackView!
     @IBOutlet weak var chooseRespondentConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var signatureView: NPRDrawSignatureView!
@@ -33,6 +43,12 @@ class EnumeratorSignatureViewController: UIViewController {
     var strEnuSignBehalfOFRespondent = "Enumerator on behalf of"
     var strSelectedRespondent = ""
     var strRespondentName = ""
+    var strSloRespondent = ""
+    
+    var delegate:SignatureDelegate?
+    var isFromFormPage = false
+    var isFromUpload = false
+    var uploadDelegate:DataUploadedDelegate?
     
     
     
@@ -68,14 +84,18 @@ class EnumeratorSignatureViewController: UIViewController {
         else{
             chooseRespondentConstraintHeight.constant = 0
             stackViewRespondentCheck.isHidden = true
+            if util.isEnumerator() {
+                lblSignType.text = LanguageModal.langObj.enumerator_sign
+            }
+           
         }
     }
     
     func viewPrepareForRespondent()  {
         
         if isRespondentSign {
-            let strRespondent = English.signatureRespondent.signature_consent
-            let strUnableRespondent = English.signatureRespondent.respondant_unable_to_sign_consent
+            let strRespondent = LanguageModal.langObj.signature_consent
+            let strUnableRespondent = LanguageModal.langObj.respondant_unable_to_sign_consent
             
             btnSignConsentRespondent.setTitle(strRespondent, for: .normal)
             btnUnableSignConsentRespondent.setTitle(strUnableRespondent, for: .normal)
@@ -86,21 +106,28 @@ class EnumeratorSignatureViewController: UIViewController {
             btnSignConsentRespondent.titleLabel?.lineBreakMode = .byCharWrapping
             btnSignConsentRespondent.titleLabel?.numberOfLines = 0
             
-            lblTitle.text = "Respondent Signature"
+            lblTitle.text = LanguageModal.langObj.respondent_signature
             
             fetchAllAvailableRespondentList()
+            lblCensusHN.text = "\(LanguageModal.langObj.census_house_no) : \(modelHHRespondent.census_hNo ?? "")"
+            btnRespondentName.setTitle(LanguageModal.langObj.choose_respondent, for: .normal)
+            lblHHNumber.text = "\(LanguageModal.langObj.hh_number) : \(modelHHRespondent.houseHoldhNo ?? "")"
         }
     }
     
     func viewPrepare()  {
         
+      //
         if !util.isEnumerator() {
-            lblUserType.text = "Supervisor Signature"
-            lblSignType.text = "Supervisor Sign below"
-            
+            lblUserType.text = LanguageModal.langObj.sup_signature
+            lblSignType.text = LanguageModal.langObj.sup_sign
+            //btnRespondentName.setTitle(LanguageModal.langObj.choose_respondent, for: .normal)
             
         }
+        buttonClear.setTitle(LanguageModal.langObj.clear, for: .normal)
         
+        buttonSave.setTitle(LanguageModal.langObj.button_save, for: .normal)
+        strEnuSignBehalfOFRespondent = LanguageModal.langObj.sign_by_enumerator_on_behalf_of
     }
     
     func fetchAllAvailableRespondentList()  {
@@ -122,10 +149,10 @@ class EnumeratorSignatureViewController: UIViewController {
         
         
         if btnTick_unableRespondent.isSelected {
-            lblSignBellow.text = "Signed By \(strEnuSignBehalfOFRespondent) \(strSelectedRespondent)"
+            lblSignBellow.text = "\(LanguageModal.langObj.sign_by) \(strEnuSignBehalfOFRespondent) \(strSelectedRespondent)"
         }
         else{
-            lblSignBellow.text = "Signed By \(strSelectedRespondent)"
+            lblSignBellow.text = "\(LanguageModal.langObj.sign_by) \(strSelectedRespondent)"
         }
     }
     // MARK: Butttons Actions
@@ -154,7 +181,7 @@ class EnumeratorSignatureViewController: UIViewController {
             }
         }
         
-        if let signatureImage = self.signatureView.getSignature(scale: 10) {
+        if let signatureImage = self.signatureView.getSignature(scale: 2) {
                    //UIImageWriteToSavedPhotosAlbum(signatureImage, nil, nil, nil)
                    self.signatureImage = signatureImage
                    self.signatureView.clear()
@@ -163,15 +190,15 @@ class EnumeratorSignatureViewController: UIViewController {
                 if isRespondentSign {
                     self.respondentSignatureSave()
                 }else{
-                    self.getAlLmembersOFCompletedHH()
+                    DispatchQueue.main.async {self.view.showLoader()}
+                    self.prepareForUploadEnumData()
+                    
                 }
                 
             }
             else{
                 self.requestForUpload()
             }
-            
-            
             
         }
     }
@@ -230,8 +257,10 @@ class EnumeratorSignatureViewController: UIViewController {
     }
     
     
-    func getAlLmembersOFCompletedHH()  {
-        
+    func prepareForUploadEnumData()  {
+        if arrayCompletedHH.count > 0 {
+            
+        // Check Completed HH count
         for hhDictAtIndex in arrayCompletedHH {
         
         self.fetchedMemberDetailData(modelSelectedHH: hhDictAtIndex) { (arayMembersInHH) in
@@ -241,188 +270,345 @@ class EnumeratorSignatureViewController: UIViewController {
             if hhDictAtIndex == self.arrayCompletedHH.last {
                 if util.isEnumerator() {
                 self.getEBList()
+                    
                 }
             }
         }
         
     }
+        }else{
+          // If No HH means Inhavited EB
+            DispatchQueue.main.async {self.view.removeLoaderView()}
+            self.navigationController?.popViewController(animated: true)
+            uploadDelegate?.DataUploadedSuccessfuly?()
+            
+           
+        }
         
     }
     
+    // Set HH Detail
     func getAllRecordData()-> NSMutableArray{
+        let nulValue = NSNull()
            let recordArr = NSMutableArray()
-           if self.arrayCompletedHHMembers.count > 0 {
-              for i in 0..<self.arrayCompletedHHMembers.count {
+           if self.arrayCompletedHH.count > 0 {
+              for i in 0..<self.arrayCompletedHH.count {
                    let recordDic = NSMutableDictionary()
 //                   recordDic.setValue(self.arrayCompletedHHMembers[i].address_district_code, forKey: "addressDistrict")
 //                   recordDic.setValue(self.arrayCompletedHHMembers[i].address_stateCode, forKey: "addressState")
-                   
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].address_line1, forKey: "addressAddressline1")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].address_line2, forKey: "addressAddressline2")
+                //recordDic.setValue(singleton().selectEBListModel.ebEnumStartOn, forKey: "enumStartedOn")
+               // recordDic.setValue(singleton().selectEBListModel.ebEnumStartOn, forKey: "enumStartedOn")
+                recordDic.setValue(self.arrayCompletedHH[i].hhType, forKey: "hhType")
+                recordDic.setValue(self.arrayCompletedHH[i].instituteName ?? "", forKey: "institutionName")
+                recordDic.setValue(self.arrayCompletedHH[i].instituteName_sl ?? "", forKey: "institutionNamesl")
+                
+                recordDic.setValue(self.arrayCompletedHH[i].slnoRespondent?.memberSrNumberForUpload(), forKey: "slnoRespondent")
+                
                // let blockNo = self.arrayCompletedHHMembers[i].block_no ?? ""
                 
                 recordDic.setValue(singleton().selectEBListModel.eb_block_number, forKey: "blockno") // "0051"
                 
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].censusHH_number, forKey: "censusHhNo")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].censusHouse_number, forKey: "censusHouseNo")
+                recordDic.setValue(self.arrayCompletedHH[i].census_hhNo?.censusHHNumberForUpload(), forKey: "censusHhNo")
+                   recordDic.setValue(self.arrayCompletedHH[i].census_hNo ?? "", forKey: "censusHouseNo")
                 recordDic.setValue(singleton().selectEBListModel.ebDistrict_code, forKey: "districtcode") // "11"
-                   recordDic.setValue("03", forKey: "hhCompleted")//"03"
-               // recordDic.setValue(self.arrayCompletedHHMembers[i].hh_status, forKey: "hhStatus") //"5"
-                 recordDic.setValue("5", forKey: "hhStatus")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].hh_type, forKey: "hhType") //"1"
+                //self.arrayCompletedHH[i].hh_completed
+                recordDic.setValue(HHCompletionStatusCode.uploaded, forKey: "hhCompleted")//"03"
+                    // recordDic.setValue("5", forKey: "hhStatus") //"5"
+                 recordDic.setValue(self.arrayCompletedHH[i].hh_status, forKey: "hhStatus")
+                //recordDic.setValue("1", forKey: "hhType") //"1"
+                   recordDic.setValue(self.arrayCompletedHH[i].hhType, forKey: "hhType") //"1"
 //                   recordDic.setValue(self.arrayCompletedHHMembers[i].is_signUpdated, forKey: "isSignUpdated")
                 
 //                recordDic.setValue("0", forKey: "isSignUpdated")
-//                recordDic.setValue(self.arrayCompletedHHMembers[i].name_responded, forKey: "nameRespondent")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].name_responded, forKey: "nameRespondent")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].pinCode, forKey: "pincode")
-                //   recordDic.setValue("493613", forKey: "ppincode")
-                   recordDic.setValue(self.getAllResidentData(), forKey: "residents")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].sign_by_enum_onBehalf_of_responded, forKey: "signByEnumBehalfRespondant")
-                   recordDic.setValue("", forKey: "signature")
-                   recordDic.setValue(self.arrayCompletedHHMembers[i].slNo_responded, forKey: "slnoRespondent")
-                recordDic.setValue(self.arrayCompletedHHMembers[i].hh_Number, forKey: "slnohhd")
+//                recordDic.setValue(self.arrayCompletedHHMembers[i].respondentName_sl, forKey: "nameRespondentsl")
+                let isSignUpdated = self.arrayCompletedHH[i].respondentName?.count ?? 0 > 0 ? "1" : "0"
+                
+                   recordDic.setValue(self.arrayCompletedHH[i].respondentName, forKey: "nameRespondent")
+                recordDic.setValue(self.arrayCompletedHH[i].signByEnumBehalfRespondant, forKey: "signByEnumBehalfRespondant")
+                recordDic.setValue(self.arrayCompletedHH[i].signRespondet, forKey: "signature")
+                recordDic.setValue(isSignUpdated, forKey: "isSignUpdated")
+                
+               
+                let arayResidents = self.getAllResidentData(hhModel: self.arrayCompletedHH[i])
+                
+                   recordDic.setValue(arayResidents, forKey: "residents")
+                  
+                  // recordDic.setValue(self.arrayCompletedHH[i].slNo_responded, forKey: "slnoRespondent")
+                recordDic.setValue(self.arrayCompletedHH[i].houseHoldhNo, forKey: "slnohhd")
                 //recordDic.setValue("0001", forKey: "slnohhd")
+                recordDic.setValue(arrayCompletedHH[i].addressPinCode ?? "", forKey: "pincode")
+                   recordDic.setValue(self.arrayCompletedHH[i].addressHNLocality ?? "", forKey: "addressAddressline1")
+                
+                    recordDic.setValue(self.arrayCompletedHH[i].addressHNLocality_sl ?? "", forKey: "addressAddressline1sl")
+                
+                
+                recordDic.setValue(singleton().selectEBListModel.ebTown_name, forKey: "addressAddressline2")
                 recordDic.setValue(singleton().selectEBListModel.ebState_code, forKey: "statecode")
                    recordDic.setValue(singleton().selectEBListModel.ebSubEB_code, forKey: "subebno") //"00"
                    recordDic.setValue(singleton().selectEBListModel.ebTahsil_code, forKey: "tehsilcode")
                    recordDic.setValue(singleton().selectEBListModel.ebTown_code, forKey: "towncode")
                    recordDic.setValue(singleton().selectEBListModel.ebWard_code, forKey: "wardid")
+                
+                
+                recordDic.setValue(singleton().selectEBListModel.ebState_code, forKey: "addressState")
+                
+                recordDic.setValue(singleton().selectEBListModel.ebDistrict_code, forKey: "addressDistrict")
+                recordDic.setValue(singleton().selectEBListModel.ebTown_code, forKey: "towncode")
+                recordDic.setValue(singleton().selectEBListModel.ebWard_code, forKey: "wardid")
+                recordDic.setValue(singleton().selectEBListModel.ebTahsil_code, forKey: "addressTehsilcode")
+                //recordDic.setValue(arrayCompletedHH[i].addressHNLocality ?? "", forKey: "addressAddressline1")
                    recordArr.add(recordDic)
+                
+                
+                recordDic.setValue(self.arrayCompletedHH[i].splitedTo ?? "", forKey: "splitsInto")
+                recordDic.setValue(self.arrayCompletedHH[i].splitedFrom ?? "", forKey: "splitsFrom")
+                //recordDic.setValue(self.arrayCompletedHH[i].SEref ?? "", forKey: "seReference")
+                
+                
+                if (self.arrayCompletedHH[i].census_hhNo?.count == 0)  {
+                    recordDic.setValue(nulValue, forKey: "censusHhNo")
+                    
+                }
               }
            }
+        if recordArr.count == 0 {
+            let emptyDict = ["":""]
+            recordArr.add(emptyDict)
+        }
            return recordArr
        }
     
    
     
-       
-       func getAllResidentData()-> NSMutableArray{
+       // Set Member Detail Data
+    func getAllResidentData(hhModel:NPR_2021hh_Details)-> NSMutableArray{
+        let nulValue = NSNull()
         
+        DBManagerMemberDetail().fetchedHHMembers(modelSelectedHH: hhModel) { (arayMemberInHH) in
+            self.arrayCompletedHHMembers = arayMemberInHH
+        }
            let residentArr = NSMutableArray()
            if self.arrayCompletedHHMembers.count > 0 {
             
                  for i in 0..<self.arrayCompletedHHMembers.count {
                     
                     let residentDic = NSMutableDictionary()
-                  
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].duration_inYear, forKey: "durationInyear")
+                 
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].old_tin, forKey: "tin2019")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].gender_id, forKey: "genderid")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].marital_status, forKey: "maritalStatus")
+                    if self.arrayCompletedHHMembers[i].marital_status?.count == 0 {
+                        residentDic.setValue(nulValue, forKey: "maritalStatus")
+                    }
+                    //self.arrayCompletedHHMembers[i].member_completionStatus
+                    residentDic.setValue(MemberCompletionStatusCode.uploaded, forKey: "memberCompleted")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].name ?? "", forKey: "name")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].nameSL ?? "", forKey: "namesl")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].first_name , forKey: "firstName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].first_name_sl ?? "", forKey: "firstnamesl")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].midle_name , forKey: "midleName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].midle_name_sl ?? "", forKey: "middlenamesl")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].last_name , forKey: "lastName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].last_name_sl ?? "", forKey: "lastnamesl")
+
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].memberStatus ?? "", forKey: "memberStatus")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].passpord_id ?? "", forKey: "passport")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].duration_inYear ?? "", forKey: "durationInyear")
                     
                     
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].dob, forKey: "dob") //"08-10-1979"
                     
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_name, forKey: "fatherName")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].dob_type, forKey: "dobType")
+                    
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].dob ?? "", forKey: "dob") //"08-10-1979"
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_name ?? "", forKey: "fatherName")
+                   // residentDic.setValue(self.arrayCompletedHHMembers[i].father_name_sl ?? "", forKey: "fathernmsl")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].dob_type ?? "", forKey: "dobType")
                    
-                    //residentDic.setValue(self.arrayCompletedHHMembers[i].enumerated_on, forKey: "enumeratedOn") //"2020-10-08T13:04:13.044Z"
-                    residentDic.setValue("2020-10-08T13:04:13.044Z", forKey: "enumeratedOn")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].enumerated_on ?? "", forKey: "enumeratedOn") //"2020-10-08T13:04:13.044Z"
+                    residentDic.setValue(singleton().getCurrentTimeStamp(), forKey: "enumeratedOn")
                     
                     
                   //  residentDic.setValue(self.arrayCompletedHHMembers[i].father_dob, forKey: "fatherDob")
                  //   residentDic.setValue(self.arrayCompletedHHMembers[i].father_dobType, forKey: "fotherDobtype")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].gender_id, forKey: "genderid")
-                    residentDic.setValue("en", forKey: "language")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].marital_status, forKey: "maritalStatus")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].member_completionStatus, forKey: "memberCompleted")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].memberStatus, forKey: "memberStatus") //"4"
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].mobile, forKey: "mobileNumber")//"8120380387"
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].language ?? "", forKey: "language")
+                     //"4"
+                    //"8120380387"
 //                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dob, forKey: "motherDob")
-//                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_code, forKey: "motherCode")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].motherName, forKey: "motherName")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dobType, forKey: "motherDobtype")
-                    
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].name, forKey: "name") //"Prateek"
                     
                     
                     
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_line1, forKey: "paddressline1")//"CHHACHHANPAIRI"
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].address_line1_sl, forKey: "paddressline1sl")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_line2, forKey: "paddressline2")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].address_line2_sl, forKey: "paddressline2sl")
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].ppinCode, forKey: "ppincode")//"493661"
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_name ?? "", forKey: "fatherName")
+                    
+                    let fatherFoundIndex = self.arrayCompletedHHMembers[i].language?.isEnglishLangCode() ?? false ? self.arrayCompletedHHMembers.filter({$0.father_name == self.arrayCompletedHHMembers[i].father_name}) : self.arrayCompletedHHMembers.filter({$0.father_name_sl == self.arrayCompletedHHMembers[i].father_name_sl})
+                    
+                    let fatherCode = fatherFoundIndex.count > 0 ? fatherFoundIndex.last?.sloMember : ""
+                    
+                   // residentDic.setValue(fatherCode?.memberSrNumberForUpload(), forKey: "fatherCode")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_name_sl ?? "", forKey: "fatherNamesl")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_dob ?? "", forKey: "fatherDob")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].father_dobType ?? "", forKey: "fotherDobtype")
+                   
+                    
+                    if self.arrayCompletedHHMembers[i].father_dobType?.count == 0 {
+                        residentDic.setValue(nulValue, forKey: "fotherDobtype")
+                    }
+//                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_code, forKey: "fatherCode")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthCountryCode ?? "", forKey: "fatherBirthCountry")//"083"
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthStateCode ?? "", forKey: "fatherBirthState")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthDistrictCode ?? "", forKey: "fatherBirthDistrict")
+                    
+                    // Parent Detail
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].motherName ?? "", forKey: "motherName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].motherName_sl ?? "", forKey: "motherNamesl")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dobType ?? "", forKey: "motherDobtype")
+                    
+                    if self.arrayCompletedHHMembers[i].mother_dobType?.count == 0 {
+                        residentDic.setValue(nulValue, forKey: "motherDobtype")
+                    }
+                    
+                    let motherFoundIndex = self.arrayCompletedHHMembers[i].language?.isEnglishLangCode() ?? false ? self.arrayCompletedHHMembers.filter({$0.motherName == self.arrayCompletedHHMembers[i].motherName}) : self.arrayCompletedHHMembers.filter({$0.motherName_sl == self.arrayCompletedHHMembers[i].motherName_sl})
+                    
+                    let motherSlo = motherFoundIndex.count > 0 ? fatherFoundIndex.last?.sloMember : ""
+                    
+                    residentDic.setValue(motherSlo?.memberSrNumberForUpload(), forKey: "motherCode")
+                     //"Prateek"
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].spouseName ?? "", forKey: "spouseName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].spouseName_sl ?? "", forKey: "spouseNamesl")
+                    let spouseFoundIndex = self.arrayCompletedHHMembers[i].language?.isEnglishLangCode() ?? false ? self.arrayCompletedHHMembers.filter({$0.spouseName == self.arrayCompletedHHMembers[i].spouseName}) : self.arrayCompletedHHMembers.filter({$0.spouseName_sl == self.arrayCompletedHHMembers[i].spouseName_sl})
+                    
+                    let spouseSlo = spouseFoundIndex.count > 0 ? fatherFoundIndex.last?.sloMember : ""
+                    residentDic.setValue(spouseSlo ?? "", forKey: "spousecode")
+                    
+                    //spousecode
+                    if self.arrayCompletedHHMembers[i].spouseName?.count == 0 {
+                        residentDic.setValue(nulValue, forKey: "spouseName")
+                    }
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].motherName ?? "", forKey: "motherName")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dob ?? "", forKey: "motherDob")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dobType ?? "", forKey: "motherDobtype")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthCountryCode ?? "", forKey: "motherBirthCountry")//"083"
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthStateCode ?? "", forKey: "motherBirthState")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthDistrictCode ?? "", forKey: "motherBirthDistrict")
+                    
+                    // ID
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].aadhar ?? "", forKey: "aadhaar")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].mobile ?? "", forKey: "mobileNumber")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].voter_id ?? "", forKey: "voterId")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].driving_lincence ?? "", forKey: "drivingLicense")
+                    
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    //Present Address
+
+                    
+
+                    
+                    // Permanent Address
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_line1 ?? "", forKey: "paddressline1")//"CHHACHHANPAIRI"
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].address_line1_sl ?? "", forKey: "paddressline1sl")
+                  
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_town ?? "", forKey: "paddressline2")
+                    
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].address_line2_sl ?? "", forKey: "paddressline2sl")
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].ppinCode ?? "", forKey: "ppincode")//"493661"
                    // residentDic.setValue("493613", forKey: "ppincode")
                     
                    // residentDic.setValue(self.arrayCompletedHHMembers[i].rel_code ?? "", forKey: "relCode") //"01"
+                   // var newTin = self.arrayCompletedHHMembers[i].new_tin ?? ""
                     
+                    let newTin = self.arrayCompletedHHMembers[i].sloMember?.memberTin(hhNumber: self.arrayCompletedHHMembers[i].hh_Number ?? "")
+                    residentDic.setValue(newTin, forKey: "tin")
                     
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].tin, forKey: "tin")
-                    
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].sloMember, forKey: "slnoMember") //"001"
-                    residentDic.setValue(self.arrayCompletedHHMembers[i].staying_since_birthdate, forKey: "stayingSinceBirth")
+                    let strMemberSerialNumber = self.arrayCompletedHHMembers[i].sloMember ?? ""
+                    residentDic.setValue(strMemberSerialNumber.memberSrNumberForUpload(), forKey: "slnoMember") //"001"
+                    residentDic.setValue(self.arrayCompletedHHMembers[i].staying_since_birthdate ?? "", forKey: "stayingSinceBirth")
                     //"872211008000400000019189001"
                     //residentDic.setValue("", forKey: "slnoMember")
+                   
+                    //residentDic.setValue("001", forKey: "slnoMember")
                     let memberStatus = MemberLivingStatusCode.init(rawValue: self.arrayCompletedHHMembers[i].memberStatus ?? "")
-                    
+                   
                     switch memberStatus {
                     case .available,.newMember:
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].edu_code, forKey: "eduCode") //"14"
-                    //    residentDic.setValue("14", forKey: "eduCode")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].occu_code, forKey: "occuCode")//"1"
+                   
+                        
                     //    residentDic.setValue("1", forKey: "occuCode")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].rel_code, forKey: "relCode")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].rel_code ?? "", forKey: "relCode")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthCountryCode, forKey: "birthCountry")//"083"
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthStateCode, forKey: "birthStateCode")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthDistrictCode, forKey: "birthDistrictCode")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthCountryCode ?? "", forKey: "birthCountry")//"083"
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthStateCode ?? "", forKey: "birthStateCode")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthDistrictCode ?? "", forKey: "birthDistrictCode")
                         
-                       
+                      //  let strDictCode = DBManager_CountryStateDistrict().getDistrictCode(stateCode: self.arrayCompletedHHMembers[i].birthStateCode, districtName:self.arrayCompletedHHMembers[i].birthDistrictName )
+                        
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].motherToungeode ?? "", forKey: "motherTongue")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].otherMotherTounge ?? "", forKey: "otherMotherTongue")
+                        
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].edu_code ?? "", forKey: "eduCode") //"14"
+                    //    residentDic.setValue("14", forKey: "eduCode")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].occu_code ?? "", forKey: "occuCode")//"1"
                         // Parent Detail
                         
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_name, forKey: "fatherName")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_dob, forKey: "fatherDob")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_dobType, forKey: "fatherDobtype")
+                        
                         
 //                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_code, forKey: "fatherCode")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthCountryCode, forKey: "fatherBirthCountry")//"083"
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthStateCode, forKey: "fatherBirthState")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].fatherBirthDistrictCode, forKey: "fatherBirthDistrict")
                         
-                        // Parent Detail
-                        
-                        
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].motherName, forKey: "motherName")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dob, forKey: "motherDob")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].mother_dobType, forKey: "motherDobtype")
-                        
-//                        residentDic.setValue(self.arrayCompletedHHMembers[i].father_code, forKey: "fatherCode")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthCountryCode, forKey: "motherBirthCountry")//"083"
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthStateCode, forKey: "motherBirthState")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].mother_birthDistrictCode, forKey: "motherBirthDistrict")
                        
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].nationality, forKey: "nationality")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].nationality ?? "", forKey: "nationality")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_countryCode, forKey: "paddressCountry")//"083"
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_districtCode, forKey: "paddressDistrict")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_stateCode, forKey: "paddressState")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsilCode, forKey: "paddressTehsil")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_countryCode ?? "", forKey: "paddressCountry")//"083"
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_districtCode ?? "", forKey: "paddressDistrict")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_stateCode ?? "", forKey: "paddressState")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsilCode ?? "", forKey: "paddressTehsil")
                         
                         
-//                        residentDic.setValue(self.arrayCompletedHHMembers[i].motherToungeode, forKey: "motherTongue") //"068"
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].motherToungeode, forKey: "motherTongue") //"068"
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].motherToungeode, forKey: "motherTongue")
-                        residentDic.setValue(singleton().selectEBListModel.ebTahsil_code, forKey: "addressTehsilcode")
-                        residentDic.setValue(singleton().selectEBListModel.ebState_code, forKey: "addressState")
-                        residentDic.setValue(singleton().selectEBListModel.ebDistrict_code, forKey: "addressDistrict")
+                        
+                        residentDic.setValue(singleton().selectEBListModel.ebTahsil_code ?? "", forKey: "addressTehsilcode")
+                        residentDic.setValue(singleton().selectEBListModel.ebState_code ?? "", forKey: "addressState")
+                        residentDic.setValue(singleton().selectEBListModel.ebDistrict_code ?? "", forKey: "addressDistrict")
                         
                         
                         // Last Residency
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].duration_inYear ?? "", forKey: "durationInyear")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyCountry ?? "", forKey: "lastResidencyCountry")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyState ?? "", forKey: "lastResidencyState")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyDistrict ?? "", forKey: "lastResidencyDistrict")
                         
-//                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyCountry, forKey: "lastResidencyCountry")
-//                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyState, forKey: "lastResidencyState")
-//                        residentDic.setValue(self.arrayCompletedHHMembers[i].lastResidencyDistrict, forKey: "lastResidencyDistrict")
-                        
-                        
+                      
                         
                         
                         break
                         
                     case .dead ,.lockedMember,.migratedOut,.notAvailable:
+                      
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].occuName ?? "", forKey: "oefOccuName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].occuName_sl, forKey: "oefOccuNamesl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].occuName, forKey: "oefOccuName")
-                        
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].eduName, forKey: "oefEduName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].eduName ?? "", forKey: "oefEduName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].eduName_sl ?? "", forKey: "oefEduNamesl")
                        
                         if (self.arrayCompletedHHMembers[i].rel_code == "") {
                             
@@ -430,36 +616,41 @@ class EnumeratorSignatureViewController: UIViewController {
                             
                         }
                         else{
-                            residentDic.setValue(self.arrayCompletedHHMembers[i].rel_code, forKey: "relCode")
+                            residentDic.setValue(self.arrayCompletedHHMembers[i].rel_code ?? "", forKey: "relCode")
                         }
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].relName, forKey: "oefRelName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].relName ?? "", forKey: "oefRelName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].relNameSL ?? "", forKey: "oefRelNamesl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthCountryName, forKey: "oefBirthCountryName")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthStateName, forKey: "oefBirthStateName")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthDistrictName, forKey: "oefBirthDistrictName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthCountryName ?? "", forKey: "oefBirthCountryName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birth_country_sl ?? "", forKey: "oefBirthCountryNamesl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthStateName ?? "", forKey: "oefBirthStateName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birth_state_sl ?? "", forKey: "oefBirthStateNamesl")
                         
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birthDistrictName ?? "", forKey: "oefBirthDistrictName")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].birth_district_sl ?? "", forKey: "oefBirthDistrictNamesl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].nationality, forKey: "oefNationality")
-                       
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].nationality ?? "", forKey: "oefNationality")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].nationality_sl ?? "", forKey: "oefNationalitysl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_country, forKey: "oefPermanentCountry")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].stateName_sl, forKey: "oefPermanentStatesl")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_state, forKey: "oefPermanentState")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_district, forKey: "oefPermanentDistrict")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil, forKey: "oefPermanentTehsil")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_country ?? "", forKey: "oefPermanentCountry")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_country, forKey: "oefPermanentCountrysl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].stateName_sl ?? "", forKey: "oefPermanentStatesl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddress_state ?? "", forKey: "oefPermanentState")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_district ?? "", forKey: "oefPermanentDistrict")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil ?? "", forKey: "oefPermanentTehsil")
                         residentDic.setValue("", forKey: "oefPermanentTehsilsl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].districtName, forKey: "oefPresentDistrict")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].districtName_sl, forKey: "oefPresentDistrictsl")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].address_state, forKey: "oefPresentState")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].stateName_sl, forKey: "oefPresentStatesl")
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil, forKey: "oefPresentTehsil")
-                       // residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil, forKey: "oefPresentTehsilsl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].districtName ?? "", forKey: "oefPresentDistrict")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].districtName_sl ?? "", forKey: "oefPresentDistrictsl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].address_state ?? "", forKey: "oefPresentState")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].stateName_sl ?? "", forKey: "oefPresentStatesl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil ?? "", forKey: "oefPresentTehsil")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].paddre_tahsil, forKey: "oefPresentTehsilsl")
                         
-                        residentDic.setValue(self.arrayCompletedHHMembers[i].relNameSL, forKey: "oefRelNamesl")
+                        residentDic.setValue(self.arrayCompletedHHMembers[i].relNameSL ?? "", forKey: "oefRelNamesl")
                         
-                        
+                       
                         
                         break
                         
@@ -498,15 +689,14 @@ class EnumeratorSignatureViewController: UIViewController {
                 residentDic.setValue(self.arrayCompletedHH[i].sub_eb, forKey: "subebno")
                 residentDic.setValue(self.arrayCompletedHH[i].superVisor_remrk, forKey: "superRemarks")
                 residentDic.setValue(self.arrayCompletedHH[i].houseHoldhNo, forKey: "slnohhd")
-                residentDic.setValue("2020-11-23T14:14:01.842Z", forKey: "superRemarksOn")
+                residentDic.setValue(self.arrayCompletedHH[i].superVisor_remrkOn, forKey: "superRemarksOn")
                 residentDic.setValue(singleton().getCredentials().userId, forKey: "supervisor")
                 residentDic.setValue(self.arrayCompletedHH[i].tahsil_code, forKey: "tehsilcode")
                 residentDic.setValue(self.arrayCompletedHH[i].townCode, forKey: "towncode")
                 residentDic.setValue(self.arrayCompletedHH[i].wardID, forKey: "wardid")
+               // residentDic.object(forKey: <#T##Any#>)
                 
-               
-                 
-                 residentArr.add(residentDic)
+               residentArr.add(residentDic)
              }
           }
         return residentArr
@@ -555,16 +745,24 @@ class EnumeratorSignatureViewController: UIViewController {
                     else{
                         print("Service Continue")
                             self.requestForExpectedHouseHold()
+                        //self.requestForUpload()
                     }
                 }
            }
            else{
                 if error?.localizedDescription == AppMessages.Not_Connected_To_Internet {
-                  singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Not_Connected_To_Internet, delay: 5.0)
+                  
+                    
+                    let alert = AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.not_connected_to_internet, time: 2.0)
+                    
                }
                 if error?.localizedDescription == AppMessages.Server_Response {
                    //let serverMessage = responseData.object(forKey:"message") as? String ?? ""
-                   singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.UnAuthorized_Access, delay: 5.0)
+                    let alert = AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.unauthorized_access, time: 2.0)
+                    
+                   
                }
            }
         }
@@ -583,18 +781,23 @@ class EnumeratorSignatureViewController: UIViewController {
                          Param_Key.NPREnumStarted: singleton().getCurrentTimeStamp()]
          self.view.showLoader()
          APIManager().postEBStartDate(params: dictParam) { (success, responseData, error) in
-            DispatchQueue.main.async {self.view.removeLoaderView()}
+           
            if success {
             self.requestForUpload()
            }
            else{
                 if error?.localizedDescription == AppMessages.Not_Connected_To_Internet {
-                  singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Not_Connected_To_Internet, delay: 5.0)
+                 
+                    let alert = AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.not_connected_to_internet, time: 2.0)
+                    
                     
                }
                 if error?.localizedDescription == AppMessages.Server_Response {
                    //let serverMessage = responseData.object(forKey:"message") as? String ?? ""
-                   singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.UnAuthorized_Access, delay: 5.0)
+                   
+                    let alert = AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.unauthorized_access, time: 2.0)
                }
             
            }
@@ -611,25 +814,39 @@ class EnumeratorSignatureViewController: UIViewController {
                          Param_Key.WardID: singleton().selectEBListModel.ebWard_code ?? "",
                          Param_Key.BlockNo: singleton().selectEBListModel.eb_block_number ?? "",
                          Param_Key.SubEBNo: singleton().selectEBListModel.ebSubEB_code ?? ""]
-        DispatchQueue.main.async {
-            self.view.showLoader()
-        }
+       
          
          APIManager().postExpectedHouseHold(params: dictParam) { (success, responseData, error) in
             //DispatchQueue.main.async {self.view.removeLoaderView()}
            if success {
            // self.requestForEBStartDate()
-            self.requestForUpload()
+            
+                self.requestForUpload()
+            
+           
            }
            else{
                 if error?.localizedDescription == AppMessages.Not_Connected_To_Internet {
-                  singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Not_Connected_To_Internet, delay: 5.0)
+                    DispatchQueue.main.async {
+                        self.view.showLoader()
+                    
+                   
+                        let alert = AlertView()
+                        alert.alertWithoutButton( message: LanguageModal.langObj.not_connected_to_internet, time: 2.0)
+                    }
                }
                 if error?.localizedDescription == AppMessages.Server_Response {
                    //let serverMessage = responseData.object(forKey:"message") as? String ?? ""
-                   singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.UnAuthorized_Access, delay: 5.0)
+                    
+                    DispatchQueue.main.async {
+                        self.view.showLoader()
+                    
+                   
+                        
+                        let alert = AlertView()
+                        alert.alertWithoutButton( message: LanguageModal.langObj.unauthorized_access, time: 2.0)
                }
-            
+                }
            }
             
         }
@@ -646,8 +863,8 @@ class EnumeratorSignatureViewController: UIViewController {
             recordData = self.getAllRecordData()
         }
         
-        let timeStamp = (NSDate().timeIntervalSince1970)*1000
-       // let timeStamp = "20201021T150827675Z"
+       // let timeStamp = Int((NSDate().timeIntervalSince1970)*1000)
+        let timeStamp = singleton().getCurrentDateAndTime()//"20210303T150827675Z"
         let batchID = "\(singleton().selectEBListModel.eb_number ?? "")_\(singleton().getCredentials().userId )_\(timeStamp)"
         
        // Param_Key.Signature: singleton().convertToBase64(image: self.signatureImage)
@@ -660,31 +877,64 @@ class EnumeratorSignatureViewController: UIViewController {
         print("Upload Data",dictParam)
         APIManager().postUploadDataRequest(params: dictParam) { (success, responseData, error) in
                // DispatchQueue.main.async {self.view.removeLoaderView()}
+            
                if success {
                // self.requestForEBCompletation()
                 
-                DispatchQueue.main.async {self.view.removeLoaderView()
+                
+                DispatchQueue.main.async {
+                  //  recordData.removeAllObjects()
+                    self.view.removeLoaderView()
+                    DBManagerHousehold().updateHHMemberAfterUpoadData()
                     let alertView = AlertView()
                     alertView.delegate = self
-                  //  alertView.showAlertWithSingleButton(vc: self, title: "", message: "Data Uploaded Successfully")
-                    alertView.alertWithoutButton(vc: self, message: "Data Uploaded Successfully")
+                  //  alertView.showAlertWithSingleButton( title: "", message: "Data Uploaded Successfully")
+                    alertView.alertWithoutButton( message: LanguageModal.langObj.success)
                     
-                        DBManagerHousehold().updateHHStatusAfterUploaded()
-                   
+                       
+                    
                 }
                 
                 
                }
                else{
                     if error?.localizedDescription == AppMessages.Not_Connected_To_Internet {
-                      singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Not_Connected_To_Internet, delay: 5.0)
-                        self.view.removeLoaderView()
+                      
+                       
+                        DispatchQueue.main.async { self.view.removeLoaderView()
+                            
+                            let alertView = AlertView()
+                             alertView.delegate = self
+                             alertView.alertWithoutButton( message: AppMessages.Not_Connected_To_Internet)
+                        }
+                        
+                       // DispatchQueue.main.async { self.view.removeLoaderView()}
                    }
                     if error?.localizedDescription == AppMessages.Server_Response {
+                        
+                        DispatchQueue.main.async {self.view.removeLoaderView()
+                            let alertView = AlertView()
+                             alertView.delegate = self
+                             alertView.alertWithoutButton( message: AppMessages.UnAuthorized_Access)
+                        }
+                        
                        //let serverMessage = responseData.object(forKey:"message") as? String ?? ""
-                       singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.UnAuthorized_Access, delay: 5.0)
+                       
+                       
+                        DispatchQueue.main.async {
                         self.view.removeLoaderView()
-                   }
+                        }
+                    }else {
+                        
+                       
+                        DispatchQueue.main.async {
+                        self.view.removeLoaderView()
+                            
+                            let alertView = AlertView()
+                             alertView.delegate = self
+                            alertView.alertWithoutButton( message: error?.localizedDescription ?? "")
+                        }
+                    }
                }
            }
        }
@@ -703,15 +953,21 @@ class EnumeratorSignatureViewController: UIViewController {
         APIManager().postEBCompletation(params: dictParam) { (success, responseData, error) in
            // DispatchQueue.main.async {self.view.removeLoaderView()}
            if success {
-               
+            self.requestForUpload()
            }
            else{
                 if error?.localizedDescription == AppMessages.Not_Connected_To_Internet {
-                  singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.Not_Connected_To_Internet, delay: 5.0)
+                    DispatchQueue.main.async {
+                    let alert =  AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.not_connected_to_internet, time: 3.0)
                }
+                }
                 if error?.localizedDescription == AppMessages.Server_Response {
                    //let serverMessage = responseData.object(forKey:"message") as? String ?? ""
-                   singleton().Alert.show(title: AppMessages.App_Name, message: AppMessages.UnAuthorized_Access, delay: 5.0)
+                  
+                    
+                    let alert =  AlertView()
+                    alert.alertWithoutButton( message: LanguageModal.langObj.unauthorized_access, time: 3.0)
                }
             }
         }
@@ -732,17 +988,21 @@ extension EnumeratorSignatureViewController : NPRSignatureDelegate {
     
 }
 
-
-
-
-
 extension EnumeratorSignatureViewController:PickerViewCommonDelegate {
     
     func didPickComponent(component: String) {
-       strSelectedRespondent = component
-        btnRespondentName.setTitle(component, for: .normal)
+        let nameSloMember = component.components(separatedBy: "_")
+        if nameSloMember.count > 1 {
+            strSelectedRespondent = nameSloMember[0]
+            strSloRespondent = nameSloMember[1]
+        }else{
+            
+            strSloRespondent = nameSloMember[0]
+        }
+        
+        btnRespondentName.setTitle(strSelectedRespondent, for: .normal)
         updateSignBelowLable()
-        strRespondentName = component
+        strRespondentName = strSelectedRespondent
     }
     
     func cancelPicker() {
@@ -758,20 +1018,23 @@ extension EnumeratorSignatureViewController:PickerViewCommonDelegate {
             if !btnTickConsent.isSelected && strSelectedRespondent.isEmpty{
                 strAlertMessage = English.signatureRespondent.tickRespondent_chhoseRespont
             }else if !btnTickConsent.isSelected {
-                strAlertMessage = English.signatureRespondent.tickRespondent
+                strAlertMessage = LanguageModal.langObj.please_tick_the_consent
             }else{
-                strAlertMessage = English.signatureRespondent.chooseRespondent
+                strAlertMessage = LanguageModal.langObj.choose_respondent
             }
             
-            AlertView().alertWithoutButton(vc: self, message: strAlertMessage)
+            AlertView().alertWithoutButton( message: strAlertMessage)
         }
       return false
     }
     func respondentSignatureSave()  {
+        
         for viewcontroller in self.navigationController!.viewControllers {
             if viewcontroller is HouseholdMemberDetail_ViewController  {
                 modelHHRespondent.respondentName = strRespondentName
-                
+                modelHHRespondent.slnoRespondent = strSloRespondent
+                modelHHRespondent.signByEnumBehalfRespondant = btnUnableSignConsentRespondent.isSelected == true ?"1": "0"
+                modelHHRespondent.signRespondet = singleton().convertToBase64(image: self.signatureImage)
                 do {
                     try context.save()
                 } catch  {
@@ -779,14 +1042,20 @@ extension EnumeratorSignatureViewController:PickerViewCommonDelegate {
                 }
               
                 
-                viewcontroller.navigationController?.popViewController(animated: true)
+                //viewcontroller.navigationController?.popViewController(animated: true)
             }
         }
+        let alertView = AlertView()
+        alertView.delegate = self
+        alertView.alertWithoutButton( message: LanguageModal.langObj.signature_captured_successfull)
         
     }
     
     
 }
+
+
+
 
 
 

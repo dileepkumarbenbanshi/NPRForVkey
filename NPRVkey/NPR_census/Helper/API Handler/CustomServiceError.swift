@@ -28,4 +28,7 @@ struct CustomServiceError: ServiceErrorProtocol {
         self.code = code
     }
 
+    
+    
+    
 }

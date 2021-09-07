@@ -102,6 +102,11 @@ extension APIManager  {
         }
     }
     
+    public func getOtpChangePassword( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+        self.request(BaseUrl.url + EndPoint.getOTP , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
+            finished(success,result, error)
+        }
+    }
     
     public func downloadEBList( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
         self.request(BaseUrl.url + EndPoint.ebList , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
@@ -128,11 +133,18 @@ extension APIManager  {
         }
     }
     
+    public func getBaseURL( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+        self.request(BaseUrl.url + EndPoint.getBaseURL , httpMethod: RequestType.POST.rawValue, apiType: APIType.DeviceManagement, parameter: params) { (success, result, error) in
+            finished(success,result, error)
+        }
+    }
+    
     public func postEnrollementRequest( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
         self.request(BaseUrl.url + EndPoint.Device_Enroll , httpMethod: RequestType.POST.rawValue, apiType: APIType.DeviceManagement, parameter: params) { (success, result, error) in
             finished(success,result, error)
         }
     }
+    
     
     
     public func postActiveDeviceRequest(finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
@@ -174,6 +186,18 @@ extension APIManager  {
         }
     }
 
+   
+    public func postHLODataDownload( params:[String: Any],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+       
+        
+        
+          let endPoint = EndPoint.hloDataDownload
+        
+        self.request(BaseUrl.url + endPoint  , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
+            finished(success,result, error)
+        }
+    }
+    
     public func postDeEnrollementRequest( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
              self.request(BaseUrl.url + EndPoint.Device_De_Enroll , httpMethod: RequestType.POST.rawValue, apiType: APIType.DeviceManagement, parameter: params) { (success, result, error) in
              finished(success,result, error)
@@ -200,6 +224,12 @@ extension APIManager  {
     }
     }
     
+    public func postChangePwdVerifyOTPRequest( params:[String: String],finished: @escaping (Bool,Any,CustomServiceError?) -> Void) {
+        self.request(BaseUrl.url + EndPoint.changePwdOtpVeriFy , httpMethod: RequestType.POST.rawValue, apiType: APIType.NonDeviceManagement, parameter: params) { (success, result, error) in
+        finished(success,result, error)
+        }
+    }
+    
     
     private  func request(_ requestURL: String, httpMethod: String,apiType:APIType, parameter: [String : Any], _ completionBlock: ((Bool, Any, CustomServiceError?) -> Void)!) {
             print("URL:-----> \(requestURL)")
@@ -221,9 +251,15 @@ extension APIManager  {
             else{ // Device Managment
                 request.addValue("Basic \(singleton().authenticateWithCredentials(userId: singleton().getCredentials().userId, password: singleton().getPasswordOrToken(apiType: apiType)))", forHTTPHeaderField: "Authorization")
             }
+        
+        
             do {
                 let strJsonObject = try JSONSerialization.data(withJSONObject: parameter, options: JSONSerialization.WritingOptions())
-                print(strJsonObject)
+                
+                // let strJsonObject = try JSONSerialization.data(withJSONObject: parameter, options: JSONSerialization.WritingOptions())
+                
+                
+                print("parameter Json", strJsonObject)
                 request.httpBody = strJsonObject
     //          let postData = strJsonObject.data(using: .utf8)// This will print the below json.
             }
